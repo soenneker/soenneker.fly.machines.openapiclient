@@ -14,13 +14,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of supported identifiable driver versions available in the region.</summary>
+        /// <summary>List of supported identifiable cuda/nvidia driver versions pairs available in the region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DriverVersions { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ClusterDriverVersionInfo>? DriverVersions { get; set; }
 #nullable restore
 #else
-        public List<string> DriverVersions { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ClusterDriverVersionInfo> DriverVersions { get; set; }
 #endif
         /// <summary>Identifiable name of the region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "driver_versions", n => { DriverVersions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "driver_versions", n => { DriverVersions = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ClusterDriverVersionInfo>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ClusterDriverVersionInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "supported_instance_types", n => { SupportedInstanceTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("driver_versions", DriverVersions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ClusterDriverVersionInfo>("driver_versions", DriverVersions);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("supported_instance_types", SupportedInstanceTypes);
             writer.WriteAdditionalData(AdditionalData);
