@@ -15,13 +15,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Array of audio inputs.</summary>
+        /// <summary>Array of audio inputs. Each element accepts a URL string or an object with an &quot;audio&quot; key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef>? AudioInputs { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs>? AudioInputs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef> AudioInputs { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs> AudioInputs { get; set; }
 #endif
         /// <summary>Array of images to guide video generation at specific timeline positions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,13 +55,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef> ReferenceVideos { get; set; }
 #endif
-        /// <summary>The source_video property</summary>
+        /// <summary>Source video to edit. Accepts a URL string or an object with a &quot;video&quot; key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef? SourceVideo { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video? SourceVideo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef SourceVideo { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video SourceVideo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia"/> and sets the default values.
@@ -88,12 +88,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audio_inputs", n => { AudioInputs = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "audio_inputs", n => { AudioInputs = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "frame_images", n => { FrameImages = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInput>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "frame_videos", n => { FrameVideos = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference_images", n => { ReferenceImages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "reference_videos", n => { ReferenceVideos = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "source_video", n => { SourceVideo = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef.CreateFromDiscriminatorValue); } },
+                { "source_video", n => { SourceVideo = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,13 +103,163 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef>("audio_inputs", AudioInputs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs>("audio_inputs", AudioInputs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInput>("frame_images", FrameImages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>("frame_videos", FrameVideos);
             writer.WriteCollectionOfPrimitiveValues<string>("reference_images", ReferenceImages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>("reference_videos", ReferenceVideos);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>("source_video", SourceVideo);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video>("source_video", SourceVideo);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class VideoMedia_audio_inputs : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef? AudioRef { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef AudioRef { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_audio_inputs();
+                if("AudioRef".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.AudioRef = new global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef();
+                }
+                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UnionBranch = new global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AudioRef != null)
+                {
+                    return AudioRef.GetFieldDeserializers();
+                }
+                else if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(AudioRef != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioRef>(null, AudioRef);
+                }
+                else if(UnionBranch != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class VideoMedia_source_video : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef? VideoRef { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef VideoRef { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoMedia.VideoMedia_source_video();
+                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UnionBranch = new global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch();
+                }
+                else if("VideoRef".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.VideoRef = new global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
+                else if(VideoRef != null)
+                {
+                    return VideoRef.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(UnionBranch != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
+                }
+                else if(VideoRef != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoRef>(null, VideoRef);
+                }
+            }
         }
     }
 }
