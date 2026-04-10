@@ -40,6 +40,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Source of the judge model.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig_model_source? ModelSource { get; set; }
+        /// <summary>Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs.</summary>
+        public int? NumWorkers { get; set; }
         /// <summary>System prompt template for the judge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "external_base_url", n => { ExternalBaseUrl = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "model_source", n => { ModelSource = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig_model_source>(); } },
+                { "num_workers", n => { NumWorkers = n.GetIntValue(); } },
                 { "system_template", n => { SystemTemplate = n.GetStringValue(); } },
             };
         }
@@ -91,6 +94,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("external_base_url", ExternalBaseUrl);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig_model_source>("model_source", ModelSource);
+            writer.WriteIntValue("num_workers", NumWorkers);
             writer.WriteStringValue("system_template", SystemTemplate);
             writer.WriteAdditionalData(AdditionalData);
         }

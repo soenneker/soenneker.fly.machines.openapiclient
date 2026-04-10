@@ -11416,6 +11416,12 @@
           "external_base_url": {
             "type": "string",
             "description": "Base URL for external judge models. Must be OpenAI-compatible base URL."
+          },
+          "num_workers": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs.",
+            "example": 5
           }
         }
       },
@@ -11503,6 +11509,12 @@
           "external_base_url": {
             "type": "string",
             "description": "Base URL for external models. Must be OpenAI-compatible base URL"
+          },
+          "num_workers": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs.",
+            "example": 5
           }
         }
       },

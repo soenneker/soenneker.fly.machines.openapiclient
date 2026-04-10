@@ -50,6 +50,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Source of the model.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationModelRequest_model_source? ModelSource { get; set; }
+        /// <summary>Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs.</summary>
+        public int? NumWorkers { get; set; }
         /// <summary>System prompt template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "model_source", n => { ModelSource = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationModelRequest_model_source>(); } },
+                { "num_workers", n => { NumWorkers = n.GetIntValue(); } },
                 { "system_template", n => { SystemTemplate = n.GetStringValue(); } },
                 { "temperature", n => { Temperature = n.GetFloatValue(); } },
             };
@@ -108,6 +111,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationModelRequest_model_source>("model_source", ModelSource);
+            writer.WriteIntValue("num_workers", NumWorkers);
             writer.WriteStringValue("system_template", SystemTemplate);
             writer.WriteFloatValue("temperature", Temperature);
             writer.WriteAdditionalData(AdditionalData);
