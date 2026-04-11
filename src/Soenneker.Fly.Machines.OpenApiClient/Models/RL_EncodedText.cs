@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Pre-tokenized text input</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText_tokens>? Tokens { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>? Tokens { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText_tokens> Tokens { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch> Tokens { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tokens", n => { Tokens = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText_tokens>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText_tokens.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tokens", n => { Tokens = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_EncodedText_tokens>("tokens", Tokens);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("tokens", Tokens);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

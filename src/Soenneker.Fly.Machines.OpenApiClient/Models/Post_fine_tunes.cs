@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Number of training examples processed together (larger batches use more memory but may train faster). Defaults to &quot;max&quot;. We use training optimizations like packing, so the effective batch size may be different than the value you set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes_batch_size? BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? BatchSize { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes_batch_size BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch BatchSize { get; set; }
 #endif
         /// <summary>The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Whether to mask the user messages in conversational data or prompts in instruction data.</summary>
         [Obsolete("")]
-        public bool? TrainOnInputs { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? TrainOnInputs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch TrainOnInputs { get; set; }
+#endif
         /// <summary>File-ID of a validation file uploaded to the Together API</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,7 +218,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes_batch_size>(global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes_batch_size.CreateFromDiscriminatorValue); } },
+                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "from_checkpoint", n => { FromCheckpoint = n.GetStringValue(); } },
                 { "from_hf_model", n => { FromHfModel = n.GetStringValue(); } },
                 { "hf_api_token", n => { HfApiToken = n.GetStringValue(); } },
@@ -229,7 +235,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "packing", n => { Packing = n.GetBoolValue(); } },
                 { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
-                { "train_on_inputs", n => { TrainOnInputs = n.GetBoolValue(); } },
+                { "train_on_inputs", n => { TrainOnInputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "training_file", n => { TrainingFile = n.GetStringValue(); } },
                 { "training_method", n => { TrainingMethod = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_method>(global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_method.CreateFromDiscriminatorValue); } },
                 { "training_type", n => { TrainingType = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_type>(global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_type.CreateFromDiscriminatorValue); } },
@@ -250,7 +256,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes_batch_size>("batch_size", BatchSize);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("batch_size", BatchSize);
             writer.WriteStringValue("from_checkpoint", FromCheckpoint);
             writer.WriteStringValue("from_hf_model", FromHfModel);
             writer.WriteStringValue("hf_api_token", HfApiToken);
@@ -270,7 +276,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("training_file", TrainingFile);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_method>("training_method", TrainingMethod);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_fine_tunes.Post_fine_tunes_training_type>("training_type", TrainingType);
-            writer.WriteBoolValue("train_on_inputs", TrainOnInputs);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("train_on_inputs", TrainOnInputs);
             writer.WriteStringValue("validation_file", ValidationFile);
             writer.WriteStringValue("wandb_api_key", WandbApiKey);
             writer.WriteStringValue("wandb_base_url", WandbBaseUrl);

@@ -39,10 +39,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The model to use for image generation.&lt;br&gt; &lt;br&gt; [See all of Together AI&apos;s image models](https://docs.together.ai/docs/serverless-models#image-models)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Model { get; set; }
 #nullable restore
 #else
-        public string Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Model { get; set; }
 #endif
         /// <summary>Number of image results to generate.</summary>
         public int? N { get; set; }
@@ -111,7 +111,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "height", n => { Height = n.GetIntValue(); } },
                 { "image_loras", n => { ImageLoras = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_images_generations_image_loras>(global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_images_generations_image_loras.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "image_url", n => { ImageUrl = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "n", n => { N = n.GetIntValue(); } },
                 { "negative_prompt", n => { NegativePrompt = n.GetStringValue(); } },
                 { "output_format", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_images_generations_output_format>(); } },
@@ -135,7 +135,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("height", Height);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_images_generations_image_loras>("image_loras", ImageLoras);
             writer.WriteStringValue("image_url", ImageUrl);
-            writer.WriteStringValue("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("model", Model);
             writer.WriteIntValue("n", N);
             writer.WriteStringValue("negative_prompt", NegativePrompt);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Post_images_generations_output_format>("output_format", OutputFormat);

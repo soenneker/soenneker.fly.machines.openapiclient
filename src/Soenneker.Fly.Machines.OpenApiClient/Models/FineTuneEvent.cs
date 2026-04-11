@@ -41,10 +41,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The level property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_level? Level { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels_Wrapper? Level { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_level Level { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels_Wrapper Level { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "checkpoint_path", n => { CheckpointPath = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
-                { "level", n => { Level = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_level>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_level.CreateFromDiscriminatorValue); } },
+                { "level", n => { Level = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels_Wrapper>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels_Wrapper.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "model_path", n => { ModelPath = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_object>(); } },
@@ -135,7 +135,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("checkpoint_path", CheckpointPath);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("hash", Hash);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_level>("level", Level);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels_Wrapper>("level", Level);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("model_path", ModelPath);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEvent_object>("object", Object);

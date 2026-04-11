@@ -29,10 +29,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>&quot;The name of the model to query.&lt;br&gt; &lt;br&gt; [See all of Together AI&apos;s chat models](https://docs.together.ai/docs/serverless-models#audio-models) The current supported tts models are: - cartesia/sonic - hexgrad/Kokoro-82M - canopylabs/orpheus-3b-0.1-ft&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_model? Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_model Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Model { get; set; }
 #endif
         /// <summary>Audio encoding of response</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_response_encoding? ResponseEncoding { get; set; }
@@ -81,7 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "bit_rate", n => { BitRate = n.GetIntValue(); } },
                 { "input", n => { Input = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_language>(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_model>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_model.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "response_encoding", n => { ResponseEncoding = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_response_encoding>(); } },
                 { "response_format", n => { ResponseFormat = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_response_format>(); } },
                 { "sample_rate", n => { SampleRate = n.GetIntValue(); } },
@@ -99,7 +99,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("bit_rate", BitRate);
             writer.WriteStringValue("input", Input);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_language>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_model>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_response_encoding>("response_encoding", ResponseEncoding);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioSpeechRequest_response_format>("response_format", ResponseFormat);
             writer.WriteIntValue("sample_rate", SampleRate);

@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The batch_size property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_batch_size? BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? BatchSize { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_batch_size BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch BatchSize { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -171,10 +171,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The train_on_inputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_train_on_inputs? TrainOnInputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? TrainOnInputs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_train_on_inputs TrainOnInputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch TrainOnInputs { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -231,7 +231,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_batch_size>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_batch_size.CreateFromDiscriminatorValue); } },
+                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "epochs_completed", n => { EpochsCompleted = n.GetIntValue(); } },
                 { "eval_steps", n => { EvalSteps = n.GetIntValue(); } },
@@ -258,7 +258,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneJobStatus>(); } },
                 { "token_count", n => { TokenCount = n.GetIntValue(); } },
                 { "total_price", n => { TotalPrice = n.GetIntValue(); } },
-                { "train_on_inputs", n => { TrainOnInputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_train_on_inputs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_train_on_inputs.CreateFromDiscriminatorValue); } },
+                { "train_on_inputs", n => { TrainOnInputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "training_file", n => { TrainingFile = n.GetStringValue(); } },
                 { "training_method", n => { TrainingMethod = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method.CreateFromDiscriminatorValue); } },
                 { "training_type", n => { TrainingType = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type.CreateFromDiscriminatorValue); } },
@@ -279,7 +279,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_batch_size>("batch_size", BatchSize);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("batch_size", BatchSize);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("epochs_completed", EpochsCompleted);
             writer.WriteIntValue("eval_steps", EvalSteps);
@@ -311,7 +311,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("trainingfile_size", TrainingfileSize);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method>("training_method", TrainingMethod);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type>("training_type", TrainingType);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse_train_on_inputs>("train_on_inputs", TrainOnInputs);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("train_on_inputs", TrainOnInputs);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("validation_file", ValidationFile);
             writer.WriteStringValue("wandb_project_name", WandbProjectName);

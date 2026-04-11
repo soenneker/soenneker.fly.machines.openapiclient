@@ -15,18 +15,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>List of documents, which can be either strings or objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.RerankRequest_documents? Documents { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Documents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.RerankRequest_documents Documents { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Documents { get; set; }
 #endif
         /// <summary>The model to be used for the rerank request.&lt;br&gt; &lt;br&gt; [See all of Together AI&apos;s rerank models](https://docs.together.ai/docs/serverless-models#rerank-models)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Model { get; set; }
 #nullable restore
 #else
-        public string Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Model { get; set; }
 #endif
         /// <summary>The search query to be used for ranking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,8 +66,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "documents", n => { Documents = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RerankRequest_documents>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RerankRequest_documents.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetStringValue(); } },
+                { "documents", n => { Documents = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "rank_fields", n => { RankFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "return_documents", n => { ReturnDocuments = n.GetBoolValue(); } },
@@ -81,8 +81,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RerankRequest_documents>("documents", Documents);
-            writer.WriteStringValue("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("documents", Documents);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("model", Model);
             writer.WriteStringValue("query", Query);
             writer.WriteCollectionOfPrimitiveValues<string>("rank_fields", RankFields);
             writer.WriteBoolValue("return_documents", ReturnDocuments);
