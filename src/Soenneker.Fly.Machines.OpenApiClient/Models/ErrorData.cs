@@ -18,10 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData_error? Error { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorDataError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData_error Error { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorDataError Error { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -50,7 +50,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData_error>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData_error.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorDataError>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorDataError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData_error>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorDataError>("error", Error);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

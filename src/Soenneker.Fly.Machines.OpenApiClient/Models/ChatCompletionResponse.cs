@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The choices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesData_item>? Choices { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesDataItem>? Choices { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesData_item> Choices { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesDataItem> Choices { get; set; }
 #endif
         /// <summary>The created property</summary>
         public int? Created { get; set; }
@@ -45,10 +45,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPart_item>? Prompt { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPartItem>? Prompt { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPart_item> Prompt { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPartItem> Prompt { get; set; }
 #endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,12 +91,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "choices", n => { Choices = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesData_item>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesData_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "choices", n => { Choices = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesDataItem>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created", n => { Created = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionResponse_object>(); } },
-                { "prompt", n => { Prompt = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPart_item>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPart_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "prompt", n => { Prompt = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPartItem>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPartItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UsageData>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UsageData.CreateFromDiscriminatorValue); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.InferenceWarning>(global::Soenneker.Fly.Machines.OpenApiClient.Models.InferenceWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -108,12 +108,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesData_item>("choices", Choices);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChoicesDataItem>("choices", Choices);
             writer.WriteIntValue("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionResponse_object>("object", Object);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPart_item>("prompt", Prompt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PromptPartItem>("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UsageData>("usage", Usage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.InferenceWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);

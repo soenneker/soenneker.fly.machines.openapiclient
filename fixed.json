@@ -1482,7 +1482,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/post_images_generations"
+                "$ref": "#/components/schemas/PostImagesGenerations"
               }
             }
           }
@@ -1643,7 +1643,7 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/post_files_upload"
+                "$ref": "#/components/schemas/PostFilesUpload"
               }
             }
           }
@@ -1704,7 +1704,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/post_fine_tunes"
+                "$ref": "#/components/schemas/PostFineTunes"
               }
             }
           }
@@ -1755,7 +1755,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/post_fine_tunes_estimate_price"
+                "$ref": "#/components/schemas/PostFineTunesEstimatePrice"
               }
             }
           }
@@ -1776,7 +1776,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/post_fine_tunes_estimate_price_200"
+                  "$ref": "#/components/schemas/PostFineTunesEstimatePrice200"
                 }
               }
             }
@@ -2047,7 +2047,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/get_fine_tunes_models_supported_200"
+                  "$ref": "#/components/schemas/GetFineTunesModelsSupported200"
                 }
               }
             }
@@ -2090,7 +2090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/get_fine_tunes_models_limits_404"
+                  "$ref": "#/components/schemas/GetFineTunesModelsLimits404"
                 }
               }
             }
@@ -2584,7 +2584,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GPUClusterService_Delete_200"
+                  "$ref": "#/components/schemas/GPUClusterServiceDelete200"
                 }
               }
             }
@@ -2829,7 +2829,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/listEndpoints_200"
+                  "$ref": "#/components/schemas/ListEndpoints200"
                 }
               }
             }
@@ -2992,7 +2992,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/updateEndpoint"
+                "$ref": "#/components/schemas/UpdateEndpoint"
               }
             }
           }
@@ -3118,7 +3118,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/listHardware_200"
+                  "$ref": "#/components/schemas/ListHardware200"
                 }
               }
             }
@@ -3212,7 +3212,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/get_batches_200"
+                  "$ref": "#/components/schemas/GetBatches200"
                 }
               }
             }
@@ -3577,7 +3577,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/getAllEvaluationJobs_200"
+                  "$ref": "#/components/schemas/GetAllEvaluationJobs200"
                 }
               }
             }
@@ -3629,7 +3629,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/getModelList_200"
+                  "$ref": "#/components/schemas/GetModelList200"
                 }
               }
             }
@@ -3733,7 +3733,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/getEvaluationJobStatusAndResults_200"
+                  "$ref": "#/components/schemas/GetEvaluationJobStatusAndResults200"
                 }
               }
             }
@@ -4102,7 +4102,7 @@
             "name": "status",
             "in": "query",
             "schema": {
-              "$ref": "#/components/schemas/RL_TrainingSessionStatus"
+              "$ref": "#/components/schemas/RLTrainingSessionStatus"
             }
           },
           {
@@ -4130,7 +4130,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingSessionsListResponse"
+                  "$ref": "#/components/schemas/RLTrainingSessionsListResponse"
                 }
               }
             }
@@ -4158,7 +4158,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RL_StartTrainingSessionRequest"
+                "$ref": "#/components/schemas/RLStartTrainingSessionRequest"
               }
             }
           }
@@ -4169,7 +4169,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingSession"
+                  "$ref": "#/components/schemas/RLTrainingSession"
                 }
               }
             }
@@ -4212,7 +4212,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingSession"
+                  "$ref": "#/components/schemas/RLTrainingSession"
                 }
               }
             }
@@ -4255,7 +4255,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingSession"
+                  "$ref": "#/components/schemas/RLTrainingSession"
                 }
               }
             }
@@ -4307,7 +4307,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_ForwardBackwardOperation"
+                  "$ref": "#/components/schemas/RLForwardBackwardOperation"
                 }
               }
             }
@@ -4359,7 +4359,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_OptimStepOperation"
+                  "$ref": "#/components/schemas/RLOptimStepOperation"
                 }
               }
             }
@@ -4411,7 +4411,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_SampleOperation"
+                  "$ref": "#/components/schemas/RLSampleOperation"
                 }
               }
             }
@@ -4452,7 +4452,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RL_ForwardBackwardBody"
+                "$ref": "#/components/schemas/RLForwardBackwardBody"
               }
             }
           }
@@ -4463,7 +4463,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_ForwardBackwardOperation"
+                  "$ref": "#/components/schemas/RLForwardBackwardOperation"
                 }
               }
             }
@@ -4504,7 +4504,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RL_OptimStepBody"
+                "$ref": "#/components/schemas/RLOptimStepBody"
               }
             }
           }
@@ -4515,7 +4515,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_OptimStepOperation"
+                  "$ref": "#/components/schemas/RLOptimStepOperation"
                 }
               }
             }
@@ -4556,7 +4556,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RL_SampleBody"
+                "$ref": "#/components/schemas/RLSampleBody"
               }
             }
           }
@@ -4567,7 +4567,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_SampleOperation"
+                  "$ref": "#/components/schemas/RLSampleOperation"
                 }
               }
             }
@@ -4610,7 +4610,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_InferenceCheckpointOperation"
+                  "$ref": "#/components/schemas/RLInferenceCheckpointOperation"
                 }
               }
             }
@@ -4662,7 +4662,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_InferenceCheckpointOperation"
+                  "$ref": "#/components/schemas/RLInferenceCheckpointOperation"
                 }
               }
             }
@@ -4705,7 +4705,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingCheckpointOperation"
+                  "$ref": "#/components/schemas/RLTrainingCheckpointOperation"
                 }
               }
             }
@@ -4757,7 +4757,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_TrainingCheckpointOperation"
+                  "$ref": "#/components/schemas/RLTrainingCheckpointOperation"
                 }
               }
             }
@@ -4798,7 +4798,7 @@
             "in": "query",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/RL_CheckpointVariant"
+              "$ref": "#/components/schemas/RLCheckpointVariant"
             }
           }
         ],
@@ -4808,7 +4808,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RL_CheckpointDownloadResponse"
+                  "$ref": "#/components/schemas/RLCheckpointDownloadResponse"
                 }
               }
             }
@@ -4829,7 +4829,7 @@
   },
   "components": {
     "schemas": {
-      "RL_OptimStepBody": {
+      "RLOptimStepBody": {
         "type": "object",
         "properties": {
           "learning_rate": {
@@ -4840,11 +4840,11 @@
             "example": 0.0001
           },
           "adamw_params": {
-            "$ref": "#/components/schemas/RL_AdamWOptimizerParams"
+            "$ref": "#/components/schemas/RLAdamWOptimizerParams"
           }
         }
       },
-      "RL_SampleBody": {
+      "RLSampleBody": {
         "required": [
           "prompts"
         ],
@@ -4853,12 +4853,12 @@
           "prompts": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_ModelInput"
+              "$ref": "#/components/schemas/RLModelInput"
             },
             "description": "Input prompts as tokenized chunks"
           },
           "sampling_params": {
-            "$ref": "#/components/schemas/RL_SamplingParams"
+            "$ref": "#/components/schemas/RLSamplingParams"
           },
           "num_samples": {
             "type": "integer",
@@ -4869,7 +4869,7 @@
           }
         }
       },
-      "RL_ForwardBackwardBody": {
+      "RLForwardBackwardBody": {
         "required": [
           "samples",
           "loss"
@@ -4879,16 +4879,16 @@
           "samples": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_TrainingSample"
+              "$ref": "#/components/schemas/RLTrainingSample"
             },
             "description": "Batch of training samples to process"
           },
           "loss": {
-            "$ref": "#/components/schemas/RL_LossConfig"
+            "$ref": "#/components/schemas/RLLossConfig"
           }
         }
       },
-      "RL_ModelInput": {
+      "RLModelInput": {
         "required": [
           "chunks"
         ],
@@ -4897,13 +4897,13 @@
           "chunks": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_InputChunk"
+              "$ref": "#/components/schemas/RLInputChunk"
             },
             "description": "Input chunks for the model"
           }
         }
       },
-      "RL_SamplingParams": {
+      "RLSamplingParams": {
         "type": "object",
         "properties": {
           "max_tokens": {
@@ -4949,15 +4949,15 @@
           }
         }
       },
-      "RL_InputChunk": {
+      "RLInputChunk": {
         "type": "object",
         "properties": {
           "encoded_text": {
-            "$ref": "#/components/schemas/RL_EncodedText"
+            "$ref": "#/components/schemas/RLEncodedText"
           }
         }
       },
-      "RL_ListMeta": {
+      "RLListMeta": {
         "type": "object",
         "properties": {
           "limit": {
@@ -4979,7 +4979,7 @@
         },
         "description": "Pagination metadata for list responses"
       },
-      "RL_EncodedText": {
+      "RLEncodedText": {
         "required": [
           "tokens"
         ],
@@ -4999,7 +4999,7 @@
           }
         }
       },
-      "RL_DType": {
+      "RLDType": {
         "enum": [
           "D_TYPE_UNSPECIFIED",
           "D_TYPE_INT64",
@@ -5010,7 +5010,7 @@
         "additionalProperties": false,
         "default": "D_TYPE_UNSPECIFIED"
       },
-      "RL_LossType": {
+      "RLLossType": {
         "enum": [
           "LOSS_TYPE_UNSPECIFIED",
           "LOSS_TYPE_CROSS_ENTROPY",
@@ -5020,11 +5020,11 @@
         "additionalProperties": false,
         "default": "LOSS_TYPE_UNSPECIFIED"
       },
-      "RL_CrossEntropyLossParams": {
+      "RLCrossEntropyLossParams": {
         "type": "object",
         "description": "Cross-entropy loss parameters (currently empty)."
       },
-      "RL_GRPOLossParams": {
+      "RLGRPOLossParams": {
         "type": "object",
         "properties": {
           "clip_low": {
@@ -5049,11 +5049,11 @@
             "example": 0.1
           },
           "agg_type": {
-            "$ref": "#/components/schemas/RL_GRPOLossAggregationType"
+            "$ref": "#/components/schemas/RLGRPOLossAggregationType"
           }
         }
       },
-      "RL_GRPOLossAggregationType": {
+      "RLGRPOLossAggregationType": {
         "enum": [
           "GRPO_LOSS_AGGREGATION_TYPE_UNSPECIFIED",
           "GRPO_LOSS_AGGREGATION_TYPE_FIXED_HORIZON",
@@ -5064,25 +5064,25 @@
         "additionalProperties": false,
         "default": "GRPO_LOSS_AGGREGATION_TYPE_UNSPECIFIED"
       },
-      "RL_LossConfig": {
+      "RLLossConfig": {
         "required": [
           "type"
         ],
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/RL_LossType"
+            "$ref": "#/components/schemas/RLLossType"
           },
           "cross_entropy_params": {
             "type": "object",
             "description": "Cross-entropy loss parameters (currently empty)."
           },
           "grpo_params": {
-            "$ref": "#/components/schemas/RL_GRPOLossParams"
+            "$ref": "#/components/schemas/RLGRPOLossParams"
           }
         }
       },
-      "RL_LossTargetTokens": {
+      "RLLossTargetTokens": {
         "required": [
           "data"
         ],
@@ -5101,11 +5101,11 @@
             "description": "Integer array of target tokens"
           },
           "dtype": {
-            "$ref": "#/components/schemas/RL_DType"
+            "$ref": "#/components/schemas/RLDType"
           }
         }
       },
-      "RL_LossMask": {
+      "RLLossMask": {
         "required": [
           "data"
         ],
@@ -5124,12 +5124,12 @@
             "description": "Integer array of per-token mask values (0s and 1s)"
           },
           "dtype": {
-            "$ref": "#/components/schemas/RL_DType"
+            "$ref": "#/components/schemas/RLDType"
           }
         },
         "description": "Per-token loss mask (1=compute loss, 0=ignore)"
       },
-      "RL_LossAdvantages": {
+      "RLLossAdvantages": {
         "required": [
           "data"
         ],
@@ -5144,11 +5144,11 @@
             "description": "Float array of per-token advantages"
           },
           "dtype": {
-            "$ref": "#/components/schemas/RL_DType"
+            "$ref": "#/components/schemas/RLDType"
           }
         }
       },
-      "RL_LossLogprobs": {
+      "RLLossLogprobs": {
         "required": [
           "data"
         ],
@@ -5163,11 +5163,11 @@
             "description": "Float array of per-token log probabilities"
           },
           "dtype": {
-            "$ref": "#/components/schemas/RL_DType"
+            "$ref": "#/components/schemas/RLDType"
           }
         }
       },
-      "RL_GRPOLossInputs": {
+      "RLGRPOLossInputs": {
         "required": [
           "advantages",
           "generator_logprobs"
@@ -5175,34 +5175,34 @@
         "type": "object",
         "properties": {
           "advantages": {
-            "$ref": "#/components/schemas/RL_LossAdvantages"
+            "$ref": "#/components/schemas/RLLossAdvantages"
           },
           "generator_logprobs": {
-            "$ref": "#/components/schemas/RL_LossLogprobs"
+            "$ref": "#/components/schemas/RLLossLogprobs"
           },
           "reference_logprobs": {
-            "$ref": "#/components/schemas/RL_LossLogprobs"
+            "$ref": "#/components/schemas/RLLossLogprobs"
           }
         }
       },
-      "RL_LossInputs": {
+      "RLLossInputs": {
         "required": [
           "target_tokens"
         ],
         "type": "object",
         "properties": {
           "target_tokens": {
-            "$ref": "#/components/schemas/RL_LossTargetTokens"
+            "$ref": "#/components/schemas/RLLossTargetTokens"
           },
           "loss_mask": {
-            "$ref": "#/components/schemas/RL_LossMask"
+            "$ref": "#/components/schemas/RLLossMask"
           },
           "grpo_inputs": {
-            "$ref": "#/components/schemas/RL_GRPOLossInputs"
+            "$ref": "#/components/schemas/RLGRPOLossInputs"
           }
         }
       },
-      "RL_TrainingSample": {
+      "RLTrainingSample": {
         "required": [
           "model_input",
           "loss_inputs"
@@ -5210,14 +5210,14 @@
         "type": "object",
         "properties": {
           "model_input": {
-            "$ref": "#/components/schemas/RL_ModelInput"
+            "$ref": "#/components/schemas/RLModelInput"
           },
           "loss_inputs": {
-            "$ref": "#/components/schemas/RL_LossInputs"
+            "$ref": "#/components/schemas/RLLossInputs"
           }
         }
       },
-      "RL_OptimStepOperation": {
+      "RLOptimStepOperation": {
         "required": [
           "id",
           "status"
@@ -5230,18 +5230,18 @@
             "example": "550e8400-e29b-41d4-a716-446655440000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingOperationStatus"
+            "$ref": "#/components/schemas/RLTrainingOperationStatus"
           },
           "output": {
-            "$ref": "#/components/schemas/RL_OptimStepResult"
+            "$ref": "#/components/schemas/RLOptimStepResult"
           },
           "error": {
-            "$ref": "#/components/schemas/RL_TrainingOperationError"
+            "$ref": "#/components/schemas/RLTrainingOperationError"
           }
         },
         "description": "Async optimizer step operation"
       },
-      "RL_SampleOperation": {
+      "RLSampleOperation": {
         "required": [
           "id",
           "status"
@@ -5254,18 +5254,18 @@
             "example": "550e8400-e29b-41d4-a716-446655440000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingOperationStatus"
+            "$ref": "#/components/schemas/RLTrainingOperationStatus"
           },
           "output": {
-            "$ref": "#/components/schemas/RL_SampleResult"
+            "$ref": "#/components/schemas/RLSampleResult"
           },
           "error": {
-            "$ref": "#/components/schemas/RL_TrainingOperationError"
+            "$ref": "#/components/schemas/RLTrainingOperationError"
           }
         },
         "description": "Async sample operation"
       },
-      "RL_OptimStepResult": {
+      "RLOptimStepResult": {
         "required": [
           "step"
         ],
@@ -5280,7 +5280,7 @@
         },
         "description": "Result of an optimizer step operation"
       },
-      "RL_SampleResult": {
+      "RLSampleResult": {
         "required": [
           "rollouts"
         ],
@@ -5289,14 +5289,14 @@
           "rollouts": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_SampleRollout"
+              "$ref": "#/components/schemas/RLSampleRollout"
             },
             "description": "Completions grouped by prompt"
           }
         },
         "description": "Result of a sample operation"
       },
-      "RL_SampleRollout": {
+      "RLSampleRollout": {
         "required": [
           "sequences"
         ],
@@ -5305,14 +5305,14 @@
           "sequences": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_SampleSequence"
+              "$ref": "#/components/schemas/RLSampleSequence"
             },
             "description": "Completions generated for one prompt"
           }
         },
         "description": "Completions generated for a single prompt"
       },
-      "RL_SampleSequence": {
+      "RLSampleSequence": {
         "required": [
           "tokens"
         ],
@@ -5342,7 +5342,7 @@
         },
         "description": "A single generated completion sequence with tokens and logprobs"
       },
-      "RL_ForwardBackwardOperation": {
+      "RLForwardBackwardOperation": {
         "required": [
           "id",
           "status"
@@ -5355,18 +5355,18 @@
             "example": "550e8400-e29b-41d4-a716-446655440000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingOperationStatus"
+            "$ref": "#/components/schemas/RLTrainingOperationStatus"
           },
           "output": {
-            "$ref": "#/components/schemas/RL_ForwardBackwardResult"
+            "$ref": "#/components/schemas/RLForwardBackwardResult"
           },
           "error": {
-            "$ref": "#/components/schemas/RL_TrainingOperationError"
+            "$ref": "#/components/schemas/RLTrainingOperationError"
           }
         },
         "description": "Async forward-backward pass operation"
       },
-      "RL_ForwardBackwardResult": {
+      "RLForwardBackwardResult": {
         "required": [
           "loss"
         ],
@@ -5384,20 +5384,16 @@
               "type": "number",
               "format": "double"
             },
-            "description": "Loss-specific metrics (e.g., KL divergence, clip fraction for GRPO)",
-            "example": {
-              "loss/clip/high_fraction": 0.1,
-              "loss/kl_ref/mean": 0.05
-            }
+            "description": "Loss-specific metrics (e.g., KL divergence, clip fraction for GRPO)"
           }
         },
         "description": "Result of a forward-backward pass operation"
       },
-      "RL_TrainingOperationError": {
+      "RLTrainingOperationError": {
         "type": "object",
         "properties": {
           "code": {
-            "$ref": "#/components/schemas/RL_TrainingOperationErrorCode"
+            "$ref": "#/components/schemas/RLTrainingOperationErrorCode"
           },
           "message": {
             "type": "string",
@@ -5407,7 +5403,7 @@
         },
         "description": "Error details for a failed training operation"
       },
-      "RL_TrainingOperationErrorCode": {
+      "RLTrainingOperationErrorCode": {
         "enum": [
           "TRAINING_OPERATION_ERROR_CODE_UNSPECIFIED",
           "TRAINING_OPERATION_ERROR_CODE_RESOURCE_EXHAUSTED",
@@ -5420,7 +5416,7 @@
         "additionalProperties": false,
         "default": "TRAINING_OPERATION_ERROR_CODE_UNSPECIFIED"
       },
-      "RL_TrainingOperationStatus": {
+      "RLTrainingOperationStatus": {
         "enum": [
           "TRAINING_OPERATION_STATUS_UNSPECIFIED",
           "TRAINING_OPERATION_STATUS_PENDING",
@@ -5432,7 +5428,7 @@
         "additionalProperties": false,
         "default": "TRAINING_OPERATION_STATUS_UNSPECIFIED"
       },
-      "RL_StartTrainingSessionRequest": {
+      "RLStartTrainingSessionRequest": {
         "required": [
           "base_model"
         ],
@@ -5449,11 +5445,11 @@
             "example": "123e4567-e89b-12d3-a456-426614174000"
           },
           "lora_config": {
-            "$ref": "#/components/schemas/RL_LoraConfig"
+            "$ref": "#/components/schemas/RLLoraConfig"
           }
         }
       },
-      "RL_TrainingSessionStatus": {
+      "RLTrainingSessionStatus": {
         "enum": [
           "TRAINING_SESSION_STATUS_UNSPECIFIED",
           "TRAINING_SESSION_STATUS_CREATING",
@@ -5468,7 +5464,7 @@
         "description": "Status of the training session",
         "default": "TRAINING_SESSION_STATUS_UNSPECIFIED"
       },
-      "RL_TrainingSession": {
+      "RLTrainingSession": {
         "required": [
           "id",
           "status",
@@ -5488,7 +5484,7 @@
             "example": "123e4567-e89b-12d3-a456-426614174000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingSessionStatus"
+            "$ref": "#/components/schemas/RLTrainingSessionStatus"
           },
           "base_model": {
             "type": "string",
@@ -5498,14 +5494,14 @@
           "inference_checkpoints": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_InferenceCheckpoint"
+              "$ref": "#/components/schemas/RLInferenceCheckpoint"
             },
             "description": "List of saved inference checkpoints for this session"
           },
           "training_checkpoints": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_TrainingCheckpoint"
+              "$ref": "#/components/schemas/RLTrainingCheckpoint"
             },
             "description": "List of saved training checkpoints for this session"
           },
@@ -5534,28 +5530,28 @@
             "example": "2026-01-02T00:00:05Z"
           },
           "lora_config": {
-            "$ref": "#/components/schemas/RL_LoraConfig"
+            "$ref": "#/components/schemas/RLLoraConfig"
           }
         },
         "description": "A training session and its current state"
       },
-      "RL_TrainingSessionsListResponse": {
+      "RLTrainingSessionsListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_TrainingSession"
+              "$ref": "#/components/schemas/RLTrainingSession"
             },
             "description": "List of training sessions"
           },
           "meta": {
-            "$ref": "#/components/schemas/RL_ListMeta"
+            "$ref": "#/components/schemas/RLListMeta"
           }
         },
         "description": "Paginated list of training sessions"
       },
-      "RL_LoraConfig": {
+      "RLLoraConfig": {
         "type": "object",
         "properties": {
           "rank": {
@@ -5582,7 +5578,7 @@
         },
         "description": "LoRA adapter configuration"
       },
-      "RL_AdamWOptimizerParams": {
+      "RLAdamWOptimizerParams": {
         "type": "object",
         "properties": {
           "beta1": {
@@ -5616,7 +5612,7 @@
         },
         "description": "AdamW optimizer parameters"
       },
-      "RL_InferenceCheckpointOperation": {
+      "RLInferenceCheckpointOperation": {
         "required": [
           "id",
           "status"
@@ -5629,18 +5625,18 @@
             "example": "550e8400-e29b-41d4-a716-446655440000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingOperationStatus"
+            "$ref": "#/components/schemas/RLTrainingOperationStatus"
           },
           "output": {
-            "$ref": "#/components/schemas/RL_InferenceCheckpointResult"
+            "$ref": "#/components/schemas/RLInferenceCheckpointResult"
           },
           "error": {
-            "$ref": "#/components/schemas/RL_TrainingOperationError"
+            "$ref": "#/components/schemas/RLTrainingOperationError"
           }
         },
         "description": "Async inference checkpoint operation"
       },
-      "RL_InferenceCheckpointResult": {
+      "RLInferenceCheckpointResult": {
         "required": [
           "model_name"
         ],
@@ -5654,7 +5650,7 @@
         },
         "description": "Result of an inference checkpoint operation"
       },
-      "RL_InferenceCheckpoint": {
+      "RLInferenceCheckpoint": {
         "required": [
           "id",
           "step",
@@ -5680,12 +5676,12 @@
             "example": "2026-01-02T00:00:00Z"
           },
           "registration": {
-            "$ref": "#/components/schemas/RL_InferenceCheckpointRegistration"
+            "$ref": "#/components/schemas/RLInferenceCheckpointRegistration"
           }
         },
         "description": "Saved inference checkpoint"
       },
-      "RL_InferenceCheckpointRegistration": {
+      "RLInferenceCheckpointRegistration": {
         "required": [
           "model_name",
           "registered_at"
@@ -5706,7 +5702,7 @@
         },
         "description": "Model registration details for an inference checkpoint"
       },
-      "RL_TrainingCheckpoint": {
+      "RLTrainingCheckpoint": {
         "required": [
           "id",
           "step",
@@ -5734,7 +5730,7 @@
         },
         "description": "Saved training checkpoint"
       },
-      "RL_TrainingCheckpointResult": {
+      "RLTrainingCheckpointResult": {
         "required": [
           "checkpoint_id"
         ],
@@ -5748,7 +5744,7 @@
         },
         "description": "Result of a save training checkpoint operation"
       },
-      "RL_TrainingCheckpointOperation": {
+      "RLTrainingCheckpointOperation": {
         "required": [
           "id",
           "status"
@@ -5761,18 +5757,18 @@
             "example": "550e8400-e29b-41d4-a716-446655440000"
           },
           "status": {
-            "$ref": "#/components/schemas/RL_TrainingOperationStatus"
+            "$ref": "#/components/schemas/RLTrainingOperationStatus"
           },
           "output": {
-            "$ref": "#/components/schemas/RL_TrainingCheckpointResult"
+            "$ref": "#/components/schemas/RLTrainingCheckpointResult"
           },
           "error": {
-            "$ref": "#/components/schemas/RL_TrainingOperationError"
+            "$ref": "#/components/schemas/RLTrainingOperationError"
           }
         },
         "description": "Async save training checkpoint operation"
       },
-      "RL_CheckpointVariant": {
+      "RLCheckpointVariant": {
         "enum": [
           "CHECKPOINT_VARIANT_UNSPECIFIED",
           "CHECKPOINT_VARIANT_MERGED",
@@ -5783,7 +5779,7 @@
         "description": "\"Checkpoint variant: merged (full model) or adapter (LoRA weights only)\"",
         "default": "CHECKPOINT_VARIANT_UNSPECIFIED"
       },
-      "RL_CheckpointFile": {
+      "RLCheckpointFile": {
         "required": [
           "filename",
           "url",
@@ -5810,7 +5806,7 @@
         },
         "description": "A downloadable file within a checkpoint"
       },
-      "RL_CheckpointDownloadResponse": {
+      "RLCheckpointDownloadResponse": {
         "required": [
           "data"
         ],
@@ -5819,7 +5815,7 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/RL_CheckpointFile"
+              "$ref": "#/components/schemas/RLCheckpointFile"
             },
             "description": "List of files with presigned download URLs"
           }
@@ -6403,14 +6399,7 @@
         "type": "object",
         "properties": {
           "model": {
-            "type": "string",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "The model to be used for the rerank request.<br> <br> [See all of Together AI's rerank models](https://docs.together.ai/docs/serverless-models#rerank-models)\n",
-            "example": "Salesforce/Llama-Rank-V1"
+            "$ref": "#/components/schemas/RerankRequestModel"
           },
           "query": {
             "type": "string",
@@ -6418,13 +6407,7 @@
             "example": "What animals can I find near Peru?"
           },
           "documents": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "List of documents, which can be either strings or objects."
+            "$ref": "#/components/schemas/RerankRequestDocuments"
           },
           "top_n": {
             "type": "integer",
@@ -6511,29 +6494,7 @@
         "type": "object",
         "properties": {
           "error": {
-            "required": [
-              "type",
-              "message"
-            ],
-            "type": "object",
-            "properties": {
-              "message": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "param": {
-                "type": "string",
-                "default": null,
-                "nullable": true
-              },
-              "code": {
-                "type": "string",
-                "default": null,
-                "nullable": true
-              }
-            }
+            "$ref": "#/components/schemas/ErrorDataError"
           }
         }
       },
@@ -6591,7 +6552,7 @@
       "PromptPart": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/PromptPart_item"
+          "$ref": "#/components/schemas/PromptPartItem"
         }
       },
       "InferenceWarning": {
@@ -6628,7 +6589,7 @@
       "CompletionChoicesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CompletionChoicesData_item"
+          "$ref": "#/components/schemas/CompletionChoicesDataItem"
         }
       },
       "CompletionRequest": {
@@ -6644,14 +6605,7 @@
             "example": "<s>[INST] What is the capital of France? [/INST]"
           },
           "model": {
-            "type": "string",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "The name of the model to query.<br> <br> [See all of Together AI's chat models](https://docs.together.ai/docs/serverless-models#chat-models)\n",
-            "example": "mistralai/Mixtral-8x7B-Instruct-v0.1"
+            "$ref": "#/components/schemas/CompletionRequestModel"
           },
           "max_tokens": {
             "type": "integer",
@@ -6705,14 +6659,7 @@
             "description": "The number of completions to generate for each prompt."
           },
           "safety_model": {
-            "type": "string",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).",
-            "example": "safety_model_name"
+            "$ref": "#/components/schemas/CompletionRequestSafetyModel"
           },
           "min_p": {
             "type": "number",
@@ -6735,11 +6682,7 @@
               "type": "number",
               "format": "float"
             },
-            "description": "Adjusts the likelihood of specific tokens appearing in the generated output.",
-            "example": {
-              "1024": -10.5,
-              "105": 21.4
-            }
+            "description": "Adjusts the likelihood of specific tokens appearing in the generated output."
           },
           "seed": {
             "type": "integer",
@@ -6859,21 +6802,13 @@
             }
           },
           "usage": {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UsageData"
-              },
-              {
-                "nullable": true
-              }
-            ]
+            "$ref": "#/components/schemas/CompletionChunkUsage"
           },
           "seed": {
             "type": "integer"
           },
           "finish_reason": {
-            "$ref": "#/components/schemas/FinishReason"
+            "$ref": "#/components/schemas/CompletionChunkFinishReason"
           }
         }
       },
@@ -6890,58 +6825,7 @@
             "type": "integer"
           },
           "delta": {
-            "title": "CompletionChoiceDelta",
-            "required": [
-              "role"
-            ],
-            "type": "object",
-            "properties": {
-              "token_id": {
-                "type": "integer"
-              },
-              "role": {
-                "enum": [
-                  "system",
-                  "user",
-                  "assistant",
-                  "function",
-                  "tool"
-                ],
-                "type": "string",
-                "additionalProperties": false
-              },
-              "content": {
-                "type": "string",
-                "nullable": true
-              },
-              "reasoning": {
-                "type": "string",
-                "nullable": true
-              },
-              "tool_calls": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ToolChoice"
-                }
-              },
-              "function_call": {
-                "required": [
-                  "arguments",
-                  "name"
-                ],
-                "type": "object",
-                "properties": {
-                  "arguments": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "nullable": true,
-                "deprecated": true
-              }
-            }
+            "$ref": "#/components/schemas/CompletionChoiceDelta"
           }
         }
       },
@@ -6971,7 +6855,7 @@
       "ChatCompletionChoicesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ChatCompletionChoicesData_item"
+          "$ref": "#/components/schemas/ChatCompletionChoicesDataItem"
         }
       },
       "ChatCompletionMessage": {
@@ -6999,20 +6883,7 @@
             }
           },
           "function_call": {
-            "required": [
-              "arguments",
-              "name"
-            ],
-            "type": "object",
-            "properties": {
-              "arguments": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "deprecated": true
+            "$ref": "#/components/schemas/ChatCompletionMessageFunctionCall"
           },
           "reasoning": {
             "type": "string",
@@ -7035,21 +6906,7 @@
             "additionalProperties": false
           },
           "function": {
-            "required": [
-              "name"
-            ],
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "parameters": {
-                "type": "object"
-              }
-            }
+            "$ref": "#/components/schemas/ChatCompletionToolFunction"
           }
         }
       },
@@ -7152,11 +7009,7 @@
               "type": "number",
               "format": "float"
             },
-            "description": "Adjusts the likelihood of specific tokens appearing in the generated output.",
-            "example": {
-              "1024": -10.5,
-              "105": 21.4
-            }
+            "description": "Adjusts the likelihood of specific tokens appearing in the generated output."
           },
           "seed": {
             "type": "integer",
@@ -7164,49 +7017,10 @@
             "example": 42
           },
           "function_call": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              },
-              {
-                "required": [
-                  "name"
-                ],
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                }
-              }
-            ]
+            "$ref": "#/components/schemas/ChatCompletionRequestFunctionCall"
           },
           "response_format": {
-            "required": [
-              "type"
-            ],
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ResponseFormatText"
-              },
-              {
-                "$ref": "#/components/schemas/ResponseFormatJsonSchema"
-              },
-              {
-                "$ref": "#/components/schemas/ResponseFormatJsonObject"
-              }
-            ],
-            "properties": {
-              "type": {
-                "type": "string"
-              }
-            },
-            "description": "\"An object specifying the format that the model must output.\n\nSetting to `{ \\\"type\\\": \\\"json_schema\\\", \\\"json_schema\\\": {...} }` enables\nStructured Outputs which ensures the model will match your supplied JSON\nschema. Learn more in the [Structured Outputs\nguide](https://docs.together.ai/docs/json-mode).\n\nSetting to `{ \\\"type\\\": \\\"json_object\\\" }` enables the older JSON mode, which\nensures the message the model generates is valid JSON. Using `json_schema`\nis preferred for models that support it.\n\"",
-            "discriminator": {
-              "propertyName": "type"
-            }
+            "$ref": "#/components/schemas/ChatCompletionRequestResponseFormat"
           },
           "tools": {
             "type": "array",
@@ -7216,16 +7030,7 @@
             "description": "A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for."
           },
           "tool_choice": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              },
-              {
-                "$ref": "#/components/schemas/ToolChoice"
-              }
-            ],
-            "description": "Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function."
+            "$ref": "#/components/schemas/ChatCompletionRequestToolChoice"
           },
           "compliance": {
             "enum": [
@@ -7235,10 +7040,7 @@
           },
           "chat_template_kwargs": {
             "type": "object",
-            "description": "Additional configuration to pass to model engine.",
-            "unrecognizedKeywords": {
-              "additional_properties": true
-            }
+            "description": "Additional configuration to pass to model engine."
           },
           "safety_model": {
             "type": "string",
@@ -7257,13 +7059,7 @@
             "example": "medium"
           },
           "reasoning": {
-            "type": "object",
-            "properties": {
-              "enabled": {
-                "type": "boolean"
-              }
-            },
-            "description": "For models that support toggling reasoning functionality, this object can be used to control that functionality."
+            "$ref": "#/components/schemas/ChatCompletionRequestReasoning"
           }
         }
       },
@@ -7323,37 +7119,7 @@
             "x-stainless-const": true
           },
           "json_schema": {
-            "title": "JSON schema",
-            "required": [
-              "name"
-            ],
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string",
-                "description": "A description of what the response format is for, used by the model to\ndetermine how to respond in the format.\n"
-              },
-              "name": {
-                "type": "string",
-                "description": "The name of the response format. Must be a-z, A-Z, 0-9, or contain\nunderscores and dashes, with a maximum length of 64.\n"
-              },
-              "schema": {
-                "type": "object",
-                "description": "The schema for the response format, described as a JSON Schema object.\nLearn how to build JSON schemas [here](https://json-schema.org/).\n"
-              },
-              "strict": {
-                "type": "object",
-                "anyOf": [
-                  {
-                    "$ref": "#/components/schemas/UnionBranch"
-                  },
-                  {
-                    "type": "object"
-                  }
-                ]
-              }
-            },
-            "description": "Structured Outputs configuration options, including a JSON Schema.\n"
+            "$ref": "#/components/schemas/ResponseFormatJsonSchemaJsonSchema"
           }
         },
         "description": "JSON Schema response format. Used to generate structured JSON responses.\nLearn more about [Structured Outputs](https://docs.together.ai/docs/json-mode).\n"
@@ -7445,8 +7211,17 @@
           }
         }
       },
-      "get_deployments_500": {
-        "type": "object"
+      "RLForwardBackwardResultMetrics": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "format": "double"
+        },
+        "description": "Loss-specific metrics (e.g., KL divergence, clip fraction for GRPO)",
+        "example": {
+          "loss/clip/high_fraction": 0.1,
+          "loss/kl_ref/mean": 0.05
+        }
       },
       "ChatCompletionUserMessageContentMultimodal": {
         "type": "array",
@@ -7651,25 +7426,11 @@
             }
           },
           "function_call": {
-            "required": [
-              "arguments",
-              "name"
-            ],
-            "type": "object",
-            "properties": {
-              "arguments": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "deprecated": true
+            "$ref": "#/components/schemas/ChatCompletionAssistantMessageParamFunctionCall"
           }
         }
       },
-      "PromptPart_item": {
-        "title": "PromptPart_item",
+      "PromptPartItem": {
         "type": "object",
         "properties": {
           "text": {
@@ -7909,15 +7670,7 @@
             }
           },
           "usage": {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UsageData"
-              },
-              {
-                "nullable": true
-              }
-            ]
+            "$ref": "#/components/schemas/ChatCompletionChunkUsage"
           },
           "warnings": {
             "type": "array",
@@ -7936,14 +7689,7 @@
         "type": "object",
         "properties": {
           "model": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "\"The name of the model to query.<br> <br> [See all of Together AI's chat models](https://docs.together.ai/docs/serverless-models#audio-models) The current supported tts models are: - cartesia/sonic - hexgrad/Kokoro-82M - canopylabs/orpheus-3b-0.1-ft\n\"",
-            "example": "canopylabs/orpheus-3b-0.1-ft"
+            "$ref": "#/components/schemas/AudioSpeechRequestModel"
           },
           "input": {
             "type": "string",
@@ -8031,13 +7777,7 @@
         "type": "object",
         "properties": {
           "file": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac."
+            "$ref": "#/components/schemas/AudioTranscriptionRequestFile"
           },
           "model": {
             "enum": [
@@ -8077,13 +7817,7 @@
             "default": 0
           },
           "timestamp_granularities": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Controls level of timestamp detail in verbose_json. Only used when response_format is verbose_json. Can be a single granularity or an array to get multiple levels."
+            "$ref": "#/components/schemas/AudioTranscriptionRequestTimestampGranularities"
           },
           "diarize": {
             "type": "boolean",
@@ -8318,13 +8052,7 @@
         "type": "object",
         "properties": {
           "file": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac."
+            "$ref": "#/components/schemas/AudioTranslationRequestFile"
           },
           "model": {
             "enum": [
@@ -8364,13 +8092,7 @@
             "default": 0
           },
           "timestamp_granularities": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Controls level of timestamp detail in verbose_json. Only used when response_format is verbose_json. Can be a single granularity or an array to get multiple levels."
+            "$ref": "#/components/schemas/AudioTranslationRequestTimestampGranularities"
           }
         }
       },
@@ -8586,58 +8308,7 @@
             "$ref": "#/components/schemas/LogprobsPart"
           },
           "delta": {
-            "title": "ChatCompletionChoiceDelta",
-            "required": [
-              "role"
-            ],
-            "type": "object",
-            "properties": {
-              "token_id": {
-                "type": "integer"
-              },
-              "role": {
-                "enum": [
-                  "system",
-                  "user",
-                  "assistant",
-                  "function",
-                  "tool"
-                ],
-                "type": "string",
-                "additionalProperties": false
-              },
-              "content": {
-                "type": "string",
-                "nullable": true
-              },
-              "tool_calls": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ToolChoice"
-                }
-              },
-              "function_call": {
-                "required": [
-                  "arguments",
-                  "name"
-                ],
-                "type": "object",
-                "properties": {
-                  "arguments": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "nullable": true,
-                "deprecated": true
-              },
-              "reasoning": {
-                "type": "string",
-                "nullable": true
-              }
-            }
+            "$ref": "#/components/schemas/ChatCompletionChoiceDelta"
           }
         }
       },
@@ -8649,23 +8320,10 @@
         "type": "object",
         "properties": {
           "model": {
-            "type": "string",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "The name of the embedding model to use.<br> <br> [See all of Together AI's embedding models](https://docs.together.ai/docs/serverless-models#embedding-models)\n",
-            "example": "togethercomputer/m2-bert-80M-8k-retrieval"
+            "$ref": "#/components/schemas/EmbeddingsRequestModel"
           },
           "input": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "example": "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+            "$ref": "#/components/schemas/EmbeddingsRequestInput"
           }
         }
       },
@@ -8844,31 +8502,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "required": [
-              "job_id",
-              "model_name",
-              "model_id",
-              "model_source"
-            ],
-            "type": "object",
-            "properties": {
-              "job_id": {
-                "type": "string",
-                "example": "job-a15dad11-8d8e-4007-97c5-a211304de284"
-              },
-              "model_name": {
-                "type": "string",
-                "example": "necolinehubner/Qwen2.5-72B-Instruct"
-              },
-              "model_id": {
-                "type": "string",
-                "example": "model-c0e32dfc-637e-47b2-bf4e-e9b2e58c9da7"
-              },
-              "model_source": {
-                "type": "string",
-                "example": "huggingface"
-              }
-            }
+            "$ref": "#/components/schemas/ModelUploadSuccessResponseData"
           },
           "message": {
             "type": "string",
@@ -9029,21 +8663,7 @@
             }
           },
           "args": {
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string",
-                "example": "Finetuned Qwen2.5-72B-Instruct by Unsloth"
-              },
-              "modelName": {
-                "type": "string",
-                "example": "necolinehubner/Qwen2.5-72B-Instruct"
-              },
-              "modelSource": {
-                "type": "string",
-                "example": "unsloth/Qwen2.5-72B-Instruct"
-              }
-            }
+            "$ref": "#/components/schemas/JobInfoSuccessResponseArgs"
           },
           "created_at": {
             "type": "string",
@@ -9111,21 +8731,7 @@
             "example": "tool_type"
           },
           "function": {
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string",
-                "example": "A description of the function."
-              },
-              "name": {
-                "type": "string",
-                "example": "function_name"
-              },
-              "parameters": {
-                "type": "object",
-                "description": "A map of parameter names to their values."
-              }
-            }
+            "$ref": "#/components/schemas/ToolsPartFunction"
           }
         }
       },
@@ -9152,20 +8758,7 @@
             "additionalProperties": false
           },
           "function": {
-            "required": [
-              "name",
-              "arguments"
-            ],
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "example": "function_name"
-              },
-              "arguments": {
-                "type": "string"
-              }
-            }
+            "$ref": "#/components/schemas/ToolChoiceFunction"
           }
         }
       },
@@ -9325,12 +8918,7 @@
             "type": "integer"
           },
           "batch_size": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ]
+            "$ref": "#/components/schemas/FinetuneResponseBatchSize"
           },
           "learning_rate": {
             "type": "number"
@@ -9353,34 +8941,13 @@
             "type": "integer"
           },
           "train_on_inputs": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ]
+            "$ref": "#/components/schemas/FinetuneResponseTrainOnInputs"
           },
           "training_method": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/TrainingMethodSFT"
-              },
-              {
-                "$ref": "#/components/schemas/TrainingMethodDPO"
-              }
-            ]
+            "$ref": "#/components/schemas/FinetuneResponseTrainingMethod"
           },
           "training_type": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/FullTrainingType"
-              },
-              {
-                "$ref": "#/components/schemas/LoRATrainingType"
-              }
-            ]
+            "$ref": "#/components/schemas/FinetuneResponseTrainingType"
           },
           "multimodal_params": {
             "$ref": "#/components/schemas/MultimodalParams"
@@ -9526,28 +9093,10 @@
             "description": "Batch size used for training"
           },
           "training_type": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/FullTrainingType"
-              },
-              {
-                "$ref": "#/components/schemas/LoRATrainingType"
-              }
-            ],
-            "description": "Type of training used (full or LoRA)"
+            "$ref": "#/components/schemas/FinetuneResponseTruncatedTrainingType"
           },
           "training_method": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/TrainingMethodSFT"
-              },
-              {
-                "$ref": "#/components/schemas/TrainingMethodDPO"
-              }
-            ],
-            "description": "Method of training used"
+            "$ref": "#/components/schemas/FinetuneResponseTruncatedTrainingMethod"
           },
           "learning_rate": {
             "type": "number",
@@ -9647,63 +9196,10 @@
             "description": "The name of the model."
           },
           "full_training": {
-            "required": [
-              "max_batch_size",
-              "max_batch_size_dpo",
-              "min_batch_size"
-            ],
-            "type": "object",
-            "properties": {
-              "max_batch_size": {
-                "type": "integer",
-                "description": "Maximum batch size for SFT full training."
-              },
-              "max_batch_size_dpo": {
-                "type": "integer",
-                "description": "Maximum batch size for DPO full training."
-              },
-              "min_batch_size": {
-                "type": "integer",
-                "description": "Minimum batch size for full training."
-              }
-            },
-            "description": "Limits for full training."
+            "$ref": "#/components/schemas/FineTuneModelLimitsFullTraining"
           },
           "lora_training": {
-            "required": [
-              "max_batch_size",
-              "max_batch_size_dpo",
-              "min_batch_size",
-              "max_rank",
-              "target_modules"
-            ],
-            "type": "object",
-            "properties": {
-              "max_batch_size": {
-                "type": "integer",
-                "description": "Maximum batch size for SFT LoRA training."
-              },
-              "max_batch_size_dpo": {
-                "type": "integer",
-                "description": "Maximum batch size for DPO LoRA training."
-              },
-              "min_batch_size": {
-                "type": "integer",
-                "description": "Minimum batch size for LoRA training."
-              },
-              "max_rank": {
-                "type": "integer",
-                "description": "Maximum LoRA rank."
-              },
-              "target_modules": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "Available target modules for LoRA."
-              }
-            },
-            "description": "Limits for LoRA training."
+            "$ref": "#/components/schemas/FineTuneModelLimitsLoraTraining"
           },
           "max_num_epochs": {
             "type": "integer",
@@ -9855,12 +9351,7 @@
             "type": "string"
           },
           "level": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/FinetuneEventLevels_Wrapper"
-              }
-            ]
+            "$ref": "#/components/schemas/FineTuneEventLevel"
           },
           "message": {
             "type": "string"
@@ -10014,13 +9505,7 @@
             "additionalProperties": false
           },
           "train_on_inputs": {
-            "type": "boolean",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Whether to mask the user messages in conversational data or prompts in instruction data."
+            "$ref": "#/components/schemas/TrainingMethodSFTTrainOnInputs"
           }
         }
       },
@@ -10086,15 +9571,7 @@
             "additionalProperties": false
           },
           "lr_scheduler_args": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/LinearLRSchedulerArgs"
-              },
-              {
-                "$ref": "#/components/schemas/CosineLRSchedulerArgs"
-              }
-            ]
+            "$ref": "#/components/schemas/LRSchedulerLrSchedulerArgs"
           }
         }
       },
@@ -10481,55 +9958,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "type": "object",
-            "properties": {
-              "application/geo+json": {
-                "type": "object"
-              },
-              "application/javascript": {
-                "type": "string"
-              },
-              "application/json": {
-                "type": "object"
-              },
-              "application/pdf": {
-                "type": "string",
-                "format": "byte"
-              },
-              "application/vnd.vega.v5+json": {
-                "type": "object"
-              },
-              "application/vnd.vegalite.v4+json": {
-                "type": "object"
-              },
-              "image/gif": {
-                "type": "string",
-                "format": "byte"
-              },
-              "image/jpeg": {
-                "type": "string",
-                "format": "byte"
-              },
-              "image/png": {
-                "type": "string",
-                "format": "byte"
-              },
-              "image/svg+xml": {
-                "type": "string"
-              },
-              "text/html": {
-                "type": "string"
-              },
-              "text/latex": {
-                "type": "string"
-              },
-              "text/markdown": {
-                "type": "string"
-              },
-              "text/plain": {
-                "type": "string"
-              }
-            }
+            "$ref": "#/components/schemas/DisplayorExecuteOutputData"
           },
           "type": {
             "enum": [
@@ -11264,19 +10693,7 @@
             "example": "classify"
           },
           "parameters": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/EvaluationClassifyParameters"
-              },
-              {
-                "$ref": "#/components/schemas/EvaluationScoreParameters"
-              },
-              {
-                "$ref": "#/components/schemas/EvaluationCompareParameters"
-              }
-            ],
-            "description": "Type-specific parameters for the evaluation"
+            "$ref": "#/components/schemas/EvaluationTypedRequestParameters"
           }
         }
       },
@@ -11597,27 +11014,7 @@
             "example": "2025-07-23T17:10:04.837888Z"
           },
           "results": {
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/EvaluationClassifyResults"
-              },
-              {
-                "$ref": "#/components/schemas/EvaluationScoreResults"
-              },
-              {
-                "$ref": "#/components/schemas/EvaluationCompareResults"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "error": {
-                    "type": "string"
-                  }
-                }
-              }
-            ],
-            "description": "Results of the evaluation (when completed)",
-            "nullable": true
+            "$ref": "#/components/schemas/EvaluationJobResults"
           }
         }
       },
@@ -11689,21 +11086,7 @@
         "type": "object",
         "properties": {
           "aggregated_scores": {
-            "type": "object",
-            "properties": {
-              "mean_score": {
-                "type": "number",
-                "format": "float"
-              },
-              "std_score": {
-                "type": "number",
-                "format": "float"
-              },
-              "pass_percentage": {
-                "type": "number",
-                "format": "float"
-              }
-            }
+            "$ref": "#/components/schemas/EvaluationScoreResultsAggregatedScores"
           },
           "generation_fail_count": {
             "type": "number",
@@ -11775,8 +11158,7 @@
           }
         }
       },
-      "ChatCompletionChoicesData_item": {
-        "title": "ChatCompletionChoicesData_item",
+      "ChatCompletionChoicesDataItem": {
         "type": "object",
         "properties": {
           "text": {
@@ -11795,15 +11177,7 @@
             "$ref": "#/components/schemas/ChatCompletionMessage"
           },
           "logprobs": {
-            "type": "object",
-            "allOf": [
-              {
-                "nullable": true
-              },
-              {
-                "$ref": "#/components/schemas/LogprobsPart"
-              }
-            ]
+            "$ref": "#/components/schemas/ChatCompletionChoicesDataItemLogprobs"
           },
           "top_logprobs": {
             "type": "object",
@@ -11814,8 +11188,7 @@
           }
         }
       },
-      "CompletionChoicesData_item": {
-        "title": "CompletionChoicesData_item",
+      "CompletionChoicesDataItem": {
         "type": "object",
         "properties": {
           "text": {
@@ -11944,13 +11317,7 @@
             "description": "URL path to hosted image that is used for a frame"
           },
           "frame": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              }
-            ],
-            "description": "Optional param to specify where to insert the frame. If this is omitted, the following heuristics are applied:\n- frame_images size is one, frame is first.\n- If size is two, frames are first and last.\n- If size is larger, frames are first, last and evenly spaced between.\n"
+            "$ref": "#/components/schemas/VideoFrameImageInputFrame"
           }
         }
       },
@@ -11986,16 +11353,7 @@
             "description": "Array of reference videos."
           },
           "source_video": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/UnionBranch"
-              },
-              {
-                "$ref": "#/components/schemas/VideoRef"
-              }
-            ],
-            "description": "Source video to edit. Accepts a URL string or an object with a \"video\" key."
+            "$ref": "#/components/schemas/VideoMediaSourceVideo"
           },
           "audio_inputs": {
             "type": "array",
@@ -12094,37 +11452,10 @@
             "description": "Duration of the generated clip in seconds."
           },
           "error": {
-            "required": [
-              "message"
-            ],
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string"
-              },
-              "message": {
-                "type": "string"
-              }
-            },
-            "description": "Error payload that explains why generation failed, if applicable."
+            "$ref": "#/components/schemas/VideoJobError"
           },
           "outputs": {
-            "required": [
-              "cost",
-              "video_url"
-            ],
-            "type": "object",
-            "properties": {
-              "cost": {
-                "type": "integer",
-                "description": "The cost of generated video charged to the owners account."
-              },
-              "video_url": {
-                "type": "string",
-                "description": "URL hosting the generated video"
-              }
-            },
-            "description": "Available upon completion, the outputs provides the cost charged and the hosted url to access the video"
+            "$ref": "#/components/schemas/VideoJobOutputs"
           }
         },
         "description": "Structured information describing a generated video job."
@@ -12174,19 +11505,7 @@
             "description": "Args overrides the container's CMD. Provide as an array of arguments (e.g., [\"python\", \"app.py\"])"
           },
           "autoscaling": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/HTTPAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/QueueAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
-              }
-            ],
-            "description": "\"Autoscaling configuration. Example: {\\\"metric\\\": \\\"QueueBacklogPerWorker\\\", \\\"target\\\": 1.01} to scale based on queue backlog. Omit or set to null to disable autoscaling\""
+            "$ref": "#/components/schemas/CreateDeploymentRequestAutoscaling"
           },
           "command": {
             "type": "array",
@@ -12312,20 +11631,14 @@
         "type": "object",
         "properties": {
           "content": {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VolumeContentRequest"
-              }
-            ],
-            "description": "Content specifies the content configuration for this volume"
+            "$ref": "#/components/schemas/CreateVolumeRequestContent"
           },
           "name": {
             "type": "string",
             "description": "Name is the unique identifier for the volume within the project"
           },
           "type": {
-            "$ref": "#/components/schemas/VolumeType"
+            "$ref": "#/components/schemas/CreateVolumeRequestType"
           }
         }
       },
@@ -12370,19 +11683,7 @@
             "description": "Args are the arguments passed to the container's command"
           },
           "autoscaling": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/HTTPAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/QueueAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
-              }
-            ],
-            "description": "Autoscaling contains autoscaling configuration parameters for this deployment. Omitted when autoscaling is disabled (nil)"
+            "$ref": "#/components/schemas/DeploymentResponseItemAutoscaling"
           },
           "command": {
             "type": "array",
@@ -12479,20 +11780,7 @@
             "description": "ReplicaEvents is a mapping of replica names or IDs to their status events"
           },
           "status": {
-            "enum": [
-              "Updating",
-              "Scaling",
-              "Ready",
-              "Failed"
-            ],
-            "type": "string",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DeploymentStatus_Wrapper"
-              }
-            ],
-            "additionalProperties": false,
-            "description": "Status represents the overall status of the deployment (e.g., Updating, Scaling, Ready, Failed)"
+            "$ref": "#/components/schemas/DeploymentResponseItemStatus"
           },
           "storage": {
             "type": "integer",
@@ -12782,19 +12070,7 @@
             "description": "Args overrides the container's CMD. Provide as an array of arguments (e.g., [\"python\", \"app.py\"])"
           },
           "autoscaling": {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/HTTPAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/QueueAutoscalingConfig"
-              },
-              {
-                "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
-              }
-            ],
-            "description": "Autoscaling configuration for the deployment. Set to {} to disable autoscaling"
+            "$ref": "#/components/schemas/UpdateDeploymentRequestAutoscaling"
           },
           "command": {
             "type": "array",
@@ -12911,20 +12187,14 @@
         "type": "object",
         "properties": {
           "content": {
-            "type": "object",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VolumeContentRequest"
-              }
-            ],
-            "description": "Content specifies the new content that will be preloaded to this volume"
+            "$ref": "#/components/schemas/UpdateVolumeRequestContent"
           },
           "name": {
             "type": "string",
             "description": "Name is the new unique identifier for the volume within the project"
           },
           "type": {
-            "$ref": "#/components/schemas/VolumeType"
+            "$ref": "#/components/schemas/UpdateVolumeRequestType"
           }
         }
       },
@@ -13280,130 +12550,1663 @@
           }
         }
       },
-      "post_deployments_400": {
+      "RerankRequestModel": {
+        "required": [
+          "type"
+        ],
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RerankRequestModel_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/RerankRequestModel_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The model to be used for the rerank request.<br> <br> [See all of Together AI's rerank models](https://docs.together.ai/docs/serverless-models#rerank-models)\n",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "RerankRequestModel_2": "#/components/schemas/RerankRequestModel_Branch2"
+          }
+        },
+        "example": "Salesforce/Llama-Rank-V1"
+      },
+      "RerankRequestDocuments": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/RerankRequestDocuments_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/RerankRequestDocuments_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "List of documents, which can be either strings or objects.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "RerankRequestDocuments_1": "#/components/schemas/RerankRequestDocuments_Branch1",
+            "RerankRequestDocuments_2": "#/components/schemas/RerankRequestDocuments_Branch2"
+          }
+        }
+      },
+      "ErrorDataError": {
+        "required": [
+          "type",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "param": {
+            "type": "string",
+            "default": null,
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "default": null,
+            "nullable": true
+          }
+        }
+      },
+      "CompletionRequestModel": {
+        "required": [
+          "type"
+        ],
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CompletionRequestModel_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/CompletionRequestModel_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The name of the model to query.<br> <br> [See all of Together AI's chat models](https://docs.together.ai/docs/serverless-models#chat-models)\n",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CompletionRequestModel_2": "#/components/schemas/CompletionRequestModel_Branch2"
+          }
+        },
+        "example": "mistralai/Mixtral-8x7B-Instruct-v0.1"
+      },
+      "CompletionRequestSafetyModel": {
+        "required": [
+          "type"
+        ],
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CompletionRequestSafetyModel_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/CompletionRequestSafetyModel_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CompletionRequestSafetyModel_2": "#/components/schemas/CompletionRequestSafetyModel_Branch2"
+          }
+        },
+        "example": "safety_model_name"
+      },
+      "CompletionRequestLogitBias": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "format": "float"
+        },
+        "description": "Adjusts the likelihood of specific tokens appearing in the generated output.",
+        "example": {
+          "1024": -10.5,
+          "105": 21.4
+        }
+      },
+      "CompletionChunkUsage": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UsageData"
+          },
+          {
+            "nullable": true
+          }
+        ]
+      },
+      "CompletionChunkFinishReason": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FinishReason_Wrapper"
+          },
+          {
+            "nullable": true
+          }
+        ]
+      },
+      "CompletionChoiceDelta": {
+        "title": "CompletionChoiceDelta",
+        "required": [
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "token_id": {
+            "type": "integer"
+          },
+          "role": {
+            "enum": [
+              "system",
+              "user",
+              "assistant",
+              "function",
+              "tool"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "reasoning": {
+            "type": "string",
+            "nullable": true
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolChoice"
+            }
+          },
+          "function_call": {
+            "$ref": "#/components/schemas/CompletionChoiceDeltaFunctionCall"
+          }
+        }
+      },
+      "ChatCompletionMessageFunctionCall": {
+        "required": [
+          "arguments",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "deprecated": true
+      },
+      "ChatCompletionToolFunction": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object"
+          }
+        }
+      },
+      "ChatCompletionRequestLogitBias": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "format": "float"
+        },
+        "description": "Adjusts the likelihood of specific tokens appearing in the generated output.",
+        "example": {
+          "1024": -10.5,
+          "105": 21.4
+        }
+      },
+      "ChatCompletionRequestFunctionCall": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ChatCompletionRequestFunctionCall_Wrapper"
+          },
+          {
+            "required": [
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "ChatCompletionRequestResponseFormat": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ResponseFormatText"
+          },
+          {
+            "$ref": "#/components/schemas/ResponseFormatJsonSchema"
+          },
+          {
+            "$ref": "#/components/schemas/ResponseFormatJsonObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "title": "type",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "\"An object specifying the format that the model must output.\n\nSetting to `{ \\\"type\\\": \\\"json_schema\\\", \\\"json_schema\\\": {...} }` enables\nStructured Outputs which ensures the model will match your supplied JSON\nschema. Learn more in the [Structured Outputs\nguide](https://docs.together.ai/docs/json-mode).\n\nSetting to `{ \\\"type\\\": \\\"json_object\\\" }` enables the older JSON mode, which\nensures the message the model generates is valid JSON. Using `json_schema`\nis preferred for models that support it.\n\"",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ResponseFormatText": "#/components/schemas/ResponseFormatText",
+            "ResponseFormatJsonSchema": "#/components/schemas/ResponseFormatJsonSchema",
+            "ResponseFormatJsonObject": "#/components/schemas/ResponseFormatJsonObject"
+          }
+        }
+      },
+      "ChatCompletionRequestToolChoice": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ChatCompletionRequestToolChoice_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/ToolChoice"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ChatCompletionRequestToolChoice_1": "#/components/schemas/ChatCompletionRequestToolChoice_Branch1",
+            "ToolChoice": "#/components/schemas/ToolChoice"
+          }
+        }
+      },
+      "ChatCompletionRequestChatTemplateKwargs": {
+        "type": "object",
+        "description": "Additional configuration to pass to model engine.",
+        "unrecognizedKeywords": {
+          "additional_properties": true
+        }
+      },
+      "ChatCompletionRequestReasoning": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "description": "For models that support toggling reasoning functionality, this object can be used to control that functionality."
+      },
+      "ResponseFormatJsonSchemaJsonSchema": {
+        "title": "JSON schema",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "A description of what the response format is for, used by the model to\ndetermine how to respond in the format.\n"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the response format. Must be a-z, A-Z, 0-9, or contain\nunderscores and dashes, with a maximum length of 64.\n"
+          },
+          "schema": {
+            "type": "object",
+            "description": "The schema for the response format, described as a JSON Schema object.\nLearn how to build JSON schemas [here](https://json-schema.org/).\n"
+          },
+          "strict": {
+            "$ref": "#/components/schemas/ResponseFormatJsonSchemaJsonSchemaStrict"
+          }
+        },
+        "description": "Structured Outputs configuration options, including a JSON Schema.\n"
+      },
+      "ChatCompletionAssistantMessageParamFunctionCall": {
+        "required": [
+          "arguments",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "deprecated": true
+      },
+      "ChatCompletionChunkUsage": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UsageData"
+          },
+          {
+            "nullable": true
+          }
+        ]
+      },
+      "AudioSpeechRequestModel": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AudioSpeechRequestModel_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/AudioSpeechRequestModel_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "\"The name of the model to query.<br> <br> [See all of Together AI's chat models](https://docs.together.ai/docs/serverless-models#audio-models) The current supported tts models are: - cartesia/sonic - hexgrad/Kokoro-82M - canopylabs/orpheus-3b-0.1-ft\n\"",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AudioSpeechRequestModel_2": "#/components/schemas/AudioSpeechRequestModel_Branch2"
+          }
+        },
+        "example": "canopylabs/orpheus-3b-0.1-ft"
+      },
+      "AudioTranscriptionRequestFile": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AudioTranscriptionRequestFile_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/AudioTranscriptionRequestFile_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AudioTranscriptionRequestFile_1": "#/components/schemas/AudioTranscriptionRequestFile_Branch1",
+            "AudioTranscriptionRequestFile_2": "#/components/schemas/AudioTranscriptionRequestFile_Branch2"
+          }
+        }
+      },
+      "AudioTranscriptionRequestTimestampGranularities": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AudioTranscriptionRequestTimestampGranularities_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/AudioTranscriptionRequestTimestampGranularities_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Controls level of timestamp detail in verbose_json. Only used when response_format is verbose_json. Can be a single granularity or an array to get multiple levels.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AudioTranscriptionRequestTimestampGranularities_2": "#/components/schemas/AudioTranscriptionRequestTimestampGranularities_Branch2"
+          }
+        }
+      },
+      "AudioTranslationRequestFile": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AudioTranslationRequestFile_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/AudioTranslationRequestFile_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AudioTranslationRequestFile_1": "#/components/schemas/AudioTranslationRequestFile_Branch1",
+            "AudioTranslationRequestFile_2": "#/components/schemas/AudioTranslationRequestFile_Branch2"
+          }
+        }
+      },
+      "AudioTranslationRequestTimestampGranularities": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AudioTranslationRequestTimestampGranularities_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/AudioTranslationRequestTimestampGranularities_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Controls level of timestamp detail in verbose_json. Only used when response_format is verbose_json. Can be a single granularity or an array to get multiple levels.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AudioTranslationRequestTimestampGranularities_2": "#/components/schemas/AudioTranslationRequestTimestampGranularities_Branch2"
+          }
+        }
+      },
+      "ChatCompletionChoiceDelta": {
+        "title": "ChatCompletionChoiceDelta",
+        "required": [
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "token_id": {
+            "type": "integer"
+          },
+          "role": {
+            "enum": [
+              "system",
+              "user",
+              "assistant",
+              "function",
+              "tool"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "tool_calls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolChoice"
+            }
+          },
+          "function_call": {
+            "$ref": "#/components/schemas/ChatCompletionChoiceDeltaFunctionCall"
+          },
+          "reasoning": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "EmbeddingsRequestModel": {
+        "required": [
+          "type"
+        ],
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/EmbeddingsRequestModel_Wrapper"
+          },
+          {
+            "$ref": "#/components/schemas/EmbeddingsRequestModel_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The name of the embedding model to use.<br> <br> [See all of Together AI's embedding models](https://docs.together.ai/docs/serverless-models#embedding-models)\n",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "EmbeddingsRequestModel_2": "#/components/schemas/EmbeddingsRequestModel_Branch2"
+          }
+        },
+        "example": "togethercomputer/m2-bert-80M-8k-retrieval"
+      },
+      "EmbeddingsRequestInput": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/EmbeddingsRequestInput_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/EmbeddingsRequestInput_Branch2"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "EmbeddingsRequestInput_1": "#/components/schemas/EmbeddingsRequestInput_Branch1",
+            "EmbeddingsRequestInput_2": "#/components/schemas/EmbeddingsRequestInput_Branch2"
+          }
+        },
+        "example": "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+      },
+      "ModelUploadSuccessResponseData": {
+        "required": [
+          "job_id",
+          "model_name",
+          "model_id",
+          "model_source"
+        ],
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "example": "job-a15dad11-8d8e-4007-97c5-a211304de284"
+          },
+          "model_name": {
+            "type": "string",
+            "example": "necolinehubner/Qwen2.5-72B-Instruct"
+          },
+          "model_id": {
+            "type": "string",
+            "example": "model-c0e32dfc-637e-47b2-bf4e-e9b2e58c9da7"
+          },
+          "model_source": {
+            "type": "string",
+            "example": "huggingface"
+          }
+        }
+      },
+      "JobInfoSuccessResponseArgs": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "example": "Finetuned Qwen2.5-72B-Instruct by Unsloth"
+          },
+          "modelName": {
+            "type": "string",
+            "example": "necolinehubner/Qwen2.5-72B-Instruct"
+          },
+          "modelSource": {
+            "type": "string",
+            "example": "unsloth/Qwen2.5-72B-Instruct"
+          }
+        }
+      },
+      "ToolsPartFunction": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "example": "A description of the function."
+          },
+          "name": {
+            "type": "string",
+            "example": "function_name"
+          },
+          "parameters": {
+            "type": "object",
+            "description": "A map of parameter names to their values."
+          }
+        }
+      },
+      "ToolChoiceFunction": {
+        "required": [
+          "name",
+          "arguments"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "function_name"
+          },
+          "arguments": {
+            "type": "string"
+          }
+        }
+      },
+      "FinetuneResponseBatchSize": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/FinetuneResponseBatchSize_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/FinetuneResponseBatchSize_Wrapper"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FinetuneResponseBatchSize_1": "#/components/schemas/FinetuneResponseBatchSize_Branch1"
+          }
+        }
+      },
+      "FinetuneResponseTrainOnInputs": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/FinetuneResponseTrainOnInputs_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/FinetuneResponseTrainOnInputs_Wrapper"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FinetuneResponseTrainOnInputs_1": "#/components/schemas/FinetuneResponseTrainOnInputs_Branch1"
+          }
+        }
+      },
+      "FinetuneResponseTrainingMethod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TrainingMethodSFT"
+          },
+          {
+            "$ref": "#/components/schemas/TrainingMethodDPO"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "TrainingMethodSFT": "#/components/schemas/TrainingMethodSFT",
+            "TrainingMethodDPO": "#/components/schemas/TrainingMethodDPO"
+          }
+        }
+      },
+      "FinetuneResponseTrainingType": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/FullTrainingType"
+          },
+          {
+            "$ref": "#/components/schemas/LoRATrainingType"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FullTrainingType": "#/components/schemas/FullTrainingType",
+            "LoRATrainingType": "#/components/schemas/LoRATrainingType"
+          }
+        }
+      },
+      "FinetuneResponseTruncatedTrainingType": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/FullTrainingType"
+          },
+          {
+            "$ref": "#/components/schemas/LoRATrainingType"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Type of training used (full or LoRA)",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FullTrainingType": "#/components/schemas/FullTrainingType",
+            "LoRATrainingType": "#/components/schemas/LoRATrainingType"
+          }
+        }
+      },
+      "FinetuneResponseTruncatedTrainingMethod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TrainingMethodSFT"
+          },
+          {
+            "$ref": "#/components/schemas/TrainingMethodDPO"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Method of training used",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "TrainingMethodSFT": "#/components/schemas/TrainingMethodSFT",
+            "TrainingMethodDPO": "#/components/schemas/TrainingMethodDPO"
+          }
+        }
+      },
+      "FineTuneModelLimitsFullTraining": {
+        "required": [
+          "max_batch_size",
+          "max_batch_size_dpo",
+          "min_batch_size"
+        ],
+        "type": "object",
+        "properties": {
+          "max_batch_size": {
+            "type": "integer",
+            "description": "Maximum batch size for SFT full training."
+          },
+          "max_batch_size_dpo": {
+            "type": "integer",
+            "description": "Maximum batch size for DPO full training."
+          },
+          "min_batch_size": {
+            "type": "integer",
+            "description": "Minimum batch size for full training."
+          }
+        },
+        "description": "Limits for full training."
+      },
+      "FineTuneModelLimitsLoraTraining": {
+        "required": [
+          "max_batch_size",
+          "max_batch_size_dpo",
+          "min_batch_size",
+          "max_rank",
+          "target_modules"
+        ],
+        "type": "object",
+        "properties": {
+          "max_batch_size": {
+            "type": "integer",
+            "description": "Maximum batch size for SFT LoRA training."
+          },
+          "max_batch_size_dpo": {
+            "type": "integer",
+            "description": "Maximum batch size for DPO LoRA training."
+          },
+          "min_batch_size": {
+            "type": "integer",
+            "description": "Minimum batch size for LoRA training."
+          },
+          "max_rank": {
+            "type": "integer",
+            "description": "Maximum LoRA rank."
+          },
+          "target_modules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Available target modules for LoRA."
+          }
+        },
+        "description": "Limits for LoRA training."
+      },
+      "FineTuneEventLevel": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/FinetuneEventLevels_Wrapper"
+          }
+        ],
+        "properties": {
+          "type": {
+            "title": "type",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FinetuneEventLevels": "#/components/schemas/FinetuneEventLevels_Wrapper"
+          }
+        }
+      },
+      "TrainingMethodSFTTrainOnInputs": {
+        "required": [
+          "type"
+        ],
+        "type": "boolean",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TrainingMethodSFTTrainOnInputs_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/TrainingMethodSFTTrainOnInputs_Wrapper"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Whether to mask the user messages in conversational data or prompts in instruction data.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "TrainingMethodSFTTrainOnInputs_1": "#/components/schemas/TrainingMethodSFTTrainOnInputs_Branch1"
+          }
+        }
+      },
+      "LRSchedulerLrSchedulerArgs": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/LinearLRSchedulerArgs"
+          },
+          {
+            "$ref": "#/components/schemas/CosineLRSchedulerArgs"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "LinearLRSchedulerArgs": "#/components/schemas/LinearLRSchedulerArgs",
+            "CosineLRSchedulerArgs": "#/components/schemas/CosineLRSchedulerArgs"
+          }
+        }
+      },
+      "DisplayorExecuteOutputData": {
+        "type": "object",
+        "properties": {
+          "application/geo+json": {
+            "type": "object"
+          },
+          "application/javascript": {
+            "type": "string"
+          },
+          "application/json": {
+            "type": "object"
+          },
+          "application/pdf": {
+            "type": "string",
+            "format": "byte"
+          },
+          "application/vnd.vega.v5+json": {
+            "type": "object"
+          },
+          "application/vnd.vegalite.v4+json": {
+            "type": "object"
+          },
+          "image/gif": {
+            "type": "string",
+            "format": "byte"
+          },
+          "image/jpeg": {
+            "type": "string",
+            "format": "byte"
+          },
+          "image/png": {
+            "type": "string",
+            "format": "byte"
+          },
+          "image/svg+xml": {
+            "type": "string"
+          },
+          "text/html": {
+            "type": "string"
+          },
+          "text/latex": {
+            "type": "string"
+          },
+          "text/markdown": {
+            "type": "string"
+          },
+          "text/plain": {
+            "type": "string"
+          }
+        }
+      },
+      "EvaluationTypedRequestParameters": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/EvaluationClassifyParameters"
+          },
+          {
+            "$ref": "#/components/schemas/EvaluationScoreParameters"
+          },
+          {
+            "$ref": "#/components/schemas/EvaluationCompareParameters"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Type-specific parameters for the evaluation",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "EvaluationClassifyParameters": "#/components/schemas/EvaluationClassifyParameters",
+            "EvaluationScoreParameters": "#/components/schemas/EvaluationScoreParameters",
+            "EvaluationCompareParameters": "#/components/schemas/EvaluationCompareParameters"
+          }
+        }
+      },
+      "EvaluationJobParameters": {
+        "type": "object",
+        "description": "The parameters used for this evaluation"
+      },
+      "EvaluationJobResults": {
+        "required": [
+          "type"
+        ],
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/EvaluationClassifyResults"
+          },
+          {
+            "$ref": "#/components/schemas/EvaluationScoreResults"
+          },
+          {
+            "$ref": "#/components/schemas/EvaluationCompareResults"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "error": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Results of the evaluation (when completed)",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "EvaluationClassifyResults": "#/components/schemas/EvaluationClassifyResults",
+            "EvaluationScoreResults": "#/components/schemas/EvaluationScoreResults",
+            "EvaluationCompareResults": "#/components/schemas/EvaluationCompareResults"
+          }
+        }
+      },
+      "EvaluationScoreResultsAggregatedScores": {
+        "type": "object",
+        "properties": {
+          "mean_score": {
+            "type": "number",
+            "format": "float"
+          },
+          "std_score": {
+            "type": "number",
+            "format": "float"
+          },
+          "pass_percentage": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "ChatCompletionChoicesDataItemLogprobs": {
+        "type": "object",
+        "allOf": [
+          {
+            "nullable": true
+          },
+          {
+            "$ref": "#/components/schemas/LogprobsPart"
+          }
+        ]
+      },
+      "VideoFrameImageInputFrame": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/VideoFrameImageInputFrame_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/VideoFrameImageInputFrame_Wrapper"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Optional param to specify where to insert the frame. If this is omitted, the following heuristics are applied:\n- frame_images size is one, frame is first.\n- If size is two, frames are first and last.\n- If size is larger, frames are first, last and evenly spaced between.\n",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "VideoFrameImageInputFrame_1": "#/components/schemas/VideoFrameImageInputFrame_Branch1"
+          }
+        }
+      },
+      "VideoMediaSourceVideo": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/VideoMediaSourceVideo_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/VideoRef"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Source video to edit. Accepts a URL string or an object with a \"video\" key.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "VideoMediaSourceVideo_1": "#/components/schemas/VideoMediaSourceVideo_Branch1",
+            "VideoRef": "#/components/schemas/VideoRef"
+          }
+        }
+      },
+      "VideoJobError": {
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "description": "Error payload that explains why generation failed, if applicable."
+      },
+      "VideoJobOutputs": {
+        "required": [
+          "cost",
+          "video_url"
+        ],
+        "type": "object",
+        "properties": {
+          "cost": {
+            "type": "integer",
+            "description": "The cost of generated video charged to the owners account."
+          },
+          "video_url": {
+            "type": "string",
+            "description": "URL hosting the generated video"
+          }
+        },
+        "description": "Available upon completion, the outputs provides the cost charged and the hosted url to access the video"
+      },
+      "CreateDeploymentRequestAutoscaling": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/HTTPAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/QueueAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "\"Autoscaling configuration. Example: {\\\"metric\\\": \\\"QueueBacklogPerWorker\\\", \\\"target\\\": 1.01} to scale based on queue backlog. Omit or set to null to disable autoscaling\"",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "HTTPAutoscalingConfig": "#/components/schemas/HTTPAutoscalingConfig",
+            "QueueAutoscalingConfig": "#/components/schemas/QueueAutoscalingConfig",
+            "CustomMetricAutoscalingConfig": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        }
+      },
+      "CreateVolumeRequestContent": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolumeContentRequest"
+          }
+        ],
+        "description": "Content specifies the content configuration for this volume"
+      },
+      "CreateVolumeRequestType": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolumeType_Wrapper"
+          }
+        ],
+        "description": "Type is the volume type (currently only \"readOnly\" is supported)"
+      },
+      "DeploymentResponseItemAutoscaling": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/HTTPAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/QueueAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Autoscaling contains autoscaling configuration parameters for this deployment. Omitted when autoscaling is disabled (nil)",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "HTTPAutoscalingConfig": "#/components/schemas/HTTPAutoscalingConfig",
+            "QueueAutoscalingConfig": "#/components/schemas/QueueAutoscalingConfig",
+            "CustomMetricAutoscalingConfig": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        }
+      },
+      "DeploymentResponseItemReplicaEvents": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReplicaEvent"
+        },
+        "description": "ReplicaEvents is a mapping of replica names or IDs to their status events"
+      },
+      "DeploymentResponseItemStatus": {
+        "enum": [
+          "Updating",
+          "Scaling",
+          "Ready",
+          "Failed"
+        ],
+        "type": "string",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DeploymentStatus_Wrapper"
+          }
+        ],
+        "additionalProperties": false,
+        "description": "Status represents the overall status of the deployment (e.g., Updating, Scaling, Ready, Failed)"
+      },
+      "UpdateDeploymentRequestAutoscaling": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/HTTPAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/QueueAutoscalingConfig"
+          },
+          {
+            "$ref": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Autoscaling configuration for the deployment. Set to {} to disable autoscaling",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "HTTPAutoscalingConfig": "#/components/schemas/HTTPAutoscalingConfig",
+            "QueueAutoscalingConfig": "#/components/schemas/QueueAutoscalingConfig",
+            "CustomMetricAutoscalingConfig": "#/components/schemas/CustomMetricAutoscalingConfig"
+          }
+        }
+      },
+      "UpdateVolumeRequestContent": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolumeContentRequest"
+          }
+        ],
+        "description": "Content specifies the new content that will be preloaded to this volume"
+      },
+      "UpdateVolumeRequestType": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolumeType_Wrapper_2"
+          }
+        ],
+        "description": "Type is the new volume type (currently only \"readOnly\" is supported)"
+      },
+      "VolumeResponseItemVersionHistory": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/VersionHistoryItem"
+        },
+        "description": "VersionHistory contains previous versions of this volume, keyed by version number"
+      },
+      "QueueJobRequestInfo": {
+        "type": "object",
+        "description": "Arbitrary JSON metadata stored with the job and returned in status\nresponses. The model and system may add or update keys during\nprocessing.\n"
+      },
+      "QueueJobRequestPayload": {
+        "type": "object",
+        "description": "Freeform model input. Passed unchanged to the model. Contents are model-specific."
+      },
+      "QueueJobStatusResponseInfo": {
+        "type": "object",
+        "description": "Job metadata. Contains keys from the submit request, plus any\nmodifications from the model or system (e.g. progress, retry\nhistory).\n"
+      },
+      "QueueJobStatusResponseInputs": {
+        "type": "object",
+        "description": "Freeform model input, as submitted"
+      },
+      "QueueJobStatusResponseOutputs": {
+        "type": "object",
+        "description": "Freeform model output, populated when the job reaches done status. Contents are model-specific."
+      },
+      "CompletionChoiceDeltaFunctionCall": {
+        "required": [
+          "arguments",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "nullable": true,
+        "deprecated": true
+      },
+      "ChatCompletionToolFunctionParameters": {
         "type": "object"
       },
-      "post_deployments_500": {
+      "ResponseFormatJsonSchemaJsonSchemaStrict": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ResponseFormatJsonSchemaJsonSchemaStrict_Branch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ResponseFormatJsonSchemaJsonSchemaStrict_1": "#/components/schemas/ResponseFormatJsonSchemaJsonSchemaStrict_Branch1"
+          }
+        }
+      },
+      "ChatCompletionChoiceDeltaFunctionCall": {
+        "required": [
+          "arguments",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "arguments": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "nullable": true,
+        "deprecated": true
+      },
+      "ToolsPartFunctionParameters": {
+        "type": "object",
+        "description": "A map of parameter names to their values."
+      },
+      "DisplayorExecuteOutputDataApplicationGeoJson": {
         "type": "object"
       },
-      "delete_deployments_id_200": {
+      "DisplayorExecuteOutputDataApplicationJson": {
         "type": "object"
       },
-      "delete_deployments_id_404": {
+      "DisplayorExecuteOutputDataApplicationVndVegaV5Json": {
         "type": "object"
       },
-      "delete_deployments_id_500": {
+      "DisplayorExecuteOutputDataApplicationVndVegaliteV4Json": {
         "type": "object"
       },
-      "get_deployments_id_404": {
+      "GetDeployments500": {
         "type": "object"
       },
-      "get_deployments_id_500": {
+      "PostDeployments400": {
         "type": "object"
       },
-      "patch_deployments_id_400": {
+      "PostDeployments500": {
         "type": "object"
       },
-      "patch_deployments_id_404": {
+      "DeleteDeploymentsId200": {
         "type": "object"
       },
-      "patch_deployments_id_500": {
+      "DeleteDeploymentsId404": {
         "type": "object"
       },
-      "get_deployments_id_logs_404": {
+      "DeleteDeploymentsId500": {
         "type": "object"
       },
-      "get_deployments_id_logs_500": {
+      "GetDeploymentsId404": {
         "type": "object"
       },
-      "get_deployments_secrets_500": {
+      "GetDeploymentsId500": {
         "type": "object"
       },
-      "post_deployments_secrets_400": {
+      "PatchDeploymentsId400": {
         "type": "object"
       },
-      "post_deployments_secrets_500": {
+      "PatchDeploymentsId404": {
         "type": "object"
       },
-      "delete_deployments_secrets_id_200": {
+      "PatchDeploymentsId500": {
         "type": "object"
       },
-      "delete_deployments_secrets_id_404": {
+      "GetDeploymentsIdLogs404": {
         "type": "object"
       },
-      "delete_deployments_secrets_id_500": {
+      "GetDeploymentsIdLogs500": {
         "type": "object"
       },
-      "get_deployments_secrets_id_404": {
+      "GetDeploymentsSecrets500": {
         "type": "object"
       },
-      "get_deployments_secrets_id_500": {
+      "PostDeploymentsSecrets400": {
         "type": "object"
       },
-      "patch_deployments_secrets_id_400": {
+      "PostDeploymentsSecrets500": {
         "type": "object"
       },
-      "patch_deployments_secrets_id_404": {
+      "DeleteDeploymentsSecretsId200": {
         "type": "object"
       },
-      "patch_deployments_secrets_id_500": {
+      "DeleteDeploymentsSecretsId404": {
         "type": "object"
       },
-      "get_deployments_storage_filename_307": {
+      "DeleteDeploymentsSecretsId500": {
+        "type": "object"
+      },
+      "GetDeploymentsSecretsId404": {
+        "type": "object"
+      },
+      "GetDeploymentsSecretsId500": {
+        "type": "object"
+      },
+      "PatchDeploymentsSecretsId400": {
+        "type": "object"
+      },
+      "PatchDeploymentsSecretsId404": {
+        "type": "object"
+      },
+      "PatchDeploymentsSecretsId500": {
+        "type": "object"
+      },
+      "GetDeploymentsStorageFilename307": {
         "type": "string"
       },
-      "get_deployments_storage_filename_400": {
+      "GetDeploymentsStorageFilename400": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "get_deployments_storage_filename_404": {
+      "GetDeploymentsStorageFilename404": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "get_deployments_storage_filename_500": {
+      "GetDeploymentsStorageFilename500": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "get_deployments_storage_volumes_500": {
+      "GetDeploymentsStorageVolumes500": {
         "type": "object"
       },
-      "post_deployments_storage_volumes_400": {
+      "PostDeploymentsStorageVolumes400": {
         "type": "object"
       },
-      "post_deployments_storage_volumes_500": {
+      "PostDeploymentsStorageVolumes500": {
         "type": "object"
       },
-      "delete_deployments_storage_volumes_id_200": {
+      "DeleteDeploymentsStorageVolumesId200": {
         "type": "object"
       },
-      "delete_deployments_storage_volumes_id_404": {
+      "DeleteDeploymentsStorageVolumesId404": {
         "type": "object"
       },
-      "delete_deployments_storage_volumes_id_500": {
+      "DeleteDeploymentsStorageVolumesId500": {
         "type": "object"
       },
-      "get_deployments_storage_volumes_id_404": {
+      "GetDeploymentsStorageVolumesId404": {
         "type": "object"
       },
-      "get_deployments_storage_volumes_id_500": {
+      "GetDeploymentsStorageVolumesId500": {
         "type": "object"
       },
-      "patch_deployments_storage_volumes_id_400": {
+      "PatchDeploymentsStorageVolumesId400": {
         "type": "object"
       },
-      "patch_deployments_storage_volumes_id_404": {
+      "PatchDeploymentsStorageVolumesId404": {
         "type": "object"
       },
-      "patch_deployments_storage_volumes_id_500": {
+      "PatchDeploymentsStorageVolumesId500": {
         "type": "object"
       },
-      "post_images_generations": {
+      "PostImagesGenerations": {
         "required": [
           "prompt",
           "model"
@@ -13516,11 +14319,11 @@
           }
         }
       },
-      "get_files_id_content_200": {
+      "GetFilesIdContent200": {
         "type": "string",
         "format": "binary"
       },
-      "post_files_upload": {
+      "PostFilesUpload": {
         "required": [
           "purpose",
           "file_name",
@@ -13546,7 +14349,7 @@
           }
         }
       },
-      "post_fine_tunes": {
+      "PostFineTunes": {
         "required": [
           "training_file",
           "model"
@@ -13710,7 +14513,7 @@
           }
         }
       },
-      "post_fine_tunes_estimate_price": {
+      "PostFineTunesEstimatePrice": {
         "required": [
           "training_file"
         ],
@@ -13769,7 +14572,7 @@
           }
         }
       },
-      "post_fine_tunes_estimate_price_200": {
+      "PostFineTunesEstimatePrice200": {
         "type": "object",
         "properties": {
           "estimated_total_price": {
@@ -13795,11 +14598,11 @@
           }
         }
       },
-      "get_finetune_download_200": {
+      "GetFinetuneDownload200": {
         "type": "string",
         "format": "binary"
       },
-      "get_fine_tunes_models_supported_200": {
+      "GetFineTunesModelsSupported200": {
         "required": [
           "models"
         ],
@@ -13814,7 +14617,7 @@
           }
         }
       },
-      "get_fine_tunes_models_limits_404": {
+      "GetFineTunesModelsLimits404": {
         "type": "object",
         "properties": {
           "message": {
@@ -13823,19 +14626,11 @@
           }
         }
       },
-      "audio_speech_200": {
+      "AudioSpeech200": {
         "type": "string",
         "format": "binary"
       },
-      "audio_speech_200_Response_audio_wav": {
-        "type": "string",
-        "format": "binary"
-      },
-      "audio_speech_200_Response_audio_mpeg": {
-        "type": "string",
-        "format": "binary"
-      },
-      "GPUClusterService_Delete_200": {
+      "GPUClusterServiceDelete200": {
         "required": [
           "cluster_id"
         ],
@@ -13846,7 +14641,7 @@
           }
         }
       },
-      "listEndpoints_200": {
+      "ListEndpoints200": {
         "required": [
           "object",
           "data"
@@ -13883,7 +14678,7 @@
           ]
         }
       },
-      "updateEndpoint": {
+      "UpdateEndpoint": {
         "type": "object",
         "properties": {
           "display_name": {
@@ -13912,7 +14707,7 @@
           }
         }
       },
-      "listHardware_200": {
+      "ListHardware200": {
         "required": [
           "object",
           "data"
@@ -13934,19 +14729,19 @@
           }
         }
       },
-      "get_batches_200": {
+      "GetBatches200": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BatchJob"
         }
       },
-      "getAllEvaluationJobs_200": {
+      "GetAllEvaluationJobs200": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EvaluationJob"
         }
       },
-      "getModelList_200": {
+      "GetModelList200": {
         "type": "object",
         "properties": {
           "model_list": {
@@ -13958,7 +14753,7 @@
           }
         }
       },
-      "getEvaluationJobStatusAndResults_200": {
+      "GetEvaluationJobStatusAndResults200": {
         "type": "object",
         "properties": {
           "status": {
@@ -13988,6 +14783,292 @@
               }
             ],
             "description": "The results of the evaluation job"
+          }
+        }
+      },
+      "RerankRequestModel_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "Salesforce/Llama-Rank-v1"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "CompletionRequestModel_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "meta-llama/Llama-2-70b-hf",
+              "mistralai/Mistral-7B-v0.1",
+              "mistralai/Mixtral-8x7B-v0.1",
+              "Meta-Llama/Llama-Guard-7b"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "CompletionRequestSafetyModel_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "Meta-Llama/Llama-Guard-7b"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "ChatCompletionRequestFunctionCall_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "none",
+              "auto"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "AudioSpeechRequestModel_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "cartesia/sonic",
+              "hexgrad/Kokoro-82M",
+              "canopylabs/orpheus-3b-0.1-ft"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "AudioTranscriptionRequestTimestampGranularities_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "segment",
+              "word"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "AudioTranslationRequestTimestampGranularities_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "segment",
+              "word"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "EmbeddingsRequestModel_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "WhereIsAI/UAE-Large-V1",
+              "BAAI/bge-large-en-v1.5",
+              "BAAI/bge-base-en-v1.5",
+              "togethercomputer/m2-bert-80M-8k-retrieval"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "FinetuneResponseBatchSize_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "max"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "FinetuneResponseTrainOnInputs_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "auto"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "FinetuneEventLevels_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FinetuneEventLevels"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "TrainingMethodSFTTrainOnInputs_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "auto"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "VideoFrameImageInputFrame_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "first",
+              "last"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "FinishReason_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FinishReason"
+          }
+        }
+      },
+      "VolumeType_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/VolumeType"
+          }
+        }
+      },
+      "DeploymentStatus_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/DeploymentStatus"
+          }
+        }
+      },
+      "VolumeType_Wrapper_2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/VolumeType"
           }
         }
       },
@@ -14037,6 +15118,295 @@
           }
         }
       },
+      "RerankRequestModel_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "RerankRequestDocuments_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "RerankRequestDocuments_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+            }
+          }
+        }
+      },
+      "CompletionRequestModel_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CompletionRequestSafetyModel_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ChatCompletionRequestToolChoice_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "tool_name"
+          }
+        }
+      },
+      "AudioSpeechRequestModel_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "AudioTranscriptionRequestFile_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Audio file to transcribe",
+            "format": "binary"
+          }
+        }
+      },
+      "AudioTranscriptionRequestFile_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Public HTTPS URL to audio file",
+            "format": "uri"
+          }
+        }
+      },
+      "AudioTranscriptionRequestTimestampGranularities_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxItems": 2,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "enum": [
+                "segment",
+                "word"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "AudioTranslationRequestFile_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Audio file to translate",
+            "format": "binary"
+          }
+        }
+      },
+      "AudioTranslationRequestFile_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Public HTTP/HTTPS URL to audio file",
+            "format": "uri"
+          }
+        }
+      },
+      "AudioTranslationRequestTimestampGranularities_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxItems": 2,
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "enum": [
+                "segment",
+                "word"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "EmbeddingsRequestModel_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "EmbeddingsRequestInput_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "A string providing the text for the model to embed.",
+            "example": "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+          }
+        }
+      },
+      "EmbeddingsRequestInput_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "A string providing the text for the model to embed.",
+              "example": "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+            }
+          }
+        }
+      },
+      "FinetuneResponseBatchSize_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "FinetuneResponseTrainOnInputs_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "TrainingMethodSFTTrainOnInputs_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "VideoFrameImageInputFrame_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "VideoMediaSourceVideo_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ResponseFormatJsonSchemaJsonSchemaStrict_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "description": "Whether to enable strict schema adherence when generating the output.\nIf set to true, the model will always follow the exact schema defined\nin the `schema` field. Only a subset of JSON Schema is supported when\n`strict` is `true`. To learn more, read the [Structured Outputs\nguide](https://docs.together.ai/docs/json-mode).\n",
+            "default": false
+          }
+        }
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -14052,17 +15422,6 @@
           }
         }
       },
-      "FinetuneEventLevels_Wrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FinetuneEventLevels"
-          }
-        }
-      },
       "Error_Wrapper": {
         "required": [
           "value"
@@ -14071,17 +15430,6 @@
         "properties": {
           "value": {
             "type": "string"
-          }
-        }
-      },
-      "DeploymentStatus_Wrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/DeploymentStatus"
           }
         }
       }

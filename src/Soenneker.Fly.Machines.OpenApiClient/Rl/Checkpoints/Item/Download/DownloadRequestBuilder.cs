@@ -36,17 +36,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download
         /// <summary>
         /// Returns presigned URLs for downloading a checkpoint&apos;s model files. Only inference checkpoints support downloading.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointDownloadResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointDownloadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointDownloadResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointDownloadResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointDownloadResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointDownloadResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download
             {
                 { "XXX", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointDownloadResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointDownloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointDownloadResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointDownloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns presigned URLs for downloading a checkpoint&apos;s model files. Only inference checkpoints support downloading.
@@ -91,7 +91,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.Checkpoints.Item.Download
         public partial class DownloadRequestBuilderGetQueryParameters 
         {
             [QueryParameter("variant")]
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_CheckpointVariant? Variant { get; set; }
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.RLCheckpointVariant? Variant { get; set; }
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Content specifies the content configuration for this volume</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content? Content { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestContent? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content Content { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestContent Content { get; set; }
 #endif
         /// <summary>Name is the unique identifier for the volume within the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,8 +30,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType? Type { get; set; }
+        /// <summary>Type is the volume type (currently only &quot;readOnly&quot; is supported)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest"/> and sets the default values.
         /// </summary>
@@ -57,9 +63,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestContent>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestContent.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestType>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +75,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestContent>("content", Content);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

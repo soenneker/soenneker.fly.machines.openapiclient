@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponse_data? Data { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponseData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponse_data Data { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponseData Data { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponse_data>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponse_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponseData>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponseData.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponse_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ModelUploadSuccessResponseData>("data", Data);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

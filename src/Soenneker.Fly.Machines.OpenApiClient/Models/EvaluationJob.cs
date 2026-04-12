@@ -35,10 +35,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Results of the evaluation (when completed)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results? Results { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobResults? Results { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results Results { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobResults Results { get; set; }
 #endif
         /// <summary>Current status of the job</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_status? Status { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "owner_id", n => { OwnerId = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_parameters>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_parameters.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobResults>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobResults.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_status>(); } },
                 { "status_updates", n => { StatusUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobStatusUpdate>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobStatusUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_type>(); } },
@@ -108,128 +108,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("owner_id", OwnerId);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_parameters>("parameters", Parameters);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results>("results", Results);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobResults>("results", Results);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJobStatusUpdate>("status_updates", StatusUpdates);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("workflow_id", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EvaluationJob_results : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults? EvaluationClassifyResults { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults EvaluationClassifyResults { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults? EvaluationCompareResults { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults EvaluationCompareResults { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1? EvaluationJobResultsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1 EvaluationJobResultsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults? EvaluationScoreResults { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults EvaluationScoreResults { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob.EvaluationJob_results();
-                if("EvaluationClassifyResults".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EvaluationClassifyResults = new global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults();
-                }
-                else if("EvaluationCompareResults".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EvaluationCompareResults = new global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EvaluationJobResultsMember1 = new global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1();
-                }
-                else if("EvaluationScoreResults".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EvaluationScoreResults = new global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EvaluationClassifyResults != null)
-                {
-                    return EvaluationClassifyResults.GetFieldDeserializers();
-                }
-                else if(EvaluationCompareResults != null)
-                {
-                    return EvaluationCompareResults.GetFieldDeserializers();
-                }
-                else if(EvaluationJobResultsMember1 != null)
-                {
-                    return EvaluationJobResultsMember1.GetFieldDeserializers();
-                }
-                else if(EvaluationScoreResults != null)
-                {
-                    return EvaluationScoreResults.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EvaluationClassifyResults != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationClassifyResults>(null, EvaluationClassifyResults);
-                }
-                else if(EvaluationCompareResults != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationCompareResults>(null, EvaluationCompareResults);
-                }
-                else if(EvaluationJobResultsMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJob_resultsMember1>(null, EvaluationJobResultsMember1);
-                }
-                else if(EvaluationScoreResults != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults>(null, EvaluationScoreResults);
-                }
-            }
         }
     }
 }

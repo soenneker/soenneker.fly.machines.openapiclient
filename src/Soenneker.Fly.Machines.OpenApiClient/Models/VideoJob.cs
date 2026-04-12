@@ -22,10 +22,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Error payload that explains why generation failed, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_error? Error { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_error Error { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobError Error { get; set; }
 #endif
         /// <summary>Unique identifier for the video job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,10 +48,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Available upon completion, the outputs provides the cost charged and the hosted url to access the video</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_outputs? Outputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobOutputs? Outputs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_outputs Outputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobOutputs Outputs { get; set; }
 #endif
         /// <summary>Duration of the generated clip in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,11 +98,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "completed_at", n => { CompletedAt = n.GetDoubleValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDoubleValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_error>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_error.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobError>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobError.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_object>(); } },
-                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_outputs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_outputs.CreateFromDiscriminatorValue); } },
+                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobOutputs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobOutputs.CreateFromDiscriminatorValue); } },
                 { "seconds", n => { Seconds = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoStatus>(); } },
@@ -117,11 +117,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("completed_at", CompletedAt);
             writer.WriteDoubleValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_error>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobError>("error", Error);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_object>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJob_outputs>("outputs", Outputs);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoJobOutputs>("outputs", Outputs);
             writer.WriteStringValue("seconds", Seconds);
             writer.WriteStringValue("size", Size);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoStatus>("status", Status);

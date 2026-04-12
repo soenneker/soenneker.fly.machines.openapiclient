@@ -36,18 +36,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Hardware
         /// <summary>
         /// Returns a list of available hardware configurations for deploying models. When a model parameter is provided, it returns only hardware configurations compatible with that model, including their current availability status.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder.HardwareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder.HardwareRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder.HardwareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware200> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder.HardwareRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Hardware
                 { "403", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware_200>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware200>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ListHardware200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of available hardware configurations for deploying models. When a model parameter is provided, it returns only hardware configurations compatible with that model, including their current availability status.

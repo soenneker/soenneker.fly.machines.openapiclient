@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The aggregated_scores property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults_aggregated_scores? AggregatedScores { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResultsAggregatedScores? AggregatedScores { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults_aggregated_scores AggregatedScores { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResultsAggregatedScores AggregatedScores { get; set; }
 #endif
         /// <summary>number of failed samples generated from model</summary>
         public double? FailedSamples { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregated_scores", n => { AggregatedScores = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults_aggregated_scores>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults_aggregated_scores.CreateFromDiscriminatorValue); } },
+                { "aggregated_scores", n => { AggregatedScores = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResultsAggregatedScores>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResultsAggregatedScores.CreateFromDiscriminatorValue); } },
                 { "failed_samples", n => { FailedSamples = n.GetDoubleValue(); } },
                 { "generation_fail_count", n => { GenerationFailCount = n.GetDoubleValue(); } },
                 { "invalid_score_count", n => { InvalidScoreCount = n.GetDoubleValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResults_aggregated_scores>("aggregated_scores", AggregatedScores);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationScoreResultsAggregatedScores>("aggregated_scores", AggregatedScores);
             writer.WriteDoubleValue("failed_samples", FailedSamples);
             writer.WriteDoubleValue("generation_fail_count", GenerationFailCount);
             writer.WriteDoubleValue("invalid_score_count", InvalidScoreCount);

@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>&quot;Autoscaling configuration. Example: {\&quot;metric\&quot;: \&quot;QueueBacklogPerWorker\&quot;, \&quot;target\&quot;: 1.01} to scale based on queue backlog. Omit or set to null to disable autoscaling&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling? Autoscaling { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequestAutoscaling? Autoscaling { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling Autoscaling { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequestAutoscaling Autoscaling { get; set; }
 #endif
         /// <summary>Command overrides the container&apos;s ENTRYPOINT. Provide as an array (e.g., [&quot;/bin/sh&quot;, &quot;-c&quot;])</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "args", n => { Args = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "autoscaling", n => { Autoscaling = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling.CreateFromDiscriminatorValue); } },
+                { "autoscaling", n => { Autoscaling = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequestAutoscaling>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequestAutoscaling.CreateFromDiscriminatorValue); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cpu", n => { Cpu = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -157,7 +157,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("args", Args);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling>("autoscaling", Autoscaling);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequestAutoscaling>("autoscaling", Autoscaling);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteDoubleValue("cpu", Cpu);
             writer.WriteStringValue("description", Description);
@@ -175,101 +175,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("termination_grace_period_seconds", TerminationGracePeriodSeconds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeMount>("volumes", Volumes);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CreateDeploymentRequest_autoscaling : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig? CustomMetricAutoscalingConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig CustomMetricAutoscalingConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig? HTTPAutoscalingConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig HTTPAutoscalingConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig? QueueAutoscalingConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig QueueAutoscalingConfig { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest.CreateDeploymentRequest_autoscaling();
-                if("CustomMetricAutoscalingConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CustomMetricAutoscalingConfig = new global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig();
-                }
-                else if("HTTPAutoscalingConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.HTTPAutoscalingConfig = new global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig();
-                }
-                else if("QueueAutoscalingConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.QueueAutoscalingConfig = new global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CustomMetricAutoscalingConfig != null)
-                {
-                    return CustomMetricAutoscalingConfig.GetFieldDeserializers();
-                }
-                else if(HTTPAutoscalingConfig != null)
-                {
-                    return HTTPAutoscalingConfig.GetFieldDeserializers();
-                }
-                else if(QueueAutoscalingConfig != null)
-                {
-                    return QueueAutoscalingConfig.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CustomMetricAutoscalingConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CustomMetricAutoscalingConfig>(null, CustomMetricAutoscalingConfig);
-                }
-                else if(HTTPAutoscalingConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.HTTPAutoscalingConfig>(null, HTTPAutoscalingConfig);
-                }
-                else if(QueueAutoscalingConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.QueueAutoscalingConfig>(null, QueueAutoscalingConfig);
-                }
-            }
         }
     }
 }

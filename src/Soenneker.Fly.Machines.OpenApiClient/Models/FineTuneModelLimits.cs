@@ -18,18 +18,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Limits for full training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_full_training? FullTraining { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsFullTraining? FullTraining { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_full_training FullTraining { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsFullTraining FullTraining { get; set; }
 #endif
         /// <summary>Limits for LoRA training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_lora_training? LoraTraining { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsLoraTraining? LoraTraining { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_lora_training LoraTraining { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsLoraTraining LoraTraining { get; set; }
 #endif
         /// <summary>Maximum learning rate.</summary>
         public double? MaxLearningRate { get; set; }
@@ -80,8 +80,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "full_training", n => { FullTraining = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_full_training>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_full_training.CreateFromDiscriminatorValue); } },
-                { "lora_training", n => { LoraTraining = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_lora_training>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_lora_training.CreateFromDiscriminatorValue); } },
+                { "full_training", n => { FullTraining = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsFullTraining>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsFullTraining.CreateFromDiscriminatorValue); } },
+                { "lora_training", n => { LoraTraining = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsLoraTraining>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsLoraTraining.CreateFromDiscriminatorValue); } },
                 { "max_learning_rate", n => { MaxLearningRate = n.GetDoubleValue(); } },
                 { "max_num_epochs", n => { MaxNumEpochs = n.GetIntValue(); } },
                 { "max_num_evals", n => { MaxNumEvals = n.GetIntValue(); } },
@@ -100,8 +100,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_full_training>("full_training", FullTraining);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimits_lora_training>("lora_training", LoraTraining);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsFullTraining>("full_training", FullTraining);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneModelLimitsLoraTraining>("lora_training", LoraTraining);
             writer.WriteDoubleValue("max_learning_rate", MaxLearningRate);
             writer.WriteIntValue("max_num_epochs", MaxNumEpochs);
             writer.WriteIntValue("max_num_evals", MaxNumEvals);

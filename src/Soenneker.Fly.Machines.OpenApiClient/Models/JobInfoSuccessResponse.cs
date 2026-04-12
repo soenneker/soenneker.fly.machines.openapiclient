@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_args? Args { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponseArgs? Args { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_args Args { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponseArgs Args { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "args", n => { Args = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_args>(global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_args.CreateFromDiscriminatorValue); } },
+                { "args", n => { Args = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponseArgs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponseArgs.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "job_id", n => { JobId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_status>(); } },
@@ -93,7 +93,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_args>("args", Args);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponseArgs>("args", Args);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("job_id", JobId);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.JobInfoSuccessResponse_status>("status", Status);

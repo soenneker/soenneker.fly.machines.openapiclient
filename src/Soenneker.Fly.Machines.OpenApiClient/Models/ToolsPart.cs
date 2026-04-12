@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The function property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart_function? Function { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPartFunction? Function { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart_function Function { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPartFunction Function { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "function", n => { Function = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart_function>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart_function.CreateFromDiscriminatorValue); } },
+                { "function", n => { Function = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPartFunction>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPartFunction.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart_function>("function", Function);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPartFunction>("function", Function);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

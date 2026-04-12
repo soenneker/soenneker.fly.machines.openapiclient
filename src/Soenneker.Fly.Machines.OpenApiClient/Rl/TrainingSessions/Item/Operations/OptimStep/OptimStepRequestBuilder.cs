@@ -49,18 +49,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.TrainingSessions.Item.Operatio
         /// <summary>
         /// Submits an optimizer step operation that will asynchronously apply accumulated gradients to update model parameters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepOperation"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepOperation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepOperation?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepOperation?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepOperation> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepOperation> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -69,7 +69,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.TrainingSessions.Item.Operatio
             {
                 { "XXX", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorData.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepOperation>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepOperation>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Submits an optimizer step operation that will asynchronously apply accumulated gradients to update model parameters.
@@ -79,11 +79,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Rl.TrainingSessions.Item.Operatio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.RL_OptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLOptimStepBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

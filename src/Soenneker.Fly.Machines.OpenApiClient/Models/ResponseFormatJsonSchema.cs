@@ -18,10 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Structured Outputs configuration options, including a JSON Schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_json_schema? JsonSchema { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema? JsonSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_json_schema JsonSchema { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema JsonSchema { get; set; }
 #endif
         /// <summary>The type of response format being defined. Always `json_schema`.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_type? Type { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_json_schema>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_json_schema.CreateFromDiscriminatorValue); } },
+                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_type>(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_json_schema>("json_schema", JsonSchema);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema>("json_schema", JsonSchema);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
