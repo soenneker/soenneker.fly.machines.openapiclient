@@ -15,5 +15,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning disable CS1591
         ON_DEMAND,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SCHEDULED_CAPACITY")]
+        #pragma warning disable CS1591
+        SCHEDULED_CAPACITY,
+        #pragma warning restore CS1591
     }
 }

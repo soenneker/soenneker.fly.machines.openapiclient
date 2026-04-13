@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Optional param to specify where to insert the frame. If this is omitted, the following heuristics are applied:- frame_images size is one, frame is first.- If size is two, frames are first and last.- If size is larger, frames are first, last and evenly spaced between.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInputFrame? Frame { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Frame { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInputFrame Frame { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Frame { get; set; }
 #endif
         /// <summary>URL path to hosted image that is used for a frame</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frame", n => { Frame = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInputFrame>(global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInputFrame.CreateFromDiscriminatorValue); } },
+                { "frame", n => { Frame = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "input_image", n => { InputImage = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VideoFrameImageInputFrame>("frame", Frame);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("frame", Frame);
             writer.WriteStringValue("input_image", InputImage);
             writer.WriteAdditionalData(AdditionalData);
         }

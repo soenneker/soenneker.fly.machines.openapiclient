@@ -15,8 +15,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether GPU cluster should be auto-scaled based on the workload. By default, it is not auto-scaled.</summary>
+        public bool? AutoScaled { get; set; }
+        /// <summary>Maximum number of GPUs to which the cluster can be auto-scaled up. This field is required if auto_scaled is true.</summary>
+        public int? AutoScaleMaxGpus { get; set; }
         /// <summary>RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.ON_DEMAND billing types will give you ownership of the cluster until you delete it.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_billing_type? BillingType { get; set; }
+        /// <summary>ID of the capacity pool to use for the cluster. This field is optional and only applicable if the cluster is created from a capacity pool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CapacityPoolId { get; set; }
+#nullable restore
+#else
+        public string CapacityPoolId { get; set; }
+#endif
         /// <summary>Name of the GPU cluster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,14 +39,32 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Type of cluster to create.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_cluster_type? ClusterType { get; set; }
-        /// <summary>NVIDIA driver version to use in the cluster.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_driver_version? DriverVersion { get; set; }
+        /// <summary>CUDA version for this cluster. For example, 12.5</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CudaVersion { get; set; }
+#nullable restore
+#else
+        public string CudaVersion { get; set; }
+#endif
         /// <summary>Duration in days to keep the cluster running.</summary>
         public int? DurationDays { get; set; }
+        /// <summary>Whether automated GPU node failover should be enabled for this cluster. By default, it is disabled.</summary>
+        public bool? GpuNodeFailoverEnabled { get; set; }
         /// <summary>Type of GPU to use in the cluster</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_gpu_type? GpuType { get; set; }
+        /// <summary>Whether to install Traefik ingress controller in the cluster. This field is only applicable for Kubernetes clusters and is false by default.</summary>
+        public bool? InstallTraefik { get; set; }
         /// <summary>Number of GPUs to allocate in the cluster. This must be multiple of 8. For example, 8, 16 or 24</summary>
         public int? NumGpus { get; set; }
+        /// <summary>Nvidia driver version for this cluster. For example, 550. Only some combination of cuda_version and nvidia_driver_version are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NvidiaDriverVersion { get; set; }
+#nullable restore
+#else
+        public string NvidiaDriverVersion { get; set; }
+#endif
         /// <summary>Region to create the GPU cluster in. Usable regions can be found from `client.clusters.list_regions()`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,6 +73,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
+        /// <summary>Reservation end time of the cluster. This field is required for SCHEDULED billing to specify the reservation end time for the cluster.</summary>
+        public DateTimeOffset? ReservationEndTime { get; set; }
+        /// <summary>Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster will be provisioned immediately.</summary>
+        public DateTimeOffset? ReservationStartTime { get; set; }
         /// <summary>The shared_volume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +85,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClustersSharedVolumeCreateRequest SharedVolume { get; set; }
 #endif
+        /// <summary>Custom Slurm image for Slurm clusters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SlurmImage { get; set; }
+#nullable restore
+#else
+        public string SlurmImage { get; set; }
+#endif
+        /// <summary>Shared memory size in GiB for Slurm cluster. This field is required if cluster_type is SLURM.</summary>
+        public int? SlurmShmSizeGib { get; set; }
         /// <summary>ID of an existing volume to use with the cluster creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,15 +128,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_scale_max_gpus", n => { AutoScaleMaxGpus = n.GetIntValue(); } },
+                { "auto_scaled", n => { AutoScaled = n.GetBoolValue(); } },
                 { "billing_type", n => { BillingType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_billing_type>(); } },
+                { "capacity_pool_id", n => { CapacityPoolId = n.GetStringValue(); } },
                 { "cluster_name", n => { ClusterName = n.GetStringValue(); } },
                 { "cluster_type", n => { ClusterType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_cluster_type>(); } },
-                { "driver_version", n => { DriverVersion = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_driver_version>(); } },
+                { "cuda_version", n => { CudaVersion = n.GetStringValue(); } },
                 { "duration_days", n => { DurationDays = n.GetIntValue(); } },
+                { "gpu_node_failover_enabled", n => { GpuNodeFailoverEnabled = n.GetBoolValue(); } },
                 { "gpu_type", n => { GpuType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_gpu_type>(); } },
+                { "install_traefik", n => { InstallTraefik = n.GetBoolValue(); } },
                 { "num_gpus", n => { NumGpus = n.GetIntValue(); } },
+                { "nvidia_driver_version", n => { NvidiaDriverVersion = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "reservation_end_time", n => { ReservationEndTime = n.GetDateTimeOffsetValue(); } },
+                { "reservation_start_time", n => { ReservationStartTime = n.GetDateTimeOffsetValue(); } },
                 { "shared_volume", n => { SharedVolume = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClustersSharedVolumeCreateRequest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClustersSharedVolumeCreateRequest.CreateFromDiscriminatorValue); } },
+                { "slurm_image", n => { SlurmImage = n.GetStringValue(); } },
+                { "slurm_shm_size_gib", n => { SlurmShmSizeGib = n.GetIntValue(); } },
                 { "volume_id", n => { VolumeId = n.GetStringValue(); } },
             };
         }
@@ -103,15 +157,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_scaled", AutoScaled);
+            writer.WriteIntValue("auto_scale_max_gpus", AutoScaleMaxGpus);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_billing_type>("billing_type", BillingType);
+            writer.WriteStringValue("capacity_pool_id", CapacityPoolId);
             writer.WriteStringValue("cluster_name", ClusterName);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_cluster_type>("cluster_type", ClusterType);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_driver_version>("driver_version", DriverVersion);
+            writer.WriteStringValue("cuda_version", CudaVersion);
             writer.WriteIntValue("duration_days", DurationDays);
+            writer.WriteBoolValue("gpu_node_failover_enabled", GpuNodeFailoverEnabled);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_gpu_type>("gpu_type", GpuType);
+            writer.WriteBoolValue("install_traefik", InstallTraefik);
             writer.WriteIntValue("num_gpus", NumGpus);
+            writer.WriteStringValue("nvidia_driver_version", NvidiaDriverVersion);
             writer.WriteStringValue("region", Region);
+            writer.WriteDateTimeOffsetValue("reservation_end_time", ReservationEndTime);
+            writer.WriteDateTimeOffsetValue("reservation_start_time", ReservationStartTime);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClustersSharedVolumeCreateRequest>("shared_volume", SharedVolume);
+            writer.WriteStringValue("slurm_image", SlurmImage);
+            writer.WriteIntValue("slurm_shm_size_gib", SlurmShmSizeGib);
             writer.WriteStringValue("volume_id", VolumeId);
             writer.WriteAdditionalData(AdditionalData);
         }

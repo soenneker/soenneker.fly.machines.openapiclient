@@ -18,10 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>CUDA driver version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CudaDriverVersion { get; set; }
+        public string? CudaVersion { get; set; }
 #nullable restore
 #else
-        public string CudaDriverVersion { get; set; }
+        public string CudaVersion { get; set; }
 #endif
         /// <summary>NVIDIA driver version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cuda_driver_version", n => { CudaDriverVersion = n.GetStringValue(); } },
+                { "cuda_version", n => { CudaVersion = n.GetStringValue(); } },
                 { "nvidia_driver_version", n => { NvidiaDriverVersion = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cuda_driver_version", CudaDriverVersion);
+            writer.WriteStringValue("cuda_version", CudaVersion);
             writer.WriteStringValue("nvidia_driver_version", NvidiaDriverVersion);
             writer.WriteAdditionalData(AdditionalData);
         }

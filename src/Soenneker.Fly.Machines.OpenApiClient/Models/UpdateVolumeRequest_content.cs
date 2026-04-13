@@ -7,20 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>
+    /// Content specifies the new content that will be preloaded to this volume
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ChatCompletionChunkUsage : global::Soenneker.Fly.Machines.OpenApiClient.Models.UsageData, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdateVolumeRequest_content : global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeContentRequest, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChunkUsage"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChunkUsage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionChunkUsage();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content();
         }
         /// <summary>
         /// The deserialization information for the current model

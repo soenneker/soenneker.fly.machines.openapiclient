@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The batch_size property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseBatchSize? BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? BatchSize { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseBatchSize BatchSize { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch BatchSize { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -155,26 +155,26 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The training_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingMethod? TrainingMethod { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method? TrainingMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingMethod TrainingMethod { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method TrainingMethod { get; set; }
 #endif
         /// <summary>The training_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingType? TrainingType { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type? TrainingType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingType TrainingType { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type TrainingType { get; set; }
 #endif
         /// <summary>The train_on_inputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainOnInputs? TrainOnInputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? TrainOnInputs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainOnInputs TrainOnInputs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch TrainOnInputs { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -231,7 +231,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseBatchSize>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseBatchSize.CreateFromDiscriminatorValue); } },
+                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "epochs_completed", n => { EpochsCompleted = n.GetIntValue(); } },
                 { "eval_steps", n => { EvalSteps = n.GetIntValue(); } },
@@ -258,10 +258,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneJobStatus>(); } },
                 { "token_count", n => { TokenCount = n.GetIntValue(); } },
                 { "total_price", n => { TotalPrice = n.GetIntValue(); } },
-                { "train_on_inputs", n => { TrainOnInputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainOnInputs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainOnInputs.CreateFromDiscriminatorValue); } },
+                { "train_on_inputs", n => { TrainOnInputs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "training_file", n => { TrainingFile = n.GetStringValue(); } },
-                { "training_method", n => { TrainingMethod = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingMethod>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingMethod.CreateFromDiscriminatorValue); } },
-                { "training_type", n => { TrainingType = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingType>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingType.CreateFromDiscriminatorValue); } },
+                { "training_method", n => { TrainingMethod = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method.CreateFromDiscriminatorValue); } },
+                { "training_type", n => { TrainingType = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type.CreateFromDiscriminatorValue); } },
                 { "trainingfile_numlines", n => { TrainingfileNumlines = n.GetIntValue(); } },
                 { "trainingfile_size", n => { TrainingfileSize = n.GetIntValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -279,7 +279,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseBatchSize>("batch_size", BatchSize);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("batch_size", BatchSize);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("epochs_completed", EpochsCompleted);
             writer.WriteIntValue("eval_steps", EvalSteps);
@@ -309,9 +309,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("training_file", TrainingFile);
             writer.WriteIntValue("trainingfile_numlines", TrainingfileNumlines);
             writer.WriteIntValue("trainingfile_size", TrainingfileSize);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingMethod>("training_method", TrainingMethod);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainingType>("training_type", TrainingType);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponseTrainOnInputs>("train_on_inputs", TrainOnInputs);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method>("training_method", TrainingMethod);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type>("training_type", TrainingType);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("train_on_inputs", TrainOnInputs);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("validation_file", ValidationFile);
             writer.WriteStringValue("wandb_project_name", WandbProjectName);
@@ -319,6 +319,156 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteDoubleValue("warmup_ratio", WarmupRatio);
             writer.WriteFloatValue("weight_decay", WeightDecay);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FinetuneResponse_training_method : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO? TrainingMethodDPO { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO TrainingMethodDPO { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT? TrainingMethodSFT { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT TrainingMethodSFT { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_method();
+                if("TrainingMethodDPO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.TrainingMethodDPO = new global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO();
+                }
+                else if("TrainingMethodSFT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.TrainingMethodSFT = new global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(TrainingMethodDPO != null)
+                {
+                    return TrainingMethodDPO.GetFieldDeserializers();
+                }
+                else if(TrainingMethodSFT != null)
+                {
+                    return TrainingMethodSFT.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(TrainingMethodDPO != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodDPO>(null, TrainingMethodDPO);
+                }
+                else if(TrainingMethodSFT != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT>(null, TrainingMethodSFT);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FinetuneResponse_training_type : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType? FullTrainingType { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType FullTrainingType { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType? LoRATrainingType { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType LoRATrainingType { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneResponse.FinetuneResponse_training_type();
+                if("FullTrainingType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FullTrainingType = new global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType();
+                }
+                else if("LoRATrainingType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.LoRATrainingType = new global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(FullTrainingType != null)
+                {
+                    return FullTrainingType.GetFieldDeserializers();
+                }
+                else if(LoRATrainingType != null)
+                {
+                    return LoRATrainingType.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(FullTrainingType != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FullTrainingType>(null, FullTrainingType);
+                }
+                else if(LoRATrainingType != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.LoRATrainingType>(null, LoRATrainingType);
+                }
+            }
         }
     }
 }

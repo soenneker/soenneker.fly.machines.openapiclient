@@ -14,6 +14,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The capacity_pool_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CapacityPoolId { get; set; }
+#nullable restore
+#else
+        public string CapacityPoolId { get; set; }
+#endif
         /// <summary>The cluster_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,8 +48,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterControlPlaneNode> ControlPlaneNodes { get; set; }
 #endif
-        /// <summary>The driver_version property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_driver_version? DriverVersion { get; set; }
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The cuda_version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CudaVersion { get; set; }
+#nullable restore
+#else
+        public string CudaVersion { get; set; }
+#endif
         /// <summary>The duration_hours property</summary>
         public int? DurationHours { get; set; }
         /// <summary>The gpu_type property</summary>
@@ -54,6 +70,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterGPUWorkerNode> GpuWorkerNodes { get; set; }
 #endif
+        /// <summary>The install_traefik property</summary>
+        public bool? InstallTraefik { get; set; }
         /// <summary>The kube_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +82,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>The num_gpus property</summary>
         public int? NumGpus { get; set; }
+        /// <summary>The nvidia_driver_version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NvidiaDriverVersion { get; set; }
+#nullable restore
+#else
+        public string NvidiaDriverVersion { get; set; }
+#endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +98,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
+        /// <summary>The reservation_end_time property</summary>
+        public DateTimeOffset? ReservationEndTime { get; set; }
+        /// <summary>The reservation_start_time property</summary>
+        public DateTimeOffset? ReservationStartTime { get; set; }
+        /// <summary>The slurm_shm_size_gib property</summary>
+        public int? SlurmShmSizeGib { get; set; }
         /// <summary>Current status of the GPU cluster.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_status? Status { get; set; }
         /// <summary>The volumes property</summary>
@@ -107,17 +139,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "capacity_pool_id", n => { CapacityPoolId = n.GetStringValue(); } },
                 { "cluster_id", n => { ClusterId = n.GetStringValue(); } },
                 { "cluster_name", n => { ClusterName = n.GetStringValue(); } },
                 { "cluster_type", n => { ClusterType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_cluster_type>(); } },
                 { "control_plane_nodes", n => { ControlPlaneNodes = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterControlPlaneNode>(global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterControlPlaneNode.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "driver_version", n => { DriverVersion = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_driver_version>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "cuda_version", n => { CudaVersion = n.GetStringValue(); } },
                 { "duration_hours", n => { DurationHours = n.GetIntValue(); } },
                 { "gpu_type", n => { GpuType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_gpu_type>(); } },
                 { "gpu_worker_nodes", n => { GpuWorkerNodes = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterGPUWorkerNode>(global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterGPUWorkerNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "install_traefik", n => { InstallTraefik = n.GetBoolValue(); } },
                 { "kube_config", n => { KubeConfig = n.GetStringValue(); } },
                 { "num_gpus", n => { NumGpus = n.GetIntValue(); } },
+                { "nvidia_driver_version", n => { NvidiaDriverVersion = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "reservation_end_time", n => { ReservationEndTime = n.GetDateTimeOffsetValue(); } },
+                { "reservation_start_time", n => { ReservationStartTime = n.GetDateTimeOffsetValue(); } },
+                { "slurm_shm_size_gib", n => { SlurmShmSizeGib = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_status>(); } },
                 { "volumes", n => { Volumes = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterVolume>(global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterVolume.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -129,17 +168,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("capacity_pool_id", CapacityPoolId);
             writer.WriteStringValue("cluster_id", ClusterId);
             writer.WriteStringValue("cluster_name", ClusterName);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_cluster_type>("cluster_type", ClusterType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterControlPlaneNode>("control_plane_nodes", ControlPlaneNodes);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_driver_version>("driver_version", DriverVersion);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("cuda_version", CudaVersion);
             writer.WriteIntValue("duration_hours", DurationHours);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_gpu_type>("gpu_type", GpuType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterGPUWorkerNode>("gpu_worker_nodes", GpuWorkerNodes);
+            writer.WriteBoolValue("install_traefik", InstallTraefik);
             writer.WriteStringValue("kube_config", KubeConfig);
             writer.WriteIntValue("num_gpus", NumGpus);
+            writer.WriteStringValue("nvidia_driver_version", NvidiaDriverVersion);
             writer.WriteStringValue("region", Region);
+            writer.WriteDateTimeOffsetValue("reservation_end_time", ReservationEndTime);
+            writer.WriteDateTimeOffsetValue("reservation_start_time", ReservationStartTime);
+            writer.WriteIntValue("slurm_shm_size_gib", SlurmShmSizeGib);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterInfo_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterVolume>("volumes", Volumes);
             writer.WriteAdditionalData(AdditionalData);

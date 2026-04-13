@@ -2,44 +2,45 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Fly.Machines.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Fly.Machines.OpenApiClient.Models
+namespace Soenneker.Fly.Machines.OpenApiClient.Hardware
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FineTuneEventLevel : IAdditionalDataHolder, IParsable
+    public partial class HardwareGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.HardwareWithStatus>? Data { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.HardwareWithStatus> Data { get; set; }
 #endif
-        /// <summary>The value property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels? Value { get; set; }
+        /// <summary>The object type, which is always `list`.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse_object? Object { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEventLevel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse"/> and sets the default values.
         /// </summary>
-        public FineTuneEventLevel()
+        public HardwareGetResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEventLevel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEventLevel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FineTuneEventLevel();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +50,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels>(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.HardwareWithStatus>(global::Soenneker.Fly.Machines.OpenApiClient.Models.HardwareWithStatus.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse_object>(); } },
             };
         }
         /// <summary>
@@ -60,8 +61,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FinetuneEventLevels>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.HardwareWithStatus>("data", Data);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareGetResponse_object>("object", Object);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

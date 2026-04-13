@@ -18,6 +18,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterUpdateRequest_cluster_type? ClusterType { get; set; }
         /// <summary>Number of GPUs to allocate in the cluster. This must be multiple of 8. For example, 8, 16 or 24</summary>
         public int? NumGpus { get; set; }
+        /// <summary>Timestamp at which the cluster should be decommissioned. Only accepted for prepaid clusters.</summary>
+        public DateTimeOffset? ReservationEndTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -45,6 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "cluster_type", n => { ClusterType = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterUpdateRequest_cluster_type>(); } },
                 { "num_gpus", n => { NumGpus = n.GetIntValue(); } },
+                { "reservation_end_time", n => { ReservationEndTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -56,6 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterUpdateRequest_cluster_type>("cluster_type", ClusterType);
             writer.WriteIntValue("num_gpus", NumGpus);
+            writer.WriteDateTimeOffsetValue("reservation_end_time", ReservationEndTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

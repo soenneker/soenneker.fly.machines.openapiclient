@@ -22,6 +22,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string HostName { get; set; }
 #endif
+        /// <summary>The instance_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InstanceId { get; set; }
+#nullable restore
+#else
+        public string InstanceId { get; set; }
+#endif
         /// <summary>The memory_gib property</summary>
         public double? MemoryGib { get; set; }
         /// <summary>The networks property</summary>
@@ -86,6 +94,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "host_name", n => { HostName = n.GetStringValue(); } },
+                { "instance_id", n => { InstanceId = n.GetStringValue(); } },
                 { "memory_gib", n => { MemoryGib = n.GetDoubleValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
@@ -103,6 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host_name", HostName);
+            writer.WriteStringValue("instance_id", InstanceId);
             writer.WriteDoubleValue("memory_gib", MemoryGib);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteStringValue("node_id", NodeId);

@@ -87,10 +87,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>&quot;An object specifying the format that the model must output.Setting to `{ \&quot;type\&quot;: \&quot;json_schema\&quot;, \&quot;json_schema\&quot;: {...} }` enablesStructured Outputs which ensures the model will match your supplied JSONschema. Learn more in the [Structured Outputsguide](https://docs.together.ai/docs/json-mode).Setting to `{ \&quot;type\&quot;: \&quot;json_object\&quot; }` enables the older JSON mode, whichensures the message the model generates is valid JSON. Using `json_schema`is preferred for models that support it.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestResponseFormat? ResponseFormat { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format? ResponseFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestResponseFormat ResponseFormat { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format ResponseFormat { get; set; }
 #endif
         /// <summary>The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,10 +117,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestToolChoice? ToolChoice { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice? ToolChoice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestToolChoice ToolChoice { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice ToolChoice { get; set; }
 #endif
         /// <summary>A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -177,13 +177,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "reasoning", n => { Reasoning = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestReasoning>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestReasoning.CreateFromDiscriminatorValue); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest_reasoning_effort>(); } },
                 { "repetition_penalty", n => { RepetitionPenalty = n.GetDoubleValue(); } },
-                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestResponseFormat>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestResponseFormat.CreateFromDiscriminatorValue); } },
+                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format.CreateFromDiscriminatorValue); } },
                 { "safety_model", n => { SafetyModel = n.GetStringValue(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "stop", n => { Stop = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "temperature", n => { Temperature = n.GetFloatValue(); } },
-                { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestToolChoice>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestToolChoice.CreateFromDiscriminatorValue); } },
+                { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice.CreateFromDiscriminatorValue); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
                 { "top_p", n => { TopP = n.GetFloatValue(); } },
@@ -213,17 +213,158 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestReasoning>("reasoning", Reasoning);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest_reasoning_effort>("reasoning_effort", ReasoningEffort);
             writer.WriteDoubleValue("repetition_penalty", RepetitionPenalty);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestResponseFormat>("response_format", ResponseFormat);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format>("response_format", ResponseFormat);
             writer.WriteStringValue("safety_model", SafetyModel);
             writer.WriteIntValue("seed", Seed);
             writer.WriteCollectionOfPrimitiveValues<string>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteFloatValue("temperature", Temperature);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequestToolChoice>("tool_choice", ToolChoice);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice>("tool_choice", ToolChoice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolsPart>("tools", Tools);
             writer.WriteIntValue("top_k", TopK);
             writer.WriteFloatValue("top_p", TopP);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatText"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChatCompletionRequest_response_format : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject? ResponseFormatJsonObject { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject ResponseFormatJsonObject { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema? ResponseFormatJsonSchema { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema ResponseFormatJsonSchema { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatText"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatText? ResponseFormatText { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatText ResponseFormatText { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_response_format();
+                result.ResponseFormatJsonObject = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject();
+                result.ResponseFormatJsonSchema = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchema();
+                result.ResponseFormatText = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatText();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ResponseFormatJsonObject != null || ResponseFormatJsonSchema != null || ResponseFormatText != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ResponseFormatJsonObject, ResponseFormatJsonSchema, ResponseFormatText);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonObject>(null, ResponseFormatJsonObject, ResponseFormatJsonSchema, ResponseFormatText);
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice"/>, <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChatCompletionRequest_tool_choice : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice? ToolChoice { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice ToolChoice { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ChatCompletionRequest.ChatCompletionRequest_tool_choice();
+                if("ToolChoice".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ToolChoice = new global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice();
+                }
+                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UnionBranch = new global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ToolChoice != null)
+                {
+                    return ToolChoice.GetFieldDeserializers();
+                }
+                else if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(ToolChoice != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ToolChoice>(null, ToolChoice);
+                }
+                else if(UnionBranch != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
+                }
+            }
         }
     }
 }

@@ -17,18 +17,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestInput? Input { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Input { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestInput Input { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Input { get; set; }
 #endif
         /// <summary>The name of the embedding model to use.&lt;br&gt; &lt;br&gt; [See all of Together AI&apos;s embedding models](https://docs.together.ai/docs/serverless-models#embedding-models)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestModel? Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestModel Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Model { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequest"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestInput>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestInput.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestModel>(global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestModel.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EmbeddingsRequestModel>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("model", Model);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

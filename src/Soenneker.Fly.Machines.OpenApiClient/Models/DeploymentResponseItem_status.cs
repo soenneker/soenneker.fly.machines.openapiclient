@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Status represents the overall status of the deployment (e.g., Updating, Scaling, Ready, Failed)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum DeploymentStatus
-    #pragma warning restore CS1591
+    public enum DeploymentResponseItem_status
     {
         [EnumMember(Value = "Updating")]
         #pragma warning disable CS1591

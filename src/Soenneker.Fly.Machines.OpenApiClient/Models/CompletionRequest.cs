@@ -35,10 +35,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The name of the model to query.&lt;br&gt; &lt;br&gt; [See all of Together AI&apos;s chat models](https://docs.together.ai/docs/serverless-models#chat-models)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestModel? Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestModel Model { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Model { get; set; }
 #endif
         /// <summary>The number of completions to generate for each prompt.</summary>
         public int? N { get; set; }
@@ -57,10 +57,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestSafetyModel? SafetyModel { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? SafetyModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestSafetyModel SafetyModel { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch SafetyModel { get; set; }
 #endif
         /// <summary>Seed value for reproducibility.</summary>
         public int? Seed { get; set; }
@@ -111,12 +111,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "logprobs", n => { Logprobs = n.GetIntValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "min_p", n => { MinP = n.GetFloatValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestModel>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "n", n => { N = n.GetIntValue(); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetFloatValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "repetition_penalty", n => { RepetitionPenalty = n.GetFloatValue(); } },
-                { "safety_model", n => { SafetyModel = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestSafetyModel>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestSafetyModel.CreateFromDiscriminatorValue); } },
+                { "safety_model", n => { SafetyModel = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "stop", n => { Stop = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
@@ -138,12 +138,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("logprobs", Logprobs);
             writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteFloatValue("min_p", MinP);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestModel>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("model", Model);
             writer.WriteIntValue("n", N);
             writer.WriteFloatValue("presence_penalty", PresencePenalty);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteFloatValue("repetition_penalty", RepetitionPenalty);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequestSafetyModel>("safety_model", SafetyModel);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("safety_model", SafetyModel);
             writer.WriteIntValue("seed", Seed);
             writer.WriteCollectionOfPrimitiveValues<string>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);

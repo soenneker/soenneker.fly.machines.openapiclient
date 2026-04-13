@@ -42,10 +42,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The strict property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchemaStrict? Strict { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_strict? Strict { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchemaStrict Strict { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_strict Strict { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_schema>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_schema.CreateFromDiscriminatorValue); } },
-                { "strict", n => { Strict = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchemaStrict>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchemaStrict.CreateFromDiscriminatorValue); } },
+                { "strict", n => { Strict = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_strict>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_strict.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_schema>("schema", Schema);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchemaStrict>("strict", Strict);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ResponseFormatJsonSchemaJsonSchema_strict>("strict", Strict);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
