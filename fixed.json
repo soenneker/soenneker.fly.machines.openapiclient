@@ -9331,6 +9331,10 @@
             "type": "boolean",
             "description": "Whether sequence packing is being used for training."
           },
+          "max_seq_length": {
+            "type": "integer",
+            "description": "Maximum sequence length to use for training."
+          },
           "model": {
             "type": "string",
             "description": "Base model used for fine-tuning"
@@ -13793,6 +13797,10 @@
             "type": "boolean",
             "description": "Whether to use sequence packing for training.",
             "default": true
+          },
+          "max_seq_length": {
+            "type": "integer",
+            "description": "Maximum sequence length to use for training."
           },
           "model": {
             "type": "string",

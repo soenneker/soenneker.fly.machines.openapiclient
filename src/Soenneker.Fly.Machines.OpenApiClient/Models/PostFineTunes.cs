@@ -74,6 +74,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Max gradient norm to be used for gradient clipping. Set to 0 to disable.</summary>
         public float? MaxGradNorm { get; set; }
+        /// <summary>Maximum sequence length to use for training.</summary>
+        public int? MaxSeqLength { get; set; }
         /// <summary>Name of the base model to run fine-tune job on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -227,6 +229,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "learning_rate", n => { LearningRate = n.GetFloatValue(); } },
                 { "lr_scheduler", n => { LrScheduler = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.LRScheduler>(global::Soenneker.Fly.Machines.OpenApiClient.Models.LRScheduler.CreateFromDiscriminatorValue); } },
                 { "max_grad_norm", n => { MaxGradNorm = n.GetFloatValue(); } },
+                { "max_seq_length", n => { MaxSeqLength = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "multimodal_params", n => { MultimodalParams = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MultimodalParams>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MultimodalParams.CreateFromDiscriminatorValue); } },
                 { "n_checkpoints", n => { NCheckpoints = n.GetIntValue(); } },
@@ -265,6 +268,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteFloatValue("learning_rate", LearningRate);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.LRScheduler>("lr_scheduler", LrScheduler);
             writer.WriteFloatValue("max_grad_norm", MaxGradNorm);
+            writer.WriteIntValue("max_seq_length", MaxSeqLength);
             writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MultimodalParams>("multimodal_params", MultimodalParams);
             writer.WriteIntValue("n_checkpoints", NCheckpoints);
