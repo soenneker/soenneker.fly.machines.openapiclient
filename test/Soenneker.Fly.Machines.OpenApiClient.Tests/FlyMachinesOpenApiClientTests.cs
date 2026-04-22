@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Fly.Machines.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class FlyMachinesOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class FlyMachinesOpenApiClientTests : HostedUnitTest
 {
-    public FlyMachinesOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public FlyMachinesOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
