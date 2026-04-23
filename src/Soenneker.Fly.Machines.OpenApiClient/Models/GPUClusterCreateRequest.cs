@@ -19,7 +19,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public bool? AutoScaled { get; set; }
         /// <summary>Maximum number of GPUs to which the cluster can be auto-scaled up. This field is required if auto_scaled is true.</summary>
         public int? AutoScaleMaxGpus { get; set; }
-        /// <summary>RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.ON_DEMAND billing types will give you ownership of the cluster until you delete it.</summary>
+        /// <summary>RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.ON_DEMAND billing types will give you ownership of the cluster until you delete it.SCHEDULED_CAPACITY billing types allow you to reserve capacity for a scheduled time window. You must specify the reservation_start_time and reservation_end_time with this request.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.GPUClusterCreateRequest_billing_type? BillingType { get; set; }
         /// <summary>ID of the capacity pool to use for the cluster. This field is optional and only applicable if the cluster is created from a capacity pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

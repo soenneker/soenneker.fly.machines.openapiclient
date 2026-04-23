@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.ON_DEMAND billing types will give you ownership of the cluster until you delete it.</summary>
+    /// <summary>RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.ON_DEMAND billing types will give you ownership of the cluster until you delete it.SCHEDULED_CAPACITY billing types allow you to reserve capacity for a scheduled time window. You must specify the reservation_start_time and reservation_end_time with this request.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GPUClusterCreateRequest_billing_type
     {

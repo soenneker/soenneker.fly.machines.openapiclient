@@ -5987,7 +5987,7 @@
             ],
             "type": "string",
             "additionalProperties": false,
-            "description": "RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.\nON_DEMAND billing types will give you ownership of the cluster until you delete it.\n",
+            "description": "RESERVED billing types allow you to specify the duration of the cluster reservation via the duration_days field.\nON_DEMAND billing types will give you ownership of the cluster until you delete it.\nSCHEDULED_CAPACITY billing types allow you to reserve capacity for a scheduled time window. You must specify the reservation_start_time and reservation_end_time with this request.\n",
             "x-stainless-terraform-configurability": "computed"
           },
           "gpu_node_failover_enabled": {
@@ -11890,7 +11890,9 @@
           },
           "gpu_type": {
             "enum": [
-              "h100-80gb"
+              "h100-80gb",
+              "h100-40gb-mig",
+              "b200-192gb"
             ],
             "type": "string",
             "additionalProperties": false,
@@ -12095,7 +12097,8 @@
           "gpu_type": {
             "enum": [
               "h100-80gb",
-              " a100-80gb"
+              "h100-40gb-mig",
+              "b200-192gb"
             ],
             "type": "string",
             "additionalProperties": false,
@@ -12498,7 +12501,9 @@
           },
           "gpu_type": {
             "enum": [
-              "h100-80gb"
+              "h100-80gb",
+              "h100-40gb-mig",
+              "b200-192gb"
             ],
             "type": "string",
             "additionalProperties": false,

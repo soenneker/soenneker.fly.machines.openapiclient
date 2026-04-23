@@ -11,5 +11,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning disable CS1591
         H10080gb,
         #pragma warning restore CS1591
+        [EnumMember(Value = "h100-40gb-mig")]
+        #pragma warning disable CS1591
+        H10040gbMig,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "b200-192gb")]
+        #pragma warning disable CS1591
+        B200192gb,
+        #pragma warning restore CS1591
     }
 }
