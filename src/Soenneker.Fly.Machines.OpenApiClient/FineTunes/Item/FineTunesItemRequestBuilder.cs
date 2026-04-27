@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Cancel;
 using Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Checkpoints;
 using Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Events;
+using Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics;
 using Soenneker.Fly.Machines.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item
         public global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The metrics property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder Metrics
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.FineTunesItemRequestBuilder"/> and sets the default values.

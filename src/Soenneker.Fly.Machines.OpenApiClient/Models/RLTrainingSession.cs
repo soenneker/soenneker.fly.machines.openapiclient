@@ -75,6 +75,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint> TrainingCheckpoints { get; set; }
 #endif
+        /// <summary>Type of a training session. TRAINER_AND_GENERATOR provisions both trainer and generator; TRAINER_ONLY provisions only the trainer and rejects generator-dependent operations such as sample.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType? Type { get; set; }
         /// <summary>Timestamp when the training session was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -84,6 +86,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Status = global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingSessionStatus.TRAINING_SESSION_STATUS_UNSPECIFIED;
+            Type = global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType.SESSION_TYPE_UNSPECIFIED;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,6 +115,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingSessionStatus>(); } },
                 { "step", n => { Step = n.GetStringValue(); } },
                 { "training_checkpoints", n => { TrainingCheckpoints = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -131,6 +135,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingSessionStatus>("status", Status);
             writer.WriteStringValue("step", Step);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint>("training_checkpoints", TrainingCheckpoints);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -3332,6 +3332,87 @@ paths:
           description: Invalid request parameters.
         '404':
           description: Fine-tune ID not found.
+  /fine-tunes/{id}/metrics:
+    get:
+      tags: ['Fine-tuning']
+      summary: Get metrics
+      description: >
+        Retrieves recorded training metrics for a fine-tuning job in chronological order.
+        All filter fields are optional — omit the body or send `{}` to retrieve all metrics.
+      x-codeSamples:
+        - lang: Shell
+          label: cURL
+          source: |
+            curl -X GET "https://api.together.xyz/v1/fine-tunes/ft-id/metrics" \
+                 -H "Authorization: Bearer $TOGETHER_API_KEY" \
+                 -H "Content-Type: application/json" \
+                 -d '{
+                   "global_step_from": 0,
+                   "global_step_to": 500
+                 }'
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            description: Fine-tune job ID. A string that starts with `ft-`.
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                global_step_from:
+                  type: integer
+                  format: int64
+                  description: Return only metrics with global_step >= this value.
+                  example: 0
+                global_step_to:
+                  type: integer
+                  format: int64
+                  description: Return only metrics with global_step <= this value.
+                  example: 500
+                logged_at_from:
+                  type: string
+                  format: date-time
+                  description: Return only metrics logged at or after this ISO-8601 timestamp.
+                  example: "2024-01-01T00:00:00Z"
+                logged_at_to:
+                  type: string
+                  format: date-time
+                  description: Return only metrics logged at or before this ISO-8601 timestamp.
+                  example: "2024-01-01T12:00:00Z"
+      responses:
+        '200':
+          description: List of metrics snapshots in chronological order.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metrics:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties:
+                        type: number
+                      description: A flat dictionary of scalar metric values.
+                example:
+                  metrics:
+                    - train/loss: 0.5
+                      train/learning_rate: 0.0001
+                      train/global_step: 7
+                    - train/loss: 0.45
+                      train/learning_rate: 0.00009
+                      train/global_step: 14
+        '400':
+          description: Invalid request — bad JSON body or missing job ID.
+        '404':
+          description: Fine-tune job not found.
+        '500':
+          description: Internal server error — failed to retrieve metrics.
   /fine-tunes/models/supported:
     get:
       tags: ['Fine-tuning']
@@ -3866,9 +3947,9 @@ paths:
           - The `input_text_buffer.commit` event is received
 
         **Audio Format:**
-        - Format: WAV (PCM s16le)
+        - Format: Raw PCM (s16le, mono)
         - Sample Rate: 24000 Hz
-        - Encoding: Base64
+        - Encoding: Base64 (per delta event)
         - Delivered via `conversation.item.audio_output.delta` events
 
         **Error Codes:**
@@ -3890,7 +3971,7 @@ paths:
 
             async def generate_speech():
                 api_key = os.environ.get("TOGETHER_API_KEY")
-                url = "wss://api.together.ai/v1/audio/speech/websocket?model=hexgrad/Kokoro-82M&voice=tara"
+                url = "wss://api.together.ai/v1/audio/speech/websocket?model=hexgrad/Kokoro-82M&voice=af_heart"
 
                 headers = {
                     "Authorization": f"Bearer {api_key}"
@@ -3900,6 +3981,9 @@ paths:
                     # Wait for session created
                     session_msg = await ws.recv()
                     session_data = json.loads(session_msg)
+                    if session_data.get("type") != "session.created":
+                        print(f"Failed to start session: {session_data}")
+                        return
                     print(f"Session created: {session_data['session']['id']}")
 
                     # Send text for TTS
@@ -3941,10 +4025,10 @@ paths:
                                 print(f"Error: {error.get('message')}")
                                 break
 
-                        # Save the audio to a file
-                        with open("output.wav", "wb") as f:
+                        # Save the raw PCM samples to a file
+                        with open("output.pcm", "wb") as f:
                             f.write(audio_data)
-                        print("Audio saved to output.wav")
+                        print("Audio saved to output.pcm")
 
                     # Run send and receive concurrently
                     await asyncio.gather(send_text(), receive_audio())
@@ -3957,7 +4041,7 @@ paths:
             import fs from 'fs';
 
             const apiKey = process.env.TOGETHER_API_KEY;
-            const url = 'wss://api.together.ai/v1/audio/speech/websocket?model=hexgrad/Kokoro-82M&voice=tara';
+            const url = 'wss://api.together.ai/v1/audio/speech/websocket?model=hexgrad/Kokoro-82M&voice=af_heart';
 
             const ws = new WebSocket(url, {
               headers: {
@@ -4017,11 +4101,11 @@ paths:
             });
 
             ws.on('close', () => {
-              // Save the audio to a file
+              // Save the raw PCM samples to a file
               if (audioData.length > 0) {
                 const completeAudio = Buffer.concat(audioData);
-                fs.writeFileSync('output.wav', completeAudio);
-                console.log('Audio saved to output.wav');
+                fs.writeFileSync('output.pcm', completeAudio);
+                console.log('Audio saved to output.pcm');
               }
             });
 
@@ -8174,8 +8258,21 @@ components:
           description: Checkpoint ID to resume from
           type: string
           example: 123e4567-e89b-12d3-a456-426614174000
+        type:
+          $ref: '#/components/schemas/RL.SessionType'
+          default: SESSION_TYPE_TRAINER_AND_GENERATOR
+          example: SESSION_TYPE_TRAINER_ONLY
+          description: Type of the training session. Defaults to TRAINER_AND_GENERATOR when unspecified. TRAINER_ONLY provisions only the trainer and rejects sample requests.
         lora_config:
           $ref: '#/components/schemas/RL.LoraConfig'
+    RL.SessionType:
+      description: Type of a training session. TRAINER_AND_GENERATOR provisions both trainer and generator; TRAINER_ONLY provisions only the trainer and rejects generator-dependent operations such as sample.
+      default: SESSION_TYPE_UNSPECIFIED
+      type: string
+      enum:
+        - SESSION_TYPE_UNSPECIFIED
+        - SESSION_TYPE_TRAINER_AND_GENERATOR
+        - SESSION_TYPE_TRAINER_ONLY
     RL.TrainingSessionStatus:
       description: Status of the training session
       default: TRAINING_SESSION_STATUS_UNSPECIFIED
@@ -8201,6 +8298,7 @@ components:
         - created_at
         - updated_at
         - lora_config
+        - type
       properties:
         id:
           type: string
@@ -8248,6 +8346,10 @@ components:
           description: Timestamp when the training session was last updated
         lora_config:
           $ref: '#/components/schemas/RL.LoraConfig'
+        type:
+          $ref: '#/components/schemas/RL.SessionType'
+          example: SESSION_TYPE_TRAINER_AND_GENERATOR
+          description: Type of the training session. TRAINER_AND_GENERATOR provisions both trainer and generator; TRAINER_ONLY provisions only the trainer and rejects generator-dependent operations such as sample.
     RL.TrainingSessionsListResponse:
       type: object
       description: Paginated list of training sessions
@@ -9994,7 +10096,7 @@ components:
             - zh
         response_encoding:
           type: string
-          description: Audio encoding of response
+          description: Audio encoding of response. Only applicable when response_format is raw or pcm. Cartesia models respect this parameter and support all values. Orpheus, Kokoro, and Minimax models always return pcm_s16le regardless of this setting.
           default: pcm_f32le
           enum:
             - pcm_f32le
@@ -10004,7 +10106,7 @@ components:
         sample_rate:
           type: integer
           default: 44100
-          description: Sampling rate to use for the output audio. The default sampling rate for canopylabs/orpheus-3b-0.1-ft and hexgrad/Kokoro-82M is 24000 and for cartesia/sonic is 44100.
+          description: Sampling rate in Hz for the output audio. Cartesia and Minimax models respect this parameter. Orpheus and Kokoro models always output at 24000 Hz regardless of this setting.
         bit_rate:
           type: integer
           description: Bitrate of the MP3 audio output in bits per second. Only applicable when response_format is mp3. Higher values produce better audio quality at larger file sizes. Default is 128000. Currently supported on Cartesia models.
