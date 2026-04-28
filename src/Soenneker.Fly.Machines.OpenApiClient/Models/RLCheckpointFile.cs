@@ -26,10 +26,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>File size in bytes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Size { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Size { get; set; }
 #nullable restore
 #else
-        public string Size { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Size { get; set; }
 #endif
         /// <summary>Presigned URL for downloading the file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filename", n => { Filename = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filename", Filename);
-            writer.WriteStringValue("size", Size);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("size", Size);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

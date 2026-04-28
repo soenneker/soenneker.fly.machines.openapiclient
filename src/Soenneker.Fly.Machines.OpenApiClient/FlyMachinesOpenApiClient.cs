@@ -177,7 +177,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://api.together.xyz/v1";
+                RequestAdapter.BaseUrl = "https://api.together.ai/v1";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

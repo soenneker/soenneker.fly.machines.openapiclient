@@ -62,10 +62,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Current training step</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Step { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Step { get; set; }
 #nullable restore
 #else
-        public string Step { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Step { get; set; }
 #endif
         /// <summary>List of saved training checkpoints for this session</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "lora_config", n => { LoraConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLLoraConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLLoraConfig.CreateFromDiscriminatorValue); } },
                 { "resume_from_checkpoint_id", n => { ResumeFromCheckpointId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingSessionStatus>(); } },
-                { "step", n => { Step = n.GetStringValue(); } },
+                { "step", n => { Step = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "training_checkpoints", n => { TrainingCheckpoints = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -133,7 +133,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLLoraConfig>("lora_config", LoraConfig);
             writer.WriteStringValue("resume_from_checkpoint_id", ResumeFromCheckpointId);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingSessionStatus>("status", Status);
-            writer.WriteStringValue("step", Step);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("step", Step);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLTrainingCheckpoint>("training_checkpoints", TrainingCheckpoints);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RLSessionType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

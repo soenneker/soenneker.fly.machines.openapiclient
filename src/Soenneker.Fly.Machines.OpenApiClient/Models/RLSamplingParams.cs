@@ -19,10 +19,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Random seed for reproducibility</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Seed { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? Seed { get; set; }
 #nullable restore
 #else
-        public string Seed { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch Seed { get; set; }
 #endif
         /// <summary>Generation stops when any of these strings is produced</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "seed", n => { Seed = n.GetStringValue(); } },
+                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "temperature", n => { Temperature = n.GetFloatValue(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteStringValue("seed", Seed);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("seed", Seed);
             writer.WriteCollectionOfPrimitiveValues<string>("stop", Stop);
             writer.WriteFloatValue("temperature", Temperature);
             writer.WriteIntValue("top_k", TopK);

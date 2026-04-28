@@ -16,7 +16,7 @@
   },
   "servers": [
     {
-      "url": "https://api.together.xyz/v1"
+      "url": "https://api.together.ai/v1"
     }
   ],
   "paths": {
@@ -979,7 +979,7 @@
         },
         "servers": [
           {
-            "url": "https://api.together.xyz/v2"
+            "url": "https://api.together.ai/v2"
           }
         ]
       }
@@ -1015,7 +1015,7 @@
         },
         "servers": [
           {
-            "url": "https://api.together.xyz/v2"
+            "url": "https://api.together.ai/v2"
           }
         ]
       }
@@ -5037,9 +5037,13 @@
             "description": "Generation stops when any of these strings is produced"
           },
           "seed": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "Random seed for reproducibility",
-            "format": "int64",
             "example": 42
           }
         }
@@ -5367,9 +5371,13 @@
         "type": "object",
         "properties": {
           "step": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "Step number",
-            "format": "uint64",
             "example": 100
           }
         },
@@ -5416,8 +5424,12 @@
           "tokens": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "int64"
+              "type": "object",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                }
+              ]
             },
             "description": "Generated token IDs"
           },
@@ -5621,9 +5633,13 @@
             "example": "123e4567-e89b-12d3-a456-426614174000"
           },
           "step": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "Current training step",
-            "format": "uint64",
             "default": 0,
             "example": 100
           },
@@ -5777,9 +5793,13 @@
             "example": "123e4567-e89b-12d3-a456-426614174000"
           },
           "step": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "Training step at time of save",
-            "format": "uint64",
             "example": 42
           },
           "created_at": {
@@ -5829,9 +5849,13 @@
             "example": "123e4567-e89b-12d3-a456-426614174000"
           },
           "step": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "Training step at time of save",
-            "format": "uint64",
             "example": 42
           },
           "created_at": {
@@ -5911,9 +5935,13 @@
             "example": "https://..."
           },
           "size": {
-            "type": "string",
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ],
             "description": "File size in bytes",
-            "format": "int64",
             "example": 123456789
           }
         },
