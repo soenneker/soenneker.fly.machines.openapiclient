@@ -22,6 +22,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public DateTimeOffset? LoggedAtFrom { get; set; }
         /// <summary>Return only metrics logged at or before this ISO-8601 timestamp.</summary>
         public DateTimeOffset? LoggedAtTo { get; set; }
+        /// <summary>Number of (uniformly sampled) train metrics to return.</summary>
+        public long? Resolution { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "global_step_to", n => { GlobalStepTo = n.GetLongValue(); } },
                 { "logged_at_from", n => { LoggedAtFrom = n.GetDateTimeOffsetValue(); } },
                 { "logged_at_to", n => { LoggedAtTo = n.GetDateTimeOffsetValue(); } },
+                { "resolution", n => { Resolution = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +67,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteLongValue("global_step_to", GlobalStepTo);
             writer.WriteDateTimeOffsetValue("logged_at_from", LoggedAtFrom);
             writer.WriteDateTimeOffsetValue("logged_at_to", LoggedAtTo);
+            writer.WriteLongValue("resolution", Resolution);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
