@@ -71,7 +71,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Maximum gradient norm for clipping</summary>
         public float? MaxGradNorm { get; set; }
-        /// <summary>Maximum sequence length to use for training.</summary>
+        /// <summary>Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used.</summary>
         public int? MaxSeqLength { get; set; }
         /// <summary>Base model used for fine-tuning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

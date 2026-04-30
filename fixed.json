@@ -9029,6 +9029,14 @@
         ],
         "type": "object",
         "properties": {
+          "base": {
+            "type": "number",
+            "example": 0
+          },
+          "finetune": {
+            "type": "number",
+            "example": 0
+          },
           "hourly": {
             "type": "number",
             "example": 0
@@ -9041,13 +9049,9 @@
             "type": "number",
             "example": 0.3
           },
-          "base": {
+          "cached_input": {
             "type": "number",
-            "example": 0
-          },
-          "finetune": {
-            "type": "number",
-            "example": 0
+            "example": 0.2
           }
         }
       },
@@ -9158,10 +9162,6 @@
         "enum": [
           "fine-tune",
           "eval",
-          "eval-sample",
-          "eval-output",
-          "eval-summary",
-          "batch-generated",
           "batch-api"
         ],
         "type": "string",
@@ -9421,7 +9421,7 @@
           },
           "max_seq_length": {
             "type": "integer",
-            "description": "Maximum sequence length to use for training."
+            "description": "Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used."
           },
           "model": {
             "type": "string",

@@ -15,22 +15,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning disable CS1591
         Eval,
         #pragma warning restore CS1591
-        [EnumMember(Value = "eval-sample")]
-        #pragma warning disable CS1591
-        EvalSample,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "eval-output")]
-        #pragma warning disable CS1591
-        EvalOutput,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "eval-summary")]
-        #pragma warning disable CS1591
-        EvalSummary,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "batch-generated")]
-        #pragma warning disable CS1591
-        BatchGenerated,
-        #pragma warning restore CS1591
         [EnumMember(Value = "batch-api")]
         #pragma warning disable CS1591
         BatchApi,

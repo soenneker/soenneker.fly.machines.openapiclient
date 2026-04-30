@@ -10868,6 +10868,12 @@ components:
       type: object
       required: [hourly, input, output, base, finetune]
       properties:
+        base:
+          type: number
+          example: 0
+        finetune:
+          type: number
+          example: 0
         hourly:
           type: number
           example: 0
@@ -10877,12 +10883,9 @@ components:
         output:
           type: number
           example: 0.3
-        base:
+        cached_input:
           type: number
-          example: 0
-        finetune:
-          type: number
-          example: 0
+          example: 0.2
 
     ToolsPart:
       type: object
@@ -10979,10 +10982,6 @@ components:
       enum:
         - fine-tune
         - eval
-        - eval-sample
-        - eval-output
-        - eval-summary
-        - batch-generated
         - batch-api
     FileType:
       type: string
@@ -11180,7 +11179,7 @@ components:
           description: Whether sequence packing is being used for training.
         max_seq_length:
           type: integer
-          description: Maximum sequence length to use for training.
+          description: Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used.
         model:
           type: string
           description: Base model used for fine-tuning

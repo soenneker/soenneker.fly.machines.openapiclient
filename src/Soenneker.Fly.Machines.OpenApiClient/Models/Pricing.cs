@@ -16,6 +16,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base property</summary>
         public double? Base { get; set; }
+        /// <summary>The cached_input property</summary>
+        public double? CachedInput { get; set; }
         /// <summary>The finetune property</summary>
         public double? Finetune { get; set; }
         /// <summary>The hourly property</summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "base", n => { Base = n.GetDoubleValue(); } },
+                { "cached_input", n => { CachedInput = n.GetDoubleValue(); } },
                 { "finetune", n => { Finetune = n.GetDoubleValue(); } },
                 { "hourly", n => { Hourly = n.GetDoubleValue(); } },
                 { "input", n => { Input = n.GetDoubleValue(); } },
@@ -64,6 +67,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("base", Base);
+            writer.WriteDoubleValue("cached_input", CachedInput);
             writer.WriteDoubleValue("finetune", Finetune);
             writer.WriteDoubleValue("hourly", Hourly);
             writer.WriteDoubleValue("input", Input);
