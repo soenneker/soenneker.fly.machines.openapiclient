@@ -8070,7 +8070,7 @@
                 "$ref": "#/components/schemas/UnionBranch"
               }
             ],
-            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac."
+            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac, .ogg, .opus, .aac."
           },
           "model": {
             "enum": [
@@ -8089,7 +8089,7 @@
           },
           "prompt": {
             "type": "string",
-            "description": "Optional text to bias decoding."
+            "description": "Optional text to bias decoding. Supported only on Whisper-family models (e.g. `openai/whisper-large-v3`). Other STT models (e.g. `nvidia/parakeet-tdt-0.6b-v3`) accept the field for API compatibility but ignore it."
           },
           "response_format": {
             "enum": [
@@ -8175,7 +8175,6 @@
       },
       "AudioTranscriptionVerboseJsonResponse": {
         "required": [
-          "task",
           "language",
           "duration",
           "text",
@@ -8183,16 +8182,6 @@
         ],
         "type": "object",
         "properties": {
-          "task": {
-            "enum": [
-              "transcribe",
-              "translate"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "The task performed",
-            "example": "transcribe"
-          },
           "language": {
             "type": "string",
             "description": "The language of the audio",
@@ -8357,7 +8346,7 @@
                 "$ref": "#/components/schemas/UnionBranch"
               }
             ],
-            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac."
+            "description": "Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac, .ogg, .opus, .aac."
           },
           "model": {
             "enum": [
@@ -8376,7 +8365,7 @@
           },
           "prompt": {
             "type": "string",
-            "description": "Optional text to bias decoding."
+            "description": "Optional text to bias decoding. Supported only on Whisper-family models (e.g. `openai/whisper-large-v3`). Other STT models (e.g. `nvidia/parakeet-tdt-0.6b-v3`) accept the field for API compatibility but ignore it."
           },
           "response_format": {
             "enum": [
@@ -8449,7 +8438,6 @@
       },
       "AudioTranslationVerboseJsonResponse": {
         "required": [
-          "task",
           "language",
           "duration",
           "text",
@@ -8457,16 +8445,6 @@
         ],
         "type": "object",
         "properties": {
-          "task": {
-            "enum": [
-              "transcribe",
-              "translate"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "The task performed",
-            "example": "translate"
-          },
           "language": {
             "type": "string",
             "description": "The target language of the translation",
@@ -11242,6 +11220,20 @@
             "type": "integer",
             "description": "Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs.",
             "example": 5
+          },
+          "max_tokens": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Maximum number of tokens the judge model can generate. Defaults to 32768. Increase for reasoning models (e.g. Gemini, o-series) that consume output token budget for chain-of-thought.",
+            "example": 8192
+          },
+          "temperature": {
+            "maximum": 2,
+            "minimum": 0,
+            "type": "number",
+            "description": "Sampling temperature for the judge model. Defaults to 0.05.",
+            "format": "float",
+            "example": 0
           }
         }
       },

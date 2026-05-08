@@ -10151,7 +10151,7 @@ components:
           oneOf:
             - $ref: '#/components/schemas/AudioFileBinary'
             - $ref: '#/components/schemas/AudioFileUrl'
-          description: Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac.
+          description: Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac, .ogg, .opus, .aac.
         model:
           type: string
           description: Model to use for transcription
@@ -10165,7 +10165,11 @@ components:
           example: en
         prompt:
           type: string
-          description: Optional text to bias decoding.
+          description: >-
+            Optional text to bias decoding. Supported only on Whisper-family
+            models (e.g. `openai/whisper-large-v3`). Other STT models
+            (e.g. `nvidia/parakeet-tdt-0.6b-v3`) accept the field for API
+            compatibility but ignore it.
         response_format:
           type: string
           description: The format of the response
@@ -10240,19 +10244,11 @@ components:
     AudioTranscriptionVerboseJsonResponse:
       type: object
       required:
-        - task
         - language
         - duration
         - text
         - segments
       properties:
-        task:
-          type: string
-          description: The task performed
-          enum:
-            - transcribe
-            - translate
-          example: transcribe
         language:
           type: string
           description: The language of the audio
@@ -10386,7 +10382,7 @@ components:
             - type: string
               format: uri
               description: Public HTTP/HTTPS URL to audio file
-          description: Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac.
+          description: Audio file upload or public HTTP/HTTPS URL. Supported formats .wav, .mp3, .m4a, .webm, .flac, .ogg, .opus, .aac.
         model:
           type: string
           description: Model to use for translation
@@ -10400,7 +10396,11 @@ components:
           example: en
         prompt:
           type: string
-          description: Optional text to bias decoding.
+          description: >-
+            Optional text to bias decoding. Supported only on Whisper-family
+            models (e.g. `openai/whisper-large-v3`). Other STT models
+            (e.g. `nvidia/parakeet-tdt-0.6b-v3`) accept the field for API
+            compatibility but ignore it.
         response_format:
           type: string
           description: The format of the response
@@ -10452,19 +10452,11 @@ components:
     AudioTranslationVerboseJsonResponse:
       type: object
       required:
-        - task
         - language
         - duration
         - text
         - segments
       properties:
-        task:
-          type: string
-          description: The task performed
-          enum:
-            - transcribe
-            - translate
-          example: translate
         language:
           type: string
           description: The target language of the translation
@@ -12519,6 +12511,18 @@ components:
           minimum: 1
           description: "Number of concurrent workers for inference requests. Overrides the default concurrency for this model. Useful for tuning throughput when using proxy endpoints (e.g. OpenRouter) or rate-limited external APIs."
           example: 5
+        max_tokens:
+          type: integer
+          minimum: 1
+          description: "Maximum number of tokens the judge model can generate. Defaults to 32768. Increase for reasoning models (e.g. Gemini, o-series) that consume output token budget for chain-of-thought."
+          example: 8192
+        temperature:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 2
+          description: "Sampling temperature for the judge model. Defaults to 0.05."
+          example: 0.0
 
     EvaluationModelOrString:
       oneOf:

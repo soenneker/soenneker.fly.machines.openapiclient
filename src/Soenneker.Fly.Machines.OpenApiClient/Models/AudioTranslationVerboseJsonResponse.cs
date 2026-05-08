@@ -32,8 +32,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionSegment> Segments { get; set; }
 #endif
-        /// <summary>The task performed</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranslationVerboseJsonResponse_task? Task { get; set; }
         /// <summary>The translated text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +76,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "duration", n => { Duration = n.GetFloatValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "segments", n => { Segments = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionSegment>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionSegment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "task", n => { Task = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranslationVerboseJsonResponse_task>(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "words", n => { Words = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionWord>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionWord.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -93,7 +90,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteFloatValue("duration", Duration);
             writer.WriteStringValue("language", Language);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionSegment>("segments", Segments);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranslationVerboseJsonResponse_task>("task", Task);
             writer.WriteStringValue("text", Text);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AudioTranscriptionWord>("words", Words);
             writer.WriteAdditionalData(AdditionalData);

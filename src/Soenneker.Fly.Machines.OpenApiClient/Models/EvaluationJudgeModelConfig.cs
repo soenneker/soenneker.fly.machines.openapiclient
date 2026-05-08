@@ -30,6 +30,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string ExternalBaseUrl { get; set; }
 #endif
+        /// <summary>Maximum number of tokens the judge model can generate. Defaults to 32768. Increase for reasoning models (e.g. Gemini, o-series) that consume output token budget for chain-of-thought.</summary>
+        public int? MaxTokens { get; set; }
         /// <summary>Name of the judge model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +52,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string SystemTemplate { get; set; }
 #endif
+        /// <summary>Sampling temperature for the judge model. Defaults to 0.05.</summary>
+        public float? Temperature { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig"/> and sets the default values.
         /// </summary>
@@ -77,10 +81,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "external_api_token", n => { ExternalApiToken = n.GetStringValue(); } },
                 { "external_base_url", n => { ExternalBaseUrl = n.GetStringValue(); } },
+                { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "model_source", n => { ModelSource = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig_model_source>(); } },
                 { "num_workers", n => { NumWorkers = n.GetIntValue(); } },
                 { "system_template", n => { SystemTemplate = n.GetStringValue(); } },
+                { "temperature", n => { Temperature = n.GetFloatValue(); } },
             };
         }
         /// <summary>
@@ -92,10 +98,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("external_api_token", ExternalApiToken);
             writer.WriteStringValue("external_base_url", ExternalBaseUrl);
+            writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.EvaluationJudgeModelConfig_model_source>("model_source", ModelSource);
             writer.WriteIntValue("num_workers", NumWorkers);
             writer.WriteStringValue("system_template", SystemTemplate);
+            writer.WriteFloatValue("temperature", Temperature);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
