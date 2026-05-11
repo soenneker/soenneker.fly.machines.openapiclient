@@ -16,7 +16,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The method property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.TrainingMethodSFT_method? Method { get; set; }
-        /// <summary>Whether to mask the user messages in conversational data or prompts in instruction data.</summary>
+        /// <summary>Whether to mask user messages in conversational data or prompts in instruction data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch? TrainOnInputs { get; set; }

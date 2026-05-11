@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Files to upload to the session. If present, files will be uploaded before executing the given code.</summary>
+        /// <summary>Files to upload to the session. If present, files are uploaded before executing the given code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecuteRequest_files>? Files { get; set; }
@@ -30,9 +30,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecuteRequest_files> Files { get; set; }
 #endif
-        /// <summary>Programming language for the code to execute. Currently only supports Python, but more will be added.</summary>
+        /// <summary>Programming language for the code to execute. Currently only supports Python.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecuteRequest_language? Language { get; set; }
-        /// <summary>Identifier of the current session. Used to make follow-up calls. Requests will return an error if the session does not belong to the caller or has expired.</summary>
+        /// <summary>Identifier of the current session. Used to make follow-up calls. Returns an error if the session does not belong to the caller or has expired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }

@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? GpuCount { get; set; }
         /// <summary>GPUType specifies the GPU hardware to use (e.g., &quot;h100-80gb&quot;).</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateDeploymentRequest_gpu_type? GpuType { get; set; }
-        /// <summary>HealthCheckPath is the HTTP path for health checks (e.g., &quot;/health&quot;). If set, the platform will check this endpoint to determine container health</summary>
+        /// <summary>HealthCheckPath is the HTTP path for health checks (e.g., &quot;/health&quot;). If set, the platform checks this endpoint to determine container health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthCheckPath { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Image { get; set; }
 #endif
-        /// <summary>MaxReplicas is the maximum number of container instances that can be scaled up to. If not set, will be set to MinReplicas</summary>
+        /// <summary>MaxReplicas is the maximum number of container instances. Defaults to MinReplicas if not set.</summary>
         public int? MaxReplicas { get; set; }
         /// <summary>Memory is the amount of RAM to allocate per container instance in GiB (e.g., 0.5 = 512MiB)</summary>
         public double? Memory { get; set; }

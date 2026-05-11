@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.</summary>
+        /// <summary>If true, the response contains the prompt. Can be used with `logprobs` to return prompt logprobs.</summary>
         public bool? Echo { get; set; }
         /// <summary>A number between -2.0 and 2.0 where a positive value decreases the likelihood of repeating tokens that have already been mentioned.</summary>
         public float? FrequencyPenalty { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CompletionRequest_logit_bias LogitBias { get; set; }
 #endif
-        /// <summary>An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of just the sampled token. Log probabilities help assess model confidence in token predictions.</summary>
+        /// <summary>An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of only the sampled token. Log probabilities help assess model confidence in token predictions.</summary>
         public int? Logprobs { get; set; }
         /// <summary>The maximum number of tokens to generate.</summary>
         public int? MaxTokens { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Seed value for reproducibility.</summary>
         public int? Seed { get; set; }
-        /// <summary>A list of string sequences that will truncate (stop) inference text output. For example, &quot;&lt;/s&gt;&quot; will stop generation as soon as the model generates the given token.</summary>
+        /// <summary>A list of string sequences that truncate (stop) inference text output. For example, &quot;&lt;/s&gt;&quot; stops generation as soon as the model generates the given token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Stop { get; set; }

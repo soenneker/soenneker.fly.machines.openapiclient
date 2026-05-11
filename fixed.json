@@ -2,7 +2,7 @@
   "openapi": "3.0.4",
   "info": {
     "title": "Together APIs",
-    "description": "The Together REST API. Please see https://docs.together.ai for more details.",
+    "description": "The Together REST API. See https://docs.together.ai for more details.",
     "termsOfService": "https://www.together.ai/terms-of-service",
     "contact": {
       "name": "Together Support",
@@ -2039,7 +2039,7 @@
           "Fine-tuning"
         ],
         "summary": "Get metrics",
-        "description": "Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional — omit the body or send `{}` to retrieve all metrics.\n",
+        "description": "\"Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional: omit the body or send `{}` to retrieve all metrics.\n\"",
         "operationId": "get_fine_tunes_id_metrics",
         "parameters": [
           {
@@ -2494,7 +2494,7 @@
         "tags": [
           "GPUClusterService"
         ],
-        "summary": "List all GPU clusters.",
+        "summary": "List all GPU clusters",
         "description": "List all GPU clusters.",
         "operationId": "GPUClusterService-List",
         "responses": {
@@ -2514,7 +2514,7 @@
         "tags": [
           "GPUClusterService"
         ],
-        "summary": "Create GPU Cluster",
+        "summary": "Create a GPU cluster",
         "description": "Create an Instant Cluster on Together's high-performance GPU clusters.\nWith features like on-demand scaling, long-lived resizable high-bandwidth shared DC-local storage,\nKubernetes and Slurm cluster flavors, a REST API, and Terraform support,\nyou can run workloads flexibly without complex infrastructure management.\n",
         "operationId": "GPUClusterService-Create",
         "requestBody": {
@@ -2576,7 +2576,7 @@
         "tags": [
           "GPUClusterService"
         ],
-        "summary": "Update a GPU Cluster.",
+        "summary": "Update a GPU cluster",
         "description": "Update the configuration of an existing GPU cluster.",
         "operationId": "GPUClusterService-Update",
         "parameters": [
@@ -2670,7 +2670,7 @@
         "tags": [
           "SharedVolumeService"
         ],
-        "summary": "List all shared volumes.",
+        "summary": "List all shared volumes",
         "description": "List all shared volumes.",
         "operationId": "SharedVolumeService-List",
         "responses": {
@@ -2690,7 +2690,7 @@
         "tags": [
           "SharedVolumeService"
         ],
-        "summary": "Update a shared volume.",
+        "summary": "Update a shared volume",
         "description": "Update the configuration of an existing shared volume.\n",
         "operationId": "SharedVolumeService-Update",
         "requestBody": {
@@ -2719,7 +2719,7 @@
         "tags": [
           "SharedVolumeService"
         ],
-        "summary": "Create a shared volume.",
+        "summary": "Create a shared volume",
         "description": "Instant Clusters supports long-lived, resizable in-DC shared storage with user data persistence.\nYou can dynamically create and attach volumes to your cluster at cluster creation time, and resize as your data grows.\nAll shared storage is backed by multi-NIC bare metal paths, ensuring high-throughput and low-latency performance for shared storage.\n",
         "operationId": "SharedVolumeService-Create",
         "requestBody": {
@@ -2750,7 +2750,7 @@
         "tags": [
           "SharedVolumeService"
         ],
-        "summary": "Get shared volume by volume Id.",
+        "summary": "Get a shared volume by ID",
         "description": "Retrieve information about a specific shared volume.",
         "operationId": "SharedVolumeService-Get",
         "parameters": [
@@ -2781,7 +2781,7 @@
         "tags": [
           "SharedVolumeService"
         ],
-        "summary": "Delete shared volume by volume id.",
+        "summary": "Delete a shared volume by ID",
         "description": "Delete a shared volume. Note that if this volume is attached to a cluster, deleting will fail.\n",
         "operationId": "SharedVolumeService-Delete",
         "parameters": [
@@ -2814,7 +2814,7 @@
         "tags": [
           "endpoints"
         ],
-        "summary": "List all available availability zones.",
+        "summary": "List all available availability zones",
         "description": "List all available availability zones.",
         "operationId": "availabilityZones",
         "responses": {
@@ -2836,7 +2836,7 @@
         "tags": [
           "Endpoints"
         ],
-        "summary": "List all endpoints, can be filtered by type",
+        "summary": "List all endpoints",
         "description": "Returns a list of all endpoints associated with your account. You can filter the results by type (dedicated or serverless).",
         "operationId": "listEndpoints",
         "parameters": [
@@ -2946,8 +2946,8 @@
         "tags": [
           "Endpoints"
         ],
-        "summary": "Create a dedicated endpoint, it will start automatically",
-        "description": "Creates a new dedicated endpoint for serving models. The endpoint will automatically start after creation. You can deploy any supported model on hardware configurations that meet the model's requirements.",
+        "summary": "Create a dedicated endpoint",
+        "description": "Creates a new dedicated endpoint for serving models. The endpoint starts automatically after creation. You can deploy any supported model on hardware configurations that meet the model's requirements.",
         "operationId": "createEndpoint",
         "requestBody": {
           "content": {
@@ -3256,7 +3256,8 @@
         "tags": [
           "Code Interpreter"
         ],
-        "description": "Executes the given code snippet and returns the output. Without a session_id, a new session will be created to run the code. If you do pass in a valid session_id, the code will be run in that session. This is useful for running multiple code snippets in the same environment, because dependencies and similar things are persisted\nbetween calls to the same session.\n",
+        "summary": "Execute code",
+        "description": "Executes the given code snippet and returns the output. Without a session_id, a new session is created to run the code. If you pass a valid session_id, the code runs in that session. This is useful for running multiple code snippets in the same environment, because dependencies and similar things are persisted\nbetween calls to the same session.\n",
         "operationId": "tci-execute",
         "requestBody": {
           "description": "Execute Request",
@@ -3287,6 +3288,7 @@
         "tags": [
           "Code Interpreter"
         ],
+        "summary": "List active sessions",
         "description": "Lists all your currently active sessions.\n",
         "operationId": "sessions-list",
         "responses": {
@@ -3872,7 +3874,7 @@
           "Audio"
         ],
         "summary": "Real-time audio transcription via WebSocket",
-        "description": "\"Establishes a WebSocket connection for real-time audio transcription. This endpoint uses WebSocket protocol (wss://api.together.ai/v1/realtime) for bidirectional streaming communication.\n\n**Connection Setup:**\n- Protocol: WebSocket (wss://)\n- Authentication: Pass API key as Bearer token in Authorization header\n- Parameters: Sent as query parameters (model, input_audio_format)\n\n**Client Events:**\n- `input_audio_buffer.append`: Send audio chunks as base64-encoded data\n  ```json\n  {\n    \\\"type\\\": \\\"input_audio_buffer.append\\\",\n    \\\"audio\\\": \\\"<base64_encoded_audio_chunk>\\\"\n  }\n  ```\n- `input_audio_buffer.commit`: Signal end of audio stream. When VAD is enabled, the server automatically detects speech boundaries and emits `completed` events. When VAD is disabled, you must send `commit` to trigger transcription of the buffered audio.\n  ```json\n  {\n    \\\"type\\\": \\\"input_audio_buffer.commit\\\"\n  }\n  ```\n- `transcription_session.updated`: Update session configuration, including Voice Activity Detection (VAD) parameters. Send this after receiving `session.created`. Can also be sent at any time during the session to change VAD settings.\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": {\n        \\\"type\\\": \\\"server_vad\\\",\n        \\\"threshold\\\": 0.3,\n        \\\"min_silence_duration_ms\\\": 500,\n        \\\"min_speech_duration_ms\\\": 250,\n        \\\"max_speech_duration_s\\\": 5.0,\n        \\\"speech_pad_ms\\\": 250\n      }\n    }\n  }\n  ```\n  To disable VAD entirely (manual commit mode), set `turn_detection` to `null`:\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": null\n    }\n  }\n  ```\n\n**Voice Activity Detection (VAD)**\n\nVAD controls how the server automatically detects speech segments in the audio stream. When enabled (the default), the server uses Silero VAD to identify speech regions and emits transcription events as each segment completes. When disabled, you must manually call `input_audio_buffer.commit` to trigger transcription.\n\nVAD can be configured in two ways:\n1. **Query parameters** at connection time: `turn_detection=server_vad&threshold=0.3&min_silence_duration_ms=500`\n2. **Session message** after connection: Send `transcription_session.updated` with a `turn_detection` object (see above)\n\nTo disable VAD at connection time, use `turn_detection=none` as a query parameter.\n\n**VAD Parameters:**\n\nAll parameters are optional — omitted fields use their defaults.\n\n| Parameter | Type | Default | Description |\n|-----------|------|---------|-------------|\n| `type` | string | `server_vad` | VAD mode. Use `server_vad` to enable, or set `turn_detection` to `null` to disable. |\n| `threshold` | float | `0.3` | Speech probability threshold (0.0–1.0). Audio frames with probability above this value are classified as speech. Lower values detect more speech but may increase false positives. For low-SNR audio (e.g., 8kHz phone calls), values of 0.01–0.2 may work better. |\n| `min_silence_duration_ms` | int | `500` | Minimum silence duration in milliseconds before ending a speech segment. Higher values merge nearby speech bursts into single segments. For phone calls with mid-sentence pauses, 2000–5000ms prevents over-segmentation. |\n| `min_speech_duration_ms` | int | `250` | Minimum speech segment duration in milliseconds. Segments shorter than this are discarded. Filters out brief noise bursts or clicks. |\n| `max_speech_duration_s` | float | `5.0` | Maximum speech segment duration in seconds. Segments longer than this are force-split at the longest internal silence gap. Useful for continuous speech without natural pauses. |\n| `speech_pad_ms` | int | `250` | Padding in milliseconds added to the start and end of each detected segment. Prevents clipping speech edges. When padding would cause adjacent segments to overlap, the gap is split at the midpoint instead. |\n\n**Server Events:**\n- `session.created`: Initial session confirmation (sent first)\n  ```json\n  {\n    \\\"type\\\": \\\"session.created\\\",\n    \\\"session\\\": {\n      \\\"id\\\": \\\"session-id\\\",\n      \\\"object\\\": \\\"realtime.session\\\",\n      \\\"modalities\\\": [\\\"audio\\\"],\n      \\\"model\\\": \\\"openai/whisper-large-v3\\\"\n    }\n  }\n  ```\n- `transcription_session.updated`: Confirms session configuration was applied. Sent in response to a client `transcription_session.updated` message.\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": {\n        \\\"type\\\": \\\"server_vad\\\",\n        \\\"threshold\\\": 0.3,\n        \\\"min_silence_duration_ms\\\": 500,\n        \\\"min_speech_duration_ms\\\": 250,\n        \\\"max_speech_duration_s\\\": 5.0,\n        \\\"speech_pad_ms\\\": 250\n      }\n    }\n  }\n  ```\n- `conversation.item.input_audio_transcription.delta`: Partial transcription results\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.delta\\\",\n    \\\"delta\\\": \\\"The quick brown\\\"\n  }\n  ```\n- `conversation.item.input_audio_transcription.completed`: Final transcription\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.completed\\\",\n    \\\"transcript\\\": \\\"The quick brown fox jumps over the lazy dog\\\"\n  }\n  ```\n- `conversation.item.input_audio_transcription.failed`: Error occurred\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.failed\\\",\n    \\\"error\\\": {\n      \\\"message\\\": \\\"Error description\\\",\n      \\\"type\\\": \\\"invalid_request_error\\\",\n      \\\"param\\\": null,\n      \\\"code\\\": \\\"invalid_api_key\\\"\n    }\n  }\n  ```\n\n**Error Codes:**\n- `invalid_api_key`: Invalid API key provided (401)\n- `missing_api_key`: Authorization header missing (401)\n- `model_not_available`: Invalid or unavailable model (400)\n- Unsupported audio format errors (400)\n\"",
+        "description": "\"Establishes a WebSocket connection for real-time audio transcription. This endpoint uses WebSocket protocol (wss://api.together.ai/v1/realtime) for bidirectional streaming communication.\n\n**Connection Setup:**\n- Protocol: WebSocket (wss://)\n- Authentication: Pass API key as Bearer token in Authorization header\n- Parameters: Sent as query parameters (model, input_audio_format)\n\n**Client Events:**\n- `input_audio_buffer.append`: Send audio chunks as base64-encoded data\n  ```json\n  {\n    \\\"type\\\": \\\"input_audio_buffer.append\\\",\n    \\\"audio\\\": \\\"<base64_encoded_audio_chunk>\\\"\n  }\n  ```\n- `input_audio_buffer.commit`: Signal end of audio stream. When VAD is enabled, the server automatically detects speech boundaries and emits `completed` events. When VAD is disabled, you must send `commit` to trigger transcription of the buffered audio.\n  ```json\n  {\n    \\\"type\\\": \\\"input_audio_buffer.commit\\\"\n  }\n  ```\n- `transcription_session.updated`: Update session configuration, including Voice Activity Detection (VAD) parameters. Send this after receiving `session.created`. Can also be sent at any time during the session to change VAD settings.\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": {\n        \\\"type\\\": \\\"server_vad\\\",\n        \\\"threshold\\\": 0.3,\n        \\\"min_silence_duration_ms\\\": 500,\n        \\\"min_speech_duration_ms\\\": 250,\n        \\\"max_speech_duration_s\\\": 5.0,\n        \\\"speech_pad_ms\\\": 250\n      }\n    }\n  }\n  ```\n  To disable VAD entirely (manual commit mode), set `turn_detection` to `null`:\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": null\n    }\n  }\n  ```\n\n**Voice Activity Detection (VAD)**\n\nVAD controls how the server automatically detects speech segments in the audio stream. When enabled (the default), the server uses Silero VAD to identify speech regions and emits transcription events as each segment completes. When disabled, you must manually call `input_audio_buffer.commit` to trigger transcription.\n\nVAD can be configured in two ways:\n1. **Query parameters** at connection time: `turn_detection=server_vad&threshold=0.3&min_silence_duration_ms=500`\n2. **Session message** after connection: Send `transcription_session.updated` with a `turn_detection` object (see above)\n\nTo disable VAD at connection time, use `turn_detection=none` as a query parameter.\n\n**VAD Parameters:**\n\nAll parameters are optional. Omitted fields use their defaults.\n\n| Parameter | Type | Default | Description |\n|-----------|------|---------|-------------|\n| `type` | string | `server_vad` | VAD mode. Use `server_vad` to enable, or set `turn_detection` to `null` to disable. |\n| `threshold` | float | `0.3` | Speech probability threshold (0.0–1.0). Audio frames with probability above this value are classified as speech. Lower values detect more speech but may increase false positives. For low-SNR audio (e.g., 8kHz phone calls), values of 0.01–0.2 may work better. |\n| `min_silence_duration_ms` | int | `500` | Minimum silence duration in milliseconds before ending a speech segment. Higher values merge nearby speech bursts into single segments. For phone calls with mid-sentence pauses, 2000–5000ms prevents over-segmentation. |\n| `min_speech_duration_ms` | int | `250` | Minimum speech segment duration in milliseconds. Segments shorter than this are discarded. Filters out brief noise bursts or clicks. |\n| `max_speech_duration_s` | float | `5.0` | Maximum speech segment duration in seconds. Segments longer than this are force-split at the longest internal silence gap. Useful for continuous speech without natural pauses. |\n| `speech_pad_ms` | int | `250` | Padding in milliseconds added to the start and end of each detected segment. Prevents clipping speech edges. When padding would cause adjacent segments to overlap, the gap is split at the midpoint instead. |\n\n**Server Events:**\n- `session.created`: Initial session confirmation (sent first)\n  ```json\n  {\n    \\\"type\\\": \\\"session.created\\\",\n    \\\"session\\\": {\n      \\\"id\\\": \\\"session-id\\\",\n      \\\"object\\\": \\\"realtime.session\\\",\n      \\\"modalities\\\": [\\\"audio\\\"],\n      \\\"model\\\": \\\"openai/whisper-large-v3\\\"\n    }\n  }\n  ```\n- `transcription_session.updated`: Confirms session configuration was applied. Sent in response to a client `transcription_session.updated` message.\n  ```json\n  {\n    \\\"type\\\": \\\"transcription_session.updated\\\",\n    \\\"session\\\": {\n      \\\"turn_detection\\\": {\n        \\\"type\\\": \\\"server_vad\\\",\n        \\\"threshold\\\": 0.3,\n        \\\"min_silence_duration_ms\\\": 500,\n        \\\"min_speech_duration_ms\\\": 250,\n        \\\"max_speech_duration_s\\\": 5.0,\n        \\\"speech_pad_ms\\\": 250\n      }\n    }\n  }\n  ```\n- `conversation.item.input_audio_transcription.delta`: Partial transcription results\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.delta\\\",\n    \\\"delta\\\": \\\"The quick brown\\\"\n  }\n  ```\n- `conversation.item.input_audio_transcription.completed`: Final transcription\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.completed\\\",\n    \\\"transcript\\\": \\\"The quick brown fox jumps over the lazy dog\\\"\n  }\n  ```\n- `conversation.item.input_audio_transcription.failed`: Error occurred\n  ```json\n  {\n    \\\"type\\\": \\\"conversation.item.input_audio_transcription.failed\\\",\n    \\\"error\\\": {\n      \\\"message\\\": \\\"Error description\\\",\n      \\\"type\\\": \\\"invalid_request_error\\\",\n      \\\"param\\\": null,\n      \\\"code\\\": \\\"invalid_api_key\\\"\n    }\n  }\n  ```\n\n**Error Codes:**\n- `invalid_api_key`: Invalid API key provided (401)\n- `missing_api_key`: Authorization header missing (401)\n- `model_not_available`: Invalid or unavailable model (400)\n- Unsupported audio format errors (400)\n\"",
         "operationId": "realtime-transcription",
         "parameters": [
           {
@@ -6112,7 +6114,7 @@
           },
           "reservation_start_time": {
             "type": "string",
-            "description": "Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster will be provisioned immediately.",
+            "description": "Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster provisions immediately.",
             "format": "date-time"
           },
           "reservation_end_time": {
@@ -6852,7 +6854,7 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of string sequences that will truncate (stop) inference text output. For example, \"</s>\" will stop generation as soon as the model generates the given token."
+            "description": "A list of string sequences that truncate (stop) inference text output. For example, \"</s>\" stops generation as soon as the model generates the given token."
           },
           "temperature": {
             "type": "number",
@@ -6882,11 +6884,11 @@
             "maximum": 20,
             "minimum": 0,
             "type": "integer",
-            "description": "An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of just the sampled token. Log probabilities help assess model confidence in token predictions."
+            "description": "An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of only the sampled token. Log probabilities help assess model confidence in token predictions."
           },
           "echo": {
             "type": "boolean",
-            "description": "If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs."
+            "description": "If true, the response contains the prompt. Can be used with `logprobs` to return prompt logprobs."
           },
           "n": {
             "maximum": 128,
@@ -7188,7 +7190,7 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of string sequences that will truncate (stop) inference text output. For example, \"</s>\" will stop generation as soon as the model generates the given token."
+            "description": "A list of string sequences that truncate (stop) inference text output. For example, \"</s>\" stops generation as soon as the model generates the given token."
           },
           "temperature": {
             "type": "number",
@@ -7212,7 +7214,7 @@
             ],
             "type": "string",
             "additionalProperties": false,
-            "description": "Defined the behavior of the API when max_tokens exceed the maximum context length of the model. When set to 'error', API will return 400 with appropriate error message. When set to 'truncate', override the max_tokens with maximum context length of the model.",
+            "description": "Defines the behavior of the API when max_tokens exceed the maximum context length of the model. When set to 'error', the API returns 400 with an appropriate error message. When set to 'truncate', overrides max_tokens with the maximum context length of the model.",
             "default": "error"
           },
           "repetition_penalty": {
@@ -7227,11 +7229,11 @@
             "maximum": 20,
             "minimum": 0,
             "type": "integer",
-            "description": "An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of just the sampled token. Log probabilities help assess model confidence in token predictions."
+            "description": "An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of only the sampled token. Log probabilities help assess model confidence in token predictions."
           },
           "echo": {
             "type": "boolean",
-            "description": "If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs."
+            "description": "If true, the response contains the prompt. Can be used with `logprobs` to return prompt logprobs."
           },
           "n": {
             "maximum": 128,
@@ -9360,7 +9362,7 @@
           },
           "user_id": {
             "type": "string",
-            "description": "Identifier for the user who created the job"
+            "description": "Identifier for who created the job."
           },
           "owner_address": {
             "type": "string",
@@ -9395,7 +9397,7 @@
           },
           "max_seq_length": {
             "type": "integer",
-            "description": "Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used."
+            "description": "Maximum sequence length to use for training. If not specified, uses the maximum allowed for the model and training method."
           },
           "model": {
             "type": "string",
@@ -9866,7 +9868,7 @@
                 "$ref": "#/components/schemas/UnionBranch"
               }
             ],
-            "description": "Whether to mask the user messages in conversational data or prompts in instruction data."
+            "description": "Whether to mask user messages in conversational data or prompts in instruction data."
           }
         }
       },
@@ -10147,7 +10149,7 @@
           },
           "inactive_timeout": {
             "type": "integer",
-            "description": "The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to null, omit or set to 0 to disable automatic timeout.",
+            "description": "The number of minutes of inactivity after which the endpoint stops automatically. Set to null, omit, or set to 0 to disable automatic timeout.",
             "nullable": true,
             "example": 60
           },
@@ -10427,7 +10429,7 @@
                 }
               }
             },
-            "description": "Files to upload to the session. If present, files will be uploaded before executing the given code."
+            "description": "Files to upload to the session. If present, files are uploaded before executing the given code."
           },
           "language": {
             "enum": [
@@ -10435,12 +10437,12 @@
             ],
             "type": "string",
             "additionalProperties": false,
-            "description": "Programming language for the code to execute. Currently only supports Python, but more will be added.",
+            "description": "Programming language for the code to execute. Currently only supports Python.",
             "default": "python"
           },
           "session_id": {
             "type": "string",
-            "description": "Identifier of the current session. Used to make follow-up calls. Requests will return an error if the session does not belong to the caller or has expired.",
+            "description": "Identifier of the current session. Used to make follow-up calls. Returns an error if the session does not belong to the caller or has expired.",
             "example": "ses_abcDEF123"
           }
         }
@@ -10654,7 +10656,7 @@
             "description": "Union discriminator"
           }
         },
-        "description": "The result of the execution. If successful, `data` contains the result and `errors` will be null. If unsuccessful, `data` will be null and `errors` will contain the errors.",
+        "description": "The result of the execution. If successful, `data` contains the result and `errors` is null. If unsuccessful, `data` is null and `errors` contains the errors.",
         "discriminator": {
           "propertyName": "type"
         }
@@ -11976,7 +11978,7 @@
           },
           "health_check_path": {
             "type": "string",
-            "description": "HealthCheckPath is the HTTP path for health checks (e.g., \"/health\"). If set, the platform will check this endpoint to determine container health"
+            "description": "HealthCheckPath is the HTTP path for health checks (e.g., \"/health\"). If set, the platform checks this endpoint to determine container health."
           },
           "image": {
             "type": "string",
@@ -11984,7 +11986,7 @@
           },
           "max_replicas": {
             "type": "integer",
-            "description": "MaxReplicas is the maximum number of container instances that can be scaled up to. If not set, will be set to MinReplicas"
+            "description": "MaxReplicas is the maximum number of container instances. Defaults to MinReplicas if not set."
           },
           "memory": {
             "maximum": 1000,
@@ -12050,7 +12052,7 @@
           "value": {
             "minLength": 1,
             "type": "string",
-            "description": "Value is the sensitive data to store securely (e.g., API keys, passwords, tokens). This value will be encrypted at rest"
+            "description": "Value is the sensitive data to store securely (e.g., API keys, passwords, tokens). Encrypted at rest."
           }
         }
       },
@@ -12492,7 +12494,7 @@
           },
           "created_by": {
             "type": "string",
-            "description": "CreatedBy is the identifier of the user who created this secret"
+            "description": "CreatedBy is the identifier of who created this secret."
           },
           "description": {
             "type": "string",
@@ -12504,7 +12506,7 @@
           },
           "last_updated_by": {
             "type": "string",
-            "description": "LastUpdatedBy is the identifier of the user who last updated this secret"
+            "description": "LastUpdatedBy is the identifier of who last updated this secret."
           },
           "name": {
             "type": "string",
@@ -12569,7 +12571,7 @@
             "items": {
               "$ref": "#/components/schemas/EnvironmentVariable"
             },
-            "description": "EnvironmentVariables is a list of environment variables to set in the container. This will replace all existing environment variables"
+            "description": "EnvironmentVariables is a list of environment variables to set in the container. Replaces all existing environment variables."
           },
           "gpu_count": {
             "type": "integer",
@@ -12632,7 +12634,7 @@
             "items": {
               "$ref": "#/components/schemas/VolumeMount"
             },
-            "description": "Volumes is a list of volume mounts to attach to the container. This will replace all existing volumes"
+            "description": "Volumes is a list of volume mounts to attach to the container. Replaces all existing volumes."
           }
         }
       },
@@ -12657,7 +12659,7 @@
           "value": {
             "minLength": 1,
             "type": "string",
-            "description": "Value is the new sensitive data to store securely. Updating this will replace the existing secret value"
+            "description": "Value is the new sensitive data to store securely. Updating this replaces the existing secret value."
           }
         }
       },
@@ -12671,7 +12673,7 @@
                 "$ref": "#/components/schemas/VolumeContentRequest"
               }
             ],
-            "description": "Content specifies the new content that will be preloaded to this volume"
+            "description": "Content specifies the new content to preload to this volume."
           },
           "name": {
             "type": "string",
@@ -12691,7 +12693,7 @@
         "properties": {
           "mount_path": {
             "type": "string",
-            "description": "MountPath is the path in the container where the volume will be mounted (e.g., \"/data\")"
+            "description": "MountPath is the path in the container where the volume mounts (e.g., \"/data\")."
           },
           "name": {
             "type": "string",
@@ -12789,7 +12791,7 @@
             "example": "files"
           }
         },
-        "description": "Content specifies the new content that will be preloaded to this volume"
+        "description": "Content specifies the new content to preload to this volume."
       },
       "VolumeContent": {
         "type": "object",
@@ -12800,7 +12802,7 @@
             "items": {
               "$ref": "#/components/schemas/FileInfo"
             },
-            "description": "Files is the list of files that will be preloaded into the volume, if the volume content type is \"files\""
+            "description": "Files is the list of files to preload into the volume, if the volume content type is \"files\"."
           },
           "source_prefix": {
             "type": "string",
@@ -13894,7 +13896,7 @@
           },
           "max_seq_length": {
             "type": "integer",
-            "description": "Maximum sequence length to use for training."
+            "description": "Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used."
           },
           "model": {
             "type": "string",
@@ -13923,6 +13925,11 @@
               }
             ],
             "description": "Number of training examples processed together (larger batches use more memory but may train faster). Defaults to \"max\". We use training optimizations like packing, so the effective batch size may be different than the value you set."
+          },
+          "gradient_accumulation_steps": {
+            "type": "integer",
+            "description": "Number of steps to accumulate gradients before performing a weight update. Effectively increases the batch size without requiring more memory. For example, with batch_size=4 and gradient_accumulation_steps=8, the effective batch size is 32.",
+            "default": 1
           },
           "learning_rate": {
             "type": "number",
@@ -13957,8 +13964,9 @@
             "nullable": true
           },
           "suffix": {
+            "maxLength": 64,
             "type": "string",
-            "description": "Suffix that will be added to your fine-tuned model name"
+            "description": "Suffix to add to your fine-tuned model name. Must be at most 64 characters long."
           },
           "wandb_api_key": {
             "type": "string",
@@ -13970,7 +13978,7 @@
           },
           "wandb_project_name": {
             "type": "string",
-            "description": "The Weights & Biases project for your run. If not specified, will use `together` as the project name."
+            "description": "The Weights & Biases project for your run. If not specified, uses `together` as the project name."
           },
           "wandb_name": {
             "type": "string",
@@ -13987,7 +13995,7 @@
                 "$ref": "#/components/schemas/UnionBranch"
               }
             ],
-            "description": "Whether to mask the user messages in conversational data or prompts in instruction data.",
+            "description": "Whether to mask user messages in conversational data or prompts in instruction data.",
             "deprecated": true
           },
           "training_method": {
@@ -14012,7 +14020,7 @@
                 "$ref": "#/components/schemas/LoRATrainingType"
               }
             ],
-            "description": "The training type to use. If not provided, the job will default to LoRA training type.",
+            "description": "The training type to use. Defaults to LoRA if not provided.",
             "nullable": true
           },
           "multimodal_params": {
@@ -14020,7 +14028,7 @@
           },
           "from_checkpoint": {
             "type": "string",
-            "description": "The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used."
+            "description": "The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, uses the final checkpoint."
           },
           "from_hf_model": {
             "type": "string",
@@ -14090,12 +14098,12 @@
                 "$ref": "#/components/schemas/LoRATrainingType"
               }
             ],
-            "description": "The training type to use. If not provided, the job will default to LoRA training type.",
+            "description": "The training type to use. Defaults to LoRA if not provided.",
             "nullable": true
           },
           "from_checkpoint": {
             "type": "string",
-            "description": "The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used."
+            "description": "The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, uses the final checkpoint."
           }
         }
       },
@@ -14108,12 +14116,12 @@
           },
           "allowed_to_proceed": {
             "type": "boolean",
-            "description": "Whether the user is allowed to proceed with the fine-tuning job",
+            "description": "Whether you are allowed to proceed with the fine-tuning job.",
             "example": true
           },
           "user_limit": {
             "type": "number",
-            "description": "The user's credit limit in dollars"
+            "description": "Your credit limit in dollars."
           },
           "estimated_train_token_count": {
             "type": "number",
@@ -14255,7 +14263,7 @@
           },
           "inactive_timeout": {
             "type": "integer",
-            "description": "The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to 0 to disable automatic timeout.",
+            "description": "The number of minutes of inactivity after which the endpoint stops automatically. Set to 0 to disable automatic timeout.",
             "nullable": true,
             "example": 60
           }

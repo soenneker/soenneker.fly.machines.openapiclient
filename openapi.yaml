@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Together APIs
-  description: The Together REST API. Please see https://docs.together.ai for more details.
+  description: The Together REST API. See https://docs.together.ai for more details.
   version: '2.0.0'
   termsOfService: https://www.together.ai/terms-of-service
   contact:
@@ -2545,7 +2545,7 @@ paths:
                   description: Whether to use sequence packing for training.
                 max_seq_length:
                   type: integer
-                  description: Maximum sequence length to use for training.
+                  description: Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used.
                 model:
                   type: string
                   description: Name of the base model to run fine-tune job on
@@ -2569,6 +2569,10 @@ paths:
                         - max
                   default: 'max'
                   description: Number of training examples processed together (larger batches use more memory but may train faster). Defaults to "max". We use training optimizations like packing, so the effective batch size may be different than the value you set.
+                gradient_accumulation_steps:
+                  type: integer
+                  default: 1
+                  description: Number of steps to accumulate gradients before performing a weight update. Effectively increases the batch size without requiring more memory. For example, with batch_size=4 and gradient_accumulation_steps=8, the effective batch size is 32.
                 learning_rate:
                   type: number
                   format: float
@@ -2601,7 +2605,8 @@ paths:
                     Random seed for reproducible training. When set, the same seed produces the same run (e.g. data shuffle, init). If omitted or null, the server applies its default seed (e.g. 42).
                 suffix:
                   type: string
-                  description: Suffix that will be added to your fine-tuned model name
+                  maxLength: 64
+                  description: Suffix to add to your fine-tuned model name. Must be at most 64 characters long.
                 wandb_api_key:
                   type: string
                   description: Integration key for tracking experiments and model metrics on W&B platform
@@ -2610,7 +2615,7 @@ paths:
                   description: The base URL of a dedicated Weights & Biases instance.
                 wandb_project_name:
                   type: string
-                  description: The Weights & Biases project for your run. If not specified, will use `together` as the project name.
+                  description: The Weights & Biases project for your run. If not specified, uses `together` as the project name.
                 wandb_name:
                   type: string
                   description: The Weights & Biases name for your run.
@@ -2625,7 +2630,7 @@ paths:
                         - auto
                   type: boolean
                   default: auto
-                  description: Whether to mask the user messages in conversational data or prompts in instruction data.
+                  description: Whether to mask user messages in conversational data or prompts in instruction data.
                   deprecated: true
                 training_method:
                   type: object
@@ -2640,12 +2645,12 @@ paths:
                   anyOf:
                     - $ref: '#/components/schemas/FullTrainingType'
                     - $ref: '#/components/schemas/LoRATrainingType'
-                  description: The training type to use. If not provided, the job will default to LoRA training type.
+                  description: The training type to use. Defaults to LoRA if not provided.
                 multimodal_params:
                   $ref: '#/components/schemas/MultimodalParams'
                 from_checkpoint:
                   type: string
-                  description: The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used.
+                  description: The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, uses the final checkpoint.
                 from_hf_model:
                   type: string
                   description: The Hugging Face Hub repo to start training from. Should be as close as possible to the base model (specified by the `model` argument) in terms of architecture and size.
@@ -2784,10 +2789,10 @@ paths:
                   oneOf:
                     - $ref: '#/components/schemas/FullTrainingType'
                     - $ref: '#/components/schemas/LoRATrainingType'
-                  description: The training type to use. If not provided, the job will default to LoRA training type.
+                  description: The training type to use. Defaults to LoRA if not provided.
                 from_checkpoint:
                   type: string
-                  description: The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used.
+                  description: The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, uses the final checkpoint.
       responses:
         '500':
           description: Internal Server Error
@@ -2807,11 +2812,11 @@ paths:
                     description: The price of the fine-tuning job
                   allowed_to_proceed:
                     type: boolean
-                    description: Whether the user is allowed to proceed with the fine-tuning job
+                    description: Whether you are allowed to proceed with the fine-tuning job.
                     example: true
                   user_limit:
                     type: number
-                    description: The user's credit limit in dollars
+                    description: Your credit limit in dollars.
                   estimated_train_token_count:
                     type: number
                     description: The estimated number of tokens to be trained
@@ -3338,7 +3343,7 @@ paths:
       summary: Get metrics
       description: >
         Retrieves recorded training metrics for a fine-tuning job in chronological order.
-        All filter fields are optional — omit the body or send `{}` to retrieve all metrics.
+        All filter fields are optional: omit the body or send `{}` to retrieve all metrics.
       x-codeSamples:
         - lang: Shell
           label: cURL
@@ -3413,11 +3418,11 @@ paths:
                       train/learning_rate: 0.00009
                       train/global_step: 14
         '400':
-          description: Invalid request — bad JSON body or missing job ID.
+          description: 'Invalid request: bad JSON body or missing job ID.'
         '404':
           description: Fine-tune job not found.
         '500':
-          description: Internal server error — failed to retrieve metrics.
+          description: 'Internal server error: failed to retrieve metrics.'
   /fine-tunes/models/supported:
     get:
       tags: ['Fine-tuning']
@@ -4428,7 +4433,7 @@ paths:
   /compute/clusters:
     get:
       tags: ['GPUClusterService']
-      summary: List all GPU clusters.
+      summary: List all GPU clusters
       description: List all GPU clusters.
       operationId: GPUClusterService_List
       responses:
@@ -4478,7 +4483,7 @@ paths:
             console.log(response.clusters);
     post:
       tags: ['GPUClusterService']
-      summary: Create GPU Cluster
+      summary: Create a GPU cluster
       description: |
         Create an Instant Cluster on Together's high-performance GPU clusters.
         With features like on-demand scaling, long-lived resizable high-bandwidth shared DC-local storage,
@@ -4604,7 +4609,7 @@ paths:
             console.log(cluster);
     put:
       tags: ['GPUClusterService']
-      summary: Update a GPU Cluster.
+      summary: Update a GPU cluster
       description: Update the configuration of an existing GPU cluster.
       operationId: GPUClusterService_Update
       parameters:
@@ -4767,7 +4772,7 @@ paths:
   /compute/clusters/storage/volumes:
     get:
       tags: ['SharedVolumeService']
-      summary: List all shared volumes.
+      summary: List all shared volumes
       description: List all shared volumes.
       operationId: SharedVolumeService_List
       responses:
@@ -4810,7 +4815,7 @@ paths:
                   https://api.together.ai/v1/compute/clusters/storages
     put:
       tags: ['SharedVolumeService']
-      summary: Update a shared volume.
+      summary: Update a shared volume
       description: |
         Update the configuration of an existing shared volume.
       operationId: SharedVolumeService_Update
@@ -4870,7 +4875,7 @@ paths:
                   https://api.together.ai/v1/compute/clusters/storage/volumes
     post:
       tags: ['SharedVolumeService']
-      summary: Create a shared volume.
+      summary: Create a shared volume
       description: |
         Instant Clusters supports long-lived, resizable in-DC shared storage with user data persistence.
         You can dynamically create and attach volumes to your cluster at cluster creation time, and resize as your data grows.
@@ -4933,7 +4938,7 @@ paths:
   /compute/clusters/storage/volumes/{volume_id}:
     get:
       tags: ['SharedVolumeService']
-      summary: Get shared volume by volume Id.
+      summary: Get a shared volume by ID
       description: Retrieve information about a specific shared volume.
       operationId: SharedVolumeService_Get
       parameters:
@@ -4983,7 +4988,7 @@ paths:
                   https://api.together.ai/v1/compute/clusters/storage/volumes/${VOLUME_ID}
     delete:
       tags: ['SharedVolumeService']
-      summary: Delete shared volume by volume id.
+      summary: Delete a shared volume by ID
       description: |
         Delete a shared volume. Note that if this volume is attached to a cluster, deleting will fail.
       operationId: SharedVolumeService_Delete
@@ -5035,7 +5040,7 @@ paths:
   /clusters/availability-zones:
     get:
       tags: ['endpoints']
-      summary: List all available availability zones.
+      summary: List all available availability zones
       description: List all available availability zones.
       operationId: availabilityZones
       responses:
@@ -5092,7 +5097,7 @@ paths:
   /endpoints:
     get:
       tags: ['Endpoints']
-      summary: List all endpoints, can be filtered by type
+      summary: List all endpoints
       description: Returns a list of all endpoints associated with your account. You can filter the results by type (dedicated or serverless).
       x-codeSamples:
         - lang: Python
@@ -5227,8 +5232,8 @@ paths:
                 $ref: '#/components/schemas/ErrorData'
     post:
       tags: ['Endpoints']
-      summary: Create a dedicated endpoint, it will start automatically
-      description: Creates a new dedicated endpoint for serving models. The endpoint will automatically start after creation. You can deploy any supported model on hardware configurations that meet the model's requirements.
+      summary: Create a dedicated endpoint
+      description: Creates a new dedicated endpoint for serving models. The endpoint starts automatically after creation. You can deploy any supported model on hardware configurations that meet the model's requirements.
       x-codeSamples:
         - lang: Python
           label: Together AI SDK (v2)
@@ -5553,7 +5558,7 @@ paths:
                   description: New autoscaling configuration for the endpoint
                 inactive_timeout:
                   type: integer
-                  description: The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to 0 to disable automatic timeout.
+                  description: The number of minutes of inactivity after which the endpoint stops automatically. Set to 0 to disable automatic timeout.
                   nullable: true
                   example: 60
       responses:
@@ -5787,9 +5792,10 @@ paths:
   /tci/execute:
     post:
       tags: ['Code Interpreter']
+      summary: Execute code
       callbacks: {}
       description: |
-        Executes the given code snippet and returns the output. Without a session_id, a new session will be created to run the code. If you do pass in a valid session_id, the code will be run in that session. This is useful for running multiple code snippets in the same environment, because dependencies and similar things are persisted
+        Executes the given code snippet and returns the output. Without a session_id, a new session is created to run the code. If you pass a valid session_id, the code runs in that session. This is useful for running multiple code snippets in the same environment, because dependencies and similar things are persisted
         between calls to the same session.
       x-codeSamples:
         - lang: Python
@@ -5883,6 +5889,7 @@ paths:
           description: Execute Response
   /tci/sessions:
     get:
+      summary: List active sessions
       tags: ['Code Interpreter']
       callbacks: {}
       description: |
@@ -6888,7 +6895,7 @@ paths:
 
         **VAD Parameters:**
 
-        All parameters are optional — omitted fields use their defaults.
+        All parameters are optional. Omitted fields use their defaults.
 
         | Parameter | Type | Default | Description |
         |-----------|------|---------|-------------|
@@ -8711,7 +8718,7 @@ components:
           description: ID of the capacity pool to use for the cluster. This field is optional and only applicable if the cluster is created from a capacity pool.
         reservation_start_time:
           type: string
-          description: Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster will be provisioned immediately.
+          description: Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster provisions immediately.
           format: date-time
         reservation_end_time:
           type: string
@@ -9277,7 +9284,7 @@ components:
           description: The maximum number of tokens to generate.
         stop:
           type: array
-          description: A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.
+          description: A list of string sequences that truncate (stop) inference text output. For example, "</s>" stops generation as soon as the model generates the given token.
           items:
             type: string
         temperature:
@@ -9303,10 +9310,10 @@ components:
           type: integer
           minimum: 0
           maximum: 20
-          description: An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of just the sampled token. Log probabilities help assess model confidence in token predictions.
+          description: An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of only the sampled token. Log probabilities help assess model confidence in token predictions.
         echo:
           type: boolean
-          description: If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.
+          description: If true, the response contains the prompt. Can be used with `logprobs` to return prompt logprobs.
         n:
           type: integer
           description: The number of completions to generate for each prompt.
@@ -9553,7 +9560,7 @@ components:
           description: The maximum number of tokens to generate.
         stop:
           type: array
-          description: A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.
+          description: A list of string sequences that truncate (stop) inference text output. For example, "</s>" stops generation as soon as the model generates the given token.
           items:
             type: string
         temperature:
@@ -9572,7 +9579,7 @@ components:
           type: string
           enum: ['truncate', 'error']
           default: 'error'
-          description: Defined the behavior of the API when max_tokens exceed the maximum context length of the model. When set to 'error', API will return 400 with appropriate error message. When set to 'truncate', override the max_tokens with maximum context length of the model.
+          description: Defines the behavior of the API when max_tokens exceed the maximum context length of the model. When set to 'error', the API returns 400 with an appropriate error message. When set to 'truncate', overrides max_tokens with the maximum context length of the model.
         repetition_penalty:
           type: number
           description: A number that controls the diversity of generated text by reducing the likelihood of repeated sequences. Higher values decrease repetition.
@@ -9583,10 +9590,10 @@ components:
           type: integer
           minimum: 0
           maximum: 20
-          description: An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of just the sampled token. Log probabilities help assess model confidence in token predictions.
+          description: An integer between 0 and 20 of the top k tokens to return log probabilities for at each generation step, instead of only the sampled token. Log probabilities help assess model confidence in token predictions.
         echo:
           type: boolean
-          description: If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.
+          description: If true, the response contains the prompt. Can be used with `logprobs` to return prompt logprobs.
         n:
           type: integer
           description: The number of completions to generate for each prompt.
@@ -11152,7 +11159,7 @@ components:
           description: Start timestamp of the current stage of the fine-tune job
         user_id:
           type: string
-          description: Identifier for the user who created the job
+          description: Identifier for who created the job.
         owner_address:
           type: string
           description: Owner address information
@@ -11179,7 +11186,7 @@ components:
           description: Whether sequence packing is being used for training.
         max_seq_length:
           type: integer
-          description: Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used.
+          description: Maximum sequence length to use for training. If not specified, uses the maximum allowed for the model and training method.
         model:
           type: string
           description: Base model used for fine-tuning
@@ -11543,7 +11550,7 @@ components:
                 - auto
           type: boolean
           default: auto
-          description: Whether to mask the user messages in conversational data or prompts in instruction data.
+          description: Whether to mask user messages in conversational data or prompts in instruction data.
       required:
         - method
         - train_on_inputs
@@ -11769,7 +11776,7 @@ components:
           example: STARTED
         inactive_timeout:
           type: integer
-          description: The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to null, omit or set to 0 to disable automatic timeout.
+          description: The number of minutes of inactivity after which the endpoint stops automatically. Set to null, omit, or set to 0 to disable automatic timeout.
           nullable: true
           example: 60
         availability_zone:
@@ -11980,7 +11987,7 @@ components:
           example: "print('Hello, world!')"
           type: string
         files:
-          description: Files to upload to the session. If present, files will be uploaded before executing the given code.
+          description: Files to upload to the session. If present, files are uploaded before executing the given code.
           items:
             properties:
               content:
@@ -12001,11 +12008,11 @@ components:
           type: array
         language:
           default: python
-          description: Programming language for the code to execute. Currently only supports Python, but more will be added.
+          description: Programming language for the code to execute. Currently only supports Python.
           enum:
             - python
         session_id:
-          description: Identifier of the current session. Used to make follow-up calls. Requests will return an error if the session does not belong to the caller or has expired.
+          description: Identifier of the current session. Used to make follow-up calls. Returns an error if the session does not belong to the caller or has expired.
           example: ses_abcDEF123
           nullable: false
           type: string
@@ -12013,7 +12020,7 @@ components:
     ExecuteResponse:
       title: ExecuteResponse
       type: object
-      description: 'The result of the execution. If successful, `data` contains the result and `errors` will be null. If unsuccessful, `data` will be null and `errors` will contain the errors.'
+      description: 'The result of the execution. If successful, `data` contains the result and `errors` is null. If unsuccessful, `data` is null and `errors` contains the errors.'
       oneOf:
         - title: SuccessfulExecution
           type: object
@@ -13056,13 +13063,13 @@ components:
             - b200-192gb
           type: string
         health_check_path:
-          description: HealthCheckPath is the HTTP path for health checks (e.g., "/health"). If set, the platform will check this endpoint to determine container health
+          description: HealthCheckPath is the HTTP path for health checks (e.g., "/health"). If set, the platform checks this endpoint to determine container health.
           type: string
         image:
           description: Image is the container image to deploy from registry.together.ai.
           type: string
         max_replicas:
-          description: MaxReplicas is the maximum number of container instances that can be scaled up to. If not set, will be set to MinReplicas
+          description: MaxReplicas is the maximum number of container instances. Defaults to MinReplicas if not set.
           type: integer
         memory:
           description: Memory is the amount of RAM to allocate per container instance in GiB (e.g., 0.5 = 512MiB)
@@ -13113,7 +13120,7 @@ components:
           description: ProjectID is ignored - the project is automatically determined from your authentication
           type: string
         value:
-          description: Value is the sensitive data to store securely (e.g., API keys, passwords, tokens). This value will be encrypted at rest
+          description: Value is the sensitive data to store securely (e.g., API keys, passwords, tokens). Encrypted at rest.
           minLength: 1
           type: string
       required:
@@ -13418,7 +13425,7 @@ components:
           description: CreatedAt is the ISO8601 timestamp when this secret was created
           type: string
         created_by:
-          description: CreatedBy is the identifier of the user who created this secret
+          description: CreatedBy is the identifier of who created this secret.
           type: string
         description:
           description: Description is a human-readable description of the secret's purpose
@@ -13427,7 +13434,7 @@ components:
           description: ID is the unique identifier for this secret
           type: string
         last_updated_by:
-          description: LastUpdatedBy is the identifier of the user who last updated this secret
+          description: LastUpdatedBy is the identifier of who last updated this secret.
           type: string
         name:
           description: Name is the name/key of the secret
@@ -13465,7 +13472,7 @@ components:
           description: Description is an optional human-readable description of your deployment
           type: string
         environment_variables:
-          description: EnvironmentVariables is a list of environment variables to set in the container. This will replace all existing environment variables
+          description: EnvironmentVariables is a list of environment variables to set in the container. Replaces all existing environment variables.
           items:
             $ref: "#/components/schemas/EnvironmentVariable"
           type: array
@@ -13513,7 +13520,7 @@ components:
           description: TerminationGracePeriodSeconds is the time in seconds to wait for graceful shutdown before forcefully terminating the replica
           type: integer
         volumes:
-          description: Volumes is a list of volume mounts to attach to the container. This will replace all existing volumes
+          description: Volumes is a list of volume mounts to attach to the container. Replaces all existing volumes.
           items:
             $ref: "#/components/schemas/VolumeMount"
           type: array
@@ -13533,7 +13540,7 @@ components:
           description: ProjectID is ignored - the project is automatically determined from your authentication
           type: string
         value:
-          description: Value is the new sensitive data to store securely. Updating this will replace the existing secret value
+          description: Value is the new sensitive data to store securely. Updating this replaces the existing secret value.
           minLength: 1
           type: string
       type: object
@@ -13542,7 +13549,7 @@ components:
         content:
           allOf:
             - $ref: "#/components/schemas/VolumeContentRequest"
-          description: Content specifies the new content that will be preloaded to this volume
+          description: Content specifies the new content to preload to this volume.
         name:
           description: Name is the new unique identifier for the volume within the project
           type: string
@@ -13554,7 +13561,7 @@ components:
     VolumeMount:
       properties:
         mount_path:
-          description: MountPath is the path in the container where the volume will be mounted (e.g., "/data")
+          description: MountPath is the path in the container where the volume mounts (e.g., "/data").
           type: string
         name:
           description: Name is the name of the volume to mount. Must reference an existing volume by name or ID
@@ -13615,7 +13622,7 @@ components:
           type: integer
       type: object
     VolumeContentRequest:
-      description: Content specifies the new content that will be preloaded to this volume
+      description: Content specifies the new content to preload to this volume.
       properties:
         source_prefix:
           description: SourcePrefix is the file path prefix for the content to be preloaded into the volume
@@ -13631,7 +13638,7 @@ components:
     VolumeContent:
       properties:
         files:
-          description: Files is the list of files that will be preloaded into the volume, if the volume content type is "files"
+          description: Files is the list of files to preload into the volume, if the volume content type is "files".
           items:
             $ref: '#/components/schemas/FileInfo'
           type: array

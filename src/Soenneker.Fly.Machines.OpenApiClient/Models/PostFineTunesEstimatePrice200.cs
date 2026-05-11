@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the user is allowed to proceed with the fine-tuning job</summary>
+        /// <summary>Whether you are allowed to proceed with the fine-tuning job.</summary>
         public bool? AllowedToProceed { get; set; }
         /// <summary>The estimated number of tokens for evaluation</summary>
         public double? EstimatedEvalTokenCount { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public double? EstimatedTotalPrice { get; set; }
         /// <summary>The estimated number of tokens to be trained</summary>
         public double? EstimatedTrainTokenCount { get; set; }
-        /// <summary>The user&apos;s credit limit in dollars</summary>
+        /// <summary>Your credit limit in dollars.</summary>
         public double? UserLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostFineTunesEstimatePrice200"/> and sets the default values.

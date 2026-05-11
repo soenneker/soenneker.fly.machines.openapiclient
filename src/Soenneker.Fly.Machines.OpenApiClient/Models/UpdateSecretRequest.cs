@@ -38,7 +38,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Value is the new sensitive data to store securely. Updating this will replace the existing secret value</summary>
+        /// <summary>Value is the new sensitive data to store securely. Updating this replaces the existing secret value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

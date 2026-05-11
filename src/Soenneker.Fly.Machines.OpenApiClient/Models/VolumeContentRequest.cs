@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// Content specifies the new content that will be preloaded to this volume
+    /// Content specifies the new content to preload to this volume.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VolumeContentRequest : IAdditionalDataHolder, IParsable

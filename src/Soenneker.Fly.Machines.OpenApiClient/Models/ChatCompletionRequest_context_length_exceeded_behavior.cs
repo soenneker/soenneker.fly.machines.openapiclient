@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>Defined the behavior of the API when max_tokens exceed the maximum context length of the model. When set to &apos;error&apos;, API will return 400 with appropriate error message. When set to &apos;truncate&apos;, override the max_tokens with maximum context length of the model.</summary>
+    /// <summary>Defines the behavior of the API when max_tokens exceed the maximum context length of the model. When set to &apos;error&apos;, the API returns 400 with an appropriate error message. When set to &apos;truncate&apos;, overrides max_tokens with the maximum context length of the model.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ChatCompletionRequest_context_length_exceeded_behavior
     {

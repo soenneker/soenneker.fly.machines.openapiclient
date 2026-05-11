@@ -48,7 +48,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>EnvironmentVariables is a list of environment variables to set in the container. This will replace all existing environment variables</summary>
+        /// <summary>EnvironmentVariables is a list of environment variables to set in the container. Replaces all existing environment variables.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.EnvironmentVariable>? EnvironmentVariables { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? Storage { get; set; }
         /// <summary>TerminationGracePeriodSeconds is the time in seconds to wait for graceful shutdown before forcefully terminating the replica</summary>
         public int? TerminationGracePeriodSeconds { get; set; }
-        /// <summary>Volumes is a list of volume mounts to attach to the container. This will replace all existing volumes</summary>
+        /// <summary>Volumes is a list of volume mounts to attach to the container. Replaces all existing volumes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeMount>? Volumes { get; set; }

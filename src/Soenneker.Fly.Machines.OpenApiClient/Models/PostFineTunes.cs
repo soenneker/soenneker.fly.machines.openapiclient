@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch BatchSize { get; set; }
 #endif
-        /// <summary>The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, the final checkpoint will be used.</summary>
+        /// <summary>The checkpoint identifier to continue training from a previous fine-tuning job. Format is `{$JOB_ID}` or `{$OUTPUT_MODEL_NAME}` or `{$JOB_ID}:{$STEP}` or `{$OUTPUT_MODEL_NAME}:{$STEP}`. The step value is optional; without it, uses the final checkpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromCheckpoint { get; set; }
@@ -38,6 +38,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string FromHfModel { get; set; }
 #endif
+        /// <summary>Number of steps to accumulate gradients before performing a weight update. Effectively increases the batch size without requiring more memory. For example, with batch_size=4 and gradient_accumulation_steps=8, the effective batch size is 32.</summary>
+        public int? GradientAccumulationSteps { get; set; }
         /// <summary>The API token for the Hugging Face Hub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Max gradient norm to be used for gradient clipping. Set to 0 to disable.</summary>
         public float? MaxGradNorm { get; set; }
-        /// <summary>Maximum sequence length to use for training.</summary>
+        /// <summary>Maximum sequence length to use for training. If not specified, the maximum allowed for the model and training method will be used.</summary>
         public int? MaxSeqLength { get; set; }
         /// <summary>Name of the base model to run fine-tune job on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +104,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public bool? Packing { get; set; }
         /// <summary>Random seed for reproducible training. When set, the same seed produces the same run (e.g. data shuffle, init). If omitted or null, the server applies its default seed (e.g. 42).</summary>
         public int? RandomSeed { get; set; }
-        /// <summary>Suffix that will be added to your fine-tuned model name</summary>
+        /// <summary>Suffix to add to your fine-tuned model name. Must be at most 64 characters long.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Suffix { get; set; }
@@ -126,7 +128,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostFineTunes.PostFineTunes_training_method TrainingMethod { get; set; }
 #endif
-        /// <summary>The training type to use. If not provided, the job will default to LoRA training type.</summary>
+        /// <summary>The training type to use. Defaults to LoRA if not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostFineTunes.PostFineTunes_training_type? TrainingType { get; set; }
@@ -134,7 +136,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostFineTunes.PostFineTunes_training_type TrainingType { get; set; }
 #endif
-        /// <summary>Whether to mask the user messages in conversational data or prompts in instruction data.</summary>
+        /// <summary>Whether to mask user messages in conversational data or prompts in instruction data.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,7 +185,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string WandbName { get; set; }
 #endif
-        /// <summary>The Weights &amp; Biases project for your run. If not specified, will use `together` as the project name.</summary>
+        /// <summary>The Weights &amp; Biases project for your run. If not specified, uses `together` as the project name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WandbProjectName { get; set; }
@@ -223,6 +225,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "from_checkpoint", n => { FromCheckpoint = n.GetStringValue(); } },
                 { "from_hf_model", n => { FromHfModel = n.GetStringValue(); } },
+                { "gradient_accumulation_steps", n => { GradientAccumulationSteps = n.GetIntValue(); } },
                 { "hf_api_token", n => { HfApiToken = n.GetStringValue(); } },
                 { "hf_model_revision", n => { HfModelRevision = n.GetStringValue(); } },
                 { "hf_output_repo_name", n => { HfOutputRepoName = n.GetStringValue(); } },
@@ -262,6 +265,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UnionBranch>("batch_size", BatchSize);
             writer.WriteStringValue("from_checkpoint", FromCheckpoint);
             writer.WriteStringValue("from_hf_model", FromHfModel);
+            writer.WriteIntValue("gradient_accumulation_steps", GradientAccumulationSteps);
             writer.WriteStringValue("hf_api_token", HfApiToken);
             writer.WriteStringValue("hf_model_revision", HfModelRevision);
             writer.WriteStringValue("hf_output_repo_name", HfOutputRepoName);

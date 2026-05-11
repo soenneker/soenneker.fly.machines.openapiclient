@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>CreatedBy is the identifier of the user who created this secret</summary>
+        /// <summary>CreatedBy is the identifier of who created this secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>LastUpdatedBy is the identifier of the user who last updated this secret</summary>
+        /// <summary>LastUpdatedBy is the identifier of who last updated this secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastUpdatedBy { get; set; }

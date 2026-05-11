@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>MountPath is the path in the container where the volume will be mounted (e.g., &quot;/data&quot;)</summary>
+        /// <summary>MountPath is the path in the container where the volume mounts (e.g., &quot;/data&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MountPath { get; set; }

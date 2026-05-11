@@ -72,7 +72,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Endpoints
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Endpoints.EndpointsGetResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Endpoints.EndpointsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new dedicated endpoint for serving models. The endpoint will automatically start after creation. You can deploy any supported model on hardware configurations that meet the model&apos;s requirements.
+        /// Creates a new dedicated endpoint for serving models. The endpoint starts automatically after creation. You can deploy any supported model on hardware configurations that meet the model&apos;s requirements.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DedicatedEndpoint"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Endpoints
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new dedicated endpoint for serving models. The endpoint will automatically start after creation. You can deploy any supported model on hardware configurations that meet the model&apos;s requirements.
+        /// Creates a new dedicated endpoint for serving models. The endpoint starts automatically after creation. You can deploy any supported model on hardware configurations that meet the model&apos;s requirements.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

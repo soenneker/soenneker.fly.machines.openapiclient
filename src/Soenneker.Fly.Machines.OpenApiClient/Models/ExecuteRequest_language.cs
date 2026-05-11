@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>Programming language for the code to execute. Currently only supports Python, but more will be added.</summary>
+    /// <summary>Programming language for the code to execute. Currently only supports Python.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExecuteRequest_language
     {

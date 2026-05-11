@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to 0 to disable automatic timeout.</summary>
+        /// <summary>The number of minutes of inactivity after which the endpoint stops automatically. Set to 0 to disable automatic timeout.</summary>
         public int? InactiveTimeout { get; set; }
         /// <summary>The desired state of the endpoint</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateEndpoint_state? State { get; set; }

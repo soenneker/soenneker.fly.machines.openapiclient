@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics
         {
         }
         /// <summary>
-        /// Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional — omit the body or send `{}` to retrieve all metrics.
+        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional: omit the body or send `{}` to retrieve all metrics.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional — omit the body or send `{}` to retrieve all metrics.
+        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional: omit the body or send `{}` to retrieve all metrics.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

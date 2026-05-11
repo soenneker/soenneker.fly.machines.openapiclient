@@ -51,7 +51,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Hardware { get; set; }
 #endif
-        /// <summary>The number of minutes of inactivity after which the endpoint will be automatically stopped. Set to null, omit or set to 0 to disable automatic timeout.</summary>
+        /// <summary>The number of minutes of inactivity after which the endpoint stops automatically. Set to null, omit, or set to 0 to disable automatic timeout.</summary>
         public int? InactiveTimeout { get; set; }
         /// <summary>The model to deploy on this endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

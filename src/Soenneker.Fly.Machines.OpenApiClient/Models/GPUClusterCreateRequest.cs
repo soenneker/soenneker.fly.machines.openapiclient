@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Reservation end time of the cluster. This field is required for SCHEDULED billing to specify the reservation end time for the cluster.</summary>
         public DateTimeOffset? ReservationEndTime { get; set; }
-        /// <summary>Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster will be provisioned immediately.</summary>
+        /// <summary>Reservation start time of the cluster. This field is required for SCHEDULED billing to specify the reservation start time for the cluster. If not provided, the cluster provisions immediately.</summary>
         public DateTimeOffset? ReservationStartTime { get; set; }
         /// <summary>The shared_volume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
