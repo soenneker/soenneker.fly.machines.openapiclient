@@ -3343,18 +3343,13 @@ paths:
       summary: Get metrics
       description: >
         Retrieves recorded training metrics for a fine-tuning job in chronological order.
-        All filter fields are optional: omit the body or send `{}` to retrieve all metrics.
+        All query parameters are optional: omit them to retrieve all metrics.
       x-codeSamples:
         - lang: Shell
           label: cURL
           source: |
-            curl -X GET "https://api.together.ai/v1/fine-tunes/ft-id/metrics" \
-                 -H "Authorization: Bearer $TOGETHER_API_KEY" \
-                 -H "Content-Type: application/json" \
-                 -d '{
-                   "global_step_from": 0,
-                   "global_step_to": 500
-                 }'
+            curl -X GET "https://api.together.ai/v1/fine-tunes/ft-id/metrics?global_step_from=0&global_step_to=500" \
+                 -H "Authorization: Bearer $TOGETHER_API_KEY"
       parameters:
         - name: id
           in: path
@@ -3362,38 +3357,46 @@ paths:
           schema:
             description: Fine-tune job ID. A string that starts with `ft-`.
             type: string
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                global_step_from:
-                  type: integer
-                  format: int64
-                  description: Return only metrics with global_step >= this value.
-                  example: 0
-                global_step_to:
-                  type: integer
-                  format: int64
-                  description: Return only metrics with global_step <= this value.
-                  example: 500
-                logged_at_from:
-                  type: string
-                  format: date-time
-                  description: Return only metrics logged at or after this ISO-8601 timestamp.
-                  example: "2024-01-01T00:00:00Z"
-                logged_at_to:
-                  type: string
-                  format: date-time
-                  description: Return only metrics logged at or before this ISO-8601 timestamp.
-                  example: "2024-01-01T12:00:00Z"
-                resolution:
-                  type: integer
-                  format: int64
-                  description: Number of (uniformly sampled) train metrics to return.
-                  example: 100
+        - name: global_step_from
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+          description: Return only metrics with global_step >= this value.
+          example: 0
+        - name: global_step_to
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+          description: Return only metrics with global_step <= this value.
+          example: 500
+        - name: logged_at_from
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+          description: Return only metrics logged at or after this ISO-8601 timestamp.
+          example: "2024-01-01T00:00:00Z"
+        - name: logged_at_to
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+          description: Return only metrics logged at or before this ISO-8601 timestamp.
+          example: "2024-01-01T12:00:00Z"
+        - name: resolution
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+          description: Number of (uniformly sampled) train metrics to return.
+          example: 100
       responses:
         '200':
           description: List of metrics snapshots in chronological order.
@@ -6117,6 +6120,38 @@ paths:
                    "endpoint": "/v1/chat/completions",
                    "input_file_id": "file-id"
                  }'
+        - lang: Python
+          label: Audio transcriptions (Python)
+          source: |
+            # Audio transcription batches use the /v1/audio/transcriptions endpoint.
+            # Each line in the uploaded JSONL must include `"method": "FILE"` so the
+            # worker dispatches the request as multipart/form-data. Example line:
+            #   {"custom_id": "transcription-1", "method": "FILE",
+            #    "body": {"file": "https://example.com/audio.wav",
+            #             "model": "openai/whisper-large-v3"}}
+            from together import Together
+            import os
+
+            client = Together(
+                api_key=os.environ.get("TOGETHER_API_KEY"),
+            )
+
+            batch = client.batches.create(
+                input_file_id="file_id",
+                endpoint="/v1/audio/transcriptions",
+            )
+
+            print(batch.job)
+        - lang: Shell
+          label: Audio transcriptions (cURL)
+          source: |
+            curl -X POST "https://api.together.ai/v1/batches" \
+                 -H "Authorization: Bearer $TOGETHER_API_KEY" \
+                 -H "Content-Type: application/json" \
+                 -d '{
+                   "endpoint": "/v1/audio/transcriptions",
+                   "input_file_id": "file-id"
+                 }'
       security:
         - bearerAuth: []
       requestBody:
@@ -8413,6 +8448,11 @@ components:
           example: 0.05
           default: "0.05"
           description: Dropout of the LoRA adapter
+        enable:
+          type: boolean
+          example: true
+          default: "true"
+          description: Whether to enable LoRA fine-tuning. If false, full fine-tuning is used.
     RL.AdamWOptimizerParams:
       description: AdamW optimizer parameters
       type: object
@@ -12296,7 +12336,15 @@ components:
       properties:
         endpoint:
           type: string
-          description: The endpoint to use for batch processing
+          enum:
+            - /v1/chat/completions
+            - /v1/audio/transcriptions
+            - /v1/audio/translations
+          description: |
+            The endpoint to use for batch processing. Each line of the uploaded input file is dispatched against this endpoint.
+            - `/v1/chat/completions` — chat completion batches
+            - `/v1/audio/transcriptions` — audio transcription batches (e.g. `openai/whisper-large-v3`)
+            - `/v1/audio/translations` — audio translation batches
           example: '/v1/chat/completions'
         input_file_id:
           type: string

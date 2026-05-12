@@ -19,6 +19,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public long? Alpha { get; set; }
         /// <summary>Dropout of the LoRA adapter</summary>
         public float? Dropout { get; set; }
+        /// <summary>Whether to enable LoRA fine-tuning. If false, full fine-tuning is used.</summary>
+        public bool? Enable { get; set; }
         /// <summary>Rank of the LoRA adapter</summary>
         public long? Rank { get; set; }
         /// <summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "alpha", n => { Alpha = n.GetLongValue(); } },
                 { "dropout", n => { Dropout = n.GetFloatValue(); } },
+                { "enable", n => { Enable = n.GetBoolValue(); } },
                 { "rank", n => { Rank = n.GetLongValue(); } },
             };
         }
@@ -60,6 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("alpha", Alpha);
             writer.WriteFloatValue("dropout", Dropout);
+            writer.WriteBoolValue("enable", Enable);
             writer.WriteLongValue("rank", Rank);
             writer.WriteAdditionalData(AdditionalData);
         }

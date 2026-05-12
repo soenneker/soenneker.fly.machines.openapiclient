@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/fine-tunes/{id}/metrics", pathParameters)
+        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/fine-tunes/{id}/metrics{?global_step_from*,global_step_to*,logged_at_from*,logged_at_to*,resolution*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,49 +30,44 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/fine-tunes/{id}/metrics", rawUrl)
+        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/fine-tunes/{id}/metrics{?global_step_from*,global_step_to*,logged_at_from*,logged_at_to*,resolution*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional: omit the body or send `{}` to retrieve all metrics.&quot;
+        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All query parameters are optional: omit them to retrieve all metrics.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200"/></returns>
-        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200?> GetAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder.MetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200> GetAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder.MetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All filter fields are optional: omit the body or send `{}` to retrieve all metrics.&quot;
+        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All query parameters are optional: omit them to retrieve all metrics.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder.MetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.GetFineTunesIdMetrics body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder.MetricsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -83,6 +78,28 @@ namespace Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics
         public global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.Item.Metrics.MetricsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// &quot;Retrieves recorded training metrics for a fine-tuning job in chronological order. All query parameters are optional: omit them to retrieve all metrics.&quot;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class MetricsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Return only metrics with global_step &gt;= this value.</summary>
+            [QueryParameter("global_step_from")]
+            public long? GlobalStepFrom { get; set; }
+            /// <summary>Return only metrics with global_step &lt;= this value.</summary>
+            [QueryParameter("global_step_to")]
+            public long? GlobalStepTo { get; set; }
+            /// <summary>Return only metrics logged at or after this ISO-8601 timestamp.</summary>
+            [QueryParameter("logged_at_from")]
+            public DateTimeOffset? LoggedAtFrom { get; set; }
+            /// <summary>Return only metrics logged at or before this ISO-8601 timestamp.</summary>
+            [QueryParameter("logged_at_to")]
+            public DateTimeOffset? LoggedAtTo { get; set; }
+            /// <summary>Number of (uniformly sampled) train metrics to return.</summary>
+            [QueryParameter("resolution")]
+            public long? Resolution { get; set; }
         }
     }
 }

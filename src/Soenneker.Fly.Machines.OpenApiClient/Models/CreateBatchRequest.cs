@@ -22,14 +22,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string CompletionWindow { get; set; }
 #endif
-        /// <summary>The endpoint to use for batch processing</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Endpoint { get; set; }
-#nullable restore
-#else
-        public string Endpoint { get; set; }
-#endif
+        /// <summary>The endpoint to use for batch processing. Each line of the uploaded input file is dispatched against this endpoint.- `/v1/chat/completions` — chat completion batches- `/v1/audio/transcriptions` — audio transcription batches (e.g. `openai/whisper-large-v3`)- `/v1/audio/translations` — audio translation batches</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateBatchRequest_endpoint? Endpoint { get; set; }
         /// <summary>ID of the uploaded input file containing batch requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +68,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completion_window", n => { CompletionWindow = n.GetStringValue(); } },
-                { "endpoint", n => { Endpoint = n.GetStringValue(); } },
+                { "endpoint", n => { Endpoint = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateBatchRequest_endpoint>(); } },
                 { "input_file_id", n => { InputFileId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
@@ -88,7 +82,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("completion_window", CompletionWindow);
-            writer.WriteStringValue("endpoint", Endpoint);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateBatchRequest_endpoint>("endpoint", Endpoint);
             writer.WriteStringValue("input_file_id", InputFileId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteIntValue("priority", Priority);
