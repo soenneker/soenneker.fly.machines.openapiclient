@@ -14,15 +14,35 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Content specifies the content configuration for this volume</summary>
+        /// <summary>enable scheduled automatic snapshots. Defaults to `true`</summary>
+        public bool? AutoBackupEnabled { get; set; }
+        /// <summary>The compute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content? Content { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? Compute { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content Content { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest Compute { get; set; }
 #endif
-        /// <summary>Name is the unique identifier for the volume within the project</summary>
+        /// <summary>The compute_image property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComputeImage { get; set; }
+#nullable restore
+#else
+        public string ComputeImage { get; set; }
+#endif
+        /// <summary>The encrypted property</summary>
+        public bool? Encrypted { get; set; }
+        /// <summary>The fstype property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Fstype { get; set; }
+#nullable restore
+#else
+        public string Fstype { get; set; }
+#endif
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -30,8 +50,38 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType? Type { get; set; }
+        /// <summary>The region property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
+        /// <summary>The require_unique_zone property</summary>
+        public bool? RequireUniqueZone { get; set; }
+        /// <summary>The size_gb property</summary>
+        public int? SizeGb { get; set; }
+        /// <summary>restore from snapshot</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SnapshotId { get; set; }
+#nullable restore
+#else
+        public string SnapshotId { get; set; }
+#endif
+        /// <summary>The snapshot_retention property</summary>
+        public int? SnapshotRetention { get; set; }
+        /// <summary>fork from remote volume</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceVolumeId { get; set; }
+#nullable restore
+#else
+        public string SourceVolumeId { get; set; }
+#endif
+        /// <summary>The unique_zone_app_wide property</summary>
+        public bool? UniqueZoneAppWide { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest"/> and sets the default values.
         /// </summary>
@@ -57,9 +107,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content.CreateFromDiscriminatorValue); } },
+                { "auto_backup_enabled", n => { AutoBackupEnabled = n.GetBoolValue(); } },
+                { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest.CreateFromDiscriminatorValue); } },
+                { "compute_image", n => { ComputeImage = n.GetStringValue(); } },
+                { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
+                { "fstype", n => { Fstype = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "require_unique_zone", n => { RequireUniqueZone = n.GetBoolValue(); } },
+                { "size_gb", n => { SizeGb = n.GetIntValue(); } },
+                { "snapshot_id", n => { SnapshotId = n.GetStringValue(); } },
+                { "snapshot_retention", n => { SnapshotRetention = n.GetIntValue(); } },
+                { "source_volume_id", n => { SourceVolumeId = n.GetStringValue(); } },
+                { "unique_zone_app_wide", n => { UniqueZoneAppWide = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +129,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest_content>("content", Content);
+            writer.WriteBoolValue("auto_backup_enabled", AutoBackupEnabled);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>("compute", Compute);
+            writer.WriteStringValue("compute_image", ComputeImage);
+            writer.WriteBoolValue("encrypted", Encrypted);
+            writer.WriteStringValue("fstype", Fstype);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>("type", Type);
+            writer.WriteStringValue("region", Region);
+            writer.WriteBoolValue("require_unique_zone", RequireUniqueZone);
+            writer.WriteIntValue("size_gb", SizeGb);
+            writer.WriteStringValue("snapshot_id", SnapshotId);
+            writer.WriteIntValue("snapshot_retention", SnapshotRetention);
+            writer.WriteStringValue("source_volume_id", SourceVolumeId);
+            writer.WriteBoolValue("unique_zone_app_wide", UniqueZoneAppWide);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

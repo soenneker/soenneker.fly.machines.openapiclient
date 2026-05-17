@@ -6,30 +6,10 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
-using Soenneker.Fly.Machines.OpenApiClient.Audio;
-using Soenneker.Fly.Machines.OpenApiClient.Batches;
-using Soenneker.Fly.Machines.OpenApiClient.Chat;
-using Soenneker.Fly.Machines.OpenApiClient.Clusters;
-using Soenneker.Fly.Machines.OpenApiClient.Completions;
-using Soenneker.Fly.Machines.OpenApiClient.Compute;
-using Soenneker.Fly.Machines.OpenApiClient.Deployments;
-using Soenneker.Fly.Machines.OpenApiClient.Embeddings;
-using Soenneker.Fly.Machines.OpenApiClient.Endpoints;
-using Soenneker.Fly.Machines.OpenApiClient.Evaluation;
-using Soenneker.Fly.Machines.OpenApiClient.Files;
-using Soenneker.Fly.Machines.OpenApiClient.FineTunes;
-using Soenneker.Fly.Machines.OpenApiClient.Finetune;
-using Soenneker.Fly.Machines.OpenApiClient.Hardware;
-using Soenneker.Fly.Machines.OpenApiClient.Images;
-using Soenneker.Fly.Machines.OpenApiClient.Jobs;
-using Soenneker.Fly.Machines.OpenApiClient.ModelsRequests;
-using Soenneker.Fly.Machines.OpenApiClient.Queue;
-using Soenneker.Fly.Machines.OpenApiClient.Realtime;
-using Soenneker.Fly.Machines.OpenApiClient.Rerank;
-using Soenneker.Fly.Machines.OpenApiClient.Rl;
-using Soenneker.Fly.Machines.OpenApiClient.Tci;
-using Soenneker.Fly.Machines.OpenApiClient.Videos;
-using Soenneker.Fly.Machines.OpenApiClient.Voices;
+using Soenneker.Fly.Machines.OpenApiClient.Apps;
+using Soenneker.Fly.Machines.OpenApiClient.Orgs;
+using Soenneker.Fly.Machines.OpenApiClient.Platform;
+using Soenneker.Fly.Machines.OpenApiClient.Tokens;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -42,125 +22,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachinesOpenApiClient : BaseRequestBuilder
     {
-        /// <summary>The audio property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Audio.AudioRequestBuilder Audio
+        /// <summary>The apps property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.AppsRequestBuilder Apps
         {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The batches property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Batches.BatchesRequestBuilder Batches
+        /// <summary>The orgs property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Orgs.OrgsRequestBuilder Orgs
         {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Batches.BatchesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.Orgs.OrgsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The chat property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Chat.ChatRequestBuilder Chat
+        /// <summary>The platform property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder Platform
         {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The clusters property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Clusters.ClustersRequestBuilder Clusters
+        /// <summary>The tokens property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Tokens.TokensRequestBuilder Tokens
         {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Clusters.ClustersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The completions property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Completions.CompletionsRequestBuilder Completions
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Completions.CompletionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The compute property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Compute.ComputeRequestBuilder Compute
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The deployments property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Deployments.DeploymentsRequestBuilder Deployments
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Deployments.DeploymentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The embeddings property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Embeddings.EmbeddingsRequestBuilder Embeddings
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Embeddings.EmbeddingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The endpoints property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Endpoints.EndpointsRequestBuilder Endpoints
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Endpoints.EndpointsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The evaluation property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Evaluation.EvaluationRequestBuilder Evaluation
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Evaluation.EvaluationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The files property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Files.FilesRequestBuilder Files
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The finetune property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Finetune.FinetuneRequestBuilder Finetune
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Finetune.FinetuneRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The fineTunes property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.FineTunesRequestBuilder FineTunes
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.FineTunes.FineTunesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The hardware property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder Hardware
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Hardware.HardwareRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The images property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Images.ImagesRequestBuilder Images
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Images.ImagesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The jobs property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Jobs.JobsRequestBuilder Jobs
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The models property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.ModelsRequests.ModelsRequestBuilder Models
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.ModelsRequests.ModelsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The queue property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Queue.QueueRequestBuilder Queue
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Queue.QueueRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The realtime property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Realtime.RealtimeRequestBuilder Realtime
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Realtime.RealtimeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The rerank property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Rerank.RerankRequestBuilder Rerank
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Rerank.RerankRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The rl property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Rl.RlRequestBuilder Rl
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Rl.RlRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The tci property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Tci.TciRequestBuilder Tci
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Tci.TciRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The videos property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Videos.VideosRequestBuilder Videos
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Videos.VideosRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The voices property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Voices.VoicesRequestBuilder Voices
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Voices.VoicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.Tokens.TokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.FlyMachinesOpenApiClient"/> and sets the default values.
@@ -177,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://api.together.ai/v1";
+                RequestAdapter.BaseUrl = "https://api.machines.dev/v1";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

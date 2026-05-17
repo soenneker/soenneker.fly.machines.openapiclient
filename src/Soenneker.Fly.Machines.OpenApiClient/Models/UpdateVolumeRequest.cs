@@ -14,24 +14,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Content specifies the new content to preload to this volume.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content? Content { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content Content { get; set; }
-#endif
-        /// <summary>Name is the new unique identifier for the volume within the project</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType? Type { get; set; }
+        /// <summary>The auto_backup_enabled property</summary>
+        public bool? AutoBackupEnabled { get; set; }
+        /// <summary>The snapshot_retention property</summary>
+        public int? SnapshotRetention { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest"/> and sets the default values.
         /// </summary>
@@ -57,9 +43,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>(); } },
+                { "auto_backup_enabled", n => { AutoBackupEnabled = n.GetBoolValue(); } },
+                { "snapshot_retention", n => { SnapshotRetention = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +54,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest_content>("content", Content);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.VolumeType>("type", Type);
+            writer.WriteBoolValue("auto_backup_enabled", AutoBackupEnabled);
+            writer.WriteIntValue("snapshot_retention", SnapshotRetention);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
