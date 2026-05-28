@@ -163,6 +163,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Size { get; set; }
 #endif
+        /// <summary>The spot property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot? Spot { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot Spot { get; set; }
+#endif
         /// <summary>Standbys enable a machine to be a standby for another. In the event of a hardware failure,the standby machine will be started.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,6 +240,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetStringValue(); } },
+                { "spot", n => { Spot = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot.CreateFromDiscriminatorValue); } },
                 { "standbys", n => { Standbys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "statics", n => { Statics = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "stop_config", n => { StopConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig.CreateFromDiscriminatorValue); } },
@@ -264,6 +273,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("schedule", Schedule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService>("services", Services);
             writer.WriteStringValue("size", Size);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot>("spot", Spot);
             writer.WriteCollectionOfPrimitiveValues<string>("standbys", Standbys);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic>("statics", Statics);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig>("stop_config", StopConfig);

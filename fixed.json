@@ -4309,6 +4309,9 @@
                 "type": "string",
                 "description": "\"Deprecated: use Guest instead\""
               },
+              "spot": {
+                "$ref": "#/components/schemas/FlyMachineSpot"
+              },
               "standbys": {
                 "type": "array",
                 "items": {
@@ -5346,6 +5349,9 @@
                 "type": "string",
                 "description": "\"Deprecated: use Guest instead\""
               },
+              "spot": {
+                "$ref": "#/components/schemas/FlyMachineSpot"
+              },
               "standbys": {
                 "type": "array",
                 "items": {
@@ -6219,6 +6225,9 @@
             "type": "string",
             "description": "\"Deprecated: use Guest instead\""
           },
+          "spot": {
+            "$ref": "#/components/schemas/FlyMachineSpot"
+          },
           "standbys": {
             "type": "array",
             "items": {
@@ -6626,6 +6635,15 @@
           },
           "type": {
             "type": "string"
+          }
+        }
+      },
+      "FlyMachineSpot": {
+        "type": "object",
+        "properties": {
+          "max_price_fraction": {
+            "type": "number",
+            "description": "\"MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]\""
           }
         }
       },
