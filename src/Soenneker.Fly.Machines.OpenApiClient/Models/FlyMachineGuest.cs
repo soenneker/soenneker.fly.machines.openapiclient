@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The memory_mb property</summary>
         public int? MemoryMb { get; set; }
         /// <summary>&quot;Deprecated: use MachineConfig.Rootfs instead&quot;</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest_persist_rootfs? PersistRootfs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "kernel_args", n => { KernelArgs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_memory_mb", n => { MaxMemoryMb = n.GetIntValue(); } },
                 { "memory_mb", n => { MemoryMb = n.GetIntValue(); } },
-                { "persist_rootfs", n => { PersistRootfs = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest_persist_rootfs>(); } },
+                { "persist_rootfs", n => { PersistRootfs = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs>(); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("kernel_args", KernelArgs);
             writer.WriteIntValue("max_memory_mb", MaxMemoryMb);
             writer.WriteIntValue("memory_mb", MemoryMb);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest_persist_rootfs>("persist_rootfs", PersistRootfs);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs>("persist_rootfs", PersistRootfs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

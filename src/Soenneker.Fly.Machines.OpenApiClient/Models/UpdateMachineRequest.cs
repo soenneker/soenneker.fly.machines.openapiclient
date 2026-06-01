@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>An object defining the Machine configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest_config? Config { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest_config Config { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig Config { get; set; }
 #endif
         /// <summary>The current_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest_config>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest_config.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig.CreateFromDiscriminatorValue); } },
                 { "current_version", n => { CurrentVersion = n.GetStringValue(); } },
                 { "lease_ttl", n => { LeaseTtl = n.GetIntValue(); } },
                 { "min_secrets_version", n => { MinSecretsVersion = n.GetIntValue(); } },
@@ -99,7 +99,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest_config>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig>("config", Config);
             writer.WriteStringValue("current_version", CurrentVersion);
             writer.WriteIntValue("lease_ttl", LeaseTtl);
             writer.WriteIntValue("min_secrets_version", MinSecretsVersion);

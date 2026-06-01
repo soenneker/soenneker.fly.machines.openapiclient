@@ -18,10 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Deprecated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse_details? Details { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse_details Details { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty Details { get; set; }
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse_details>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse_details.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode>(); } },
             };
@@ -72,7 +72,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse_details>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty>("details", Details);
             writer.WriteStringValue("error", Error);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

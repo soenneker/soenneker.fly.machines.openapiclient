@@ -15,7 +15,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The signal property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig_signal? Signal { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfigSignal? Signal { get; set; }
         /// <summary>The timeout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "signal", n => { Signal = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig_signal>(); } },
+                { "signal", n => { Signal = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfigSignal>(); } },
                 { "timeout", n => { Timeout = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig_signal>("signal", Signal);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfigSignal>("signal", Signal);
             writer.WriteStringValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }

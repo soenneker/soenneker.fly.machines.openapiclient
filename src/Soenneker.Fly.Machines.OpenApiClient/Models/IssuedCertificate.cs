@@ -31,7 +31,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ExpiresAt { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate_type? Type { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "certificate_authority", n => { CertificateAuthority = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificateType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("certificate_authority", CertificateAuthority);
             writer.WriteStringValue("expires_at", ExpiresAt);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

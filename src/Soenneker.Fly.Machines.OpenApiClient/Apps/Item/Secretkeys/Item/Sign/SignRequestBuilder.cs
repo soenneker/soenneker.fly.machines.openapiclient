@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.Sign
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\secretkeys\{secret_name}\sign
+    /// Builds and executes requests for operations under \apps\{appName}\secretkeys\{secretName}\sign
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SignRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.Sign
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/secretkeys/{secret_name}/sign{?min_version*}", pathParameters)
+        public SignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}/sign{?min_version*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.Sign
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/secretkeys/{secret_name}/sign{?min_version*}", rawUrl)
+        public SignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}/sign{?min_version*}", rawUrl)
         {
         }
         /// <summary>

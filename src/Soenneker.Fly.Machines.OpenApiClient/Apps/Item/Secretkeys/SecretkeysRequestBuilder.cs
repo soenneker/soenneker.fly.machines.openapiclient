@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\secretkeys
+    /// Builds and executes requests for operations under \apps\{appName}\secretkeys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretkeysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fly.Machines.OpenApiClient.apps.item.secretkeys.item collection</summary>
         /// <param name="position">Secret key name</param>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecret_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecret_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecretNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecretNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("secret_name", position);
-                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecret_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("secretName", position);
+                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item.WithSecretNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretkeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/secretkeys{?min_version*,types*}", pathParameters)
+        public SecretkeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys{?min_version*,types*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretkeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/secretkeys{?min_version*,types*}", rawUrl)
+        public SecretkeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys{?min_version*,types*}", rawUrl)
         {
         }
         /// <summary>

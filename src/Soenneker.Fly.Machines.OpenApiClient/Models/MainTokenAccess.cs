@@ -12,8 +12,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     public partial class MainTokenAccess : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
-        public int? Action { get; set; }
+        /// <summary>&quot;Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g \&quot;rw\&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction Action { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&quot;AppFeature is a named set of functionality associated with the app. Ifthis is specified, the AppName field must be set.  - images: images in the fly.io registry&quot;</summary>
@@ -129,7 +135,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetIntValue(); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction.CreateFromDiscriminatorValue); } },
                 { "app_feature", n => { AppFeature = n.GetStringValue(); } },
                 { "app_name", n => { AppName = n.GetStringValue(); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -150,7 +156,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction>("action", Action);
             writer.WriteStringValue("app_feature", AppFeature);
             writer.WriteStringValue("app_name", AppName);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);

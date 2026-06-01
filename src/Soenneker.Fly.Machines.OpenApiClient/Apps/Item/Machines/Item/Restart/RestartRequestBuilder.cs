@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Restart
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\machines\{machine_id}\restart
+    /// Builds and executes requests for operations under \apps\{appName}\machines\{machineId}\restart
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RestartRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Restart
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RestartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?signal*,timeout*}", pathParameters)
+        public RestartRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/restart{?signal*,timeout*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Restart
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RestartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?signal*,timeout*}", rawUrl)
+        public RestartRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/restart{?signal*,timeout*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Restart
         {
             /// <summary>Unix signal name</summary>
             [QueryParameter("signal")]
-            public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Restart.PostSignalQueryParameterType? Signal { get; set; }
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesRestartSignalParameter? Signal { get; set; }
             /// <summary>Restart timeout as a Go duration string or number of seconds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

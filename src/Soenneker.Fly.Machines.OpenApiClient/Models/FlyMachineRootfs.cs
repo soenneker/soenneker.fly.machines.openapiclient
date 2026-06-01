@@ -15,7 +15,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The persist property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs_persist? Persist { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? Persist { get; set; }
         /// <summary>The size_gb property</summary>
         public int? SizeGb { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "persist", n => { Persist = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs_persist>(); } },
+                { "persist", n => { Persist = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>(); } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs_persist>("persist", Persist);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>("persist", Persist);
             writer.WriteIntValue("size_gb", SizeGb);
             writer.WriteAdditionalData(AdditionalData);
         }

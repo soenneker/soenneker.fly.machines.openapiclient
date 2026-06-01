@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The caveats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet_caveats>? Caveats { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>? Caveats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet_caveats> Caveats { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty> Caveats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "caveats", n => { Caveats = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet_caveats>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet_caveats.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "caveats", n => { Caveats = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet_caveats>("caveats", Caveats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>("caveats", Caveats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

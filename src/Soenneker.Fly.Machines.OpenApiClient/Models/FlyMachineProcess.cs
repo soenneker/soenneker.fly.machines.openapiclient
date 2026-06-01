@@ -33,10 +33,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The env property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess_env? Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty? Env { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess_env Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty Env { get; set; }
 #endif
         /// <summary>EnvFrom can be provided to set environment variables from machine fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "cmd", n => { Cmd = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess_env>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess_env.CreateFromDiscriminatorValue); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty.CreateFromDiscriminatorValue); } },
                 { "env_from", n => { EnvFrom = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exec", n => { Exec = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ignore_app_secrets", n => { IgnoreAppSecrets = n.GetBoolValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("cmd", Cmd);
             writer.WriteCollectionOfPrimitiveValues<string>("entrypoint", Entrypoint);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty>("env", Env);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>("env_from", EnvFrom);
             writer.WriteCollectionOfPrimitiveValues<string>("exec", Exec);
             writer.WriteBoolValue("ignore_app_secrets", IgnoreAppSecrets);

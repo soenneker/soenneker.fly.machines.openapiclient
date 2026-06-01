@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.Volumes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \orgs\{org_slug}\volumes
+    /// Builds and executes requests for operations under \orgs\{orgSlug}\volumes
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VolumesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.Volumes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VolumesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org_slug}/volumes{?cursor*,include_deleted*,limit*,region*,state*,summary*,updated_after*}", pathParameters)
+        public VolumesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{orgSlug}/volumes{?cursor*,include_deleted*,limit*,region*,state*,summary*,updated_after*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.Volumes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VolumesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org_slug}/volumes{?cursor*,include_deleted*,limit*,region*,state*,summary*,updated_after*}", rawUrl)
+        public VolumesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{orgSlug}/volumes{?cursor*,include_deleted*,limit*,region*,state*,summary*,updated_after*}", rawUrl)
         {
         }
         /// <summary>

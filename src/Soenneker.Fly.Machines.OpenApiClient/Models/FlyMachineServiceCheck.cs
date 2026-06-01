@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHTTPHeader>? Headers { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader>? Headers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHTTPHeader> Headers { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader> Headers { get; set; }
 #endif
         /// <summary>The time between connectivity checks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "grace_period", n => { GracePeriod = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHTTPHeader>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHTTPHeader.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("grace_period", GracePeriod);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHTTPHeader>("headers", Headers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader>("headers", Headers);
             writer.WriteStringValue("interval", Interval);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("path", Path);

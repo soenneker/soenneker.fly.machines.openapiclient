@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "insufficient_capacity")]
         #pragma warning disable CS1591
-        Insufficient_capacity,
+        InsufficientCapacity,
         #pragma warning restore CS1591
     }
 }

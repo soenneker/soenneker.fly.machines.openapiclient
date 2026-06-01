@@ -3,7 +3,7 @@
   "info": {
     "title": "Machines API",
     "description": "This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/) for how to get started, more information about each endpoint, parameter descriptions, and examples.",
-    "contact": { },
+    "contact": {},
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
@@ -23,12 +23,12 @@
         ],
         "summary": "List Apps",
         "description": "List all apps with the ability to filter by organization slug.\n",
-        "operationId": "Apps-list",
+        "operationId": "AppsList",
         "parameters": [
           {
             "name": "org_slug",
             "in": "query",
-            "description": "The org slug, or 'personal', to filter apps",
+            "description": "The org slug, or \u0027personal\u0027, to filter apps",
             "required": true,
             "schema": {
               "type": "string"
@@ -62,7 +62,7 @@
         ],
         "summary": "Create App",
         "description": "Create an app with the specified details in the request body.\n",
-        "operationId": "Apps-create",
+        "operationId": "AppsCreate",
         "requestBody": {
           "description": "App body",
           "content": {
@@ -87,17 +87,17 @@
         }
       }
     },
-    "/apps/{app_name}": {
+    "/apps/{appName}": {
       "get": {
         "tags": [
           "Apps"
         ],
         "summary": "Get App",
         "description": "Retrieve details about a specific app by its name.\n",
-        "operationId": "Apps-show",
+        "operationId": "AppsShow",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -125,10 +125,10 @@
         ],
         "summary": "Destroy App",
         "description": "Delete an app by its name.\n",
-        "operationId": "Apps-delete",
+        "operationId": "AppsDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -143,9 +143,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponse"
                 }
               }
             }
@@ -153,16 +151,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates": {
+    "/apps/{appName}/certificates": {
       "get": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "List certificates for app",
-        "operationId": "App-Certificates-list",
+        "operationId": "AppCertificatesList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -209,16 +207,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/acme": {
+    "/apps/{appName}/certificates/acme": {
       "post": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Request ACME certificate",
-        "operationId": "App-Certificates-acme-create",
+        "operationId": "AppCertificatesAcmeCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -261,16 +259,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/custom": {
+    "/apps/{appName}/certificates/custom": {
       "post": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Upload custom certificate",
-        "operationId": "App-Certificates-custom-create",
+        "operationId": "AppCertificatesCustomCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -313,16 +311,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/{hostname}": {
+    "/apps/{appName}/certificates/{hostname}": {
       "get": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Get certificate details",
-        "operationId": "App-Certificates-show",
+        "operationId": "AppCertificatesShow",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -358,10 +356,10 @@
           "TLS Certificates"
         ],
         "summary": "Remove certificate",
-        "operationId": "App-Certificates-delete",
+        "operationId": "AppCertificatesDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -385,9 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
                 }
               }
             }
@@ -395,16 +391,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/{hostname}/acme": {
+    "/apps/{appName}/certificates/{hostname}/acme": {
       "delete": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Remove ACME certificates",
-        "operationId": "App-Certificates-acme-delete",
+        "operationId": "AppCertificatesAcmeDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -436,16 +432,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/{hostname}/check": {
+    "/apps/{appName}/certificates/{hostname}/check": {
       "post": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Check DNS and re-validate certificate",
-        "operationId": "App-Certificates-check",
+        "operationId": "AppCertificatesCheck",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -477,16 +473,16 @@
         }
       }
     },
-    "/apps/{app_name}/certificates/{hostname}/custom": {
+    "/apps/{appName}/certificates/{hostname}/custom": {
       "delete": {
         "tags": [
           "TLS Certificates"
         ],
         "summary": "Remove custom certificate",
-        "operationId": "App-Certificates-custom-delete",
+        "operationId": "AppCertificatesCustomDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -518,16 +514,16 @@
         }
       }
     },
-    "/apps/{app_name}/deploy_token": {
+    "/apps/{appName}/deploy_token": {
       "post": {
         "tags": [
           "Apps"
         ],
         "summary": "Create App deploy token",
-        "operationId": "App-create-deploy-token",
+        "operationId": "AppCreateDeployToken",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -560,16 +556,16 @@
         }
       }
     },
-    "/apps/{app_name}/ip_assignments": {
+    "/apps/{appName}/ip_assignments": {
       "get": {
         "tags": [
           "Apps"
         ],
         "summary": "List IP assignments for app",
-        "operationId": "App-IPAssignments-list",
+        "operationId": "AppIpAssignmentsList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -584,7 +580,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListIPAssignmentsResponse"
+                  "$ref": "#/components/schemas/ListIpAssignmentsResponse"
                 }
               }
             }
@@ -596,10 +592,10 @@
           "Apps"
         ],
         "summary": "Assign new IP address to app",
-        "operationId": "App-IPAssignments-create",
+        "operationId": "AppIpAssignmentsCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -613,7 +609,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AssignIPRequest"
+                "$ref": "#/components/schemas/AssignIpRequest"
               }
             }
           }
@@ -624,7 +620,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IPAssignment"
+                  "$ref": "#/components/schemas/IpAssignment"
                 }
               }
             }
@@ -632,16 +628,16 @@
         }
       }
     },
-    "/apps/{app_name}/ip_assignments/{ip}": {
+    "/apps/{appName}/ip_assignments/{ip}": {
       "delete": {
         "tags": [
           "Apps"
         ],
         "summary": "Remove IP assignment from app",
-        "operationId": "App-IPAssignments-delete",
+        "operationId": "AppIpAssignmentsDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -665,9 +661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
                 }
               }
             }
@@ -675,17 +669,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines": {
+    "/apps/{appName}/machines": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "List Machines",
         "description": "List all Machines associated with a specific app, with optional filters for including deleted Machines and filtering by region.\n",
-        "operationId": "Machines-list",
+        "operationId": "MachinesList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -732,10 +726,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Machine"
-                  }
+                  "$ref": "#/components/schemas/MachinesList200ResponseResponseJson"
                 }
               }
             }
@@ -747,11 +738,11 @@
           "Machines"
         ],
         "summary": "Create Machine",
-        "description": "\"Create a Machine within a specific app using the details provided in the request body.\n\n**Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!\n\"",
-        "operationId": "Machines-create",
+        "description": "\u0022Create a Machine within a specific app using the details provided in the request body.\n\n**Important**: This request can fail, and you\u2019re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you\u2019re working directly with the Machines API, you\u2019re taking some responsibility for your own orchestration!\n\u0022",
+        "operationId": "MachinesCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -784,17 +775,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}": {
+    "/apps/{appName}/machines/{machineId}": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Get Machine",
         "description": "Get details of a specific Machine within an app by the Machine ID.\n",
-        "operationId": "Machines-show",
+        "operationId": "MachinesShow",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -803,7 +794,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -830,11 +821,11 @@
           "Machines"
         ],
         "summary": "Update Machine",
-        "description": "Update a Machine's configuration using the details provided in the request body.\n",
-        "operationId": "Machines-update",
+        "description": "Update a Machine\u0027s configuration using the details provided in the request body.\n",
+        "operationId": "MachinesUpdate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -843,7 +834,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -890,11 +881,11 @@
           "Machines"
         ],
         "summary": "Destroy Machine",
-        "description": "Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it's running.\n",
-        "operationId": "Machines-delete",
+        "description": "Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it\u0027s running.\n",
+        "operationId": "MachinesDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -903,7 +894,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -914,7 +905,7 @@
           {
             "name": "force",
             "in": "query",
-            "description": "Force kill the machine if it's running",
+            "description": "Force kill the machine if it\u0027s running",
             "schema": {
               "type": "boolean"
             }
@@ -926,9 +917,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
                 }
               }
             }
@@ -936,17 +925,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/cordon": {
+    "/apps/{appName}/machines/{machineId}/cordon": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Cordon Machine",
-        "description": "“Cordoning” a Machine refers to disabling its services, so the Fly Proxy won’t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.\n",
-        "operationId": "Machines-cordon",
+        "description": "\u201CCordoning\u201D a Machine refers to disabling its services, so the Fly Proxy won\u2019t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.\n",
+        "operationId": "MachinesCordon",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -955,7 +944,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -970,9 +959,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
                 }
               }
             }
@@ -980,17 +967,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/events": {
+    "/apps/{appName}/machines/{machineId}/events": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "List Events",
         "description": "List all events associated with a specific Machine within an app.\n",
-        "operationId": "Machines-list-events",
+        "operationId": "MachinesListEvents",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -999,7 +986,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1022,10 +1009,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MachineEvent"
-                  }
+                  "$ref": "#/components/schemas/MachinesListEvents200ResponseResponseJson"
                 }
               }
             }
@@ -1033,17 +1017,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/exec": {
+    "/apps/{appName}/machines/{machineId}/exec": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Execute Command",
         "description": "Execute a command on a specific Machine and return the raw command output bytes.\n",
-        "operationId": "Machines-exec",
+        "operationId": "MachinesExec",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1052,7 +1036,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1105,17 +1089,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/lease": {
+    "/apps/{appName}/machines/{machineId}/lease": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Get Lease",
         "description": "Retrieve the current lease of a specific Machine within an app. Machine leases can be used to obtain an exclusive lock on modifying a Machine.\n",
-        "operationId": "Machines-show-lease",
+        "operationId": "MachinesShowLease",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1124,7 +1108,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1152,10 +1136,10 @@
         ],
         "summary": "Create Lease",
         "description": "Create a lease for a specific Machine within an app using the details provided in the request body. Machine leases can be used to obtain an exclusive lock on modifying a Machine.\n",
-        "operationId": "Machines-create-lease",
+        "operationId": "MachinesCreateLease",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1164,7 +1148,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1210,10 +1194,10 @@
         ],
         "summary": "Release Lease",
         "description": "Release the lease of a specific Machine within an app. Machine leases can be used to obtain an exclusive lock on modifying a Machine.\n",
-        "operationId": "Machines-release-lease",
+        "operationId": "MachinesReleaseLease",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1222,7 +1206,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1246,9 +1230,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
                 }
               }
             }
@@ -1256,17 +1238,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/memory": {
+    "/apps/{appName}/machines/{machineId}/memory": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Get Machine Memory",
         "description": "Get current memory limit and available capacity for a machine",
-        "operationId": "Machines-get-memory",
+        "operationId": "MachinesGetMemory",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1275,7 +1257,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1303,10 +1285,10 @@
         ],
         "summary": "Set Machine Memory Limit",
         "description": "Set the memory limit for a machine using the balloon device",
-        "operationId": "Machines-set-memory-limit",
+        "operationId": "MachinesSetMemoryLimit",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1315,7 +1297,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1348,17 +1330,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/memory/reclaim": {
+    "/apps/{appName}/machines/{machineId}/memory/reclaim": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Reclaim Machine Memory",
         "description": "Trigger the balloon device to reclaim memory from a machine",
-        "operationId": "Machines-reclaim-memory",
+        "operationId": "MachinesReclaimMemory",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1367,7 +1349,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1400,17 +1382,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/metadata": {
+    "/apps/{appName}/machines/{machineId}/metadata": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Get Metadata",
         "description": "Retrieve metadata for a specific Machine within an app.\n",
-        "operationId": "Machines-show-metadata",
+        "operationId": "MachinesShowMetadata",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1419,7 +1401,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1434,10 +1416,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
+                  "$ref": "#/components/schemas/MachinesShowMetadata200ResponseResponseJson"
                 }
               }
             }
@@ -1449,11 +1428,11 @@
           "Machines"
         ],
         "summary": "Update Metadata (set/remove multiple keys)",
-        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
-        "operationId": "Machines-update-metadata",
+        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
+        "operationId": "MachinesUpdateMetadata",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1462,7 +1441,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1509,11 +1488,11 @@
           "Machines"
         ],
         "summary": "Update Metadata (set/remove multiple keys)",
-        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
-        "operationId": "Machines-update-metadata_1",
+        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
+        "operationId": "MachinesUpdateMetadata2",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1522,7 +1501,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1565,17 +1544,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/metadata/{key}": {
+    "/apps/{appName}/machines/{machineId}/metadata/{key}": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Get Metadata Value",
         "description": "Get the value of a specific metadata key",
-        "operationId": "Machines-get-metadata-key",
+        "operationId": "MachinesGetMetadataKey",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1584,7 +1563,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1631,10 +1610,10 @@
         ],
         "summary": "Upsert Metadata Key",
         "description": "Update metadata for a specific machine within an app by providing a metadata key.\n",
-        "operationId": "Machines-upsert-metadata",
+        "operationId": "MachinesUpsertMetadata",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1643,7 +1622,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1690,10 +1669,10 @@
         ],
         "summary": "Delete Metadata",
         "description": "Delete metadata for a specific Machine within an app by providing a metadata key.\n",
-        "operationId": "Machines-delete-metadata",
+        "operationId": "MachinesDeleteMetadata",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1702,7 +1681,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1726,9 +1705,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
                 }
               }
             }
@@ -1736,17 +1713,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/ps": {
+    "/apps/{appName}/machines/{machineId}/ps": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "List Processes",
         "description": "List all processes running on a specific Machine within an app, with optional sorting parameters.\n",
-        "operationId": "Machines-list-processes",
+        "operationId": "MachinesListProcesses",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1755,7 +1732,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1786,10 +1763,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ProcessStat"
-                  }
+                  "$ref": "#/components/schemas/MachinesListProcesses200ResponseResponseJson"
                 }
               }
             }
@@ -1807,17 +1781,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/restart": {
+    "/apps/{appName}/machines/{machineId}/restart": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Restart Machine",
         "description": "Restart a specific Machine within an app, with an optional timeout parameter.\n",
-        "operationId": "Machines-restart",
+        "operationId": "MachinesRestart",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1826,7 +1800,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1847,17 +1821,7 @@
             "in": "query",
             "description": "Unix signal name",
             "schema": {
-              "enum": [
-                "SIGHUP",
-                "SIGINT",
-                "SIGQUIT",
-                "SIGKILL",
-                "SIGUSR1",
-                "SIGUSR2",
-                "SIGTERM"
-              ],
-              "type": "string",
-              "additionalProperties": false
+              "$ref": "#/components/schemas/MachinesRestartSignalParameter"
             }
           }
         ],
@@ -1875,17 +1839,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/signal": {
+    "/apps/{appName}/machines/{machineId}/signal": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Signal Machine",
         "description": "Send a signal to a specific Machine within an app using the details provided in the request body.\n",
-        "operationId": "Machines-signal",
+        "operationId": "MachinesSignal",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1894,7 +1858,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1927,17 +1891,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/start": {
+    "/apps/{appName}/machines/{machineId}/start": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Start Machine",
         "description": "Start a specific Machine within an app.\n",
-        "operationId": "Machines-start",
+        "operationId": "MachinesStart",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1946,7 +1910,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -1961,9 +1925,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
                 }
               }
             }
@@ -1971,17 +1933,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/stop": {
+    "/apps/{appName}/machines/{machineId}/stop": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Stop Machine",
         "description": "Stop a specific Machine within an app, with an optional request body to specify signal and timeout.\n",
-        "operationId": "Machines-stop",
+        "operationId": "MachinesStop",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -1990,7 +1952,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -2023,17 +1985,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/suspend": {
+    "/apps/{appName}/machines/{machineId}/suspend": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Suspend Machine",
         "description": "Suspend a specific Machine within an app. The next start operation will attempt (but is not guaranteed) to resume the Machine from a snapshot taken at suspension time, rather than performing a cold boot.\n",
-        "operationId": "Machines-suspend",
+        "operationId": "MachinesSuspend",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2042,7 +2004,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -2057,9 +2019,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
                 }
               }
             }
@@ -2067,17 +2027,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/uncordon": {
+    "/apps/{appName}/machines/{machineId}/uncordon": {
       "post": {
         "tags": [
           "Machines"
         ],
         "summary": "Uncordon Machine",
-        "description": "“Cordoning” a Machine refers to disabling its services, so the Fly Proxy won’t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.\n",
-        "operationId": "Machines-uncordon",
+        "description": "\u201CCordoning\u201D a Machine refers to disabling its services, so the Fly Proxy won\u2019t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.\n",
+        "operationId": "MachinesUncordon",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2086,7 +2046,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -2101,9 +2061,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
                 }
               }
             }
@@ -2111,17 +2069,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/versions": {
+    "/apps/{appName}/machines/{machineId}/versions": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "List Versions",
         "description": "List all versions of the configuration for a specific Machine within an app.\n",
-        "operationId": "Machines-list-versions",
+        "operationId": "MachinesListVersions",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2130,7 +2088,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -2145,10 +2103,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/MachineVersion"
-                  }
+                  "$ref": "#/components/schemas/MachinesListVersions200ResponseResponseJson"
                 }
               }
             }
@@ -2156,17 +2111,17 @@
         }
       }
     },
-    "/apps/{app_name}/machines/{machine_id}/wait": {
+    "/apps/{appName}/machines/{machineId}/wait": {
       "get": {
         "tags": [
           "Machines"
         ],
         "summary": "Wait for State",
-        "description": "Wait for a Machine to reach a specific state. Specify the desired state with the state parameter. See the [Machine states table](https://fly.io/docs/machines/working-with-machines/#machine-states) for a list of possible states. The default for this parameter is `started`.\n\nThis request will block for up to 60 seconds. Set a shorter timeout with the timeout parameter.\n",
-        "operationId": "Machines-wait",
+        "description": "Wait for a Machine to reach a specific state. Specify the desired state with the state parameter. See the [Machine states table](https://fly.io/docs/machines/working-with-machines/#machine-states) for a list of possible states. The default for this parameter is \u0060started\u0060.\n\nThis request will block for up to 60 seconds. Set a shorter timeout with the timeout parameter.\n",
+        "operationId": "MachinesWait",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2175,7 +2130,7 @@
             }
           },
           {
-            "name": "machine_id",
+            "name": "machineId",
             "in": "path",
             "description": "Machine ID",
             "required": true,
@@ -2220,16 +2175,7 @@
             "in": "query",
             "description": "desired state(s), supports repeated or comma-separated values",
             "schema": {
-              "enum": [
-                "started",
-                "stopped",
-                "suspended",
-                "destroyed",
-                "failed",
-                "settled"
-              ],
-              "type": "string",
-              "additionalProperties": false
+              "$ref": "#/components/schemas/MachinesWaitStateParameter"
             }
           }
         ],
@@ -2257,16 +2203,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys": {
+    "/apps/{appName}/secretkeys": {
       "get": {
         "tags": [
           "Secrets"
         ],
         "summary": "List secret keys belonging to an app",
-        "operationId": "Secretkeys-list",
+        "operationId": "SecretkeysList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2305,16 +2251,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}": {
+    "/apps/{appName}/secretkeys/{secretName}": {
       "get": {
         "tags": [
           "Secrets"
         ],
-        "summary": "Get an app's secret key",
-        "operationId": "Secretkey-get",
+        "summary": "Get an app\u0027s secret key",
+        "operationId": "SecretkeyGet",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2323,7 +2269,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2358,10 +2304,10 @@
           "Secrets"
         ],
         "summary": "Create or update a secret key",
-        "operationId": "Secretkey-set",
+        "operationId": "SecretkeySet",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2370,7 +2316,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2416,11 +2362,11 @@
         "tags": [
           "Secrets"
         ],
-        "summary": "Delete an app's secret key",
-        "operationId": "Secretkey-delete",
+        "summary": "Delete an app\u0027s secret key",
+        "operationId": "SecretkeyDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2429,7 +2375,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2452,16 +2398,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}/decrypt": {
+    "/apps/{appName}/secretkeys/{secretName}/decrypt": {
       "post": {
         "tags": [
           "Secrets"
         ],
         "summary": "Decrypt with a secret key",
-        "operationId": "Secretkey-decrypt",
+        "operationId": "SecretkeyDecrypt",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2470,7 +2416,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2521,16 +2467,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}/encrypt": {
+    "/apps/{appName}/secretkeys/{secretName}/encrypt": {
       "post": {
         "tags": [
           "Secrets"
         ],
         "summary": "Encrypt with a secret key",
-        "operationId": "Secretkey-encrypt",
+        "operationId": "SecretkeyEncrypt",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2539,7 +2485,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2590,16 +2536,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}/generate": {
+    "/apps/{appName}/secretkeys/{secretName}/generate": {
       "post": {
         "tags": [
           "Secrets"
         ],
         "summary": "Generate a random secret key",
-        "operationId": "Secretkey-generate",
+        "operationId": "SecretkeyGenerate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2608,7 +2554,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2651,16 +2597,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}/sign": {
+    "/apps/{appName}/secretkeys/{secretName}/sign": {
       "post": {
         "tags": [
           "Secrets"
         ],
         "summary": "Sign with a secret key",
-        "operationId": "Secretkey-sign",
+        "operationId": "SecretkeySign",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2669,7 +2615,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2720,16 +2666,16 @@
         }
       }
     },
-    "/apps/{app_name}/secretkeys/{secret_name}/verify": {
+    "/apps/{appName}/secretkeys/{secretName}/verify": {
       "post": {
         "tags": [
           "Secrets"
         ],
         "summary": "Verify with a secret key",
-        "operationId": "Secretkey-verify",
+        "operationId": "SecretkeyVerify",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2738,7 +2684,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "Secret key name",
             "required": true,
@@ -2779,16 +2725,16 @@
         }
       }
     },
-    "/apps/{app_name}/secrets": {
+    "/apps/{appName}/secrets": {
       "get": {
         "tags": [
           "Secrets"
         ],
         "summary": "List app secrets belonging to an app",
-        "operationId": "Secrets-list",
+        "operationId": "SecretsList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2831,10 +2777,10 @@
           "Secrets"
         ],
         "summary": "Update app secrets belonging to an app",
-        "operationId": "Secrets-update",
+        "operationId": "SecretsUpdate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2877,16 +2823,16 @@
         }
       }
     },
-    "/apps/{app_name}/secrets/{secret_name}": {
+    "/apps/{appName}/secrets/{secretName}": {
       "get": {
         "tags": [
           "Secrets"
         ],
         "summary": "Get an app secret",
-        "operationId": "Secret-get",
+        "operationId": "SecretGet",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2895,7 +2841,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "App secret name",
             "required": true,
@@ -2938,10 +2884,10 @@
           "Secrets"
         ],
         "summary": "Create or update Secret",
-        "operationId": "Secret-create",
+        "operationId": "SecretCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -2950,7 +2896,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "App secret name",
             "required": true,
@@ -2997,10 +2943,10 @@
           "Secrets"
         ],
         "summary": "Delete an app secret",
-        "operationId": "Secret-delete",
+        "operationId": "SecretDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3009,7 +2955,7 @@
             }
           },
           {
-            "name": "secret_name",
+            "name": "secretName",
             "in": "path",
             "description": "App secret name",
             "required": true,
@@ -3032,17 +2978,17 @@
         }
       }
     },
-    "/apps/{app_name}/volumes": {
+    "/apps/{appName}/volumes": {
       "get": {
         "tags": [
           "Volumes"
         ],
         "summary": "List Volumes",
         "description": "List all volumes associated with a specific app.\n",
-        "operationId": "Volumes-list",
+        "operationId": "VolumesList",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3065,10 +3011,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Volume"
-                  }
+                  "$ref": "#/components/schemas/VolumesList200ResponseResponseJson"
                 }
               }
             }
@@ -3081,10 +3024,10 @@
         ],
         "summary": "Create Volume",
         "description": "Create a volume for a specific app using the details provided in the request body.\n",
-        "operationId": "Volumes-create",
+        "operationId": "VolumesCreate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3117,17 +3060,17 @@
         }
       }
     },
-    "/apps/{app_name}/volumes/{volume_id}": {
+    "/apps/{appName}/volumes/{volumeId}": {
       "get": {
         "tags": [
           "Volumes"
         ],
         "summary": "Get Volume",
         "description": "Retrieve details about a specific volume by its ID within an app.\n",
-        "operationId": "Volumes-get-by-id",
+        "operationId": "VolumesGetById",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3136,7 +3079,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3163,11 +3106,11 @@
           "Volumes"
         ],
         "summary": "Update Volume",
-        "description": "Update a volume's configuration using the details provided in the request body.\n",
-        "operationId": "Volumes-update",
+        "description": "Update a volume\u0027s configuration using the details provided in the request body.\n",
+        "operationId": "VolumesUpdate",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3176,7 +3119,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3224,10 +3167,10 @@
         ],
         "summary": "Destroy Volume",
         "description": "Delete a specific volume within an app by volume ID.\n",
-        "operationId": "Volume-delete",
+        "operationId": "VolumeDelete",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3236,7 +3179,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3259,17 +3202,17 @@
         }
       }
     },
-    "/apps/{app_name}/volumes/{volume_id}/extend": {
+    "/apps/{appName}/volumes/{volumeId}/extend": {
       "put": {
         "tags": [
           "Volumes"
         ],
         "summary": "Extend Volume",
-        "description": "Extend a volume's size within an app using the details provided in the request body.\n",
-        "operationId": "Volumes-extend",
+        "description": "Extend a volume\u0027s size within an app using the details provided in the request body.\n",
+        "operationId": "VolumesExtend",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3278,7 +3221,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3311,17 +3254,17 @@
         }
       }
     },
-    "/apps/{app_name}/volumes/{volume_id}/snapshots": {
+    "/apps/{appName}/volumes/{volumeId}/snapshots": {
       "get": {
         "tags": [
           "Volumes"
         ],
         "summary": "List Snapshots",
         "description": "List all snapshots for a specific volume within an app.\n",
-        "operationId": "Volumes-list-snapshots",
+        "operationId": "VolumesListSnapshots",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3330,7 +3273,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3345,10 +3288,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/VolumeSnapshot"
-                  }
+                  "$ref": "#/components/schemas/VolumesListSnapshots200ResponseResponseJson"
                 }
               }
             }
@@ -3361,10 +3301,10 @@
         ],
         "summary": "Create Snapshot",
         "description": "Create a snapshot for a specific volume within an app.\n",
-        "operationId": "createVolumeSnapshot",
+        "operationId": "CreateVolumeSnapshot",
         "parameters": [
           {
-            "name": "app_name",
+            "name": "appName",
             "in": "path",
             "description": "Fly App Name",
             "required": true,
@@ -3373,7 +3313,7 @@
             }
           },
           {
-            "name": "volume_id",
+            "name": "volumeId",
             "in": "path",
             "description": "Volume ID",
             "required": true,
@@ -3388,9 +3328,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
                 }
               }
             }
@@ -3398,17 +3336,17 @@
         }
       }
     },
-    "/orgs/{org_slug}/machines": {
+    "/orgs/{orgSlug}/machines": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "List All Machines",
-        "description": "List all Machines associated with a specific organization. Machines are sorted by their `updated_at` timestamps, oldest to newest.\n\nThis API call represents \"a point in time\". Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.\n",
-        "operationId": "Machines-org-list",
+        "description": "List all Machines associated with a specific organization. Machines are sorted by their \u0060updated_at\u0060 timestamps, oldest to newest.\n\nThis API call represents \u0022a point in time\u0022. Recent machine changes, including creations and destructions, may take time to propagate. When polling with \u0060updated_after\u0060, offset your timestamps to catch late-arriving events.\n",
+        "operationId": "MachinesOrgList",
         "parameters": [
           {
-            "name": "org_slug",
+            "name": "orgSlug",
             "in": "path",
             "description": "Fly Organization Slug",
             "required": true,
@@ -3487,17 +3425,17 @@
         }
       }
     },
-    "/orgs/{org_slug}/volumes": {
+    "/orgs/{orgSlug}/volumes": {
       "get": {
         "tags": [
           "Organizations"
         ],
         "summary": "List All Volumes",
         "description": "List all volumes for an organization with optional filters and cursor-based pagination.",
-        "operationId": "Volumes-org-list",
+        "operationId": "VolumesOrgList",
         "parameters": [
           {
-            "name": "org_slug",
+            "name": "orgSlug",
             "in": "path",
             "description": "Fly Organization Slug",
             "required": true,
@@ -3583,7 +3521,7 @@
         ],
         "summary": "Get Placements",
         "description": "Simulates placing the specified number of machines into regions, depending on available capacity and limits.",
-        "operationId": "Platform-placements-post",
+        "operationId": "PlatformPlacementsPost",
         "requestBody": {
           "description": "Get placements request",
           "content": {
@@ -3615,7 +3553,7 @@
         ],
         "summary": "Get Regions",
         "description": "List all regions on the platform with their details.",
-        "operationId": "Platform-regions-get",
+        "operationId": "PlatformRegionsGet",
         "responses": {
           "200": {
             "description": "OK",
@@ -3637,7 +3575,7 @@
         ],
         "summary": "Authenticate token header",
         "description": "Verify a token header without checking resource access.",
-        "operationId": "Tokens-authenticate",
+        "operationId": "TokensAuthenticate",
         "requestBody": {
           "description": "Authenticate token request",
           "content": {
@@ -3654,10 +3592,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RootVerifiedToken"
-                  }
+                  "$ref": "#/components/schemas/TokensAuthenticate200ResponseResponseJson"
                 }
               }
             }
@@ -3682,7 +3617,7 @@
         ],
         "summary": "Authorize token for resource access",
         "description": "Verify a token header and validate it against a requested access scope.",
-        "operationId": "Tokens-authorize",
+        "operationId": "TokensAuthorize",
         "requestBody": {
           "description": "Authorize token request",
           "content": {
@@ -3734,7 +3669,7 @@
         ],
         "summary": "Get Current Token Information",
         "description": "Get information about the current macaroon token(s), including organizations, apps, user identity hashes, and machine restrictions",
-        "operationId": "CurrentToken-show",
+        "operationId": "CurrentTokenShow",
         "responses": {
           "200": {
             "description": "OK",
@@ -3776,14 +3711,14 @@
         ],
         "summary": "Request a Petsem token for accessing KMS",
         "description": "This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/apps-resource/) for details about using the Apps resource.",
-        "operationId": "Tokens-request-Kms",
+        "operationId": "TokensRequestKms",
         "responses": {
           "200": {
             "description": "KMS token",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/TokensRequestKms200ResponseResponsePlain"
                 }
               }
             }
@@ -3797,14 +3732,14 @@
           "Tokens"
         ],
         "summary": "Request an OIDC token",
-        "description": "Request an Open ID Connect token for your machine. Customize the audience claim with the `aud` parameter. This returns a JWT token. Learn more about [using OpenID Connect](/docs/reference/openid-connect/) on Fly.io.\n",
-        "operationId": "Tokens-request-OIDC",
+        "description": "Request an Open ID Connect token for your machine. Customize the audience claim with the \u0060aud\u0060 parameter. This returns a JWT token. Learn more about [using OpenID Connect](/docs/reference/openid-connect/) on Fly.io.\n",
+        "operationId": "TokensRequestOidc",
         "requestBody": {
           "description": "Optional request body",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateOIDCTokenRequest"
+                "$ref": "#/components/schemas/CreateOidcTokenRequest"
               }
             }
           }
@@ -3815,7 +3750,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "$ref": "#/components/schemas/TokensRequestOidc200ResponseResponsePlain"
                 }
               }
             }
@@ -3925,10 +3860,7 @@
         "type": "object",
         "properties": {
           "values": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/AppSecretsUpdateRequestValuesProperty"
           }
         }
       },
@@ -3969,10 +3901,10 @@
             "type": "string"
           },
           "dns_records": {
-            "$ref": "#/components/schemas/DNSRecords"
+            "$ref": "#/components/schemas/DnsRecords"
           },
           "dns_requirements": {
-            "$ref": "#/components/schemas/DNSRequirements"
+            "$ref": "#/components/schemas/DnsRequirements"
           },
           "hostname": {
             "type": "string"
@@ -4013,7 +3945,7 @@
             "type": "string"
           },
           "dns_requirements": {
-            "$ref": "#/components/schemas/DNSRequirements"
+            "$ref": "#/components/schemas/DnsRequirements"
           },
           "hostname": {
             "type": "string"
@@ -4054,21 +3986,10 @@
             "type": "string"
           },
           "source": {
-            "enum": [
-              "custom",
-              "fly"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/CertificateEntrySource"
           },
           "status": {
-            "enum": [
-              "active",
-              "pending_ownership",
-              "pending_validation"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/CertificateEntryStatus"
           }
         }
       },
@@ -4216,120 +4137,7 @@
         "type": "object",
         "properties": {
           "config": {
-            "type": "object",
-            "properties": {
-              "auto_destroy": {
-                "type": "boolean",
-                "description": "Optional boolean telling the Machine to destroy itself once it’s complete (default false)"
-              },
-              "cache_drive": {
-                "$ref": "#/components/schemas/FlyMachineCacheDrive"
-              },
-              "checks": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/FlyMachineCheck"
-                },
-                "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
-              },
-              "containers": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyContainerConfig"
-                },
-                "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
-              },
-              "disable_machine_autostart": {
-                "type": "boolean",
-                "description": "\"Deprecated: use Service.Autostart instead\""
-              },
-              "dns": {
-                "$ref": "#/components/schemas/FlyDNSConfig"
-              },
-              "env": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                },
-                "description": "An object filled with key/value pairs to be set as environment variables"
-              },
-              "files": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyFile"
-                }
-              },
-              "guest": {
-                "$ref": "#/components/schemas/FlyMachineGuest"
-              },
-              "image": {
-                "type": "string",
-                "description": "The docker image to run"
-              },
-              "init": {
-                "$ref": "#/components/schemas/FlyMachineInit"
-              },
-              "metadata": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                }
-              },
-              "metrics": {
-                "$ref": "#/components/schemas/FlyMachineMetrics"
-              },
-              "mounts": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineMount"
-                }
-              },
-              "processes": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineProcess"
-                }
-              },
-              "restart": {
-                "$ref": "#/components/schemas/FlyMachineRestart"
-              },
-              "rootfs": {
-                "$ref": "#/components/schemas/FlyMachineRootfs"
-              },
-              "schedule": {
-                "type": "string"
-              },
-              "services": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineService"
-                }
-              },
-              "size": {
-                "type": "string",
-                "description": "\"Deprecated: use Guest instead\""
-              },
-              "spot": {
-                "$ref": "#/components/schemas/FlyMachineSpot"
-              },
-              "standbys": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "Standbys enable a machine to be a standby for another. In the event of a hardware failure,\nthe standby machine will be started."
-              },
-              "statics": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyStatic"
-                }
-              },
-              "stop_config": {
-                "$ref": "#/components/schemas/FlyStopConfig"
-              }
-            },
-            "description": "An object defining the Machine configuration"
+            "$ref": "#/components/schemas/CreateMachineRequestConfig"
           },
           "lease_ttl": {
             "type": "integer"
@@ -4356,7 +4164,7 @@
           }
         }
       },
-      "CreateOIDCTokenRequest": {
+      "CreateOidcTokenRequest": {
         "type": "object",
         "properties": {
           "aud": {
@@ -4374,7 +4182,7 @@
         "properties": {
           "auto_backup_enabled": {
             "type": "boolean",
-            "description": "enable scheduled automatic snapshots. Defaults to `true`"
+            "description": "enable scheduled automatic snapshots. Defaults to \u0060true\u0060"
           },
           "compute": {
             "$ref": "#/components/schemas/FlyMachineGuest"
@@ -4427,7 +4235,7 @@
           }
         }
       },
-      "DNSRecords": {
+      "DnsRecords": {
         "type": "object",
         "properties": {
           "a": {
@@ -4465,7 +4273,7 @@
           }
         }
       },
-      "DNSRequirements": {
+      "DnsRequirements": {
         "type": "object",
         "properties": {
           "a": {
@@ -4575,8 +4383,7 @@
         "type": "object",
         "properties": {
           "details": {
-            "type": "object",
-            "description": "Deprecated"
+            "$ref": "#/components/schemas/ErrorResponseDetailsProperty"
           },
           "error": {
             "type": "string"
@@ -4605,7 +4412,7 @@
           }
         }
       },
-      "IPAssignment": {
+      "IpAssignment": {
         "type": "object",
         "properties": {
           "created_at": {
@@ -4632,10 +4439,7 @@
             "type": "string"
           },
           "labels": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/ImageRefLabelsProperty"
           },
           "registry": {
             "type": "string"
@@ -4658,12 +4462,7 @@
             "type": "string"
           },
           "type": {
-            "enum": [
-              "rsa",
-              "ecdsa"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/IssuedCertificateType"
           }
         }
       },
@@ -4739,13 +4538,7 @@
             }
           },
           "host_status": {
-            "enum": [
-              "ok",
-              "unknown",
-              "unreachable"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/MachineHostStatus"
           },
           "id": {
             "type": "string"
@@ -4789,7 +4582,7 @@
             "type": "string"
           },
           "request": {
-            "type": "object"
+            "$ref": "#/components/schemas/MachineEventRequestProperty"
           },
           "source": {
             "type": "string"
@@ -4810,7 +4603,7 @@
         "properties": {
           "cmd": {
             "type": "string",
-            "description": "\"Deprecated: use Command instead\""
+            "description": "\u0022Deprecated: use Command instead\u0022"
           },
           "command": {
             "type": "array",
@@ -4839,10 +4632,7 @@
             "type": "string"
           },
           "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/MachineOverviewConfigMetadataProperty"
           }
         }
       },
@@ -4961,13 +4751,7 @@
             "type": "string"
           },
           "host_status": {
-            "enum": [
-              "ok",
-              "unknown",
-              "unreachable"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/OrgVolumeHostStatus"
           },
           "id": {
             "type": "string"
@@ -4988,12 +4772,7 @@
             "type": "string"
           },
           "type": {
-            "enum": [
-              "local",
-              "cache"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/OrgVolumeType"
           },
           "updated_at": {
             "type": "string"
@@ -5208,24 +4987,7 @@
         "type": "object",
         "properties": {
           "signal": {
-            "enum": [
-              "SIGABRT",
-              "SIGALRM",
-              "SIGFPE",
-              "SIGHUP",
-              "SIGILL",
-              "SIGINT",
-              "SIGKILL",
-              "SIGPIPE",
-              "SIGQUIT",
-              "SIGSEGV",
-              "SIGTERM",
-              "SIGTRAP",
-              "SIGUSR1",
-              "SIGUSR2"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/SignalRequestSignal"
           }
         }
       },
@@ -5233,18 +4995,7 @@
         "type": "object",
         "properties": {
           "signal": {
-            "enum": [
-              "SIGHUP",
-              "SIGINT",
-              "SIGQUIT",
-              "SIGKILL",
-              "SIGUSR1",
-              "SIGUSR2",
-              "SIGTERM"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "example": "SIGTERM"
+            "$ref": "#/components/schemas/StopRequestSignal"
           },
           "timeout": {
             "type": "string",
@@ -5256,120 +5007,7 @@
         "type": "object",
         "properties": {
           "config": {
-            "type": "object",
-            "properties": {
-              "auto_destroy": {
-                "type": "boolean",
-                "description": "Optional boolean telling the Machine to destroy itself once it’s complete (default false)"
-              },
-              "cache_drive": {
-                "$ref": "#/components/schemas/FlyMachineCacheDrive"
-              },
-              "checks": {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/FlyMachineCheck"
-                },
-                "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
-              },
-              "containers": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyContainerConfig"
-                },
-                "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
-              },
-              "disable_machine_autostart": {
-                "type": "boolean",
-                "description": "\"Deprecated: use Service.Autostart instead\""
-              },
-              "dns": {
-                "$ref": "#/components/schemas/FlyDNSConfig"
-              },
-              "env": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                },
-                "description": "An object filled with key/value pairs to be set as environment variables"
-              },
-              "files": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyFile"
-                }
-              },
-              "guest": {
-                "$ref": "#/components/schemas/FlyMachineGuest"
-              },
-              "image": {
-                "type": "string",
-                "description": "The docker image to run"
-              },
-              "init": {
-                "$ref": "#/components/schemas/FlyMachineInit"
-              },
-              "metadata": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "string"
-                }
-              },
-              "metrics": {
-                "$ref": "#/components/schemas/FlyMachineMetrics"
-              },
-              "mounts": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineMount"
-                }
-              },
-              "processes": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineProcess"
-                }
-              },
-              "restart": {
-                "$ref": "#/components/schemas/FlyMachineRestart"
-              },
-              "rootfs": {
-                "$ref": "#/components/schemas/FlyMachineRootfs"
-              },
-              "schedule": {
-                "type": "string"
-              },
-              "services": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyMachineService"
-                }
-              },
-              "size": {
-                "type": "string",
-                "description": "\"Deprecated: use Guest instead\""
-              },
-              "spot": {
-                "$ref": "#/components/schemas/FlyMachineSpot"
-              },
-              "standbys": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "Standbys enable a machine to be a standby for another. In the event of a hardware failure,\nthe standby machine will be started."
-              },
-              "statics": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/FlyStatic"
-                }
-              },
-              "stop_config": {
-                "$ref": "#/components/schemas/FlyStopConfig"
-              }
-            },
-            "description": "An object defining the Machine configuration"
+            "$ref": "#/components/schemas/UpdateMachineRequestConfig"
           },
           "current_version": {
             "type": "string"
@@ -5467,13 +5105,7 @@
             "type": "string"
           },
           "host_status": {
-            "enum": [
-              "ok",
-              "unknown",
-              "unreachable"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/VolumeHostStatus"
           },
           "id": {
             "type": "string"
@@ -5494,12 +5126,7 @@
             "type": "string"
           },
           "type": {
-            "enum": [
-              "local",
-              "cache"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/VolumeType"
           },
           "zone": {
             "type": "string"
@@ -5549,7 +5176,7 @@
           }
         }
       },
-      "AssignIPRequest": {
+      "AssignIpRequest": {
         "type": "object",
         "properties": {
           "network": {
@@ -5640,7 +5267,7 @@
             "type": "string"
           },
           "dns_requirements": {
-            "$ref": "#/components/schemas/DNSRequirements"
+            "$ref": "#/components/schemas/DnsRequirements"
           },
           "hostname": {
             "type": "string"
@@ -5690,11 +5317,7 @@
             "description": "EntrypointOverride is used to override the default entrypoint of the image."
           },
           "env": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "description": "ExtraEnv is used to add additional environment variables to the container."
+            "$ref": "#/components/schemas/FlyContainerConfigEnvProperty"
           },
           "env_from": {
             "type": "array",
@@ -5733,29 +5356,7 @@
             "description": "Name is used to identify the container in the machine."
           },
           "restart": {
-            "type": "object",
-            "properties": {
-              "gpu_bid_price": {
-                "type": "number",
-                "description": "GPU bid price for spot Machines."
-              },
-              "max_retries": {
-                "type": "integer",
-                "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
-              },
-              "policy": {
-                "enum": [
-                  "no",
-                  "always",
-                  "on-failure",
-                  "spot-price"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.\n* spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price."
-              }
-            },
-            "description": "\"Restart is used to define the restart policy for the container. NOTE: spot-price is not\nsupported for containers.\""
+            "$ref": "#/components/schemas/FlyContainerConfigRestart"
           },
           "secrets": {
             "type": "array",
@@ -5765,27 +5366,7 @@
             "description": "Secrets can be provided at the process level to explicitly indicate which secrets should be\nused for the process. If not provided, the secrets provided at the machine level will be used."
           },
           "stop": {
-            "type": "object",
-            "properties": {
-              "signal": {
-                "enum": [
-                  "SIGHUP",
-                  "SIGINT",
-                  "SIGQUIT",
-                  "SIGKILL",
-                  "SIGUSR1",
-                  "SIGUSR2",
-                  "SIGTERM"
-                ],
-                "type": "string",
-                "additionalProperties": false
-              },
-              "timeout": {
-                "type": "string",
-                "example": "10s"
-              }
-            },
-            "description": "Stop is used to define the signal and timeout for stopping the container."
+            "$ref": "#/components/schemas/FlyContainerConfigStop"
           },
           "user": {
             "type": "string",
@@ -5797,7 +5378,7 @@
         "type": "object",
         "properties": {
           "condition": {
-            "$ref": "#/components/schemas/FlyContainerDependencyCondition"
+            "$ref": "#/components/schemas/FlyContainerDependencyConditionComposed"
           },
           "name": {
             "type": "string"
@@ -5816,7 +5397,25 @@
           "ExitedSuccessfully",
           "Healthy",
           "Started"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerDependencyCondition",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "exited_successfully",
+              "name": "ExitedSuccessfully"
+            },
+            {
+              "value": "healthy",
+              "name": "Healthy"
+            },
+            {
+              "value": "started",
+              "name": "Started"
+            }
+          ]
+        }
       },
       "FlyContainerHealthcheck": {
         "type": "object",
@@ -5833,14 +5432,14 @@
             "description": "The time in seconds to wait after a container starts before checking its health."
           },
           "http": {
-            "$ref": "#/components/schemas/FlyHTTPHealthcheck"
+            "$ref": "#/components/schemas/FlyHttpHealthcheck"
           },
           "interval": {
             "type": "integer",
             "description": "The time in seconds between executing the defined check."
           },
           "kind": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckKind"
+            "$ref": "#/components/schemas/FlyContainerHealthcheckKindComposed"
           },
           "name": {
             "type": "string",
@@ -5851,14 +5450,14 @@
             "description": "The number of times the check must succeeed before considering the container healthy."
           },
           "tcp": {
-            "$ref": "#/components/schemas/FlyTCPHealthcheck"
+            "$ref": "#/components/schemas/FlyTcpHealthcheck"
           },
           "timeout": {
             "type": "integer",
             "description": "The time in seconds to wait for the check to complete."
           },
           "unhealthy": {
-            "$ref": "#/components/schemas/FlyUnhealthyPolicy"
+            "$ref": "#/components/schemas/FlyContainerHealthcheckUnhealthy"
           }
         }
       },
@@ -5872,7 +5471,21 @@
         "x-enum-varnames": [
           "Readiness",
           "Liveness"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerHealthcheckKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "readiness",
+              "name": "Readiness"
+            },
+            {
+              "value": "liveness",
+              "name": "Liveness"
+            }
+          ]
+        }
       },
       "FlyContainerHealthcheckScheme": {
         "enum": [
@@ -5884,9 +5497,23 @@
         "x-enum-varnames": [
           "HTTP",
           "HTTPS"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerHealthcheckScheme",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "http",
+              "name": "Http"
+            },
+            {
+              "value": "https",
+              "name": "Https"
+            }
+          ]
+        }
       },
-      "FlyDNSConfig": {
+      "FlyDnsConfig": {
         "type": "object",
         "properties": {
           "dns_forward_rules": {
@@ -5932,17 +5559,7 @@
             "description": "EnvVar is required and is the name of the environment variable that will be set from the\nsecret. It must be a valid environment variable name."
           },
           "field_ref": {
-            "enum": [
-              "id",
-              "version",
-              "app_name",
-              "private_ip",
-              "region",
-              "image"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "\"FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.\""
+            "$ref": "#/components/schemas/FlyEnvFromFieldRef"
           }
         },
         "description": "EnvVar defines an environment variable to be populated from a machine field, env_var"
@@ -5955,7 +5572,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The command to run to check the health of the container (e.g. [\"cat\", \"/tmp/healthy\"])"
+            "description": "The command to run to check the health of the container (e.g. [\u0022cat\u0022, \u0022/tmp/healthy\u0022])"
           }
         }
       },
@@ -5964,7 +5581,7 @@
         "properties": {
           "guest_path": {
             "type": "string",
-            "description": "\"GuestPath is the path on the machine where the file will be written and must be an absolute path.\nFor example: /full/path/to/file.json\""
+            "description": "\u0022GuestPath is the path on the machine where the file will be written and must be an absolute path.\nFor example: /full/path/to/file.json\u0022"
           },
           "image_config": {
             "type": "string",
@@ -5985,13 +5602,13 @@
         },
         "description": "A file that will be written to the Machine. One of RawValue or SecretName must be set."
       },
-      "FlyHTTPHealthcheck": {
+      "FlyHttpHealthcheck": {
         "type": "object",
         "properties": {
           "headers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FlyMachineHTTPHeader"
+              "$ref": "#/components/schemas/FlyMachineHttpHeader"
             },
             "description": "Additional headers to send with the request"
           },
@@ -6008,7 +5625,7 @@
             "description": "The port to connect to, often the same as internal_port"
           },
           "scheme": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckScheme"
+            "$ref": "#/components/schemas/FlyHttpHealthcheckScheme"
           },
           "tls_server_name": {
             "type": "string",
@@ -6020,7 +5637,7 @@
           }
         }
       },
-      "FlyHTTPOptions": {
+      "FlyHttpOptions": {
         "type": "object",
         "properties": {
           "compress": {
@@ -6042,18 +5659,15 @@
             }
           },
           "response": {
-            "$ref": "#/components/schemas/FlyHTTPResponseOptions"
+            "$ref": "#/components/schemas/FlyHttpResponseOptions"
           }
         }
       },
-      "FlyHTTPResponseOptions": {
+      "FlyHttpResponseOptions": {
         "type": "object",
         "properties": {
           "headers": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
+            "$ref": "#/components/schemas/FlyHttpResponseOptionsHeadersProperty"
           },
           "pristine": {
             "type": "boolean"
@@ -6079,7 +5693,7 @@
           "headers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FlyMachineHTTPHeader"
+              "$ref": "#/components/schemas/FlyMachineHttpHeader"
             }
           },
           "interval": {
@@ -6088,13 +5702,7 @@
             "example": "15s"
           },
           "kind": {
-            "enum": [
-              "informational",
-              "readiness"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Kind of the check (informational, readiness)"
+            "$ref": "#/components/schemas/FlyMachineCheckKind"
           },
           "method": {
             "type": "string",
@@ -6136,17 +5744,13 @@
         "properties": {
           "auto_destroy": {
             "type": "boolean",
-            "description": "Optional boolean telling the Machine to destroy itself once it’s complete (default false)"
+            "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
           },
           "cache_drive": {
             "$ref": "#/components/schemas/FlyMachineCacheDrive"
           },
           "checks": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/FlyMachineCheck"
-            },
-            "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
+            "$ref": "#/components/schemas/FlyMachineConfigChecksProperty"
           },
           "containers": {
             "type": "array",
@@ -6157,17 +5761,13 @@
           },
           "disable_machine_autostart": {
             "type": "boolean",
-            "description": "\"Deprecated: use Service.Autostart instead\""
+            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
           },
           "dns": {
-            "$ref": "#/components/schemas/FlyDNSConfig"
+            "$ref": "#/components/schemas/FlyDnsConfig"
           },
           "env": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "description": "An object filled with key/value pairs to be set as environment variables"
+            "$ref": "#/components/schemas/FlyMachineConfigEnvProperty"
           },
           "files": {
             "type": "array",
@@ -6186,10 +5786,7 @@
             "$ref": "#/components/schemas/FlyMachineInit"
           },
           "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/FlyMachineConfigMetadataProperty"
           },
           "metrics": {
             "$ref": "#/components/schemas/FlyMachineMetrics"
@@ -6223,7 +5820,7 @@
           },
           "size": {
             "type": "string",
-            "description": "\"Deprecated: use Guest instead\""
+            "description": "\u0022Deprecated: use Guest instead\u0022"
           },
           "spot": {
             "$ref": "#/components/schemas/FlyMachineSpot"
@@ -6277,18 +5874,11 @@
             "type": "integer"
           },
           "persist_rootfs": {
-            "enum": [
-              "never",
-              "always",
-              "restart"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "\"Deprecated: use MachineConfig.Rootfs instead\""
+            "$ref": "#/components/schemas/FlyMachineGuestPersistRootfs"
           }
         }
       },
-      "FlyMachineHTTPHeader": {
+      "FlyMachineHttpHeader": {
         "type": "object",
         "properties": {
           "name": {
@@ -6399,7 +5989,7 @@
             }
           },
           "http_options": {
-            "$ref": "#/components/schemas/FlyHTTPOptions"
+            "$ref": "#/components/schemas/FlyHttpOptions"
           },
           "port": {
             "type": "integer"
@@ -6411,7 +6001,7 @@
             "type": "integer"
           },
           "tls_options": {
-            "$ref": "#/components/schemas/FlyTLSOptions"
+            "$ref": "#/components/schemas/FlyTlsOptions"
           }
         }
       },
@@ -6431,10 +6021,7 @@
             }
           },
           "env": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/FlyMachineProcessEnvProperty"
           },
           "env_from": {
             "type": "array",
@@ -6477,15 +6064,7 @@
             "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
           },
           "policy": {
-            "enum": [
-              "no",
-              "always",
-              "on-failure",
-              "spot-price"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.\n* spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price."
+            "$ref": "#/components/schemas/FlyMachineRestartPolicy"
           }
         },
         "description": "The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/."
@@ -6494,13 +6073,7 @@
         "type": "object",
         "properties": {
           "persist": {
-            "enum": [
-              "never",
-              "always",
-              "restart"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/FlyMachineRootfsPersist"
           },
           "size_gb": {
             "type": "integer"
@@ -6528,14 +6101,7 @@
             "type": "boolean"
           },
           "autostop": {
-            "enum": [
-              "off",
-              "stop",
-              "suspend"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for \"off\" and \"stop\" in responses.\n* \"off\" or false - Do not autostop the Machine.\n* \"stop\" or true - Automatically stop the Machine.\n* \"suspend\" - Automatically suspend the Machine, falling back to a full stop if this is not possible."
+            "$ref": "#/components/schemas/FlyMachineServiceAutostop"
           },
           "checks": {
             "type": "array",
@@ -6581,7 +6147,7 @@
           "headers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FlyMachineHTTPHeader"
+              "$ref": "#/components/schemas/FlyMachineHttpHeader"
             }
           },
           "interval": {
@@ -6643,7 +6209,7 @@
         "properties": {
           "max_price_fraction": {
             "type": "number",
-            "description": "\"MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]\""
+            "description": "\u0022MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]\u0022"
           }
         }
       },
@@ -6672,13 +6238,7 @@
             "type": "integer"
           },
           "type": {
-            "enum": [
-              "cookie",
-              "header"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Currently either \"cookie\" or \"header\""
+            "$ref": "#/components/schemas/FlyReplayCacheType"
           }
         }
       },
@@ -6707,17 +6267,7 @@
         "type": "object",
         "properties": {
           "signal": {
-            "enum": [
-              "SIGHUP",
-              "SIGINT",
-              "SIGQUIT",
-              "SIGKILL",
-              "SIGUSR1",
-              "SIGUSR2",
-              "SIGTERM"
-            ],
-            "type": "string",
-            "additionalProperties": false
+            "$ref": "#/components/schemas/FlyStopConfigSignal"
           },
           "timeout": {
             "type": "string",
@@ -6725,7 +6275,7 @@
           }
         }
       },
-      "FlyTCPHealthcheck": {
+      "FlyTcpHealthcheck": {
         "type": "object",
         "properties": {
           "port": {
@@ -6734,7 +6284,7 @@
           }
         }
       },
-      "FlyTLSOptions": {
+      "FlyTlsOptions": {
         "type": "object",
         "properties": {
           "alpn": {
@@ -6762,7 +6312,17 @@
         "additionalProperties": false,
         "x-enum-varnames": [
           "UnhealthyPolicyStop"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "FlyUnhealthyPolicy",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "stop",
+              "name": "Stop"
+            }
+          ]
+        }
       },
       "FlyDnsForwardRule": {
         "type": "object",
@@ -6873,13 +6433,13 @@
           }
         }
       },
-      "ListIPAssignmentsResponse": {
+      "ListIpAssignmentsResponse": {
         "type": "object",
         "properties": {
           "ips": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IPAssignment"
+              "$ref": "#/components/schemas/IpAssignment"
             }
           }
         }
@@ -6890,7 +6450,7 @@
           "caveats": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/MacaroonCaveatSetCaveatsItemProperty"
             }
           }
         }
@@ -6919,11 +6479,11 @@
         "type": "object",
         "properties": {
           "action": {
-            "$ref": "#/components/schemas/RessetAction"
+            "$ref": "#/components/schemas/MainTokenAccessAction"
           },
           "app_feature": {
             "type": "string",
-            "description": "\"AppFeature is a named set of functionality associated with the app. If\nthis is specified, the AppName field must be set.\n  - images: images in the fly.io registry\""
+            "description": "\u0022AppFeature is a named set of functionality associated with the app. If\nthis is specified, the AppName field must be set.\n  - images: images in the fly.io registry\u0022"
           },
           "app_name": {
             "type": "string",
@@ -6938,7 +6498,7 @@
           },
           "machine_feature": {
             "type": "string",
-            "description": "\"MachineFeature is a named set of functionality associated with the\nmachine. If this is specified, the Machine field must be set.\n  - metadata: machine metadata service\n  - oidc: OIDC tokens\n  - kmstoken: Petsem tokens for KMS access\""
+            "description": "\u0022MachineFeature is a named set of functionality associated with the\nmachine. If this is specified, the Machine field must be set.\n  - metadata: machine metadata service\n  - oidc: OIDC tokens\n  - kmstoken: Petsem tokens for KMS access\u0022"
           },
           "machine_id": {
             "type": "string",
@@ -6950,7 +6510,7 @@
           },
           "org_feature": {
             "type": "string",
-            "description": "\"OrgFeature is a named set of functionality associated with the\norganization. If this is specified, the OrgSlug field must be set.\n  - wg: WireGuard peers\n  - builder: remote builders\n  - addon: addons\n  - membership: organization membership\n  - billing: billing\n  - litefs-cloud: LiteFS Cloud\n  - authentication: authentication settings\""
+            "description": "\u0022OrgFeature is a named set of functionality associated with the\norganization. If this is specified, the OrgSlug field must be set.\n  - wg: WireGuard peers\n  - builder: remote builders\n  - addon: addons\n  - membership: organization membership\n  - billing: billing\n  - litefs-cloud: LiteFS Cloud\n  - authentication: authentication settings\u0022"
           },
           "org_slug": {
             "type": "string",
@@ -6977,47 +6537,7 @@
         "type": "object",
         "properties": {
           "compute": {
-            "type": "object",
-            "properties": {
-              "cpu_kind": {
-                "type": "string"
-              },
-              "cpus": {
-                "type": "integer"
-              },
-              "gpu_kind": {
-                "type": "string"
-              },
-              "gpus": {
-                "type": "integer"
-              },
-              "host_dedication_id": {
-                "type": "string"
-              },
-              "kernel_args": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "max_memory_mb": {
-                "type": "integer"
-              },
-              "memory_mb": {
-                "type": "integer"
-              },
-              "persist_rootfs": {
-                "enum": [
-                  "never",
-                  "always",
-                  "restart"
-                ],
-                "type": "string",
-                "additionalProperties": false,
-                "description": "\"Deprecated: use MachineConfig.Rootfs instead\""
-              }
-            },
-            "description": "Resource requirements for the Machine to simulate. Defaults to a performance-1x machine"
+            "$ref": "#/components/schemas/MainGetPlacementsRequestCompute"
           },
           "count": {
             "type": "integer",
@@ -7029,7 +6549,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Region expression for placement as a comma-delimited set of regions or aliases.\nDefaults to \"[region],any\", to prefer the API endpoint's local region with any other region as fallback.",
+            "description": "Region expression for placement as a comma-delimited set of regions or aliases.\nDefaults to \u0022[region],any\u0022, to prefer the API endpoint\u0027s local region with any other region as fallback.",
             "example": "lhr,eu"
           },
           "volume_name": {
@@ -7039,20 +6559,7 @@
             "type": "integer"
           },
           "weights": {
-            "type": "object",
-            "allOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "integer"
-                }
-              }
-            ],
-            "description": "Optional weights to override default placement preferences.",
-            "example": {
-              "region": 1000,
-              "spread": 0
-            }
+            "$ref": "#/components/schemas/MainGetPlacementsRequestWeights"
           }
         }
       },
@@ -7155,7 +6662,21 @@
         "x-enum-varnames": [
           "unknown",
           "capacityErr"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "MainStatusCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "insufficient_capacity",
+              "name": "InsufficientCapacity"
+            }
+          ]
+        }
       },
       "MainTokenInfo": {
         "type": "object",
@@ -7266,10 +6787,7 @@
             "type": "string"
           },
           "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
+            "$ref": "#/components/schemas/UpdateMetadataRequestMetadataProperty"
           },
           "updated_at": {
             "type": "string"
@@ -7287,17 +6805,375 @@
           }
         }
       },
+      "CreateMachineRequestConfig": {
+        "type": "object",
+        "properties": {
+          "auto_destroy": {
+            "type": "boolean",
+            "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
+          },
+          "cache_drive": {
+            "$ref": "#/components/schemas/FlyMachineCacheDrive"
+          },
+          "checks": {
+            "$ref": "#/components/schemas/CreateMachineRequestConfigChecks"
+          },
+          "containers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyContainerConfig"
+            },
+            "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
+          },
+          "disable_machine_autostart": {
+            "type": "boolean",
+            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
+          },
+          "dns": {
+            "$ref": "#/components/schemas/FlyDnsConfig"
+          },
+          "env": {
+            "$ref": "#/components/schemas/CreateMachineRequestConfigEnv"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyFile"
+            }
+          },
+          "guest": {
+            "$ref": "#/components/schemas/FlyMachineGuest"
+          },
+          "image": {
+            "type": "string",
+            "description": "The docker image to run"
+          },
+          "init": {
+            "$ref": "#/components/schemas/FlyMachineInit"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/CreateMachineRequestConfigMetadata"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/FlyMachineMetrics"
+          },
+          "mounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineMount"
+            }
+          },
+          "processes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineProcess"
+            }
+          },
+          "restart": {
+            "$ref": "#/components/schemas/FlyMachineRestart"
+          },
+          "rootfs": {
+            "$ref": "#/components/schemas/FlyMachineRootfs"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineService"
+            }
+          },
+          "size": {
+            "type": "string",
+            "description": "\u0022Deprecated: use Guest instead\u0022"
+          },
+          "spot": {
+            "$ref": "#/components/schemas/FlyMachineSpot"
+          },
+          "standbys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Standbys enable a machine to be a standby for another. In the event of a hardware failure,\nthe standby machine will be started."
+          },
+          "statics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyStatic"
+            }
+          },
+          "stop_config": {
+            "$ref": "#/components/schemas/FlyStopConfig"
+          }
+        },
+        "description": "An object defining the Machine configuration"
+      },
+      "UpdateMachineRequestConfig": {
+        "type": "object",
+        "properties": {
+          "auto_destroy": {
+            "type": "boolean",
+            "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
+          },
+          "cache_drive": {
+            "$ref": "#/components/schemas/FlyMachineCacheDrive"
+          },
+          "checks": {
+            "$ref": "#/components/schemas/UpdateMachineRequestConfigChecks"
+          },
+          "containers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyContainerConfig"
+            },
+            "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
+          },
+          "disable_machine_autostart": {
+            "type": "boolean",
+            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
+          },
+          "dns": {
+            "$ref": "#/components/schemas/FlyDnsConfig"
+          },
+          "env": {
+            "$ref": "#/components/schemas/UpdateMachineRequestConfigEnv"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyFile"
+            }
+          },
+          "guest": {
+            "$ref": "#/components/schemas/FlyMachineGuest"
+          },
+          "image": {
+            "type": "string",
+            "description": "The docker image to run"
+          },
+          "init": {
+            "$ref": "#/components/schemas/FlyMachineInit"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/UpdateMachineRequestConfigMetadata"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/FlyMachineMetrics"
+          },
+          "mounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineMount"
+            }
+          },
+          "processes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineProcess"
+            }
+          },
+          "restart": {
+            "$ref": "#/components/schemas/FlyMachineRestart"
+          },
+          "rootfs": {
+            "$ref": "#/components/schemas/FlyMachineRootfs"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyMachineService"
+            }
+          },
+          "size": {
+            "type": "string",
+            "description": "\u0022Deprecated: use Guest instead\u0022"
+          },
+          "spot": {
+            "$ref": "#/components/schemas/FlyMachineSpot"
+          },
+          "standbys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Standbys enable a machine to be a standby for another. In the event of a hardware failure,\nthe standby machine will be started."
+          },
+          "statics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyStatic"
+            }
+          },
+          "stop_config": {
+            "$ref": "#/components/schemas/FlyStopConfig"
+          }
+        },
+        "description": "An object defining the Machine configuration"
+      },
+      "FlyContainerConfigRestart": {
+        "type": "object",
+        "properties": {
+          "gpu_bid_price": {
+            "type": "number",
+            "description": "GPU bid price for spot Machines."
+          },
+          "max_retries": {
+            "type": "integer",
+            "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
+          },
+          "policy": {
+            "$ref": "#/components/schemas/FlyMachineRestartPolicy"
+          }
+        },
+        "description": "\u0022Restart is used to define the restart policy for the container. NOTE: spot-price is not\nsupported for containers.\u0022"
+      },
+      "FlyContainerConfigStop": {
+        "type": "object",
+        "properties": {
+          "signal": {
+            "$ref": "#/components/schemas/FlyStopConfigSignal"
+          },
+          "timeout": {
+            "type": "string",
+            "example": "10s"
+          }
+        },
+        "description": "Stop is used to define the signal and timeout for stopping the container."
+      },
+      "FlyContainerDependencyConditionComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerDependencyCondition"
+          }
+        }
+      },
+      "FlyContainerHealthcheckKindComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerHealthcheckKind"
+          }
+        },
+        "description": "Kind of healthcheck (readiness, liveness)"
+      },
+      "FlyContainerHealthcheckUnhealthy": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyUnhealthyPolicy"
+          }
+        },
+        "description": "Unhealthy policy that determines what action to take if a container is deemed unhealthy"
+      },
+      "FlyHttpHealthcheckScheme": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerHealthcheckScheme"
+          }
+        },
+        "description": "Whether to use http or https"
+      },
+      "MainTokenAccessAction": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/RessetAction"
+          }
+        },
+        "description": "\u0022Action is the action being taken on the specified resource. This is the\ncombination of individual action characters (e.g \\\u0022rw\\\u0022)\n  - r: read\n  - w: write\n  - c: create\n  - d: delete\n  - C: control\u0022"
+      },
+      "MainGetPlacementsRequestCompute": {
+        "type": "object",
+        "properties": {
+          "cpu_kind": {
+            "type": "string"
+          },
+          "cpus": {
+            "type": "integer"
+          },
+          "gpu_kind": {
+            "type": "string"
+          },
+          "gpus": {
+            "type": "integer"
+          },
+          "host_dedication_id": {
+            "type": "string"
+          },
+          "kernel_args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_memory_mb": {
+            "type": "integer"
+          },
+          "memory_mb": {
+            "type": "integer"
+          },
+          "persist_rootfs": {
+            "$ref": "#/components/schemas/FlyMachineGuestPersistRootfs"
+          }
+        },
+        "description": "Resource requirements for the Machine to simulate. Defaults to a performance-1x machine"
+      },
+      "MainGetPlacementsRequestWeights": {
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          }
+        ],
+        "description": "Optional weights to override default placement preferences.",
+        "example": {
+          "region": 1000,
+          "spread": 0
+        }
+      },
       "AppSecretsUpdateRequestValues": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
+      "ErrorResponseDetails": {
+        "type": "object",
+        "description": "Deprecated"
+      },
       "ImageRefLabels": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "MachineEventRequest": {
+        "type": "object"
       },
       "MachineOverviewConfigMetadata": {
         "type": "object",
@@ -7312,11 +7188,18 @@
         },
         "description": "ExtraEnv is used to add additional environment variables to the container."
       },
-      "FlyHTTPResponseOptionsHeaders": {
+      "FlyHttpResponseOptionsHeaders": {
         "type": "object",
         "additionalProperties": {
-          "type": "object"
+          "$ref": "#/components/schemas/FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty"
         }
+      },
+      "FlyMachineConfigChecks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/FlyMachineCheck"
+        },
+        "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
       },
       "FlyMachineConfigEnv": {
         "type": "object",
@@ -7337,69 +7220,1025 @@
           "type": "string"
         }
       },
+      "MacaroonCaveatSetCaveatsItem": {
+        "type": "object"
+      },
       "UpdateMetadataRequestMetadata": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "MachinesList200": {
+      "FlyHttpResponseOptionsHeadersAdditionalProperties": {
+        "type": "object"
+      },
+      "MachinesList200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Machine"
         }
       },
-      "MachinesListEvents200": {
+      "MachinesListEvents200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/MachineEvent"
         }
       },
-      "MachinesShowMetadata200": {
+      "MachinesShowMetadata200Response": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "MachinesListProcesses200": {
+      "MachinesListProcesses200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ProcessStat"
         }
       },
-      "MachinesListVersions200": {
+      "MachinesListVersions200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/MachineVersion"
         }
       },
-      "VolumesList200": {
+      "VolumesList200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Volume"
         }
       },
-      "VolumesListSnapshots200": {
+      "VolumesListSnapshots200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/VolumeSnapshot"
         }
       },
-      "TokensAuthenticate200": {
+      "TokensAuthenticate200Response": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RootVerifiedToken"
         }
       },
-      "TokensRequestKms200": {
+      "TokensRequestKms200Response": {
         "type": "string"
       },
-      "TokensRequestOIDC200": {
+      "TokensRequestOidc200Response": {
         "type": "string"
+      },
+      "FlyContainerDependencyConditionWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerDependencyCondition"
+          }
+        }
+      },
+      "FlyContainerHealthcheckKindWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerHealthcheckKind"
+          }
+        }
+      },
+      "FlyUnhealthyPolicyWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyUnhealthyPolicy"
+          }
+        }
+      },
+      "FlyContainerHealthcheckSchemeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/FlyContainerHealthcheckScheme"
+          }
+        }
+      },
+      "RessetActionWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/RessetAction"
+          }
+        }
       },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "DefaultResponse": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson2": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "MachinesList200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Machine"
+        }
+      },
+      "DefaultResponseResponseJson3": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson4": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "MachinesListEvents200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MachineEvent"
+        }
+      },
+      "DefaultResponseResponseJson5": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "MachinesShowMetadata200ResponseResponseJson": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "DefaultResponseResponseJson6": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "MachinesListProcesses200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProcessStat"
+        }
+      },
+      "DefaultResponseResponseJson7": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson8": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson9": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "MachinesListVersions200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MachineVersion"
+        }
+      },
+      "VolumesList200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Volume"
+        }
+      },
+      "VolumesListSnapshots200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/VolumeSnapshot"
+        }
+      },
+      "DefaultResponseResponseJson10": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "TokensAuthenticate200ResponseResponseJson": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RootVerifiedToken"
+        }
+      },
+      "TokensRequestKms200ResponseResponsePlain": {
+        "type": "string"
+      },
+      "TokensRequestOidc200ResponseResponsePlain": {
+        "type": "string"
+      },
+      "AppSecretsUpdateRequestValuesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ErrorResponseDetailsProperty": {
+        "type": "object",
+        "description": "Deprecated"
+      },
+      "ImageRefLabelsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "MachineEventRequestProperty": {
+        "type": "object"
+      },
+      "MachineOverviewConfigMetadataProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "FlyContainerConfigEnvProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "ExtraEnv is used to add additional environment variables to the container."
+      },
+      "FlyHttpResponseOptionsHeadersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/FlyHttpResponseOptionsHeadersPropertyAdditionalProperties"
+        }
+      },
+      "FlyMachineConfigChecksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/FlyMachineCheck"
+        },
+        "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
+      },
+      "FlyMachineConfigEnvProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "An object filled with key/value pairs to be set as environment variables"
+      },
+      "FlyMachineConfigMetadataProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "FlyMachineProcessEnvProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "MacaroonCaveatSetCaveatsItemProperty": {
+        "type": "object"
+      },
+      "UpdateMetadataRequestMetadataProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "CreateMachineRequestConfigChecks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/FlyMachineCheck"
+        },
+        "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
+      },
+      "CreateMachineRequestConfigEnv": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "An object filled with key/value pairs to be set as environment variables"
+      },
+      "CreateMachineRequestConfigMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "UpdateMachineRequestConfigChecks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/FlyMachineCheck"
+        },
+        "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
+      },
+      "UpdateMachineRequestConfigEnv": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "An object filled with key/value pairs to be set as environment variables"
+      },
+      "UpdateMachineRequestConfigMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty": {
+        "type": "object"
+      },
+      "FlyHttpResponseOptionsHeadersPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "CertificateEntrySource": {
+        "enum": [
+          "custom",
+          "fly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CertificateEntrySource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom",
+              "name": "Custom"
+            },
+            {
+              "value": "fly",
+              "name": "Fly"
+            }
+          ]
+        }
+      },
+      "CertificateEntryStatus": {
+        "enum": [
+          "active",
+          "pending_ownership",
+          "pending_validation"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CertificateEntryStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "pending_ownership",
+              "name": "PendingOwnership"
+            },
+            {
+              "value": "pending_validation",
+              "name": "PendingValidation"
+            }
+          ]
+        }
+      },
+      "IssuedCertificateType": {
+        "enum": [
+          "rsa",
+          "ecdsa"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "IssuedCertificateType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rsa",
+              "name": "Rsa"
+            },
+            {
+              "value": "ecdsa",
+              "name": "Ecdsa"
+            }
+          ]
+        }
+      },
+      "MachineHostStatus": {
+        "enum": [
+          "ok",
+          "unknown",
+          "unreachable"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MachineHostStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ok",
+              "name": "Ok"
+            },
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "unreachable",
+              "name": "Unreachable"
+            }
+          ]
+        }
+      },
+      "OrgVolumeHostStatus": {
+        "enum": [
+          "ok",
+          "unknown",
+          "unreachable"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "OrgVolumeHostStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ok",
+              "name": "Ok"
+            },
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "unreachable",
+              "name": "Unreachable"
+            }
+          ]
+        }
+      },
+      "OrgVolumeType": {
+        "enum": [
+          "local",
+          "cache"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "OrgVolumeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "local",
+              "name": "Local"
+            },
+            {
+              "value": "cache",
+              "name": "Cache"
+            }
+          ]
+        }
+      },
+      "SignalRequestSignal": {
+        "enum": [
+          "SIGABRT",
+          "SIGALRM",
+          "SIGFPE",
+          "SIGHUP",
+          "SIGILL",
+          "SIGINT",
+          "SIGKILL",
+          "SIGPIPE",
+          "SIGQUIT",
+          "SIGSEGV",
+          "SIGTERM",
+          "SIGTRAP",
+          "SIGUSR1",
+          "SIGUSR2"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SignalRequestSignal",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SIGABRT",
+              "name": "Sigabrt"
+            },
+            {
+              "value": "SIGALRM",
+              "name": "Sigalrm"
+            },
+            {
+              "value": "SIGFPE",
+              "name": "Sigfpe"
+            },
+            {
+              "value": "SIGHUP",
+              "name": "Sighup"
+            },
+            {
+              "value": "SIGILL",
+              "name": "Sigill"
+            },
+            {
+              "value": "SIGINT",
+              "name": "Sigint"
+            },
+            {
+              "value": "SIGKILL",
+              "name": "Sigkill"
+            },
+            {
+              "value": "SIGPIPE",
+              "name": "Sigpipe"
+            },
+            {
+              "value": "SIGQUIT",
+              "name": "Sigquit"
+            },
+            {
+              "value": "SIGSEGV",
+              "name": "Sigsegv"
+            },
+            {
+              "value": "SIGTERM",
+              "name": "Sigterm"
+            },
+            {
+              "value": "SIGTRAP",
+              "name": "Sigtrap"
+            },
+            {
+              "value": "SIGUSR1",
+              "name": "Sigusr1"
+            },
+            {
+              "value": "SIGUSR2",
+              "name": "Sigusr2"
+            }
+          ]
+        }
+      },
+      "StopRequestSignal": {
+        "enum": [
+          "SIGHUP",
+          "SIGINT",
+          "SIGQUIT",
+          "SIGKILL",
+          "SIGUSR1",
+          "SIGUSR2",
+          "SIGTERM"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "example": "SIGTERM",
+        "x-ms-enum": {
+          "name": "StopRequestSignal",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SIGHUP",
+              "name": "Sighup"
+            },
+            {
+              "value": "SIGINT",
+              "name": "Sigint"
+            },
+            {
+              "value": "SIGQUIT",
+              "name": "Sigquit"
+            },
+            {
+              "value": "SIGKILL",
+              "name": "Sigkill"
+            },
+            {
+              "value": "SIGUSR1",
+              "name": "Sigusr1"
+            },
+            {
+              "value": "SIGUSR2",
+              "name": "Sigusr2"
+            },
+            {
+              "value": "SIGTERM",
+              "name": "Sigterm"
+            }
+          ]
+        }
+      },
+      "VolumeHostStatus": {
+        "enum": [
+          "ok",
+          "unknown",
+          "unreachable"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "VolumeHostStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ok",
+              "name": "Ok"
+            },
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "unreachable",
+              "name": "Unreachable"
+            }
+          ]
+        }
+      },
+      "VolumeType": {
+        "enum": [
+          "local",
+          "cache"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "VolumeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "local",
+              "name": "Local"
+            },
+            {
+              "value": "cache",
+              "name": "Cache"
+            }
+          ]
+        }
+      },
+      "FlyEnvFromFieldRef": {
+        "enum": [
+          "id",
+          "version",
+          "app_name",
+          "private_ip",
+          "region",
+          "image"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.\u0022",
+        "x-ms-enum": {
+          "name": "FlyEnvFromFieldRef",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "version",
+              "name": "Version"
+            },
+            {
+              "value": "app_name",
+              "name": "AppName"
+            },
+            {
+              "value": "private_ip",
+              "name": "PrivateIp"
+            },
+            {
+              "value": "region",
+              "name": "Region"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            }
+          ]
+        }
+      },
+      "FlyMachineCheckKind": {
+        "enum": [
+          "informational",
+          "readiness"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Kind of the check (informational, readiness)",
+        "x-ms-enum": {
+          "name": "FlyMachineCheckKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "informational",
+              "name": "Informational"
+            },
+            {
+              "value": "readiness",
+              "name": "Readiness"
+            }
+          ]
+        }
+      },
+      "FlyMachineGuestPersistRootfs": {
+        "enum": [
+          "never",
+          "always",
+          "restart"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022Deprecated: use MachineConfig.Rootfs instead\u0022",
+        "x-ms-enum": {
+          "name": "FlyMachineGuestPersistRootfs",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "never",
+              "name": "Never"
+            },
+            {
+              "value": "always",
+              "name": "Always"
+            },
+            {
+              "value": "restart",
+              "name": "Restart"
+            }
+          ]
+        }
+      },
+      "FlyMachineRestartPolicy": {
+        "enum": [
+          "no",
+          "always",
+          "on-failure",
+          "spot-price"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that\u2019s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.\n* spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price.",
+        "x-ms-enum": {
+          "name": "FlyMachineRestartPolicy",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "no",
+              "name": "No"
+            },
+            {
+              "value": "always",
+              "name": "Always"
+            },
+            {
+              "value": "on-failure",
+              "name": "OnFailure"
+            },
+            {
+              "value": "spot-price",
+              "name": "SpotPrice"
+            }
+          ]
+        }
+      },
+      "FlyMachineRootfsPersist": {
+        "enum": [
+          "never",
+          "always",
+          "restart"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FlyMachineRootfsPersist",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "never",
+              "name": "Never"
+            },
+            {
+              "value": "always",
+              "name": "Always"
+            },
+            {
+              "value": "restart",
+              "name": "Restart"
+            }
+          ]
+        }
+      },
+      "FlyMachineServiceAutostop": {
+        "enum": [
+          "off",
+          "stop",
+          "suspend"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for \u0022off\u0022 and \u0022stop\u0022 in responses.\n* \u0022off\u0022 or false - Do not autostop the Machine.\n* \u0022stop\u0022 or true - Automatically stop the Machine.\n* \u0022suspend\u0022 - Automatically suspend the Machine, falling back to a full stop if this is not possible.",
+        "x-ms-enum": {
+          "name": "FlyMachineServiceAutostop",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "stop",
+              "name": "Stop"
+            },
+            {
+              "value": "suspend",
+              "name": "Suspend"
+            }
+          ]
+        }
+      },
+      "FlyReplayCacheType": {
+        "enum": [
+          "cookie",
+          "header"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Currently either \u0022cookie\u0022 or \u0022header\u0022",
+        "x-ms-enum": {
+          "name": "FlyReplayCacheType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cookie",
+              "name": "Cookie"
+            },
+            {
+              "value": "header",
+              "name": "Header"
+            }
+          ]
+        }
+      },
+      "FlyStopConfigSignal": {
+        "enum": [
+          "SIGHUP",
+          "SIGINT",
+          "SIGQUIT",
+          "SIGKILL",
+          "SIGUSR1",
+          "SIGUSR2",
+          "SIGTERM"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FlyStopConfigSignal",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SIGHUP",
+              "name": "Sighup"
+            },
+            {
+              "value": "SIGINT",
+              "name": "Sigint"
+            },
+            {
+              "value": "SIGQUIT",
+              "name": "Sigquit"
+            },
+            {
+              "value": "SIGKILL",
+              "name": "Sigkill"
+            },
+            {
+              "value": "SIGUSR1",
+              "name": "Sigusr1"
+            },
+            {
+              "value": "SIGUSR2",
+              "name": "Sigusr2"
+            },
+            {
+              "value": "SIGTERM",
+              "name": "Sigterm"
+            }
+          ]
+        }
+      },
+      "MachinesRestartSignalParameter": {
+        "enum": [
+          "SIGHUP",
+          "SIGINT",
+          "SIGQUIT",
+          "SIGKILL",
+          "SIGUSR1",
+          "SIGUSR2",
+          "SIGTERM"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MachinesRestartSignalParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SIGHUP",
+              "name": "Sighup"
+            },
+            {
+              "value": "SIGINT",
+              "name": "Sigint"
+            },
+            {
+              "value": "SIGQUIT",
+              "name": "Sigquit"
+            },
+            {
+              "value": "SIGKILL",
+              "name": "Sigkill"
+            },
+            {
+              "value": "SIGUSR1",
+              "name": "Sigusr1"
+            },
+            {
+              "value": "SIGUSR2",
+              "name": "Sigusr2"
+            },
+            {
+              "value": "SIGTERM",
+              "name": "Sigterm"
+            }
+          ]
+        }
+      },
+      "MachinesWaitStateParameter": {
+        "enum": [
+          "started",
+          "stopped",
+          "suspended",
+          "destroyed",
+          "failed",
+          "settled"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MachinesWaitStateParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "started",
+              "name": "Started"
+            },
+            {
+              "value": "stopped",
+              "name": "Stopped"
+            },
+            {
+              "value": "suspended",
+              "name": "Suspended"
+            },
+            {
+              "value": "destroyed",
+              "name": "Destroyed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "settled",
+              "name": "Settled"
+            }
+          ]
+        }
       }
     },
     "securitySchemes": {

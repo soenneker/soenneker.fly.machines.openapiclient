@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef_labels? Labels { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRefLabelsProperty? Labels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef_labels Labels { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRefLabelsProperty Labels { get; set; }
 #endif
         /// <summary>The registry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "digest", n => { Digest = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef_labels>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef_labels.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRefLabelsProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRefLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "registry", n => { Registry = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetStringValue(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("digest", Digest);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef_labels>("labels", Labels);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRefLabelsProperty>("labels", Labels);
             writer.WriteStringValue("registry", Registry);
             writer.WriteStringValue("repository", Repository);
             writer.WriteStringValue("tag", Tag);

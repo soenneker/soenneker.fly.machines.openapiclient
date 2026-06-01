@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent> Events { get; set; }
 #endif
         /// <summary>The host_status property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine_host_status? HostStatus { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus? HostStatus { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +157,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine_host_status>(); } },
+                { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_ref", n => { ImageRef = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef.CreateFromDiscriminatorValue); } },
                 { "incomplete_config", n => { IncompleteConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
@@ -181,7 +181,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("config", Config);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>("events", Events);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine_host_status>("host_status", HostStatus);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>("host_status", HostStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>("image_ref", ImageRef);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("incomplete_config", IncompleteConfig);

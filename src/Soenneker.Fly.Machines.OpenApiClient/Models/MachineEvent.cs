@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent_request? Request { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEventRequestProperty? Request { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent_request Request { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEventRequestProperty Request { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent_request>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent_request.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEventRequestProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEventRequestProperty.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent_request>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEventRequestProperty>("request", Request);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("timestamp", Timestamp);

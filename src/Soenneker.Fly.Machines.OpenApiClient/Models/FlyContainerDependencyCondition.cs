@@ -10,7 +10,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         [EnumMember(Value = "exited_successfully")]
         #pragma warning disable CS1591
-        Exited_successfully,
+        ExitedSuccessfully,
         #pragma warning restore CS1591
         [EnumMember(Value = "healthy")]
         #pragma warning disable CS1591

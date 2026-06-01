@@ -29,10 +29,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The http_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHTTPOptions? HttpOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions? HttpOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHTTPOptions HttpOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions HttpOptions { get; set; }
 #endif
         /// <summary>The port property</summary>
         public int? Port { get; set; }
@@ -49,10 +49,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The tls_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTLSOptions? TlsOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions? TlsOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTLSOptions TlsOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions TlsOptions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort"/> and sets the default values.
@@ -82,11 +82,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "end_port", n => { EndPort = n.GetIntValue(); } },
                 { "force_https", n => { ForceHttps = n.GetBoolValue(); } },
                 { "handlers", n => { Handlers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "http_options", n => { HttpOptions = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHTTPOptions>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHTTPOptions.CreateFromDiscriminatorValue); } },
+                { "http_options", n => { HttpOptions = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions.CreateFromDiscriminatorValue); } },
                 { "port", n => { Port = n.GetIntValue(); } },
                 { "proxy_proto_options", n => { ProxyProtoOptions = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions.CreateFromDiscriminatorValue); } },
                 { "start_port", n => { StartPort = n.GetIntValue(); } },
-                { "tls_options", n => { TlsOptions = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTLSOptions>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTLSOptions.CreateFromDiscriminatorValue); } },
+                { "tls_options", n => { TlsOptions = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,11 +99,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("end_port", EndPort);
             writer.WriteBoolValue("force_https", ForceHttps);
             writer.WriteCollectionOfPrimitiveValues<string>("handlers", Handlers);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHTTPOptions>("http_options", HttpOptions);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions>("http_options", HttpOptions);
             writer.WriteIntValue("port", Port);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions>("proxy_proto_options", ProxyProtoOptions);
             writer.WriteIntValue("start_port", StartPort);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTLSOptions>("tls_options", TlsOptions);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions>("tls_options", TlsOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

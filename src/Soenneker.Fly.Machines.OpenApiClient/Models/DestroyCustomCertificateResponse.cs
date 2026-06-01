@@ -37,10 +37,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The dns_requirements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DNSRequirements? DnsRequirements { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements? DnsRequirements { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DNSRequirements DnsRequirements { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements DnsRequirements { get; set; }
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "certificates", n => { Certificates = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configured", n => { Configured = n.GetBoolValue(); } },
                 { "dns_provider", n => { DnsProvider = n.GetStringValue(); } },
-                { "dns_requirements", n => { DnsRequirements = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.DNSRequirements>(global::Soenneker.Fly.Machines.OpenApiClient.Models.DNSRequirements.CreateFromDiscriminatorValue); } },
+                { "dns_requirements", n => { DnsRequirements = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements>(global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements.CreateFromDiscriminatorValue); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "rate_limited_until", n => { RateLimitedUntil = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -139,7 +139,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry>("certificates", Certificates);
             writer.WriteBoolValue("configured", Configured);
             writer.WriteStringValue("dns_provider", DnsProvider);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.DNSRequirements>("dns_requirements", DnsRequirements);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements>("dns_requirements", DnsRequirements);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("rate_limited_until", RateLimitedUntil);
             writer.WriteStringValue("status", Status);

@@ -17,7 +17,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The autostart property</summary>
         public bool? Autostart { get; set; }
         /// <summary>Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for &quot;off&quot; and &quot;stop&quot; in responses.* &quot;off&quot; or false - Do not autostop the Machine.* &quot;stop&quot; or true - Automatically stop the Machine.* &quot;suspend&quot; - Automatically suspend the Machine, falling back to a full stop if this is not possible.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService_autostop? Autostop { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop? Autostop { get; set; }
         /// <summary>An optional list of service checks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +96,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autostart", n => { Autostart = n.GetBoolValue(); } },
-                { "autostop", n => { Autostop = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService_autostop>(); } },
+                { "autostop", n => { Autostop = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>(); } },
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency.CreateFromDiscriminatorValue); } },
                 { "force_instance_description", n => { ForceInstanceDescription = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autostart", Autostart);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService_autostop>("autostop", Autostop);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>("autostop", Autostop);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>("checks", Checks);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency>("concurrency", Concurrency);
             writer.WriteStringValue("force_instance_description", ForceInstanceDescription);

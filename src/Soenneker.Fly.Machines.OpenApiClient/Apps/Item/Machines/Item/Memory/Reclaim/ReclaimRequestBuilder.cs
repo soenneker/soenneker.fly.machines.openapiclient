@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory.Reclaim
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\machines\{machine_id}\memory\reclaim
+    /// Builds and executes requests for operations under \apps\{appName}\machines\{machineId}\memory\reclaim
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReclaimRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory.Re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReclaimRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/memory/reclaim", pathParameters)
+        public ReclaimRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/memory/reclaim", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory.Re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReclaimRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/memory/reclaim", rawUrl)
+        public ReclaimRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/memory/reclaim", rawUrl)
         {
         }
         /// <summary>

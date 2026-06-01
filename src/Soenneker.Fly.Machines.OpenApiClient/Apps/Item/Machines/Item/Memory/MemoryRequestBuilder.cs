@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\machines\{machine_id}\memory
+    /// Builds and executes requests for operations under \apps\{appName}\machines\{machineId}\memory
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MemoryRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MemoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/memory", pathParameters)
+        public MemoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/memory", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Memory
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MemoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/memory", rawUrl)
+        public MemoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/memory", rawUrl)
         {
         }
         /// <summary>

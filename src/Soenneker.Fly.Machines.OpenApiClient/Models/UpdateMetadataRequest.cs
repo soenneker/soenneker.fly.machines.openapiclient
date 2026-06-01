@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest_metadata Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "machine_version", n => { MachineVersion = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest_metadata>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("machine_version", MachineVersion);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

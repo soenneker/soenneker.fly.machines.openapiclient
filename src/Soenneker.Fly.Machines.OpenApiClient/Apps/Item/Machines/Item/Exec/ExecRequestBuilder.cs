@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Exec
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\machines\{machine_id}\exec
+    /// Builds and executes requests for operations under \apps\{appName}\machines\{machineId}\exec
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExecRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Exec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExecRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/exec", pathParameters)
+        public ExecRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/exec", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Exec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExecRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/exec", rawUrl)
+        public ExecRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/exec", rawUrl)
         {
         }
         /// <summary>

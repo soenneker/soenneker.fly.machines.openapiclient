@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The ttl_seconds property</summary>
         public int? TtlSeconds { get; set; }
         /// <summary>Currently either &quot;cookie&quot; or &quot;header&quot;</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache_type? Type { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache"/> and sets the default values.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path_prefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "ttl_seconds", n => { TtlSeconds = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path_prefix", PathPrefix);
             writer.WriteIntValue("ttl_seconds", TtlSeconds);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

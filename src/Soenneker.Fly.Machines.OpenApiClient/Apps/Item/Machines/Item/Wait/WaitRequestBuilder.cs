@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Wait
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\machines\{machine_id}\wait
+    /// Builds and executes requests for operations under \apps\{appName}\machines\{machineId}\wait
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WaitRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Wait
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WaitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/wait{?from_event_id*,instance_id*,state*,timeout*,version*}", pathParameters)
+        public WaitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/wait{?from_event_id*,instance_id*,state*,timeout*,version*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Wait
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WaitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/wait{?from_event_id*,instance_id*,state*,timeout*,version*}", rawUrl)
+        public WaitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}/wait{?from_event_id*,instance_id*,state*,timeout*,version*}", rawUrl)
         {
         }
         /// <summary>
@@ -112,7 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Wait
 #endif
             /// <summary>desired state(s), supports repeated or comma-separated values</summary>
             [QueryParameter("state")]
-            public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Wait.GetStateQueryParameterType? State { get; set; }
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesWaitStateParameter? State { get; set; }
             /// <summary>wait timeout. default 60s</summary>
             [QueryParameter("timeout")]
             public int? Timeout { get; set; }

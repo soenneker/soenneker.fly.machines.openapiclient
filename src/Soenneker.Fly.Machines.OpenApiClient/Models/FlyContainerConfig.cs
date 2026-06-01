@@ -41,10 +41,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>ExtraEnv is used to add additional environment variables to the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_env? Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty? Env { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_env Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty Env { get; set; }
 #endif
         /// <summary>EnvFrom can be provided to set environment variables from machine fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,10 +97,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>&quot;Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_restart? Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart? Restart { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_restart Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart Restart { get; set; }
 #endif
         /// <summary>Secrets can be provided at the process level to explicitly indicate which secrets should beused for the process. If not provided, the secrets provided at the machine level will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,10 +113,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Stop is used to define the signal and timeout for stopping the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_stop? Stop { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop? Stop { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_stop Stop { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop Stop { get; set; }
 #endif
         /// <summary>UserOverride is used to override the default user of the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,16 +154,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "cmd", n => { Cmd = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "depends_on", n => { DependsOn = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entrypoint", n => { Entrypoint = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_env>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_env.CreateFromDiscriminatorValue); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty.CreateFromDiscriminatorValue); } },
                 { "env_from", n => { EnvFrom = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exec", n => { Exec = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "healthchecks", n => { Healthchecks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "restart", n => { Restart = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_restart>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_restart.CreateFromDiscriminatorValue); } },
+                { "restart", n => { Restart = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart.CreateFromDiscriminatorValue); } },
                 { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_stop>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_stop.CreateFromDiscriminatorValue); } },
+                { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
         }
@@ -177,16 +177,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("cmd", Cmd);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>("depends_on", DependsOn);
             writer.WriteCollectionOfPrimitiveValues<string>("entrypoint", Entrypoint);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty>("env", Env);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>("env_from", EnvFrom);
             writer.WriteCollectionOfPrimitiveValues<string>("exec", Exec);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>("files", Files);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck>("healthchecks", Healthchecks);
             writer.WriteStringValue("image", Image);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_restart>("restart", Restart);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart>("restart", Restart);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>("secrets", Secrets);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig_stop>("stop", Stop);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop>("stop", Stop);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -33,10 +33,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig_metadata? Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfigMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig_metadata Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfigMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "guest", n => { Guest = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig_metadata>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfigMetadataProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfigMetadataProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>("guest", Guest);
             writer.WriteStringValue("image", Image);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfig_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineOverviewConfigMetadataProperty>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

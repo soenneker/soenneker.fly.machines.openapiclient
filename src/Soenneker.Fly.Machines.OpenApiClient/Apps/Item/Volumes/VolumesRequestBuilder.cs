@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\volumes
+    /// Builds and executes requests for operations under \apps\{appName}\volumes
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VolumesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fly.Machines.OpenApiClient.apps.item.volumes.item collection</summary>
         /// <param name="position">Volume ID</param>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolume_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolume_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolumeItemRequestBuilder"/></returns>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolumeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("volume_id", position);
-                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolume_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("volumeId", position);
+                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes.Item.WithVolumeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VolumesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/volumes{?summary*}", pathParameters)
+        public VolumesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/volumes{?summary*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Volumes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VolumesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/volumes{?summary*}", rawUrl)
+        public VolumesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/volumes{?summary*}", rawUrl)
         {
         }
         /// <summary>

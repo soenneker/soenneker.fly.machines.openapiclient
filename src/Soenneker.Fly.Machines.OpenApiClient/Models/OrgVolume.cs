@@ -71,7 +71,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Fstype { get; set; }
 #endif
         /// <summary>The host_status property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_host_status? HostStatus { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus? HostStatus { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +109,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string State { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_type? Type { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeType? Type { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,14 +164,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
                 { "fstype", n => { Fstype = n.GetStringValue(); } },
-                { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_host_status>(); } },
+                { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
                 { "snapshot_retention", n => { SnapshotRetention = n.GetIntValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "zone", n => { Zone = n.GetStringValue(); } },
             };
@@ -196,14 +196,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteBoolValue("encrypted", Encrypted);
             writer.WriteStringValue("fstype", Fstype);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_host_status>("host_status", HostStatus);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus>("host_status", HostStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("region", Region);
             writer.WriteIntValue("size_gb", SizeGb);
             writer.WriteIntValue("snapshot_retention", SnapshotRetention);
             writer.WriteStringValue("state", State);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);

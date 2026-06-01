@@ -17,14 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Orgs
     {
         /// <summary>Gets an item from the Soenneker.Fly.Machines.OpenApiClient.orgs.item collection</summary>
         /// <param name="position">Fly Organization Slug</param>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrg_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrg_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrgSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrgSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("org_slug", position);
-                return new global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrg_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("orgSlug", position);
+                return new global::Soenneker.Fly.Machines.OpenApiClient.Orgs.Item.WithOrgSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

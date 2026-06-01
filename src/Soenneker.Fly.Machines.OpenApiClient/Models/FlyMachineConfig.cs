@@ -27,10 +27,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>An optional object that defines one or more named top-level checks. The key for each check is the check name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_checks? Checks { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigChecksProperty? Checks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_checks Checks { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigChecksProperty Checks { get; set; }
 #endif
         /// <summary>Containers are a list of containers that will run in the machine. Currently restricted toonly specific organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,18 +45,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDNSConfig? Dns { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDNSConfig Dns { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig Dns { get; set; }
 #endif
         /// <summary>An object filled with key/value pairs to be set as environment variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_env? Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigEnvProperty? Env { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_env Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigEnvProperty Env { get; set; }
 #endif
         /// <summary>The files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,10 +93,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_metadata? Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_metadata Metadata { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,16 +221,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "auto_destroy", n => { AutoDestroy = n.GetBoolValue(); } },
                 { "cache_drive", n => { CacheDrive = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive.CreateFromDiscriminatorValue); } },
-                { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_checks>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_checks.CreateFromDiscriminatorValue); } },
+                { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigChecksProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigChecksProperty.CreateFromDiscriminatorValue); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disable_machine_autostart", n => { DisableMachineAutostart = n.GetBoolValue(); } },
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDNSConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDNSConfig.CreateFromDiscriminatorValue); } },
-                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_env>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_env.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig.CreateFromDiscriminatorValue); } },
+                { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigEnvProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigEnvProperty.CreateFromDiscriminatorValue); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "guest", n => { Guest = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "init", n => { Init = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_metadata>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetadataProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics.CreateFromDiscriminatorValue); } },
                 { "mounts", n => { Mounts = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "processes", n => { Processes = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -254,16 +254,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_destroy", AutoDestroy);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive>("cache_drive", CacheDrive);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_checks>("checks", Checks);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigChecksProperty>("checks", Checks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>("containers", Containers);
             writer.WriteBoolValue("disable_machine_autostart", DisableMachineAutostart);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDNSConfig>("dns", Dns);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_env>("env", Env);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigEnvProperty>("env", Env);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>("files", Files);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>("guest", Guest);
             writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit>("init", Init);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetadataProperty>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics>("metrics", Metrics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount>("mounts", Mounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess>("processes", Processes);

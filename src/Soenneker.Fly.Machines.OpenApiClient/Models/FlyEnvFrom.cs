@@ -24,7 +24,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string EnvVar { get; set; }
 #endif
         /// <summary>&quot;FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.&quot;</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom_field_ref? FieldRef { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef? FieldRef { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env_var", n => { EnvVar = n.GetStringValue(); } },
-                { "field_ref", n => { FieldRef = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom_field_ref>(); } },
+                { "field_ref", n => { FieldRef = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("env_var", EnvVar);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom_field_ref>("field_ref", FieldRef);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef>("field_ref", FieldRef);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

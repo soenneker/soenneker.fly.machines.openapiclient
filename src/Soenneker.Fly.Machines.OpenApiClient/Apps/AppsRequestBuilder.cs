@@ -20,14 +20,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps
     {
         /// <summary>Gets an item from the Soenneker.Fly.Machines.OpenApiClient.apps.item collection</summary>
         /// <param name="position">Fly App Name</param>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithApp_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithApp_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithAppNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithAppNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("app_name", position);
-                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithApp_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("appName", position);
+                return new global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.WithAppNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

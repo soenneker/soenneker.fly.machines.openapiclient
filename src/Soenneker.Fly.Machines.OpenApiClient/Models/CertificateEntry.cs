@@ -47,9 +47,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Issuer { get; set; }
 #endif
         /// <summary>The source property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_source? Source { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntrySource? Source { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_status? Status { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntryStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry"/> and sets the default values.
         /// </summary>
@@ -79,8 +79,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "issued", n => { Issued = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate>(global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_source>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_status>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntrySource>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntryStatus>(); } },
             };
         }
         /// <summary>
@@ -94,8 +94,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate>("issued", Issued);
             writer.WriteStringValue("issuer", Issuer);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_source>("source", Source);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntrySource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntryStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

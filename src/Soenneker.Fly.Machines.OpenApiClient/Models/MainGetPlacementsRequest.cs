@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Resource requirements for the Machine to simulate. Defaults to a performance-1x machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_compute? Compute { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute? Compute { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_compute Compute { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute Compute { get; set; }
 #endif
         /// <summary>Number of machines to simulate placement.Defaults to 0, which returns the org-specific limit for each region.</summary>
         public int? Count { get; set; }
@@ -53,10 +53,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Optional weights to override default placement preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_weights? Weights { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights? Weights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_weights Weights { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights Weights { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest"/> and sets the default values.
@@ -83,13 +83,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_compute>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_compute.CreateFromDiscriminatorValue); } },
+                { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "org_slug", n => { OrgSlug = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "volume_name", n => { VolumeName = n.GetStringValue(); } },
                 { "volume_size_bytes", n => { VolumeSizeBytes = n.GetIntValue(); } },
-                { "weights", n => { Weights = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_weights>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_weights.CreateFromDiscriminatorValue); } },
+                { "weights", n => { Weights = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,13 +99,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_compute>("compute", Compute);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute>("compute", Compute);
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("org_slug", OrgSlug);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("volume_name", VolumeName);
             writer.WriteIntValue("volume_size_bytes", VolumeSizeBytes);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequest_weights>("weights", Weights);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights>("weights", Weights);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

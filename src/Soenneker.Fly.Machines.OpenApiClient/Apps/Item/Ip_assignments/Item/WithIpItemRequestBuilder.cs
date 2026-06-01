@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Ip_assignments.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \apps\{app_name}\ip_assignments\{ip}
+    /// Builds and executes requests for operations under \apps\{appName}\ip_assignments\{ip}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIpItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Ip_assignments.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIpItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/ip_assignments/{ip}", pathParameters)
+        public WithIpItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/ip_assignments/{ip}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Ip_assignments.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIpItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{app_name}/ip_assignments/{ip}", rawUrl)
+        public WithIpItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/ip_assignments/{ip}", rawUrl)
         {
         }
         /// <summary>

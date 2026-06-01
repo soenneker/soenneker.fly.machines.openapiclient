@@ -17,10 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest_values? Values { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequestValuesProperty? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest_values Values { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequestValuesProperty Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest_values>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest_values.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequestValuesProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequestValuesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequest_values>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateRequestValuesProperty>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

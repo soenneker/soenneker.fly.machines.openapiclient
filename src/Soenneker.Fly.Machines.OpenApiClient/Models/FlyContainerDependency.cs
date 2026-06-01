@@ -15,7 +15,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The condition property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyCondition? Condition { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? Condition { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed Condition { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyCondition>(); } },
+                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -60,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyCondition>("condition", Condition);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed>("condition", Condition);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
