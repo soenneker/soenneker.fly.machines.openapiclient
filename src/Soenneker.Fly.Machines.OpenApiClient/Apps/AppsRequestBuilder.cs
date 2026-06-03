@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps?org_slug={org_slug}{&app_role*}", pathParameters)
+        public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps?org_slug={org_slug}{&app_role*}", rawUrl)
+        public AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.AppsRequestBuilder.AppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/apps?org_slug={org_slug}{&app_role*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

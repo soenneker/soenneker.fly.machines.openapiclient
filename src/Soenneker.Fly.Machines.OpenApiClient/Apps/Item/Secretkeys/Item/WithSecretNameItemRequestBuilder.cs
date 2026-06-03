@@ -52,7 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSecretNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}{?min_version*}", pathParameters)
+        public WithSecretNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}", pathParameters)
         {
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secretkeys.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSecretNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}{?min_version*}", rawUrl)
+        public WithSecretNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secretkeys/{secretName}", rawUrl)
         {
         }
         /// <summary>

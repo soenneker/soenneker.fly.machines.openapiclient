@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,region*,state*,summary*}", pathParameters)
+        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,region*,state*,summary*}", rawUrl)
+        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
