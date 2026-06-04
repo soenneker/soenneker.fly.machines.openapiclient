@@ -127,7 +127,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item.WithSecretNameItemRequestBuilder.WithSecretNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/apps/{appName}/secrets/{secretName}{?min_version*,show_secrets*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
