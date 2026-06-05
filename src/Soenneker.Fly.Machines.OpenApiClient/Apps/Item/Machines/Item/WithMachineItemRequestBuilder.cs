@@ -112,7 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMachineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}", pathParameters)
+        public WithMachineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*}", pathParameters)
         {
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMachineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}", rawUrl)
+        public WithMachineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*}", rawUrl)
         {
         }
         /// <summary>
@@ -197,7 +197,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

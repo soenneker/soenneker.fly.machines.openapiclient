@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSecretNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secrets/{secretName}", pathParameters)
+        public WithSecretNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secrets/{secretName}{?min_version*,show_secrets*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSecretNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secrets/{secretName}", rawUrl)
+        public WithSecretNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/secrets/{secretName}{?min_version*,show_secrets*}", rawUrl)
         {
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Secrets.Item.WithSecretNameItemRequestBuilder.WithSecretNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/apps/{appName}/secrets/{secretName}{?min_version*,show_secrets*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
