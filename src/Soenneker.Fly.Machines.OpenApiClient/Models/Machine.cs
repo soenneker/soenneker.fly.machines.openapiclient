@@ -30,6 +30,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig Config { get; set; }
 #endif
+        /// <summary>The cordoned property</summary>
+        public bool? Cordoned { get; set; }
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +157,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
+                { "cordoned", n => { Cordoned = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>(); } },
@@ -179,6 +182,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>("checks", Checks);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("config", Config);
+            writer.WriteBoolValue("cordoned", Cordoned);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>("events", Events);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>("host_status", HostStatus);

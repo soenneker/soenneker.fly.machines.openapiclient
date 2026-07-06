@@ -4528,6 +4528,9 @@
           "config": {
             "$ref": "#/components/schemas/FlyMachineConfig"
           },
+          "cordoned": {
+            "type": "boolean"
+          },
           "created_at": {
             "type": "string"
           },
