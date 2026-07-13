@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,region*,state*,summary*}", pathParameters)
+        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,include_leases*,region*,state*,summary*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,region*,state*,summary*}", rawUrl)
+        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines{?include_deleted*,include_leases*,region*,state*,summary*}", rawUrl)
         {
         }
         /// <summary>
@@ -144,6 +144,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines
             /// <summary>Include deleted machines</summary>
             [QueryParameter("include_deleted")]
             public bool? IncludeDeleted { get; set; }
+            /// <summary>Include machine leases</summary>
+            [QueryParameter("include_leases")]
+            public bool? IncludeLeases { get; set; }
             /// <summary>Region filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

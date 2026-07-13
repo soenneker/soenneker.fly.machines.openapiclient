@@ -112,7 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMachineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*}", pathParameters)
+        public WithMachineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*,include_leases*}", pathParameters)
         {
         }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMachineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*}", rawUrl)
+        public WithMachineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/apps/{appName}/machines/{machineId}{?force*,include_leases*}", rawUrl)
         {
         }
         /// <summary>
@@ -148,11 +148,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -209,11 +209,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -261,6 +261,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item
             /// <summary>Force kill the machine if it&apos;s running</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
+        }
+        /// <summary>
+        /// Get details of a specific Machine within an app by the Machine ID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithMachineItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Include machine lease</summary>
+            [QueryParameter("include_leases")]
+            public bool? IncludeLeases { get; set; }
         }
     }
 }

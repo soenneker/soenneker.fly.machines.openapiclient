@@ -82,6 +82,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string InstanceId { get; set; }
 #endif
+        /// <summary>The lease property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease? Lease { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease Lease { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +173,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "image_ref", n => { ImageRef = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef.CreateFromDiscriminatorValue); } },
                 { "incomplete_config", n => { IncompleteConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
+                { "lease", n => { Lease = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease>(global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nonce", n => { Nonce = n.GetStringValue(); } },
                 { "private_ip", n => { PrivateIp = n.GetStringValue(); } },
@@ -190,6 +199,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>("image_ref", ImageRef);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("incomplete_config", IncompleteConfig);
             writer.WriteStringValue("instance_id", InstanceId);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease>("lease", Lease);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("nonce", Nonce);
             writer.WriteStringValue("private_ip", PrivateIp);

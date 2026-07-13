@@ -696,6 +696,14 @@
             }
           },
           {
+            "name": "include_leases",
+            "in": "query",
+            "description": "Include machine leases",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "region",
             "in": "query",
             "description": "Region filter",
@@ -800,6 +808,14 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "include_leases",
+            "in": "query",
+            "description": "Include machine lease",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],
@@ -4556,6 +4572,9 @@
             "type": "string",
             "description": "InstanceID is unique for each version of the machine"
           },
+          "lease": {
+            "$ref": "#/components/schemas/StrippedLease"
+          },
           "name": {
             "type": "string"
           },
@@ -5003,6 +5022,20 @@
           "timeout": {
             "type": "string",
             "example": "1s"
+          }
+        }
+      },
+      "StrippedLease": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "integer"
+          },
+          "owner": {
+            "type": "string"
           }
         }
       },
