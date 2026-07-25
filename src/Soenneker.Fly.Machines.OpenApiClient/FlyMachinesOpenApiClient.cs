@@ -9,6 +9,7 @@ using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Fly.Machines.OpenApiClient.Apps;
 using Soenneker.Fly.Machines.OpenApiClient.Orgs;
 using Soenneker.Fly.Machines.OpenApiClient.Platform;
+using Soenneker.Fly.Machines.OpenApiClient.Postgres;
 using Soenneker.Fly.Machines.OpenApiClient.Tokens;
 using System.Collections.Generic;
 using System.IO;
@@ -36,6 +37,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient
         public global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder Platform
         {
             get => new global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The postgres property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Postgres.PostgresRequestBuilder Postgres
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.Postgres.PostgresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tokens property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Tokens.TokensRequestBuilder Tokens
