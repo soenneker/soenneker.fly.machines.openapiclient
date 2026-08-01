@@ -36,20 +36,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Apps.Item.Machines.Item.Suspend
         /// <summary>
         /// Suspend a specific Machine within an app. The next start operation will attempt (but is not guaranteed) to resume the Machine from a snapshot taken at suspension time, rather than performing a cold boot.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DefaultResponseResponseJson8"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesSuspend201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.DefaultResponseResponseJson8?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesSuspend201Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.DefaultResponseResponseJson8> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesSuspend201Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.DefaultResponseResponseJson8>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.DefaultResponseResponseJson8.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesSuspend201Response>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesSuspend201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Suspend a specific Machine within an app. The next start operation will attempt (but is not guaranteed) to resume the Machine from a snapshot taken at suspension time, rather than performing a cold boot.

@@ -143,7 +143,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/AppsDelete204Response"
                 }
               }
             }
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/AppCertificatesDelete204Response"
                 }
               }
             }
@@ -661,7 +661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/AppIpAssignmentsDelete204Response"
                 }
               }
             }
@@ -734,7 +734,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MachinesList200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MachinesList200ResponseSchema"
                 }
               }
             }
@@ -933,7 +933,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/MachinesDelete204Response"
                 }
               }
             }
@@ -975,7 +975,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/MachinesCordon201Response"
                 }
               }
             }
@@ -1025,7 +1025,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MachinesListEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MachinesListEvents200ResponseSchema"
                 }
               }
             }
@@ -1246,7 +1246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/MachinesReleaseLease204Response"
                 }
               }
             }
@@ -1432,7 +1432,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MachinesShowMetadata200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MachinesShowMetadata200ResponseSchema"
                 }
               }
             }
@@ -1721,7 +1721,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/MachinesDeleteMetadata204Response"
                 }
               }
             }
@@ -1779,7 +1779,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MachinesListProcesses200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MachinesListProcesses200ResponseSchema"
                 }
               }
             }
@@ -1941,7 +1941,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/MachinesStart201Response"
                 }
               }
             }
@@ -2035,7 +2035,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/MachinesSuspend201Response"
                 }
               }
             }
@@ -2077,7 +2077,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/MachinesUncordon201Response"
                 }
               }
             }
@@ -2119,7 +2119,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MachinesListVersions200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MachinesListVersions200ResponseSchema"
                 }
               }
             }
@@ -3027,7 +3027,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VolumesList200ResponseResponseJson"
+                  "$ref": "#/components/schemas/VolumesList200ResponseSchema"
                 }
               }
             }
@@ -3304,7 +3304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VolumesListSnapshots200ResponseResponseJson"
+                  "$ref": "#/components/schemas/VolumesListSnapshots200ResponseSchema"
                 }
               }
             }
@@ -3344,7 +3344,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/CreateVolumeSnapshot201Response"
                 }
               }
             }
@@ -4995,7 +4995,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TokensAuthenticate200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TokensAuthenticate200ResponseSchema"
                 }
               }
             }
@@ -5121,7 +5121,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TokensRequestKms200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/TokensRequestKms200PlainResponseSchema"
                 }
               }
             }
@@ -5153,7 +5153,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/TokensRequestOidc200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/TokensRequestOidc200PlainResponseSchema"
                 }
               }
             }
@@ -9321,10 +9321,10 @@
           "$ref": "#/components/schemas/RootVerifiedToken"
         }
       },
-      "TokensRequestKms200Response": {
+      "TokensRequestKms200PlainResponse": {
         "type": "string"
       },
-      "TokensRequestOidc200Response": {
+      "TokensRequestOidc200PlainResponse": {
         "type": "string"
       },
       "FlyContainerDependencyConditionWrapper": {
@@ -9386,113 +9386,113 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "DefaultResponse": {
+      "AppsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson": {
+      "AppCertificatesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson2": {
+      "AppIpAssignmentsDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MachinesList200ResponseResponseJson": {
+      "MachinesList200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Machine"
         }
       },
-      "DefaultResponseResponseJson3": {
+      "MachinesDelete204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson4": {
+      "MachinesCordon201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MachinesListEvents200ResponseResponseJson": {
+      "MachinesListEvents200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/MachineEvent"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "MachinesReleaseLease204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MachinesShowMetadata200ResponseResponseJson": {
+      "MachinesShowMetadata200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "DefaultResponseResponseJson6": {
+      "MachinesDeleteMetadata204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MachinesListProcesses200ResponseResponseJson": {
+      "MachinesListProcesses200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ProcessStat"
         }
       },
-      "DefaultResponseResponseJson7": {
+      "MachinesStart201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson8": {
+      "MachinesSuspend201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson9": {
+      "MachinesUncordon201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MachinesListVersions200ResponseResponseJson": {
+      "MachinesListVersions200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/MachineVersion"
         }
       },
-      "VolumesList200ResponseResponseJson": {
+      "VolumesList200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Volume"
         }
       },
-      "VolumesListSnapshots200ResponseResponseJson": {
+      "VolumesListSnapshots200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/VolumeSnapshot"
         }
       },
-      "DefaultResponseResponseJson10": {
+      "CreateVolumeSnapshot201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "TokensAuthenticate200ResponseResponseJson": {
+      "TokensAuthenticate200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RootVerifiedToken"
         }
       },
-      "TokensRequestKms200ResponseResponsePlain": {
+      "TokensRequestKms200PlainResponseSchema": {
         "type": "string"
       },
-      "TokensRequestOidc200ResponseResponsePlain": {
+      "TokensRequestOidc200PlainResponseSchema": {
         "type": "string"
       },
       "AppSecretsUpdateRequestValuesProperty": {

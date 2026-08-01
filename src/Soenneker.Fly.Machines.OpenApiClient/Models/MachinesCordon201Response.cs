@@ -7,29 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>
+    /// Default response schema
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MachinesShowMetadata200ResponseResponseJson : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class MachinesCordon201Response : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseResponseJson"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesCordon201Response"/> and sets the default values.
         /// </summary>
-        public MachinesShowMetadata200ResponseResponseJson()
+        public MachinesCordon201Response()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesCordon201Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseResponseJson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesCordon201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseResponseJson();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesCordon201Response();
         }
         /// <summary>
         /// The deserialization information for the current model
