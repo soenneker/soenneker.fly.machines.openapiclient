@@ -5203,6 +5203,9 @@
           "network": {
             "type": "string"
           },
+          "network_cidr": {
+            "type": "string"
+          },
           "organization": {
             "$ref": "#/components/schemas/AppOrganizationInfo"
           },
@@ -8555,6 +8558,9 @@
           },
           "longitude": {
             "type": "number"
+          },
+          "mpg_available": {
+            "type": "boolean"
           },
           "name": {
             "type": "string"

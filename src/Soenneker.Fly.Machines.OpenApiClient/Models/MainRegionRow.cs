@@ -38,6 +38,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public double? Latitude { get; set; }
         /// <summary>The longitude property</summary>
         public double? Longitude { get; set; }
+        /// <summary>The mpg_available property</summary>
+        public bool? MpgAvailable { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "geo_region", n => { GeoRegion = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "mpg_available", n => { MpgAvailable = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "requires_paid_plan", n => { RequiresPaidPlan = n.GetBoolValue(); } },
             };
@@ -96,6 +99,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("geo_region", GeoRegion);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteBoolValue("mpg_available", MpgAvailable);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("requires_paid_plan", RequiresPaidPlan);
             writer.WriteAdditionalData(AdditionalData);

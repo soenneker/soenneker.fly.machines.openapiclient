@@ -42,6 +42,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Network { get; set; }
 #endif
+        /// <summary>The network_cidr property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkCidr { get; set; }
+#nullable restore
+#else
+        public string NetworkCidr { get; set; }
+#endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "machine_count", n => { MachineCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
+                { "network_cidr", n => { NetworkCidr = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "volume_count", n => { VolumeCount = n.GetIntValue(); } },
@@ -107,6 +116,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("machine_count", MachineCount);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network", Network);
+            writer.WriteStringValue("network_cidr", NetworkCidr);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo>("organization", Organization);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("volume_count", VolumeCount);
