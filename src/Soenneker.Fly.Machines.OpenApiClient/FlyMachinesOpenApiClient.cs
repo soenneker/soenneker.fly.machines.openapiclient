@@ -6,11 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
-using Soenneker.Fly.Machines.OpenApiClient.Apps;
-using Soenneker.Fly.Machines.OpenApiClient.Orgs;
-using Soenneker.Fly.Machines.OpenApiClient.Platform;
-using Soenneker.Fly.Machines.OpenApiClient.Postgres;
-using Soenneker.Fly.Machines.OpenApiClient.Tokens;
+using Soenneker.Fly.Machines.OpenApiClient.V1;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,30 +19,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachinesOpenApiClient : BaseRequestBuilder
     {
-        /// <summary>The apps property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Apps.AppsRequestBuilder Apps
+        /// <summary>The v1 property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.V1.V1RequestBuilder V1
         {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The orgs property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Orgs.OrgsRequestBuilder Orgs
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Orgs.OrgsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The platform property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder Platform
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Platform.PlatformRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The postgres property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Postgres.PostgresRequestBuilder Postgres
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Postgres.PostgresRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The tokens property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Tokens.TokensRequestBuilder Tokens
-        {
-            get => new global::Soenneker.Fly.Machines.OpenApiClient.Tokens.TokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.V1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.FlyMachinesOpenApiClient"/> and sets the default values.
@@ -63,7 +39,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://api.machines.dev/v1";
+                RequestAdapter.BaseUrl = "https://api.machines.dev";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

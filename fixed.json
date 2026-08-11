@@ -12,11 +12,11 @@
   },
   "servers": [
     {
-      "url": "https://api.machines.dev/v1"
+      "url": "https://api.machines.dev"
     }
   ],
   "paths": {
-    "/apps": {
+    "/v1/apps": {
       "get": {
         "tags": [
           "Apps"
@@ -87,7 +87,7 @@
         }
       }
     },
-    "/apps/{appName}": {
+    "/v1/apps/{appName}": {
       "get": {
         "tags": [
           "Apps"
@@ -151,7 +151,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates": {
+    "/v1/apps/{appName}/certificates": {
       "get": {
         "tags": [
           "TLS Certificates"
@@ -207,7 +207,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/acme": {
+    "/v1/apps/{appName}/certificates/acme": {
       "post": {
         "tags": [
           "TLS Certificates"
@@ -259,7 +259,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/custom": {
+    "/v1/apps/{appName}/certificates/custom": {
       "post": {
         "tags": [
           "TLS Certificates"
@@ -311,7 +311,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/{hostname}": {
+    "/v1/apps/{appName}/certificates/{hostname}": {
       "get": {
         "tags": [
           "TLS Certificates"
@@ -391,7 +391,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/{hostname}/acme": {
+    "/v1/apps/{appName}/certificates/{hostname}/acme": {
       "delete": {
         "tags": [
           "TLS Certificates"
@@ -432,7 +432,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/{hostname}/check": {
+    "/v1/apps/{appName}/certificates/{hostname}/check": {
       "post": {
         "tags": [
           "TLS Certificates"
@@ -473,7 +473,7 @@
         }
       }
     },
-    "/apps/{appName}/certificates/{hostname}/custom": {
+    "/v1/apps/{appName}/certificates/{hostname}/custom": {
       "delete": {
         "tags": [
           "TLS Certificates"
@@ -514,7 +514,7 @@
         }
       }
     },
-    "/apps/{appName}/deploy_token": {
+    "/v1/apps/{appName}/deploy_token": {
       "post": {
         "tags": [
           "Apps"
@@ -556,7 +556,7 @@
         }
       }
     },
-    "/apps/{appName}/ip_assignments": {
+    "/v1/apps/{appName}/ip_assignments": {
       "get": {
         "tags": [
           "Apps"
@@ -628,7 +628,7 @@
         }
       }
     },
-    "/apps/{appName}/ip_assignments/{ip}": {
+    "/v1/apps/{appName}/ip_assignments/{ip}": {
       "delete": {
         "tags": [
           "Apps"
@@ -669,7 +669,7 @@
         }
       }
     },
-    "/apps/{appName}/machines": {
+    "/v1/apps/{appName}/machines": {
       "get": {
         "tags": [
           "Machines"
@@ -783,7 +783,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}": {
+    "/v1/apps/{appName}/machines/{machineId}": {
       "get": {
         "tags": [
           "Machines"
@@ -941,7 +941,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/cordon": {
+    "/v1/apps/{appName}/machines/{machineId}/cordon": {
       "post": {
         "tags": [
           "Machines"
@@ -983,7 +983,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/events": {
+    "/v1/apps/{appName}/machines/{machineId}/events": {
       "get": {
         "tags": [
           "Machines"
@@ -1033,7 +1033,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/exec": {
+    "/v1/apps/{appName}/machines/{machineId}/exec": {
       "post": {
         "tags": [
           "Machines"
@@ -1105,7 +1105,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/lease": {
+    "/v1/apps/{appName}/machines/{machineId}/lease": {
       "get": {
         "tags": [
           "Machines"
@@ -1254,7 +1254,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/memory": {
+    "/v1/apps/{appName}/machines/{machineId}/memory": {
       "get": {
         "tags": [
           "Machines"
@@ -1346,7 +1346,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/memory/reclaim": {
+    "/v1/apps/{appName}/machines/{machineId}/memory/reclaim": {
       "post": {
         "tags": [
           "Machines"
@@ -1398,7 +1398,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/metadata": {
+    "/v1/apps/{appName}/machines/{machineId}/metadata": {
       "get": {
         "tags": [
           "Machines"
@@ -1560,7 +1560,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/metadata/{key}": {
+    "/v1/apps/{appName}/machines/{machineId}/metadata/{key}": {
       "get": {
         "tags": [
           "Machines"
@@ -1729,7 +1729,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/ps": {
+    "/v1/apps/{appName}/machines/{machineId}/ps": {
       "get": {
         "tags": [
           "Machines"
@@ -1797,7 +1797,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/restart": {
+    "/v1/apps/{appName}/machines/{machineId}/restart": {
       "post": {
         "tags": [
           "Machines"
@@ -1855,7 +1855,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/signal": {
+    "/v1/apps/{appName}/machines/{machineId}/signal": {
       "post": {
         "tags": [
           "Machines"
@@ -1907,7 +1907,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/start": {
+    "/v1/apps/{appName}/machines/{machineId}/start": {
       "post": {
         "tags": [
           "Machines"
@@ -1949,7 +1949,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/stop": {
+    "/v1/apps/{appName}/machines/{machineId}/stop": {
       "post": {
         "tags": [
           "Machines"
@@ -2001,7 +2001,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/suspend": {
+    "/v1/apps/{appName}/machines/{machineId}/suspend": {
       "post": {
         "tags": [
           "Machines"
@@ -2043,7 +2043,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/uncordon": {
+    "/v1/apps/{appName}/machines/{machineId}/uncordon": {
       "post": {
         "tags": [
           "Machines"
@@ -2085,7 +2085,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/versions": {
+    "/v1/apps/{appName}/machines/{machineId}/versions": {
       "get": {
         "tags": [
           "Machines"
@@ -2127,7 +2127,7 @@
         }
       }
     },
-    "/apps/{appName}/machines/{machineId}/wait": {
+    "/v1/apps/{appName}/machines/{machineId}/wait": {
       "get": {
         "tags": [
           "Machines"
@@ -2219,7 +2219,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys": {
+    "/v1/apps/{appName}/secretkeys": {
       "get": {
         "tags": [
           "Secrets"
@@ -2267,7 +2267,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}": {
+    "/v1/apps/{appName}/secretkeys/{secretName}": {
       "get": {
         "tags": [
           "Secrets"
@@ -2414,7 +2414,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}/decrypt": {
+    "/v1/apps/{appName}/secretkeys/{secretName}/decrypt": {
       "post": {
         "tags": [
           "Secrets"
@@ -2483,7 +2483,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}/encrypt": {
+    "/v1/apps/{appName}/secretkeys/{secretName}/encrypt": {
       "post": {
         "tags": [
           "Secrets"
@@ -2552,7 +2552,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}/generate": {
+    "/v1/apps/{appName}/secretkeys/{secretName}/generate": {
       "post": {
         "tags": [
           "Secrets"
@@ -2613,7 +2613,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}/sign": {
+    "/v1/apps/{appName}/secretkeys/{secretName}/sign": {
       "post": {
         "tags": [
           "Secrets"
@@ -2682,7 +2682,7 @@
         }
       }
     },
-    "/apps/{appName}/secretkeys/{secretName}/verify": {
+    "/v1/apps/{appName}/secretkeys/{secretName}/verify": {
       "post": {
         "tags": [
           "Secrets"
@@ -2741,7 +2741,7 @@
         }
       }
     },
-    "/apps/{appName}/secrets": {
+    "/v1/apps/{appName}/secrets": {
       "get": {
         "tags": [
           "Secrets"
@@ -2839,7 +2839,7 @@
         }
       }
     },
-    "/apps/{appName}/secrets/{secretName}": {
+    "/v1/apps/{appName}/secrets/{secretName}": {
       "get": {
         "tags": [
           "Secrets"
@@ -2994,7 +2994,7 @@
         }
       }
     },
-    "/apps/{appName}/volumes": {
+    "/v1/apps/{appName}/volumes": {
       "get": {
         "tags": [
           "Volumes"
@@ -3076,7 +3076,7 @@
         }
       }
     },
-    "/apps/{appName}/volumes/{volumeId}": {
+    "/v1/apps/{appName}/volumes/{volumeId}": {
       "get": {
         "tags": [
           "Volumes"
@@ -3218,7 +3218,7 @@
         }
       }
     },
-    "/apps/{appName}/volumes/{volumeId}/extend": {
+    "/v1/apps/{appName}/volumes/{volumeId}/extend": {
       "put": {
         "tags": [
           "Volumes"
@@ -3270,7 +3270,7 @@
         }
       }
     },
-    "/apps/{appName}/volumes/{volumeId}/snapshots": {
+    "/v1/apps/{appName}/volumes/{volumeId}/snapshots": {
       "get": {
         "tags": [
           "Volumes"
@@ -3352,7 +3352,7 @@
         }
       }
     },
-    "/orgs/{orgSlug}/machines": {
+    "/v1/orgs/{orgSlug}/machines": {
       "get": {
         "tags": [
           "Organizations"
@@ -3441,7 +3441,7 @@
         }
       }
     },
-    "/orgs/{orgSlug}/volumes": {
+    "/v1/orgs/{orgSlug}/volumes": {
       "get": {
         "tags": [
           "Organizations"
@@ -3530,7 +3530,7 @@
         }
       }
     },
-    "/platform/placements": {
+    "/v1/platform/placements": {
       "post": {
         "tags": [
           "Platform"
@@ -3562,7 +3562,7 @@
         }
       }
     },
-    "/platform/regions": {
+    "/v1/platform/regions": {
       "get": {
         "tags": [
           "Platform"
@@ -3584,7 +3584,7 @@
         }
       }
     },
-    "/postgres": {
+    "/v1/postgres": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -3705,7 +3705,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}": {
+    "/v1/postgres/{postgresClusterId}": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -3789,7 +3789,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/attachments": {
+    "/v1/postgres/{postgresClusterId}/attachments": {
       "post": {
         "tags": [
           "Postgres Clusters"
@@ -3862,7 +3862,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/attachments/{appName}": {
+    "/v1/postgres/{postgresClusterId}/attachments/{appName}": {
       "delete": {
         "tags": [
           "Postgres Clusters"
@@ -3914,7 +3914,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/backups": {
+    "/v1/postgres/{postgresClusterId}/backups": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -4008,7 +4008,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/databases": {
+    "/v1/postgres/{postgresClusterId}/databases": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -4122,7 +4122,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/databases/{databaseName}": {
+    "/v1/postgres/{postgresClusterId}/databases/{databaseName}": {
       "delete": {
         "tags": [
           "Postgres Clusters"
@@ -4184,7 +4184,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/databases/{databaseName}/extensions": {
+    "/v1/postgres/{postgresClusterId}/databases/{databaseName}/extensions": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -4326,7 +4326,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/databases/{databaseName}/extensions/{extensionName}": {
+    "/v1/postgres/{postgresClusterId}/databases/{databaseName}/extensions/{extensionName}": {
       "delete": {
         "tags": [
           "Postgres Clusters"
@@ -4405,7 +4405,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/fork": {
+    "/v1/postgres/{postgresClusterId}/fork": {
       "post": {
         "tags": [
           "Postgres Clusters"
@@ -4498,13 +4498,13 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/restore": {
+    "/v1/postgres/{postgresClusterId}/restore": {
       "post": {
         "tags": [
           "Postgres Clusters"
         ],
-        "summary": "Restore Backup to New Cluster",
-        "description": "Restore a backup into a new Managed Postgres cluster. The source cluster is left unchanged, and a new cluster is provisioned from the specified backup.",
+        "summary": "Restore Backup or Point in Time to New Cluster",
+        "description": "Restore a backup, or a point in time within the cluster\u0027s PITR recovery window, into a new Managed Postgres cluster. The source cluster is left unchanged, and a new cluster is provisioned asynchronously.",
         "operationId": "PostgresRestore",
         "parameters": [
           {
@@ -4529,7 +4529,7 @@
         },
         "responses": {
           "201": {
-            "description": "New cluster provisioned from the backup",
+            "description": "New cluster provisioned from the backup or point in time",
             "content": {
               "application/json": {
                 "schema": {
@@ -4559,7 +4559,7 @@
             }
           },
           "422": {
-            "description": "backup_id is required",
+            "description": "A restore target is missing, both backup_id and pitr_time were supplied, point-in-time restore is outside the recovery window or unavailable, or name is invalid",
             "content": {
               "application/json": {
                 "schema": {
@@ -4571,7 +4571,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/users": {
+    "/v1/postgres/{postgresClusterId}/users": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -4695,7 +4695,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/users/{username}": {
+    "/v1/postgres/{postgresClusterId}/users/{username}": {
       "delete": {
         "tags": [
           "Postgres Clusters"
@@ -4817,7 +4817,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/users/{username}/credentials": {
+    "/v1/postgres/{postgresClusterId}/users/{username}/credentials": {
       "get": {
         "tags": [
           "Postgres Clusters"
@@ -4879,7 +4879,7 @@
         }
       }
     },
-    "/postgres/{postgresClusterId}/users/{username}/rotate_password": {
+    "/v1/postgres/{postgresClusterId}/users/{username}/rotate_password": {
       "post": {
         "tags": [
           "Postgres Clusters"
@@ -4971,7 +4971,7 @@
         }
       }
     },
-    "/tokens/authenticate": {
+    "/v1/tokens/authenticate": {
       "post": {
         "tags": [
           "Tokens"
@@ -5013,7 +5013,7 @@
         }
       }
     },
-    "/tokens/authorize": {
+    "/v1/tokens/authorize": {
       "post": {
         "tags": [
           "Tokens"
@@ -5065,7 +5065,7 @@
         }
       }
     },
-    "/tokens/current": {
+    "/v1/tokens/current": {
       "get": {
         "tags": [
           "Tokens"
@@ -5107,7 +5107,7 @@
         }
       }
     },
-    "/tokens/kms": {
+    "/v1/tokens/kms": {
       "post": {
         "tags": [
           "Tokens"
@@ -5129,7 +5129,7 @@
         }
       }
     },
-    "/tokens/oidc": {
+    "/v1/tokens/oidc": {
       "post": {
         "tags": [
           "Tokens"
@@ -8695,14 +8695,19 @@
         ]
       },
       "RestorePostgresClusterRequest": {
-        "required": [
-          "backup_id"
-        ],
         "type": "object",
         "properties": {
           "backup_id": {
             "type": "string",
-            "description": "Backup label to restore from, as returned by the backups list."
+            "description": "Backup label to restore from, as returned by the backups list. Mutually exclusive with pitr_time."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name for the restored cluster. Defaults to a generated name derived from the source cluster and backup/point in time when omitted or blank."
+          },
+          "pitr_time": {
+            "type": "string",
+            "description": "Point in time to restore to, as an RFC3339 timestamp with an explicit offset from UTC (e.g. Z or \u002B02:00). Normalized to UTC and must fall within the cluster\u0027s PITR recovery window. Mutually exclusive with backup_id."
           }
         }
       },

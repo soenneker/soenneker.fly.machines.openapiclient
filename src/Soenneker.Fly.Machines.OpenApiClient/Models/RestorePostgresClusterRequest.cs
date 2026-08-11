@@ -14,13 +14,29 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Backup label to restore from, as returned by the backups list.</summary>
+        /// <summary>Backup label to restore from, as returned by the backups list. Mutually exclusive with pitr_time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackupId { get; set; }
 #nullable restore
 #else
         public string BackupId { get; set; }
+#endif
+        /// <summary>Name for the restored cluster. Defaults to a generated name derived from the source cluster and backup/point in time when omitted or blank.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Point in time to restore to, as an RFC3339 timestamp with an explicit offset from UTC (e.g. Z or +02:00). Normalized to UTC and must fall within the cluster&apos;s PITR recovery window. Mutually exclusive with backup_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PitrTime { get; set; }
+#nullable restore
+#else
+        public string PitrTime { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RestorePostgresClusterRequest"/> and sets the default values.
@@ -48,6 +64,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backup_id", n => { BackupId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "pitr_time", n => { PitrTime = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +76,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backup_id", BackupId);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("pitr_time", PitrTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
