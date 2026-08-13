@@ -38,6 +38,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Container { get; set; }
 #endif
+        /// <summary>Machine runs the command in the machine&apos;s own namespace instead of in acontainer. It is mutually exclusive with Container.</summary>
+        public bool? Machine { get; set; }
         /// <summary>The stdin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +78,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "cmd", n => { Cmd = n.GetStringValue(); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "container", n => { Container = n.GetStringValue(); } },
+                { "machine", n => { Machine = n.GetBoolValue(); } },
                 { "stdin", n => { Stdin = n.GetStringValue(); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
             };
@@ -90,6 +93,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("cmd", Cmd);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);
             writer.WriteStringValue("container", Container);
+            writer.WriteBoolValue("machine", Machine);
             writer.WriteStringValue("stdin", Stdin);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
