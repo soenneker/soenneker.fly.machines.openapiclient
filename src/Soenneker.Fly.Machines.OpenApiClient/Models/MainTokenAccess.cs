@@ -12,7 +12,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     public partial class MainTokenAccess : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g \&quot;rw\&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control&quot;</summary>
+        /// <summary>Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g &quot;rw&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction? Action { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;AppFeature is a named set of functionality associated with the app. Ifthis is specified, the AppName field must be set.  - images: images in the fly.io registry&quot;</summary>
+        /// <summary>AppFeature is a named set of functionality associated with the app. Ifthis is specified, the AppName field must be set.  - images: images in the fly.io registry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppFeature { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<string> Command { get; set; }
 #endif
-        /// <summary>&quot;MachineFeature is a named set of functionality associated with themachine. If this is specified, the Machine field must be set.  - metadata: machine metadata service  - oidc: OIDC tokens  - kmstoken: Petsem tokens for KMS access&quot;</summary>
+        /// <summary>MachineFeature is a named set of functionality associated with themachine. If this is specified, the Machine field must be set.  - metadata: machine metadata service  - oidc: OIDC tokens  - kmstoken: Petsem tokens for KMS access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MachineFeature { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Mutation { get; set; }
 #endif
-        /// <summary>&quot;OrgFeature is a named set of functionality associated with theorganization. If this is specified, the OrgSlug field must be set.  - wg: WireGuard peers  - builder: remote builders  - addon: addons  - membership: organization membership  - billing: billing  - litefs-cloud: LiteFS Cloud  - authentication: authentication settings&quot;</summary>
+        /// <summary>OrgFeature is a named set of functionality associated with theorganization. If this is specified, the OrgSlug field must be set.  - wg: WireGuard peers  - builder: remote builders  - addon: addons  - membership: organization membership  - billing: billing  - litefs-cloud: LiteFS Cloud  - authentication: authentication settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgFeature { get; set; }

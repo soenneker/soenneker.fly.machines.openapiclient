@@ -94,7 +94,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.&quot;</summary>
+        /// <summary>Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart? Restart { get; set; }

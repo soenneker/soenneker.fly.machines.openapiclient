@@ -71,9 +71,13 @@
                 "$ref": "#/components/schemas/CreateAppRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "201": {
+            "description": "Created"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -138,15 +142,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppsDelete204Response"
-                }
-              }
-            }
+          "202": {
+            "description": "Accepted"
           }
         }
       }
@@ -233,7 +230,8 @@
                 "$ref": "#/components/schemas/CreateAcmeCertificateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -285,7 +283,8 @@
                 "$ref": "#/components/schemas/CreateCustomCertificateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -379,14 +378,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppCertificatesDelete204Response"
-                }
-              }
-            }
+            "description": "No Content"
           }
         }
       }
@@ -540,7 +532,8 @@
                 "$ref": "#/components/schemas/CreateAppDeployTokenRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -612,7 +605,8 @@
                 "$ref": "#/components/schemas/AssignIpRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -657,14 +651,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppIpAssignmentsDelete204Response"
-                }
-              }
-            }
+            "description": "No Content"
           }
         }
       }
@@ -746,7 +733,7 @@
           "Machines"
         ],
         "summary": "Create Machine",
-        "description": "\u0022Create a Machine within a specific app using the details provided in the request body.\n\n**Important**: This request can fail, and you\u2019re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you\u2019re working directly with the Machines API, you\u2019re taking some responsibility for your own orchestration!\n\u0022",
+        "description": "Create a Machine within a specific app using the details provided in the request body.\n\n**Important**: This request can fail, and you\u2019re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you\u2019re working directly with the Machines API, you\u2019re taking some responsibility for your own orchestration!\n",
         "operationId": "MachinesCreate",
         "parameters": [
           {
@@ -767,7 +754,8 @@
                 "$ref": "#/components/schemas/CreateMachineRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -867,7 +855,8 @@
                 "$ref": "#/components/schemas/UpdateMachineRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -928,15 +917,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesDelete204Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -970,15 +952,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesCordon201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1069,7 +1044,8 @@
                 "$ref": "#/components/schemas/MachineExecRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1189,7 +1165,8 @@
                 "$ref": "#/components/schemas/CreateLeaseRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -1241,15 +1218,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesReleaseLease204Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1330,7 +1300,8 @@
                 "$ref": "#/components/schemas/MainSetMemoryLimitRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1382,7 +1353,8 @@
                 "$ref": "#/components/schemas/MainReclaimMemoryRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -1474,9 +1446,13 @@
                 "$ref": "#/components/schemas/UpdateMetadataRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1534,9 +1510,13 @@
                 "$ref": "#/components/schemas/UpdateMetadataRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1664,9 +1644,13 @@
                 "$ref": "#/components/schemas/UpsertMetadataKeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1717,14 +1701,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesDeleteMetadata204Response"
-                }
-              }
-            }
+            "description": "No Content"
           }
         }
       }
@@ -1842,6 +1819,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1891,9 +1871,13 @@
                 "$ref": "#/components/schemas/SignalRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -1936,15 +1920,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesStart201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1988,6 +1965,9 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -2030,15 +2010,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesSuspend201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -2072,15 +2045,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MachinesUncordon201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -2349,7 +2315,8 @@
                 "$ref": "#/components/schemas/SetSecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -2457,7 +2424,8 @@
                 "$ref": "#/components/schemas/DecryptSecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2526,7 +2494,8 @@
                 "$ref": "#/components/schemas/EncryptSecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2587,7 +2556,8 @@
                 "$ref": "#/components/schemas/SetSecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -2656,7 +2626,8 @@
                 "$ref": "#/components/schemas/SignSecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2725,9 +2696,13 @@
                 "$ref": "#/components/schemas/VerifySecretkeyRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
@@ -2813,7 +2788,8 @@
                 "$ref": "#/components/schemas/AppSecretsUpdateRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2929,7 +2905,8 @@
                 "$ref": "#/components/schemas/SetAppSecretRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3060,7 +3037,8 @@
                 "$ref": "#/components/schemas/CreateVolumeRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3152,7 +3130,8 @@
                 "$ref": "#/components/schemas/UpdateVolumeRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3254,7 +3233,8 @@
                 "$ref": "#/components/schemas/ExtendVolumeRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3339,15 +3319,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateVolumeSnapshot201Response"
-                }
-              }
-            }
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -3546,7 +3519,8 @@
                 "$ref": "#/components/schemas/MainGetPlacementsRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3659,7 +3633,8 @@
                 "$ref": "#/components/schemas/CreatePostgresClusterRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -3766,6 +3741,9 @@
           }
         ],
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
           "404": {
             "description": "Cluster not found",
             "content": {
@@ -3816,7 +3794,8 @@
                 "$ref": "#/components/schemas/CreatePostgresAttachmentRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -3891,6 +3870,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "404": {
             "description": "\u0027Cluster not found\u0027 for the cluster; \u0027App not found\u0027 for the app; \u0027Attachment not found\u0027 for the attachment",
             "content": {
@@ -3982,9 +3964,13 @@
                 "$ref": "#/components/schemas/CreatePostgresBackupRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "202": {
+            "description": "Accepted"
+          },
           "404": {
             "description": "Cluster not found",
             "content": {
@@ -4076,7 +4062,8 @@
                 "$ref": "#/components/schemas/CreatePostgresDatabaseRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4280,9 +4267,13 @@
                 "$ref": "#/components/schemas/EnablePostgresExtensionRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Database name is malformed",
             "content": {
@@ -4372,6 +4363,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "\u0027System extensions cannot be disabled\u0027 or \u0027Database name is malformed\u0027",
             "content": {
@@ -4525,7 +4519,8 @@
                 "$ref": "#/components/schemas/RestorePostgresClusterRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4639,7 +4634,8 @@
                 "$ref": "#/components/schemas/CreatePostgresUserRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -4724,6 +4720,9 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Username is reserved, a system user, or malformed",
             "content": {
@@ -4781,9 +4780,13 @@
                 "$ref": "#/components/schemas/UpdatePostgresUserRoleRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Username is reserved, a system user, or malformed",
             "content": {
@@ -4987,7 +4990,8 @@
                 "$ref": "#/components/schemas/AuthenticateTokenRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -5029,7 +5033,8 @@
                 "$ref": "#/components/schemas/AuthorizeTokenRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -6015,7 +6020,7 @@
         "properties": {
           "cmd": {
             "type": "string",
-            "description": "\u0022Deprecated: use Command instead\u0022"
+            "description": "Deprecated: use Command instead"
           },
           "command": {
             "type": "array",
@@ -7436,7 +7441,7 @@
         "properties": {
           "guest_path": {
             "type": "string",
-            "description": "\u0022GuestPath is the path on the machine where the file will be written and must be an absolute path.\nFor example: /full/path/to/file.json\u0022"
+            "description": "GuestPath is the path on the machine where the file will be written and must be an absolute path.\nFor example: /full/path/to/file.json"
           },
           "image_config": {
             "type": "string",
@@ -7616,7 +7621,7 @@
           },
           "disable_machine_autostart": {
             "type": "boolean",
-            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
+            "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
             "$ref": "#/components/schemas/FlyDnsConfig"
@@ -7675,7 +7680,7 @@
           },
           "size": {
             "type": "string",
-            "description": "\u0022Deprecated: use Guest instead\u0022"
+            "description": "Deprecated: use Guest instead"
           },
           "spot": {
             "$ref": "#/components/schemas/FlyMachineSpot"
@@ -8064,7 +8069,7 @@
         "properties": {
           "max_price_fraction": {
             "type": "number",
-            "description": "\u0022MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]\u0022"
+            "description": "MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]"
           }
         }
       },
@@ -8410,7 +8415,7 @@
           },
           "app_feature": {
             "type": "string",
-            "description": "\u0022AppFeature is a named set of functionality associated with the app. If\nthis is specified, the AppName field must be set.\n  - images: images in the fly.io registry\u0022"
+            "description": "AppFeature is a named set of functionality associated with the app. If\nthis is specified, the AppName field must be set.\n  - images: images in the fly.io registry"
           },
           "app_name": {
             "type": "string",
@@ -8425,7 +8430,7 @@
           },
           "machine_feature": {
             "type": "string",
-            "description": "\u0022MachineFeature is a named set of functionality associated with the\nmachine. If this is specified, the Machine field must be set.\n  - metadata: machine metadata service\n  - oidc: OIDC tokens\n  - kmstoken: Petsem tokens for KMS access\u0022"
+            "description": "MachineFeature is a named set of functionality associated with the\nmachine. If this is specified, the Machine field must be set.\n  - metadata: machine metadata service\n  - oidc: OIDC tokens\n  - kmstoken: Petsem tokens for KMS access"
           },
           "machine_id": {
             "type": "string",
@@ -8437,7 +8442,7 @@
           },
           "org_feature": {
             "type": "string",
-            "description": "\u0022OrgFeature is a named set of functionality associated with the\norganization. If this is specified, the OrgSlug field must be set.\n  - wg: WireGuard peers\n  - builder: remote builders\n  - addon: addons\n  - membership: organization membership\n  - billing: billing\n  - litefs-cloud: LiteFS Cloud\n  - authentication: authentication settings\u0022"
+            "description": "OrgFeature is a named set of functionality associated with the\norganization. If this is specified, the OrgSlug field must be set.\n  - wg: WireGuard peers\n  - builder: remote builders\n  - addon: addons\n  - membership: organization membership\n  - billing: billing\n  - litefs-cloud: LiteFS Cloud\n  - authentication: authentication settings"
           },
           "org_slug": {
             "type": "string",
@@ -8818,7 +8823,7 @@
           },
           "disable_machine_autostart": {
             "type": "boolean",
-            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
+            "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
             "$ref": "#/components/schemas/FlyDnsConfig"
@@ -8877,7 +8882,7 @@
           },
           "size": {
             "type": "string",
-            "description": "\u0022Deprecated: use Guest instead\u0022"
+            "description": "Deprecated: use Guest instead"
           },
           "spot": {
             "$ref": "#/components/schemas/FlyMachineSpot"
@@ -8988,7 +8993,7 @@
           },
           "disable_machine_autostart": {
             "type": "boolean",
-            "description": "\u0022Deprecated: use Service.Autostart instead\u0022"
+            "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
             "$ref": "#/components/schemas/FlyDnsConfig"
@@ -9047,7 +9052,7 @@
           },
           "size": {
             "type": "string",
-            "description": "\u0022Deprecated: use Guest instead\u0022"
+            "description": "Deprecated: use Guest instead"
           },
           "spot": {
             "$ref": "#/components/schemas/FlyMachineSpot"
@@ -9086,7 +9091,7 @@
             "$ref": "#/components/schemas/FlyMachineRestartPolicy"
           }
         },
-        "description": "\u0022Restart is used to define the restart policy for the container. NOTE: spot-price is not\nsupported for containers.\u0022"
+        "description": "Restart is used to define the restart policy for the container. NOTE: spot-price is not\nsupported for containers."
       },
       "FlyContainerConfigStop": {
         "type": "object",
@@ -9158,7 +9163,7 @@
             "$ref": "#/components/schemas/RessetAction"
           }
         },
-        "description": "\u0022Action is the action being taken on the specified resource. This is the\ncombination of individual action characters (e.g \\\u0022rw\\\u0022)\n  - r: read\n  - w: write\n  - c: create\n  - d: delete\n  - C: control\u0022"
+        "description": "Action is the action being taken on the specified resource. This is the\ncombination of individual action characters (e.g \u0022rw\u0022)\n  - r: read\n  - w: write\n  - c: create\n  - d: delete\n  - C: control"
       },
       "MainGetPlacementsRequestCompute": {
         "type": "object",
@@ -9401,36 +9406,11 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "AppsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "AppCertificatesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "AppIpAssignmentsDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "MachinesList200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Machine"
         }
-      },
-      "MachinesDelete204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "MachinesCordon201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "MachinesListEvents200ResponseSchema": {
         "type": "array",
@@ -9438,42 +9418,17 @@
           "$ref": "#/components/schemas/MachineEvent"
         }
       },
-      "MachinesReleaseLease204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "MachinesShowMetadata200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
       },
-      "MachinesDeleteMetadata204Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "MachinesListProcesses200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ProcessStat"
         }
-      },
-      "MachinesStart201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "MachinesSuspend201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "MachinesUncordon201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "MachinesListVersions200ResponseSchema": {
         "type": "array",
@@ -9492,11 +9447,6 @@
         "items": {
           "$ref": "#/components/schemas/VolumeSnapshot"
         }
-      },
-      "CreateVolumeSnapshot201Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "TokensAuthenticate200ResponseSchema": {
         "type": "array",
@@ -10369,7 +10319,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.\u0022",
+        "description": "FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.",
         "x-ms-enum": {
           "name": "FlyEnvFromFieldRef",
           "modelAsString": false,
@@ -10432,7 +10382,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Deprecated: use MachineConfig.Rootfs instead\u0022",
+        "description": "Deprecated: use MachineConfig.Rootfs instead",
         "x-ms-enum": {
           "name": "FlyMachineGuestPersistRootfs",
           "modelAsString": false,
@@ -10727,14 +10677,6 @@
             }
           ]
         }
-      }
-    },
-    "securitySchemes": {
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   },

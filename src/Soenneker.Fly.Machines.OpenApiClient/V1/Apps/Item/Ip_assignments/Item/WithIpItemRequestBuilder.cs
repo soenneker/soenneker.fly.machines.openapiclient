@@ -65,7 +65,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Ip_assignments.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

@@ -40,7 +40,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig> Containers { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: use Service.Autostart instead&quot;</summary>
+        /// <summary>Deprecated: use Service.Autostart instead</summary>
         public bool? DisableMachineAutostart { get; set; }
         /// <summary>The dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService> Services { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: use Guest instead&quot;</summary>
+        /// <summary>Deprecated: use Guest instead</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Size { get; set; }

@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? MaxMemoryMb { get; set; }
         /// <summary>The memory_mb property</summary>
         public int? MemoryMb { get; set; }
-        /// <summary>&quot;Deprecated: use MachineConfig.Rootfs instead&quot;</summary>
+        /// <summary>Deprecated: use MachineConfig.Rootfs instead</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute"/> and sets the default values.

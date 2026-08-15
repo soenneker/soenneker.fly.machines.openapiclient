@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.&quot;
+    /// Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyContainerConfigRestart : IAdditionalDataHolder, IParsable

@@ -23,7 +23,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string EnvVar { get; set; }
 #endif
-        /// <summary>&quot;FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.&quot;</summary>
+        /// <summary>FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef? FieldRef { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom"/> and sets the default values.

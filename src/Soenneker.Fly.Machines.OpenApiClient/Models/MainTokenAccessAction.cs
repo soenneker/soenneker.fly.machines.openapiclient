@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g \&quot;rw\&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control&quot;
+    /// Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g &quot;rw&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MainTokenAccessAction : IAdditionalDataHolder, IParsable

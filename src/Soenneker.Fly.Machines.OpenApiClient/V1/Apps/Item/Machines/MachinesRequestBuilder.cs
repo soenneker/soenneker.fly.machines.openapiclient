@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Create a Machine within a specific app using the details provided in the request body.**Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!&quot;
+        /// Create a Machine within a specific app using the details provided in the request body.**Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a Machine within a specific app using the details provided in the request body.**Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!&quot;
+        /// Create a Machine within a specific app using the details provided in the request body.**Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>&quot;Deprecated: use MachineConfig.Rootfs instead&quot;</summary>
+    /// <summary>Deprecated: use MachineConfig.Rootfs instead</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FlyMachineGuestPersistRootfs
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>&quot;FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.&quot;</summary>
+    /// <summary>FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FlyEnvFromFieldRef
     {

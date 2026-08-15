@@ -15,7 +15,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;GuestPath is the path on the machine where the file will be written and must be an absolute path.For example: /full/path/to/file.json&quot;</summary>
+        /// <summary>GuestPath is the path on the machine where the file will be written and must be an absolute path.For example: /full/path/to/file.json</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GuestPath { get; set; }
