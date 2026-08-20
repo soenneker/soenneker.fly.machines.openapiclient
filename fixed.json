@@ -87,6 +87,16 @@
                 }
               }
             }
+          },
+          "422": {
+            "description": "Rejected by validation. status is name_taken when the app name is already in use.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -8590,13 +8600,15 @@
       "MainStatusCode": {
         "enum": [
           "unknown",
-          "insufficient_capacity"
+          "insufficient_capacity",
+          "name_taken"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-enum-varnames": [
           "unknown",
-          "capacityErr"
+          "capacityErr",
+          "nameTakenErr"
         ],
         "x-ms-enum": {
           "name": "MainStatusCode",
@@ -8609,6 +8621,10 @@
             {
               "value": "insufficient_capacity",
               "name": "InsufficientCapacity"
+            },
+            {
+              "value": "name_taken",
+              "name": "NameTaken"
             }
           ]
         }
