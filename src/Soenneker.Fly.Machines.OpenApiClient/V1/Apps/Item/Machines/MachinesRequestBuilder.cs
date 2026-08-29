@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,region*,state*,summary*}", pathParameters)
+        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,metadata%2E%7Bkey*,region*,state*,summary*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,region*,state*,summary*}", rawUrl)
+        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,metadata%2E%7Bkey*,region*,state*,summary*}", rawUrl)
         {
         }
         /// <summary>
@@ -147,6 +147,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
             /// <summary>Include machine leases</summary>
             [QueryParameter("include_leases")]
             public bool? IncludeLeases { get; set; }
+            /// <summary>Filter by a machine metadata key and exact value. Replace {key} with the metadata key, for example metadata.foo=bar. Specify multiple metadata filters to require all matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("metadata%2E%7Bkey")]
+            public string? Metadatakey { get; set; }
+#nullable restore
+#else
+            [QueryParameter("metadata%2E%7Bkey")]
+            public string Metadatakey { get; set; }
+#endif
             /// <summary>Region filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
