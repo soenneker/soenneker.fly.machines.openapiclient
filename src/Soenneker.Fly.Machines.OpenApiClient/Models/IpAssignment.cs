@@ -22,6 +22,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The egress property</summary>
+        public bool? Egress { get; set; }
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "egress", n => { Egress = n.GetBoolValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
@@ -88,6 +91,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteBoolValue("egress", Egress);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("service_name", ServiceName);

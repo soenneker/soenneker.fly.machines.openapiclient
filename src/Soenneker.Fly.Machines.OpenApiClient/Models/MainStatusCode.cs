@@ -16,6 +16,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning disable CS1591
         InsufficientCapacity,
         #pragma warning restore CS1591
+        [EnumMember(Value = "volume_placement_capacity")]
+        #pragma warning disable CS1591
+        VolumePlacementCapacity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "name_taken")]
         #pragma warning disable CS1591
         NameTaken,

@@ -9,26 +9,36 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssignIpRequest : IAdditionalDataHolder, IParsable
+    public partial class AssignIpResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The network property</summary>
+        /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Network { get; set; }
+        public string? CreatedAt { get; set; }
 #nullable restore
 #else
-        public string Network { get; set; }
+        public string CreatedAt { get; set; }
 #endif
-        /// <summary>The org_slug property</summary>
+        /// <summary>The egress property</summary>
+        public bool? Egress { get; set; }
+        /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgSlug { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public string OrgSlug { get; set; }
+        public string Ip { get; set; }
+#endif
+        /// <summary>ip_pair is returned when &quot;egress-pair&quot; IP type is requested; in this case, ip is null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair? IpPair { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair IpPair { get; set; }
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,24 +56,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string ServiceName { get; set; }
 #endif
-        /// <summary>Type of IP address to allocate. &quot;egress-pair&quot; allocates both v4 and v6 egress IP addresses (recommended when using egress IPs).</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType? Type { get; set; }
+        /// <summary>The shared property</summary>
+        public bool? Shared { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponse"/> and sets the default values.
         /// </summary>
-        public AssignIpRequest()
+        public AssignIpResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequest();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +83,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "network", n => { Network = n.GetStringValue(); } },
-                { "org_slug", n => { OrgSlug = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "egress", n => { Egress = n.GetBoolValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "ip_pair", n => { IpPair = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType>(); } },
+                { "shared", n => { Shared = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +99,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("network", Network);
-            writer.WriteStringValue("org_slug", OrgSlug);
+            writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteBoolValue("egress", Egress);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair>("ip_pair", IpPair);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("service_name", ServiceName);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType>("type", Type);
+            writer.WriteBoolValue("shared", Shared);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

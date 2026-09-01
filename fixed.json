@@ -624,7 +624,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IpAssignment"
+                  "$ref": "#/components/schemas/AssignIpResponse"
                 }
               }
             }
@@ -5311,6 +5311,32 @@
           }
         }
       },
+      "AssignIpResponse": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "egress": {
+            "type": "boolean"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "ip_pair": {
+            "$ref": "#/components/schemas/AssignIpResponseIpPair"
+          },
+          "region": {
+            "type": "string"
+          },
+          "service_name": {
+            "type": "string"
+          },
+          "shared": {
+            "type": "boolean"
+          }
+        }
+      },
       "CertificateCheckResponse": {
         "type": "object",
         "properties": {
@@ -5847,6 +5873,9 @@
           "created_at": {
             "type": "string"
           },
+          "egress": {
+            "type": "boolean"
+          },
           "ip": {
             "type": "string"
           },
@@ -5858,6 +5887,74 @@
           },
           "shared": {
             "type": "boolean"
+          }
+        }
+      },
+      "IpAssignmentType": {
+        "enum": [
+          "v4",
+          "v6",
+          "shared_v4",
+          "private_v6",
+          "egress_v4",
+          "egress_v6",
+          "egress_pair"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of IP address to allocate. \u0022egress-pair\u0022 allocates both v4 and v6 egress IP addresses (recommended when using egress IPs).",
+        "x-enum-varnames": [
+          "IPAssignmentType_v4",
+          "IPAssignmentType_v6",
+          "IPAssignmentType_shared_v4",
+          "IPAssignmentType_private_v6",
+          "IPAssignmentType_egress_v4",
+          "IPAssignmentType_egress_v6",
+          "IPAssignmentType_egress_pair"
+        ],
+        "x-ms-enum": {
+          "name": "IpAssignmentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "v4",
+              "name": "V4"
+            },
+            {
+              "value": "v6",
+              "name": "V6"
+            },
+            {
+              "value": "shared_v4",
+              "name": "SharedV4"
+            },
+            {
+              "value": "private_v6",
+              "name": "PrivateV6"
+            },
+            {
+              "value": "egress_v4",
+              "name": "EgressV4"
+            },
+            {
+              "value": "egress_v6",
+              "name": "EgressV6"
+            },
+            {
+              "value": "egress_pair",
+              "name": "EgressPair"
+            }
+          ]
+        }
+      },
+      "IpPair": {
+        "type": "object",
+        "properties": {
+          "v4": {
+            "type": "string"
+          },
+          "v6": {
+            "type": "string"
           }
         }
       },
@@ -6938,7 +7035,7 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/IpAssignmentType"
           }
         }
       },
@@ -8609,6 +8706,7 @@
         "enum": [
           "unknown",
           "insufficient_capacity",
+          "volume_placement_capacity",
           "name_taken"
         ],
         "type": "string",
@@ -8616,6 +8714,7 @@
         "x-enum-varnames": [
           "unknown",
           "capacityErr",
+          "volumePlacementCapacityErr",
           "nameTakenErr"
         ],
         "x-ms-enum": {
@@ -8629,6 +8728,10 @@
             {
               "value": "insufficient_capacity",
               "name": "InsufficientCapacity"
+            },
+            {
+              "value": "volume_placement_capacity",
+              "name": "VolumePlacementCapacity"
             },
             {
               "value": "name_taken",
@@ -8824,6 +8927,18 @@
             "type": "string"
           }
         }
+      },
+      "AssignIpResponseIpPair": {
+        "type": "object",
+        "properties": {
+          "v4": {
+            "type": "string"
+          },
+          "v6": {
+            "type": "string"
+          }
+        },
+        "description": "ip_pair is returned when \u0022egress-pair\u0022 IP type is requested; in this case, ip is null."
       },
       "CreateMachineRequestConfig": {
         "type": "object",
