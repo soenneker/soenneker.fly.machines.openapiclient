@@ -5326,6 +5326,9 @@
           "ip_pair": {
             "$ref": "#/components/schemas/AssignIpResponseIpPair"
           },
+          "network": {
+            "$ref": "#/components/schemas/IpAssignmentNetwork"
+          },
           "region": {
             "type": "string"
           },
@@ -5879,6 +5882,9 @@
           "ip": {
             "type": "string"
           },
+          "network": {
+            "$ref": "#/components/schemas/IpAssignmentNetwork"
+          },
           "region": {
             "type": "string"
           },
@@ -5889,6 +5895,19 @@
             "type": "boolean"
           }
         }
+      },
+      "IpAssignmentNetwork": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Network name; empty for the organization\u0027s default network."
+          },
+          "org_slug": {
+            "type": "string"
+          }
+        },
+        "description": "The 6PN network a Flycast (private_v6) address belongs to. Null for all other IP types."
       },
       "IpAssignmentType": {
         "enum": [

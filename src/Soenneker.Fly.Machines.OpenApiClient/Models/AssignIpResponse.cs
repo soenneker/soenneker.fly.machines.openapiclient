@@ -40,6 +40,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair IpPair { get; set; }
 #endif
+        /// <summary>The 6PN network a Flycast (private_v6) address belongs to. Null for all other IP types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork? Network { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork Network { get; set; }
+#endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "egress", n => { Egress = n.GetBoolValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "ip_pair", n => { IpPair = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair.CreateFromDiscriminatorValue); } },
+                { "network", n => { Network = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork>(global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
@@ -103,6 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteBoolValue("egress", Egress);
             writer.WriteStringValue("ip", Ip);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpResponseIpPair>("ip_pair", IpPair);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork>("network", Network);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteBoolValue("shared", Shared);
