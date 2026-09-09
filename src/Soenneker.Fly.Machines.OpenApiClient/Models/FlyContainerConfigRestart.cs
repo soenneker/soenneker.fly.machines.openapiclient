@@ -8,18 +8,16 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// Restart is used to define the restart policy for the container. NOTE: spot-price is notsupported for containers.
+    /// Restart is used to define the restart policy for the container.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyContainerConfigRestart : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>GPU bid price for spot Machines.</summary>
-        public double? GpuBidPrice { get; set; }
         /// <summary>When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop.</summary>
         public int? MaxRetries { get; set; }
-        /// <summary>* no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash.* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.* spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price.</summary>
+        /// <summary>* no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash.* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestartPolicy? Policy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart"/> and sets the default values.
@@ -46,7 +44,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gpu_bid_price", n => { GpuBidPrice = n.GetDoubleValue(); } },
                 { "max_retries", n => { MaxRetries = n.GetIntValue(); } },
                 { "policy", n => { Policy = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestartPolicy>(); } },
             };
@@ -58,7 +55,6 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("gpu_bid_price", GpuBidPrice);
             writer.WriteIntValue("max_retries", MaxRetries);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestartPolicy>("policy", Policy);
             writer.WriteAdditionalData(AdditionalData);

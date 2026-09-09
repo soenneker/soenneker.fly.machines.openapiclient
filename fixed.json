@@ -5560,6 +5560,10 @@
           "enable_subdomains": {
             "type": "boolean"
           },
+          "idempotency_key": {
+            "type": "string",
+            "description": "When set, makes a retry of this exact request safe: a\nsecond create with the same key and the same name (or no name) returns\nthe app the first request created, instead of erroring on a false name\nconflict or creating a duplicate. A second create with the same key\nbut a *different* name is rejected outright; it won\u0027t silently\nhand back the first app."
+          },
           "name": {
             "type": "string"
           },
@@ -7944,11 +7948,19 @@
           "add_size_gb": {
             "type": "integer"
           },
+          "add_size_percent": {
+            "type": "integer",
+            "description": "AddSizePercent grows by a percentage of the current size, rounded up to GiB.\nIt is mutually exclusive with AddSizeGb."
+          },
           "encrypted": {
             "type": "boolean"
           },
           "extend_threshold_percent": {
             "type": "integer"
+          },
+          "min_add_size_gb": {
+            "type": "integer",
+            "description": "MinAddSizeGb is the minimum proportional growth in GiB (default 1)."
           },
           "name": {
             "type": "string"
@@ -8049,10 +8061,6 @@
       "FlyMachineRestart": {
         "type": "object",
         "properties": {
-          "gpu_bid_price": {
-            "type": "number",
-            "description": "GPU bid price for spot Machines."
-          },
           "max_retries": {
             "type": "integer",
             "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
@@ -9237,10 +9245,6 @@
       "FlyContainerConfigRestart": {
         "type": "object",
         "properties": {
-          "gpu_bid_price": {
-            "type": "number",
-            "description": "GPU bid price for spot Machines."
-          },
           "max_retries": {
             "type": "integer",
             "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
@@ -9249,7 +9253,7 @@
             "$ref": "#/components/schemas/FlyMachineRestartPolicy"
           }
         },
-        "description": "Restart is used to define the restart policy for the container. NOTE: spot-price is not\nsupported for containers."
+        "description": "Restart is used to define the restart policy for the container."
       },
       "FlyContainerConfigStop": {
         "type": "object",
@@ -10564,12 +10568,11 @@
         "enum": [
           "no",
           "always",
-          "on-failure",
-          "spot-price"
+          "on-failure"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that\u2019s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.\n* spot-price - Starts the Machine only when there is capacity and the spot price is less than or equal to the bid price.",
+        "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that\u2019s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.",
         "x-ms-enum": {
           "name": "FlyMachineRestartPolicy",
           "modelAsString": false,
@@ -10585,10 +10588,6 @@
             {
               "value": "on-failure",
               "name": "OnFailure"
-            },
-            {
-              "value": "spot-price",
-              "name": "SpotPrice"
             }
           ]
         }

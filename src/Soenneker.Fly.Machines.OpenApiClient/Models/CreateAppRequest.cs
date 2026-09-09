@@ -16,6 +16,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enable_subdomains property</summary>
         public bool? EnableSubdomains { get; set; }
+        /// <summary>When set, makes a retry of this exact request safe: asecond create with the same key and the same name (or no name) returnsthe app the first request created, instead of erroring on a false nameconflict or creating a duplicate. A second create with the same keybut a *different* name is rejected outright; it won&apos;t silentlyhand back the first app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdempotencyKey { get; set; }
+#nullable restore
+#else
+        public string IdempotencyKey { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enable_subdomains", n => { EnableSubdomains = n.GetBoolValue(); } },
+                { "idempotency_key", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
                 { "org_slug", n => { OrgSlug = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enable_subdomains", EnableSubdomains);
+            writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network", Network);
             writer.WriteStringValue("org_slug", OrgSlug);

@@ -16,10 +16,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The add_size_gb property</summary>
         public int? AddSizeGb { get; set; }
+        /// <summary>AddSizePercent grows by a percentage of the current size, rounded up to GiB.It is mutually exclusive with AddSizeGb.</summary>
+        public int? AddSizePercent { get; set; }
         /// <summary>The encrypted property</summary>
         public bool? Encrypted { get; set; }
         /// <summary>The extend_threshold_percent property</summary>
         public int? ExtendThresholdPercent { get; set; }
+        /// <summary>MinAddSizeGb is the minimum proportional growth in GiB (default 1).</summary>
+        public int? MinAddSizeGb { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,8 +78,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "add_size_gb", n => { AddSizeGb = n.GetIntValue(); } },
+                { "add_size_percent", n => { AddSizePercent = n.GetIntValue(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
                 { "extend_threshold_percent", n => { ExtendThresholdPercent = n.GetIntValue(); } },
+                { "min_add_size_gb", n => { MinAddSizeGb = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
@@ -91,8 +97,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("add_size_gb", AddSizeGb);
+            writer.WriteIntValue("add_size_percent", AddSizePercent);
             writer.WriteBoolValue("encrypted", Encrypted);
             writer.WriteIntValue("extend_threshold_percent", ExtendThresholdPercent);
+            writer.WriteIntValue("min_add_size_gb", MinAddSizeGb);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("size_gb", SizeGb);
