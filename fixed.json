@@ -76,7 +76,14 @@
         },
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAppResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -551,7 +558,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateAppResponse"
+                  "$ref": "#/components/schemas/CreateAppDeployTokenResponse"
                 }
               }
             }
@@ -3614,6 +3621,16 @@
               }
             }
           },
+          "400": {
+            "description": "org_slug is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresErrorResponse"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Organization not found",
             "content": {
@@ -5554,6 +5571,14 @@
           }
         }
       },
+      "CreateAppDeployTokenResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
       "CreateAppRequest": {
         "type": "object",
         "properties": {
@@ -5578,7 +5603,10 @@
       "CreateAppResponse": {
         "type": "object",
         "properties": {
-          "token": {
+          "created_at": {
+            "type": "integer"
+          },
+          "id": {
             "type": "string"
           }
         }
