@@ -16,7 +16,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Role to grant the user.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresUserRequestRole? Role { get; set; }
-        /// <summary>Name for the new user.</summary>
+        /// <summary>Name for the new user. Must start and end with a lowercase alphanumericcharacter and may contain hyphens and underscores, up to 63 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Username { get; set; }

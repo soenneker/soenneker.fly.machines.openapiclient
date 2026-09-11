@@ -7225,7 +7225,8 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Name of the database to create."
+            "description": "Name of the database to create. Must start and end with an alphanumeric\ncharacter and may contain hyphens and underscores, up to 63 characters.",
+            "example": "customer_data"
           }
         }
       },
@@ -7241,7 +7242,8 @@
           },
           "username": {
             "type": "string",
-            "description": "Name for the new user."
+            "description": "Name for the new user. Must start and end with a lowercase alphanumeric\ncharacter and may contain hyphens and underscores, up to 63 characters.",
+            "example": "app_user"
           }
         }
       },
