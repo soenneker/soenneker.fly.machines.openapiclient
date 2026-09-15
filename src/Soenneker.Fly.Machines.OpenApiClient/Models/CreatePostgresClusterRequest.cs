@@ -24,7 +24,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Slug of the organization that will own the cluster.</summary>
+        /// <summary>Slug of the organization that will own the cluster, or &quot;personal&quot; for the caller&apos;s personal organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgSlug { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Postgres major version.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPgMajorVersion? PgMajorVersion { get; set; }
-        /// <summary>Plan slug selecting CPU, memory, and disk sizing.</summary>
+        /// <summary>Plan slug selecting CPU, memory, and disk sizing. Matched case-insensitively.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPlan? Plan { get; set; }
         /// <summary>Connection pooler mode.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPoolMode? PoolMode { get; set; }

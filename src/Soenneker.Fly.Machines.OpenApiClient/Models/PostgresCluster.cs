@@ -27,13 +27,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>vCPUs per node.</summary>
         public int? Cpus { get; set; }
         /// <summary>RFC 3339 creation timestamp.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedAt { get; set; }
-#nullable restore
-#else
-        public string CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Disk size in gigabytes.</summary>
         public int? DiskSizeGb { get; set; }
         /// <summary>Connection endpoints. Populated once the cluster is ready.</summary>
@@ -116,7 +110,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "attached_apps", n => { AttachedApps = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cpu_kind", n => { CpuKind = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterCpuKind>(); } },
                 { "cpus", n => { Cpus = n.GetIntValue(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "disk_size_gb", n => { DiskSizeGb = n.GetIntValue(); } },
                 { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsComposed>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsComposed.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -141,7 +135,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp>("attached_apps", AttachedApps);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterCpuKind>("cpu_kind", CpuKind);
             writer.WriteIntValue("cpus", Cpus);
-            writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("disk_size_gb", DiskSizeGb);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsComposed>("endpoints", Endpoints);
             writer.WriteStringValue("id", Id);

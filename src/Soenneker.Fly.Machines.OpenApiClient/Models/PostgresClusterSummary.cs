@@ -23,13 +23,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp> AttachedApps { get; set; }
 #endif
         /// <summary>RFC 3339 creation timestamp.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedAt { get; set; }
-#nullable restore
-#else
-        public string CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 deletion timestamp; present for deleted clusters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +86,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attached_apps", n => { AttachedApps = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -109,7 +103,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp>("attached_apps", AttachedApps);
-            writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("deleted_at", DeletedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

@@ -53,7 +53,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.E
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresExtensionsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,7 +69,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.E
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresExtensionsResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresExtensionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,9 +82,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.E
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.EnablePostgresExtensionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,9 +101,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.E
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

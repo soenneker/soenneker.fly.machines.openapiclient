@@ -47,12 +47,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Attachments
         {
         }
         /// <summary>
-        /// Attach a specific cluster to a Fly app. The attachment is created if it does not already exist.
+        /// Record an attachment between a cluster and a Fly app. This endpoint records the relationship but does not set DATABASE_URL or other app secrets; configure the connection string separately. The attachment is created if it does not already exist.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresAttachmentResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 410 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,13 +69,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Attachments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresAttachmentResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresAttachmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Attach a specific cluster to a Fly app. The attachment is created if it does not already exist.
+        /// Record an attachment between a cluster and a Fly app. This endpoint records the relationship but does not set DATABASE_URL or other app secrets; configure the connection string separately. The attachment is created if it does not already exist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

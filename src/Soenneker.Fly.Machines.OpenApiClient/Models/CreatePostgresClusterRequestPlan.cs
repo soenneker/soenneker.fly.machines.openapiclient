@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
-    /// <summary>Plan slug selecting CPU, memory, and disk sizing.</summary>
+    /// <summary>Plan slug selecting CPU, memory, and disk sizing. Matched case-insensitively.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreatePostgresClusterRequestPlan
     {

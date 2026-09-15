@@ -53,6 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,19 +69,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresClustersResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresClustersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a Managed Postgres cluster for the organization named in the request body. Provisioning is asynchronous, and a name is generated when one is not supplied.
+        /// Create a Managed Postgres cluster for the organization named in the request body. Provisioning is asynchronous: poll `GET /v1/postgres/{id}` until `status == ready` before calling database, user, extension, or credential endpoints.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresClusterResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,6 +100,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
@@ -122,7 +126,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
             return requestInfo;
         }
         /// <summary>
-        /// Create a Managed Postgres cluster for the organization named in the request body. Provisioning is asynchronous, and a name is generated when one is not supplied.
+        /// Create a Managed Postgres cluster for the organization named in the request body. Provisioning is asynchronous: poll `GET /v1/postgres/{id}` until `status == ready` before calling database, user, extension, or credential endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +165,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
             /// <summary>Include deleted clusters</summary>
             [QueryParameter("include_deleted")]
             public bool? IncludeDeleted { get; set; }
-            /// <summary>Fly Organization Slug</summary>
+            /// <summary>Fly Organization Slug, or &apos;personal&apos; for the caller&apos;s personal organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("org_slug")]

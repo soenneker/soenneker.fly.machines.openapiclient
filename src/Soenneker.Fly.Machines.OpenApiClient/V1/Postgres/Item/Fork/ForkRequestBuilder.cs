@@ -41,6 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 410 status code</exception>
@@ -59,6 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
