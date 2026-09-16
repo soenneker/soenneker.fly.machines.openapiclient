@@ -28,7 +28,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? Cpus { get; set; }
         /// <summary>RFC 3339 creation timestamp.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Disk size in gigabytes.</summary>
+        /// <summary>Disk size in gigabytes, for one replica.</summary>
         public int? DiskSizeGb { get; set; }
         /// <summary>Connection endpoints. Populated once the cluster is ready.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,6 +82,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? Replicas { get; set; }
         /// <summary>Current lifecycle status.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterStatus? Status { get; set; }
+        /// <summary>Storage provisioned, summed across the cluster&apos;s volumes and measured hourly.Null until first measured.</summary>
+        public long? StorageProvisionedBytes { get; set; }
+        /// <summary>Storage used, summed across the cluster&apos;s volumes and measured hourly. Nulluntil first measured.</summary>
+        public long? StorageUsedBytes { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresCluster"/> and sets the default values.
         /// </summary>
@@ -123,6 +127,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "replicas", n => { Replicas = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterStatus>(); } },
+                { "storage_provisioned_bytes", n => { StorageProvisionedBytes = n.GetLongValue(); } },
+                { "storage_used_bytes", n => { StorageUsedBytes = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -148,6 +154,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteIntValue("replicas", Replicas);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterStatus>("status", Status);
+            writer.WriteLongValue("storage_provisioned_bytes", StorageProvisionedBytes);
+            writer.WriteLongValue("storage_used_bytes", StorageUsedBytes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

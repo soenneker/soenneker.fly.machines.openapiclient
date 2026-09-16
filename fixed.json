@@ -6946,7 +6946,7 @@
           },
           "disk_size_gb": {
             "type": "integer",
-            "description": "Disk size in gigabytes.",
+            "description": "Disk size in gigabytes, for one replica.",
             "example": 10
           },
           "endpoints": {
@@ -6990,6 +6990,20 @@
           },
           "status": {
             "$ref": "#/components/schemas/PostgresClusterStatus"
+          },
+          "storage_provisioned_bytes": {
+            "type": "integer",
+            "description": "Storage provisioned, summed across the cluster\u0027s volumes and measured hourly.\nNull until first measured.",
+            "format": "int64",
+            "nullable": true,
+            "example": 10737418240
+          },
+          "storage_used_bytes": {
+            "type": "integer",
+            "description": "Storage used, summed across the cluster\u0027s volumes and measured hourly. Null\nuntil first measured.",
+            "format": "int64",
+            "nullable": true,
+            "example": 5368709120
           }
         }
       },
