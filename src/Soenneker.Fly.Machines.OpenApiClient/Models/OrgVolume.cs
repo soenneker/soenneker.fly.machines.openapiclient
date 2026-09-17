@@ -70,6 +70,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Fstype { get; set; }
 #endif
+        /// <summary>The host_features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? HostFeatures { get; set; }
+#nullable restore
+#else
+        public List<string> HostFeatures { get; set; }
+#endif
         /// <summary>The host_status property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus? HostStatus { get; set; }
         /// <summary>The id property</summary>
@@ -95,6 +103,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #nullable restore
 #else
         public string Region { get; set; }
+#endif
+        /// <summary>The required_host_features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RequiredHostFeatures { get; set; }
+#nullable restore
+#else
+        public List<string> RequiredHostFeatures { get; set; }
 #endif
         /// <summary>The size_gb property</summary>
         public int? SizeGb { get; set; }
@@ -164,10 +180,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
                 { "fstype", n => { Fstype = n.GetStringValue(); } },
+                { "host_features", n => { HostFeatures = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
+                { "required_host_features", n => { RequiredHostFeatures = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
                 { "snapshot_retention", n => { SnapshotRetention = n.GetIntValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
@@ -196,10 +214,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteBoolValue("encrypted", Encrypted);
             writer.WriteStringValue("fstype", Fstype);
+            writer.WriteCollectionOfPrimitiveValues<string>("host_features", HostFeatures);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumeHostStatus>("host_status", HostStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("region", Region);
+            writer.WriteCollectionOfPrimitiveValues<string>("required_host_features", RequiredHostFeatures);
             writer.WriteIntValue("size_gb", SizeGb);
             writer.WriteIntValue("snapshot_retention", SnapshotRetention);
             writer.WriteStringValue("state", State);

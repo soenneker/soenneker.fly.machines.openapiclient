@@ -48,6 +48,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent> Events { get; set; }
 #endif
+        /// <summary>The host_features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? HostFeatures { get; set; }
+#nullable restore
+#else
+        public List<string> HostFeatures { get; set; }
+#endif
         /// <summary>The host_status property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus? HostStatus { get; set; }
         /// <summary>The id property</summary>
@@ -168,6 +176,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "cordoned", n => { Cordoned = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "host_features", n => { HostFeatures = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "host_status", n => { HostStatus = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_ref", n => { ImageRef = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef.CreateFromDiscriminatorValue); } },
@@ -194,6 +203,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteBoolValue("cordoned", Cordoned);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>("events", Events);
+            writer.WriteCollectionOfPrimitiveValues<string>("host_features", HostFeatures);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>("host_status", HostStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>("image_ref", ImageRef);

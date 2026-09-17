@@ -57,6 +57,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public int? MemoryMb { get; set; }
         /// <summary>Deprecated: use MachineConfig.Rootfs instead</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get; set; }
+        /// <summary>The required_host_features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RequiredHostFeatures { get; set; }
+#nullable restore
+#else
+        public List<string> RequiredHostFeatures { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute"/> and sets the default values.
         /// </summary>
@@ -91,6 +99,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "max_memory_mb", n => { MaxMemoryMb = n.GetIntValue(); } },
                 { "memory_mb", n => { MemoryMb = n.GetIntValue(); } },
                 { "persist_rootfs", n => { PersistRootfs = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs>(); } },
+                { "required_host_features", n => { RequiredHostFeatures = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -109,6 +118,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("max_memory_mb", MaxMemoryMb);
             writer.WriteIntValue("memory_mb", MemoryMb);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs>("persist_rootfs", PersistRootfs);
+            writer.WriteCollectionOfPrimitiveValues<string>("required_host_features", RequiredHostFeatures);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,6 +8,7 @@ using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Attachments;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Backups;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork;
+using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Queries;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Restore;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Users;
 using System.Collections.Generic;
@@ -42,6 +43,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item
         public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork.ForkRequestBuilder Fork
         {
             get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork.ForkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The queries property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Queries.QueriesRequestBuilder Queries
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Queries.QueriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The restore property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Restore.RestoreRequestBuilder Restore
