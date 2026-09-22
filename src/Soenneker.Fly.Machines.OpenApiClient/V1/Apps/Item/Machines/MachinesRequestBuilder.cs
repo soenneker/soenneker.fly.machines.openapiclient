@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,metadata%2E%7Bkey*,region*,state*,summary*}", pathParameters)
+        public MachinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?cursor*,include_deleted*,include_leases*,limit*,metadata%2E%7Bkey*,region*,state*,summary*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?include_deleted*,include_leases*,metadata%2E%7Bkey*,region*,state*,summary*}", rawUrl)
+        public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/apps/{appName}/machines{?cursor*,include_deleted*,include_leases*,limit*,metadata%2E%7Bkey*,region*,state*,summary*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,12 +141,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MachinesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Value of the fly-next-cursor response header from the previous page. Requires limit.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
             /// <summary>Include deleted machines</summary>
             [QueryParameter("include_deleted")]
             public bool? IncludeDeleted { get; set; }
             /// <summary>Include machine leases</summary>
             [QueryParameter("include_leases")]
             public bool? IncludeLeases { get; set; }
+            /// <summary>The number of machines to fetch (must be between 1 and 1000). Providing a limit enables pagination. This limit is advisory; responses may be shorter, or even empty, even when more machines remain.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
             /// <summary>Filter by a machine metadata key and exact value. Replace {key} with the metadata key, for example metadata.foo=bar. Specify multiple metadata filters to require all matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
