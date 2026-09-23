@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig Config { get; set; }
 #endif
-        /// <summary>The current_version property</summary>
+        /// <summary>CurrentVersion is an optional optimistic-concurrency guard: the Machine&apos;s`version`, as returned by create, get or a previous update. When setand it is no longer the Machine&apos;s current version, the update is rejectedwith 409 Conflict and nothing changes. Omit it to update unconditionally.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentVersion { get; set; }

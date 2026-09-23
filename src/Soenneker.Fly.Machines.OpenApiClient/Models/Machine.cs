@@ -82,7 +82,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig IncompleteConfig { get; set; }
 #endif
-        /// <summary>InstanceID is unique for each version of the machine</summary>
+        /// <summary>InstanceID is the same value as `version`.Deprecated: use `version`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstanceId { get; set; }
@@ -146,6 +146,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string UpdatedAt { get; set; }
 #endif
+        /// <summary>Version is unique for each version of the machine. Pass it as`current_version` when updating the Machine to reject the update if theMachine has changed since this version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine"/> and sets the default values.
         /// </summary>
@@ -189,6 +197,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -216,6 +225,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

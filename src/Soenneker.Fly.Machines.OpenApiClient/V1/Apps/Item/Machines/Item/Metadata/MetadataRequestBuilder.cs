@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Metada
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseSchema>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesShowMetadata200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update multiple metadata keys at once. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
+        /// Update multiple metadata keys at once. Keys that are not in the request are left untouched. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,13 +91,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Metada
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update multiple metadata keys at once. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
+        /// Deprecated: use `PATCH` on the same path, which this is identical to.+ Despite the method, this does not replace the metadata: keys that are not in the request are left untouched. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 412 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PutAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -136,7 +137,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Metada
             return requestInfo;
         }
         /// <summary>
-        /// Update multiple metadata keys at once. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
+        /// Update multiple metadata keys at once. Keys that are not in the request are left untouched. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,11 +159,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Metada
             return requestInfo;
         }
         /// <summary>
-        /// Update multiple metadata keys at once. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
+        /// Deprecated: use `PATCH` on the same path, which this is identical to.+ Despite the method, this does not replace the metadata: keys that are not in the request are left untouched. Null values and empty strings remove keys.+ If `machine_version` is provided and no longer matches the current machine version, returns 412 Precondition Failed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)

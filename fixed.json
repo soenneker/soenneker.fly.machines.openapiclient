@@ -854,6 +854,14 @@
             }
           },
           {
+            "name": "version",
+            "in": "query",
+            "description": "26-character Machine version ID; returns that version of the Machine instead of the current one",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "include_leases",
             "in": "query",
             "description": "Include machine lease",
@@ -926,6 +934,16 @@
           },
           "400": {
             "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -1475,9 +1493,9 @@
         "tags": [
           "Machines"
         ],
-        "summary": "Update Metadata (set/remove multiple keys)",
-        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
-        "operationId": "MachinesUpdateMetadata",
+        "summary": "Update Metadata (deprecated PUT alias of PATCH)",
+        "description": "Deprecated: use \u0060PATCH\u0060 on the same path, which this is identical to.\n\u002B Despite the method, this does not replace the metadata: keys that are not in the request are left untouched. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
+        "operationId": "MachinesUpdateMetadataDeprecated",
         "parameters": [
           {
             "name": "appName",
@@ -1534,6 +1552,7 @@
             }
           }
         },
+        "deprecated": true,
         "x-codegen-request-body-name": "request"
       },
       "patch": {
@@ -1541,8 +1560,8 @@
           "Machines"
         ],
         "summary": "Update Metadata (set/remove multiple keys)",
-        "description": "Update multiple metadata keys at once. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
-        "operationId": "MachinesUpdateMetadata2",
+        "description": "Update multiple metadata keys at once. Keys that are not in the request are left untouched. Null values and empty strings remove keys.\n\u002B If \u0060machine_version\u0060 is provided and no longer matches the current machine version, returns 412 Precondition Failed.",
+        "operationId": "MachinesUpdateMetadata",
         "parameters": [
           {
             "name": "appName",
@@ -6829,7 +6848,7 @@
           },
           "instance_id": {
             "type": "string",
-            "description": "InstanceID is unique for each version of the machine"
+            "description": "InstanceID is the same value as \u0060version\u0060.\n\nDeprecated: use \u0060version\u0060."
           },
           "lease": {
             "$ref": "#/components/schemas/StrippedLease"
@@ -6853,6 +6872,10 @@
           },
           "updated_at": {
             "type": "string"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version is unique for each version of the machine. Pass it as\n\u0060current_version\u0060 when updating the Machine to reject the update if the\nMachine has changed since this version."
           }
         }
       },
@@ -7716,7 +7739,8 @@
             "$ref": "#/components/schemas/UpdateMachineRequestConfig"
           },
           "current_version": {
-            "type": "string"
+            "type": "string",
+            "description": "CurrentVersion is an optional optimistic-concurrency guard: the Machine\u0027s\n\u0060version\u0060, as returned by create, get or a previous update. When set\nand it is no longer the Machine\u0027s current version, the update is rejected\nwith 409 Conflict and nothing changes. Omit it to update unconditionally."
           },
           "lease_ttl": {
             "type": "integer"
