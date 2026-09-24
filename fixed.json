@@ -41,6 +41,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of apps to fetch (must be between 1 and 5000). Providing a limit enables pagination. Without it, all apps are returned in one response.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Value of next_cursor from the previous page. Requires limit. Later pages only include apps that existed when the first page was requested. Apps created in the seconds before the first page was requested may be missing. Cursors expire 30 minutes after the first page was requested.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -50,6 +66,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListAppsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -6788,8 +6814,13 @@
               "$ref": "#/components/schemas/App"
             }
           },
+          "next_cursor": {
+            "type": "string",
+            "description": "Pagination cursor for the next page. Absent when no more apps remain.\nCursors expire 30 minutes after the first page was requested."
+          },
           "total_apps": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The number of apps matching the request, across all pages. When\npaginating, it is counted once when the first page is requested and not\nupdated afterwards, so it may differ slightly from the number of apps\nreturned: it excludes apps created later and includes apps deleted while\npaginating. Apps created in the seconds before the first page may also be\ncounted but missing from the pages."
           }
         }
       },

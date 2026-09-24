@@ -22,7 +22,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.App> Apps { get; set; }
 #endif
-        /// <summary>The total_apps property</summary>
+        /// <summary>Pagination cursor for the next page. Absent when no more apps remain.Cursors expire 30 minutes after the first page was requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextCursor { get; set; }
+#nullable restore
+#else
+        public string NextCursor { get; set; }
+#endif
+        /// <summary>The number of apps matching the request, across all pages. Whenpaginating, it is counted once when the first page is requested and notupdated afterwards, so it may differ slightly from the number of appsreturned: it excludes apps created later and includes apps deleted whilepaginating. Apps created in the seconds before the first page may also becounted but missing from the pages.</summary>
         public int? TotalApps { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ListAppsResponse"/> and sets the default values.
@@ -50,6 +58,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apps", n => { Apps = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.App>(global::Soenneker.Fly.Machines.OpenApiClient.Models.App.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "total_apps", n => { TotalApps = n.GetIntValue(); } },
             };
         }
@@ -61,6 +70,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.App>("apps", Apps);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteIntValue("total_apps", TotalApps);
             writer.WriteAdditionalData(AdditionalData);
         }
