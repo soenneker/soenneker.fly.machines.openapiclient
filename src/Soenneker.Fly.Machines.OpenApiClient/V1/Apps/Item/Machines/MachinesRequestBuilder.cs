@@ -52,6 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         /// <returns>A List&lt;global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.MachinesRequestBuilder.MachinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
