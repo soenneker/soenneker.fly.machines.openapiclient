@@ -45,6 +45,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Users.Item.Rotat
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 410 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Users.Item.Rotat
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "410", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RotatePostgresPasswordResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RotatePostgresPasswordResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version property</summary>
+        /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
         public int? DeleteAppSecretResponseVersion { get; set; }
         /// <summary>DEPRECATED</summary>
         public int? Version { get; set; }

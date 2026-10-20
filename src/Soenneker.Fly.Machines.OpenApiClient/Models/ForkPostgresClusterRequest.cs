@@ -22,6 +22,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Plan slug selecting CPU and memory sizing for the fork. Defaults to the source cluster&apos;s plan. Matched case-insensitively.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ForkPostgresClusterRequestPlan? Plan { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ForkPostgresClusterRequest"/> and sets the default values.
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ForkPostgresClusterRequestPlan>(); } },
             };
         }
         /// <summary>
@@ -58,6 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ForkPostgresClusterRequestPlan>("plan", Plan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

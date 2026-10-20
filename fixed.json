@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.1.2",
   "info": {
     "title": "Machines API",
     "description": "This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/) for how to get started, more information about each endpoint, parameter descriptions, and examples.",
@@ -996,7 +996,7 @@
           "Machines"
         ],
         "summary": "Destroy Machine",
-        "description": "Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it\u0027s running.\n",
+        "description": "Delete a specific Machine within an app by Machine ID.\n\nOnly a Machine in the \u0060stopped\u0060, \u0060suspended\u0060, \u0060failed\u0060, \u0060pending\u0060 or \u0060archived\u0060 state can be deleted. Deleting a Machine in any other state, such as \u0060started\u0060, fails with \u0060412 Precondition Failed\u0060 unless you set \u0060force=true\u0060, which kills the Machine first. Deleting a Machine that is already \u0060destroying\u0060 or \u0060destroyed\u0060 succeeds without doing anything.\n\nIf someone else holds a lease on the Machine, the request fails with \u0060409 Conflict\u0060. Pass the lease nonce in the \u0060fly-machine-lease-nonce\u0060 header to delete a Machine you hold the lease on.\n",
         "operationId": "MachinesDelete",
         "parameters": [
           {
@@ -1020,7 +1020,7 @@
           {
             "name": "force",
             "in": "query",
-            "description": "Force kill the machine if it\u0027s running",
+            "description": "Kill the Machine first if it\u0027s not stopped, suspended, failed, pending or archived",
             "schema": {
               "type": "boolean"
             }
@@ -1028,7 +1028,34 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Another client holds a lease on the Machine",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "The Machine isn\u0027t stopped, suspended, failed, pending or archived, and force isn\u0027t set",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -1063,7 +1090,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -1938,7 +1972,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -1994,7 +2035,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -2040,7 +2088,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartMachineResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2085,7 +2140,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request",
@@ -2131,7 +2193,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2166,7 +2235,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2894,6 +2970,7 @@
           "Secrets"
         ],
         "summary": "Update app secrets belonging to an app",
+        "description": "Running Machines don\u0027t pick up the change on their own: create or update Machines with \u0060min_secrets_version\u0060 set to the returned \u0060version\u0060 for them to see it.",
         "operationId": "SecretsUpdate",
         "parameters": [
           {
@@ -3003,6 +3080,7 @@
           "Secrets"
         ],
         "summary": "Create or update Secret",
+        "description": "Running Machines don\u0027t pick up the change on their own: create or update Machines with \u0060min_secrets_version\u0060 set to the returned \u0060version\u0060 for them to see it.",
         "operationId": "SecretCreate",
         "parameters": [
           {
@@ -3064,6 +3142,7 @@
           "Secrets"
         ],
         "summary": "Delete an app secret",
+        "description": "Running Machines don\u0027t pick up the change on their own: create or update Machines with \u0060min_secrets_version\u0060 set to the returned \u0060version\u0060 for them to see it.",
         "operationId": "SecretDelete",
         "parameters": [
           {
@@ -3721,7 +3800,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/v1/postgres": {
@@ -3802,12 +3882,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -3879,12 +3954,70 @@
             }
           }
         },
-        "security": [
+        "x-codegen-request-body-name": "request"
+      }
+    },
+    "/v1/postgres/plans": {
+      "get": {
+        "tags": [
+          "Postgres Clusters"
+        ],
+        "summary": "List Postgres Plans",
+        "description": "List the Managed Postgres plans the caller can choose when creating or forking a cluster in an organization, cheapest first.",
+        "operationId": "PostgresPlansList",
+        "parameters": [
           {
-            "FlyBearerAuth": []
+            "name": "org_slug",
+            "in": "query",
+            "description": "Fly Organization Slug, or \u0027personal\u0027 for the caller\u0027s personal organization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
-        "x-codegen-request-body-name": "request"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPostgresPlansResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "org_slug is required and must be a string",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresErrorResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}": {
@@ -3937,12 +4070,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "delete": {
         "tags": [
@@ -3996,12 +4124,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/attachments": {
@@ -4086,11 +4209,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -4156,12 +4274,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/backups": {
@@ -4214,12 +4327,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -4285,11 +4393,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -4353,12 +4456,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -4451,11 +4549,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -4538,12 +4631,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/databases/{databaseName}/extensions": {
@@ -4625,12 +4713,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -4735,11 +4818,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -4842,12 +4920,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/fork": {
@@ -4856,7 +4929,7 @@
           "Postgres Clusters"
         ],
         "summary": "Fork Cluster to New Cluster",
-        "description": "Fork a ready Managed Postgres cluster into a new cluster that inherits the source\u0027s settings. The source cluster is left unchanged, and the fork is provisioned asynchronously.",
+        "description": "Fork a ready Managed Postgres cluster into a new cluster that inherits the source\u0027s settings, on the source\u0027s plan unless \u0060plan\u0060 is given. The source cluster is left unchanged, and the fork is provisioned asynchronously.",
         "operationId": "PostgresFork",
         "parameters": [
           {
@@ -4941,7 +5014,7 @@
             }
           },
           "422": {
-            "description": "Invalid attributes",
+            "description": "Invalid attributes, such as an unknown or unavailable plan",
             "content": {
               "application/json": {
                 "schema": {
@@ -4951,11 +5024,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5039,12 +5107,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/queries/slow": {
@@ -5128,12 +5191,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/restore": {
@@ -5218,11 +5276,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5286,12 +5339,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -5394,11 +5442,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5474,12 +5517,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       },
       "patch": {
         "tags": [
@@ -5574,11 +5612,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5661,12 +5694,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ]
+        }
       }
     },
     "/v1/postgres/{postgresClusterId}/users/{username}/rotate_password": {
@@ -5768,6 +5796,16 @@
               }
             }
           },
+          "500": {
+            "description": "Password rotation failed, or rotation succeeded but session termination failed (status: sessions_not_terminated)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresErrorResponse"
+                }
+              }
+            }
+          },
           "503": {
             "description": "pg-admin is unavailable; retry after the interval given by the Retry-After header",
             "content": {
@@ -5779,11 +5817,6 @@
             }
           }
         },
-        "security": [
-          {
-            "FlyBearerAuth": []
-          }
-        ],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5828,6 +5861,7 @@
             }
           }
         },
+        "security": [],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5882,6 +5916,7 @@
             }
           }
         },
+        "security": [],
         "x-codegen-request-body-name": "request"
       }
     },
@@ -5933,7 +5968,6 @@
           "Tokens"
         ],
         "summary": "Request a Petsem token for accessing KMS",
-        "description": "This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/apps-resource/) for details about using the Apps resource.",
         "operationId": "TokensRequestKms",
         "responses": {
           "200": {
@@ -6105,7 +6139,8 @@
             }
           },
           "version": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The app\u0027s secrets version after this change. Pass it as \u0060min_secrets_version\u0060 when creating or\nupdating Machines so that they are guaranteed to see the change."
           }
         }
       },
@@ -6414,7 +6449,8 @@
             "type": "integer"
           },
           "min_secrets_version": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The minimum version of the app\u0027s secrets the Machine must run with. Set it to the \u0060version\u0060\nreturned by the endpoints that set or delete app secrets, so that the Machine is guaranteed\nto see those changes. This field belongs at the top level of the request body, not in\n\u0060config\u0060. If omitted, the app\u0027s current secrets version is looked up for you."
           },
           "name": {
             "type": "string",
@@ -6606,7 +6642,8 @@
             "description": "DEPRECATED"
           },
           "version": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The app\u0027s secrets version after this change. Pass it as \u0060min_secrets_version\u0060 when creating or\nupdating Machines so that they are guaranteed to see the change."
           }
         }
       },
@@ -7030,6 +7067,14 @@
           }
         }
       },
+      "OkResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        }
+      },
       "OrgMachine": {
         "type": "object",
         "properties": {
@@ -7399,17 +7444,21 @@
             "$ref": "#/components/schemas/PostgresClusterStatus"
           },
           "storage_provisioned_bytes": {
-            "type": "integer",
+            "type": [
+              "null",
+              "integer"
+            ],
             "description": "Storage provisioned, summed across the cluster\u0027s volumes and measured hourly.\nNull until first measured.",
             "format": "int64",
-            "nullable": true,
             "example": 10737418240
           },
           "storage_used_bytes": {
-            "type": "integer",
+            "type": [
+              "null",
+              "integer"
+            ],
             "description": "Storage used, summed across the cluster\u0027s volumes and measured hourly. Null\nuntil first measured.",
             "format": "int64",
-            "nullable": true,
             "example": 5368709120
           }
         }
@@ -7490,6 +7539,11 @@
           "error": {
             "type": "string",
             "description": "Human-readable error message."
+          },
+          "status": {
+            "type": "string",
+            "description": "Optional machine-readable error status.",
+            "example": "sessions_not_terminated"
           }
         }
       },
@@ -7541,6 +7595,32 @@
           },
           "pooler": {
             "$ref": "#/components/schemas/PostgresNodeEndpointsPooler"
+          }
+        }
+      },
+      "PostgresPlan": {
+        "type": "object",
+        "properties": {
+          "cpu_kind": {
+            "$ref": "#/components/schemas/PostgresPlanCpuKind"
+          },
+          "cpus": {
+            "type": "integer",
+            "description": "vCPUs per node.",
+            "example": 2
+          },
+          "memory_mb": {
+            "type": "integer",
+            "description": "Memory per node in megabytes.",
+            "example": 1024
+          },
+          "monthly_price_usd": {
+            "type": "integer",
+            "description": "Base monthly price in US dollars.",
+            "example": 38
+          },
+          "plan": {
+            "$ref": "#/components/schemas/PostgresPlanPlan"
           }
         }
       },
@@ -7703,7 +7783,8 @@
             "type": "string"
           },
           "version": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The app\u0027s secrets version after this change. Pass it as \u0060min_secrets_version\u0060 when creating or\nupdating Machines so that they are guaranteed to see the change."
           }
         }
       },
@@ -7781,6 +7862,23 @@
           }
         }
       },
+      "StartMachineResponse": {
+        "type": "object",
+        "properties": {
+          "migrated": {
+            "type": "boolean",
+            "description": "Whether the Machine was moved to another host to be started"
+          },
+          "new_host": {
+            "type": "string",
+            "description": "The host the Machine was moved to, if it was migrated"
+          },
+          "previous_state": {
+            "type": "string",
+            "description": "The state the Machine was in before it was started"
+          }
+        }
+      },
       "StopRequest": {
         "type": "object",
         "properties": {
@@ -7821,7 +7919,8 @@
             "type": "integer"
           },
           "min_secrets_version": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The minimum version of the app\u0027s secrets the Machine must run with. Set it to the \u0060version\u0060\nreturned by the endpoints that set or delete app secrets, so that the Machine is guaranteed\nto see those changes. This field belongs at the top level of the request body, not in\n\u0060config\u0060. If omitted, the app\u0027s current secrets version is looked up for you."
           },
           "name": {
             "type": "string",
@@ -8698,7 +8797,7 @@
             "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
           },
           "cache_drive": {
-            "$ref": "#/components/schemas/FlyMachineCacheDrive"
+            "$ref": "#/components/schemas/FlyMachineConfigCacheDrive"
           },
           "checks": {
             "$ref": "#/components/schemas/FlyMachineConfigChecksProperty"
@@ -8708,14 +8807,14 @@
             "items": {
               "$ref": "#/components/schemas/FlyContainerConfig"
             },
-            "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
+            "description": "Containers are a list of containers that will run in the machine, each from its own image."
           },
           "disable_machine_autostart": {
             "type": "boolean",
             "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
-            "$ref": "#/components/schemas/FlyDnsConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigDns"
           },
           "env": {
             "$ref": "#/components/schemas/FlyMachineConfigEnvProperty"
@@ -8724,57 +8823,62 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyFile"
-            }
+            },
+            "description": "Files to write into the Machine, from either a raw value or an app secret"
           },
           "guest": {
-            "$ref": "#/components/schemas/FlyMachineGuest"
+            "$ref": "#/components/schemas/FlyMachineConfigGuest"
           },
           "image": {
             "type": "string",
             "description": "The docker image to run"
           },
           "init": {
-            "$ref": "#/components/schemas/FlyMachineInit"
+            "$ref": "#/components/schemas/FlyMachineConfigInit"
           },
           "metadata": {
             "$ref": "#/components/schemas/FlyMachineConfigMetadataProperty"
           },
           "metrics": {
-            "$ref": "#/components/schemas/FlyMachineMetrics"
+            "$ref": "#/components/schemas/FlyMachineConfigMetrics"
           },
           "mounts": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineMount"
-            }
+            },
+            "description": "Persistent volumes to mount in the Machine. A Machine can mount at most one volume, which must be on\nthe same host. The mounted volume cannot be changed by updating the Machine"
           },
           "processes": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineProcess"
-            }
+            },
+            "description": "Multiple processes to run within this one Machine, all from the Machine\u0027s image. Unrelated to the\nprocess groups in fly.toml, which run on separate Machines. To run processes from different\nimages, use containers instead"
           },
           "restart": {
-            "$ref": "#/components/schemas/FlyMachineRestart"
+            "$ref": "#/components/schemas/FlyMachineConfigRestart"
           },
           "rootfs": {
-            "$ref": "#/components/schemas/FlyMachineRootfs"
+            "$ref": "#/components/schemas/FlyMachineConfigRootfs"
           },
           "schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "Run the Machine at an interval: one of hourly, daily, weekly or monthly. The interval starts when\nthe Machine is created"
           },
           "services": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineService"
-            }
+            },
+            "description": "Network services that Fly Proxy routes traffic to"
           },
           "size": {
             "type": "string",
             "description": "Deprecated: use Guest instead"
           },
           "spot": {
-            "$ref": "#/components/schemas/FlyMachineSpot"
+            "$ref": "#/components/schemas/FlyMachineConfigSpot"
           },
           "standbys": {
             "type": "array",
@@ -8787,10 +8891,11 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyStatic"
-            }
+            },
+            "description": "Static files to serve under a URL prefix. Fly Proxy routes matching requests to a file server\ninside the Machine, bypassing your application\u0027s own process; the Machine must be running. The\nfiles are read either from a path inside the Machine or from a Tigris bucket that belongs to the\napp; no bucket is created for you"
           },
           "stop_config": {
-            "$ref": "#/components/schemas/FlyStopConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigStopConfig"
           }
         }
       },
@@ -9177,6 +9282,9 @@
       "FlyProxyProtoOptions": {
         "type": "object",
         "properties": {
+          "fly_src": {
+            "type": "boolean"
+          },
           "version": {
             "type": "string"
           }
@@ -9211,16 +9319,20 @@
         "type": "object",
         "properties": {
           "guest_path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path inside the Machine, or inside tigris_bucket when set, where the files to serve are located"
           },
           "index_document": {
-            "type": "string"
+            "type": "string",
+            "description": "The document served for requests to the URL prefix or any of its subfolders. Only works with tigris_bucket"
           },
           "tigris_bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "An existing Tigris bucket belonging to the app to read the files from, instead of the Machine\u0027s\nfilesystem. The files are still served through the Machine"
           },
           "url_prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL prefix under which the files are served"
           }
         }
       },
@@ -9383,6 +9495,9 @@
           "name": {
             "type": "string",
             "description": "Name for the forked cluster. Defaults to the source name with a -fork suffix."
+          },
+          "plan": {
+            "$ref": "#/components/schemas/ForkPostgresClusterRequestPlan"
           }
         }
       },
@@ -9473,6 +9588,17 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PostgresExtension"
+            }
+          }
+        }
+      },
+      "ListPostgresPlansResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostgresPlan"
             }
           }
         }
@@ -9805,7 +9931,8 @@
       "PlacementWeights": {
         "type": "object",
         "additionalProperties": {
-          "type": "integer"
+          "type": "integer",
+          "format": "int64"
         }
       },
       "PostgresDatabaseResponse": {
@@ -9828,6 +9955,7 @@
         ],
         "type": "integer",
         "additionalProperties": false,
+        "format": "int32",
         "x-enum-varnames": [
           "ActionRead",
           "ActionWrite",
@@ -9956,7 +10084,7 @@
             "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
           },
           "cache_drive": {
-            "$ref": "#/components/schemas/FlyMachineCacheDrive"
+            "$ref": "#/components/schemas/FlyMachineConfigCacheDrive"
           },
           "checks": {
             "$ref": "#/components/schemas/CreateMachineRequestConfigChecks"
@@ -9966,14 +10094,14 @@
             "items": {
               "$ref": "#/components/schemas/FlyContainerConfig"
             },
-            "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
+            "description": "Containers are a list of containers that will run in the machine, each from its own image."
           },
           "disable_machine_autostart": {
             "type": "boolean",
             "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
-            "$ref": "#/components/schemas/FlyDnsConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigDns"
           },
           "env": {
             "$ref": "#/components/schemas/CreateMachineRequestConfigEnv"
@@ -9982,57 +10110,62 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyFile"
-            }
+            },
+            "description": "Files to write into the Machine, from either a raw value or an app secret"
           },
           "guest": {
-            "$ref": "#/components/schemas/FlyMachineGuest"
+            "$ref": "#/components/schemas/FlyMachineConfigGuest"
           },
           "image": {
             "type": "string",
             "description": "The docker image to run"
           },
           "init": {
-            "$ref": "#/components/schemas/FlyMachineInit"
+            "$ref": "#/components/schemas/FlyMachineConfigInit"
           },
           "metadata": {
             "$ref": "#/components/schemas/CreateMachineRequestConfigMetadata"
           },
           "metrics": {
-            "$ref": "#/components/schemas/FlyMachineMetrics"
+            "$ref": "#/components/schemas/FlyMachineConfigMetrics"
           },
           "mounts": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineMount"
-            }
+            },
+            "description": "Persistent volumes to mount in the Machine. A Machine can mount at most one volume, which must be on\nthe same host. The mounted volume cannot be changed by updating the Machine"
           },
           "processes": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineProcess"
-            }
+            },
+            "description": "Multiple processes to run within this one Machine, all from the Machine\u0027s image. Unrelated to the\nprocess groups in fly.toml, which run on separate Machines. To run processes from different\nimages, use containers instead"
           },
           "restart": {
-            "$ref": "#/components/schemas/FlyMachineRestart"
+            "$ref": "#/components/schemas/FlyMachineConfigRestart"
           },
           "rootfs": {
-            "$ref": "#/components/schemas/FlyMachineRootfs"
+            "$ref": "#/components/schemas/FlyMachineConfigRootfs"
           },
           "schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "Run the Machine at an interval: one of hourly, daily, weekly or monthly. The interval starts when\nthe Machine is created"
           },
           "services": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineService"
-            }
+            },
+            "description": "Network services that Fly Proxy routes traffic to"
           },
           "size": {
             "type": "string",
             "description": "Deprecated: use Guest instead"
           },
           "spot": {
-            "$ref": "#/components/schemas/FlyMachineSpot"
+            "$ref": "#/components/schemas/FlyMachineConfigSpot"
           },
           "standbys": {
             "type": "array",
@@ -10045,10 +10178,11 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyStatic"
-            }
+            },
+            "description": "Static files to serve under a URL prefix. Fly Proxy routes matching requests to a file server\ninside the Machine, bypassing your application\u0027s own process; the Machine must be running. The\nfiles are read either from a path inside the Machine or from a Tigris bucket that belongs to the\napp; no bucket is created for you"
           },
           "stop_config": {
-            "$ref": "#/components/schemas/FlyStopConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigStopConfig"
           }
         },
         "description": "An object defining the Machine configuration"
@@ -10110,7 +10244,7 @@
             "description": "Optional boolean telling the Machine to destroy itself once it\u2019s complete (default false)"
           },
           "cache_drive": {
-            "$ref": "#/components/schemas/FlyMachineCacheDrive"
+            "$ref": "#/components/schemas/FlyMachineConfigCacheDrive"
           },
           "checks": {
             "$ref": "#/components/schemas/UpdateMachineRequestConfigChecks"
@@ -10120,14 +10254,14 @@
             "items": {
               "$ref": "#/components/schemas/FlyContainerConfig"
             },
-            "description": "Containers are a list of containers that will run in the machine. Currently restricted to\nonly specific organizations."
+            "description": "Containers are a list of containers that will run in the machine, each from its own image."
           },
           "disable_machine_autostart": {
             "type": "boolean",
             "description": "Deprecated: use Service.Autostart instead"
           },
           "dns": {
-            "$ref": "#/components/schemas/FlyDnsConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigDns"
           },
           "env": {
             "$ref": "#/components/schemas/UpdateMachineRequestConfigEnv"
@@ -10136,57 +10270,62 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyFile"
-            }
+            },
+            "description": "Files to write into the Machine, from either a raw value or an app secret"
           },
           "guest": {
-            "$ref": "#/components/schemas/FlyMachineGuest"
+            "$ref": "#/components/schemas/FlyMachineConfigGuest"
           },
           "image": {
             "type": "string",
             "description": "The docker image to run"
           },
           "init": {
-            "$ref": "#/components/schemas/FlyMachineInit"
+            "$ref": "#/components/schemas/FlyMachineConfigInit"
           },
           "metadata": {
             "$ref": "#/components/schemas/UpdateMachineRequestConfigMetadata"
           },
           "metrics": {
-            "$ref": "#/components/schemas/FlyMachineMetrics"
+            "$ref": "#/components/schemas/FlyMachineConfigMetrics"
           },
           "mounts": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineMount"
-            }
+            },
+            "description": "Persistent volumes to mount in the Machine. A Machine can mount at most one volume, which must be on\nthe same host. The mounted volume cannot be changed by updating the Machine"
           },
           "processes": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineProcess"
-            }
+            },
+            "description": "Multiple processes to run within this one Machine, all from the Machine\u0027s image. Unrelated to the\nprocess groups in fly.toml, which run on separate Machines. To run processes from different\nimages, use containers instead"
           },
           "restart": {
-            "$ref": "#/components/schemas/FlyMachineRestart"
+            "$ref": "#/components/schemas/FlyMachineConfigRestart"
           },
           "rootfs": {
-            "$ref": "#/components/schemas/FlyMachineRootfs"
+            "$ref": "#/components/schemas/FlyMachineConfigRootfs"
           },
           "schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "Run the Machine at an interval: one of hourly, daily, weekly or monthly. The interval starts when\nthe Machine is created"
           },
           "services": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyMachineService"
-            }
+            },
+            "description": "Network services that Fly Proxy routes traffic to"
           },
           "size": {
             "type": "string",
             "description": "Deprecated: use Guest instead"
           },
           "spot": {
-            "$ref": "#/components/schemas/FlyMachineSpot"
+            "$ref": "#/components/schemas/FlyMachineConfigSpot"
           },
           "standbys": {
             "type": "array",
@@ -10199,10 +10338,11 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FlyStatic"
-            }
+            },
+            "description": "Static files to serve under a URL prefix. Fly Proxy routes matching requests to a file server\ninside the Machine, bypassing your application\u0027s own process; the Machine must be running. The\nfiles are read either from a path inside the Machine or from a Tigris bucket that belongs to the\napp; no bucket is created for you"
           },
           "stop_config": {
-            "$ref": "#/components/schemas/FlyStopConfig"
+            "$ref": "#/components/schemas/FlyMachineConfigStopConfig"
           }
         },
         "description": "An object defining the Machine configuration"
@@ -10280,6 +10420,195 @@
         },
         "description": "Whether to use http or https"
       },
+      "FlyMachineConfigCacheDrive": {
+        "type": "object",
+        "properties": {
+          "size_mb": {
+            "type": "integer"
+          }
+        },
+        "description": "A cache drive attached to the Machine"
+      },
+      "FlyMachineConfigDns": {
+        "type": "object",
+        "properties": {
+          "dns_forward_rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyDnsForwardRule"
+            }
+          },
+          "hostname": {
+            "type": "string"
+          },
+          "hostname_fqdn": {
+            "type": "string"
+          },
+          "nameservers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlyDnsOption"
+            }
+          },
+          "searches": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "skip_registration": {
+            "type": "boolean"
+          }
+        },
+        "description": "DNS settings for the Machine"
+      },
+      "FlyMachineConfigGuest": {
+        "type": "object",
+        "properties": {
+          "cpu_kind": {
+            "type": "string"
+          },
+          "cpus": {
+            "type": "integer"
+          },
+          "gpu_kind": {
+            "type": "string"
+          },
+          "gpus": {
+            "type": "integer"
+          },
+          "host_dedication_id": {
+            "type": "string"
+          },
+          "kernel_args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_memory_mb": {
+            "type": "integer"
+          },
+          "memory_mb": {
+            "type": "integer"
+          },
+          "persist_rootfs": {
+            "$ref": "#/components/schemas/FlyMachineGuestPersistRootfs"
+          },
+          "required_host_features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "The resources (CPUs, memory, etc.) allocated to the Machine"
+      },
+      "FlyMachineConfigInit": {
+        "type": "object",
+        "properties": {
+          "cmd": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entrypoint": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exec": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kernel_args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "swap_size_mb": {
+            "type": "integer"
+          },
+          "tty": {
+            "type": "boolean"
+          }
+        },
+        "description": "Arguments for init, Fly.io\u0027s footprint inside the Machine, which controls how your own code is run"
+      },
+      "FlyMachineConfigMetrics": {
+        "type": "object",
+        "properties": {
+          "https": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer"
+          }
+        },
+        "description": "An optional metrics endpoint for Prometheus on Fly.io to scrape"
+      },
+      "FlyMachineConfigRestart": {
+        "type": "object",
+        "properties": {
+          "max_retries": {
+            "type": "integer",
+            "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
+          },
+          "policy": {
+            "$ref": "#/components/schemas/FlyMachineRestartPolicy"
+          }
+        },
+        "description": "Whether and how the Machine is restarted after its main process exits"
+      },
+      "FlyMachineConfigRootfs": {
+        "type": "object",
+        "properties": {
+          "persist": {
+            "$ref": "#/components/schemas/FlyMachineRootfsPersist"
+          },
+          "size_gb": {
+            "type": "integer"
+          }
+        },
+        "description": "The size of the Machine\u0027s root filesystem and whether it persists"
+      },
+      "FlyMachineConfigSpot": {
+        "type": "object",
+        "properties": {
+          "max_price_fraction": {
+            "type": "number",
+            "description": "MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]"
+          }
+        },
+        "description": "Spot pricing settings for the Machine"
+      },
+      "FlyMachineConfigStopConfig": {
+        "type": "object",
+        "properties": {
+          "signal": {
+            "$ref": "#/components/schemas/FlyStopConfigSignal"
+          },
+          "timeout": {
+            "type": "string",
+            "example": "10s"
+          }
+        },
+        "description": "How the Machine is shut down gracefully: the signal sent to it and how long to wait before a hard shutdown"
+      },
       "MainTokenAccessAction": {
         "required": [
           "value"
@@ -10340,7 +10669,8 @@
           {
             "type": "object",
             "additionalProperties": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           }
         ],
@@ -10376,7 +10706,10 @@
         }
       },
       "PostgresExtensionInstalled": {
-        "type": "object",
+        "type": [
+          "null",
+          "object"
+        ],
         "properties": {
           "schema": {
             "type": "string",
@@ -10389,8 +10722,7 @@
             "example": "1.0"
           }
         },
-        "description": "Installation details, or null when the extension is not installed.",
-        "nullable": true
+        "description": "Installation details, or null when the extension is not installed."
       },
       "FlyContainerConfigEnv": {
         "type": "object",
@@ -10423,7 +10755,8 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
+        },
+        "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
       },
       "FlyMachineProcessEnv": {
         "type": "object",
@@ -10666,7 +10999,8 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
+        },
+        "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
       },
       "FlyMachineProcessEnvProperty": {
         "type": "object",
@@ -10701,7 +11035,8 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
+        },
+        "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
       },
       "UpdateMachineRequestConfigChecks": {
         "type": "object",
@@ -10721,7 +11056,8 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
+        },
+        "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
       },
       "FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty": {
         "type": "object"
@@ -11106,6 +11442,65 @@
             {
               "value": "failed",
               "name": "Failed"
+            }
+          ]
+        }
+      },
+      "PostgresPlanCpuKind": {
+        "enum": [
+          "shared",
+          "performance"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "CPU class.",
+        "example": "shared",
+        "x-ms-enum": {
+          "name": "PostgresPlanCpuKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "shared",
+              "name": "Shared"
+            },
+            {
+              "value": "performance",
+              "name": "Performance"
+            }
+          ]
+        }
+      },
+      "PostgresPlanPlan": {
+        "enum": [
+          "basic",
+          "starter",
+          "launch",
+          "scale",
+          "Performance"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Plan slug. Pass it as \u0060plan\u0060 when creating or forking a cluster.",
+        "example": "basic",
+        "x-ms-enum": {
+          "name": "PostgresPlanPlan",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
+            {
+              "value": "starter",
+              "name": "Starter"
+            },
+            {
+              "value": "launch",
+              "name": "Launch"
+            },
+            {
+              "value": "scale",
+              "name": "Scale"
             }
           ]
         }
@@ -11705,6 +12100,41 @@
           ]
         }
       },
+      "ForkPostgresClusterRequestPlan": {
+        "enum": [
+          "basic",
+          "starter",
+          "launch",
+          "scale",
+          "Performance"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Plan slug selecting CPU and memory sizing for the fork. Defaults to the source cluster\u0027s plan. Matched case-insensitively.",
+        "example": "launch",
+        "x-ms-enum": {
+          "name": "ForkPostgresClusterRequestPlan",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "basic",
+              "name": "Basic"
+            },
+            {
+              "value": "starter",
+              "name": "Starter"
+            },
+            {
+              "value": "launch",
+              "name": "Launch"
+            },
+            {
+              "value": "scale",
+              "name": "Scale"
+            }
+          ]
+        }
+      },
       "UpdatePostgresUserRoleRequestRole": {
         "enum": [
           "schema_admin",
@@ -11826,13 +12256,17 @@
     },
     "securitySchemes": {
       "FlyBearerAuth": {
-        "type": "apiKey",
+        "type": "http",
         "description": "A Fly API token with access to the requested organization or resource. Send it as \u0060Authorization: Bearer \u003CFly API token\u003E\u0060.",
-        "name": "Authorization",
-        "in": "header"
+        "scheme": "bearer"
       }
     }
   },
+  "security": [
+    {
+      "FlyBearerAuth": []
+    }
+  ],
   "tags": [
     {
       "name": "Apps",

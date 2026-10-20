@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
         {
         }
         /// <summary>
-        /// Delete an app secret
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteAppSecretResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update Secret
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.SetAppSecretResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.SetAppSecretResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.SetAppSecretResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an app secret
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create or update Secret
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

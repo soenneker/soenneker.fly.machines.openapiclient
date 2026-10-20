@@ -36,17 +36,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restar
         /// <summary>
         /// Restart a specific Machine within an app, with an optional timeout parameter.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restart.RestartRequestBuilder.RestartRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restart.RestartRequestBuilder.RestartRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restart.RestartRequestBuilder.RestartRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restart.RestartRequestBuilder.RestartRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Restar
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restart a specific Machine within an app, with an optional timeout parameter.

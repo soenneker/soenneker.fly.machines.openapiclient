@@ -124,22 +124,29 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
         {
         }
         /// <summary>
-        /// Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it&apos;s running.
+        /// Delete a specific Machine within an app by Machine ID.Only a Machine in the `stopped`, `suspended`, `failed`, `pending` or `archived` state can be deleted. Deleting a Machine in any other state, such as `started`, fails with `412 Precondition Failed` unless you set `force=true`, which kills the Machine first. Deleting a Machine that is already `destroying` or `destroyed` succeeds without doing anything.If someone else holds a lease on the Machine, the request fails with `409 Conflict`. Pass the lease nonce in the `fly-machine-lease-nonce` header to delete a Machine you hold the lease on.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 412 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.WithMachineItemRequestBuilder.WithMachineItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "409", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get details of a specific Machine within an app by the Machine ID.
@@ -187,7 +194,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it&apos;s running.
+        /// Delete a specific Machine within an app by Machine ID.Only a Machine in the `stopped`, `suspended`, `failed`, `pending` or `archived` state can be deleted. Deleting a Machine in any other state, such as `started`, fails with `412 Precondition Failed` unless you set `force=true`, which kills the Machine first. Deleting a Machine that is already `destroying` or `destroyed` succeeds without doing anything.If someone else holds a lease on the Machine, the request fails with `409 Conflict`. Pass the lease nonce in the `fly-machine-lease-nonce` header to delete a Machine you hold the lease on.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,6 +209,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -255,12 +263,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
             return new global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.WithMachineItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it&apos;s running.
+        /// Delete a specific Machine within an app by Machine ID.Only a Machine in the `stopped`, `suspended`, `failed`, `pending` or `archived` state can be deleted. Deleting a Machine in any other state, such as `started`, fails with `412 Precondition Failed` unless you set `force=true`, which kills the Machine first. Deleting a Machine that is already `destroying` or `destroyed` succeeds without doing anything.If someone else holds a lease on the Machine, the request fails with `409 Conflict`. Pass the lease nonce in the `fly-machine-lease-nonce` header to delete a Machine you hold the lease on.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithMachineItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Force kill the machine if it&apos;s running</summary>
+            /// <summary>Kill the Machine first if it&apos;s not stopped, suspended, failed, pending or archived</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
         }

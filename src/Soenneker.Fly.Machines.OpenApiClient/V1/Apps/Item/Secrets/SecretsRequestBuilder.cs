@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update app secrets belonging to an app
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp"/></returns>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
             return requestInfo;
         }
         /// <summary>
-        /// Update app secrets belonging to an app
+        /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

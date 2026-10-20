@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fly.Machines.OpenApiClient.Models;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item;
+using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Plans;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostgresRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The plans property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Plans.PlansRequestBuilder Plans
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Fly.Machines.OpenApiClient.v1.postgres.item collection</summary>
         /// <param name="position">Managed Postgres Cluster ID</param>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.WithPostgresClusterItemRequestBuilder"/></returns>

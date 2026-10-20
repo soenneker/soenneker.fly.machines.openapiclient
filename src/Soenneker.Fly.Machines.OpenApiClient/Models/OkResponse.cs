@@ -9,31 +9,29 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FlyMachineRootfs : IAdditionalDataHolder, IParsable
+    public partial class OkResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The persist property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? Persist { get; set; }
-        /// <summary>The size_gb property</summary>
-        public int? SizeGb { get; set; }
+        /// <summary>The ok property</summary>
+        public bool? Ok { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse"/> and sets the default values.
         /// </summary>
-        public FlyMachineRootfs()
+        public OkResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "persist", n => { Persist = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>(); } },
-                { "size_gb", n => { SizeGb = n.GetIntValue(); } },
+                { "ok", n => { Ok = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +51,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>("persist", Persist);
-            writer.WriteIntValue("size_gb", SizeGb);
+            writer.WriteBoolValue("ok", Ok);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

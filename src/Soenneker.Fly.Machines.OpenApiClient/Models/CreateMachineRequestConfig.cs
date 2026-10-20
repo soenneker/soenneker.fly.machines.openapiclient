@@ -17,13 +17,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional boolean telling the Machine to destroy itself once it’s complete (default false)</summary>
         public bool? AutoDestroy { get; set; }
-        /// <summary>The cache_drive property</summary>
+        /// <summary>A cache drive attached to the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive? CacheDrive { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive? CacheDrive { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive CacheDrive { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive CacheDrive { get; set; }
 #endif
         /// <summary>An optional object that defines one or more named top-level checks. The key for each check is the check name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,7 +33,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigChecks Checks { get; set; }
 #endif
-        /// <summary>Containers are a list of containers that will run in the machine. Currently restricted toonly specific organizations.</summary>
+        /// <summary>Containers are a list of containers that will run in the machine, each from its own image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>? Containers { get; set; }
@@ -43,13 +43,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Deprecated: use Service.Autostart instead</summary>
         public bool? DisableMachineAutostart { get; set; }
-        /// <summary>The dns property</summary>
+        /// <summary>DNS settings for the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig? Dns { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig Dns { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns Dns { get; set; }
 #endif
         /// <summary>An object filled with key/value pairs to be set as environment variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigEnv Env { get; set; }
 #endif
-        /// <summary>The files property</summary>
+        /// <summary>Files to write into the Machine, from either a raw value or an app secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>? Files { get; set; }
@@ -67,13 +67,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile> Files { get; set; }
 #endif
-        /// <summary>The guest property</summary>
+        /// <summary>The resources (CPUs, memory, etc.) allocated to the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? Guest { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest? Guest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest Guest { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest Guest { get; set; }
 #endif
         /// <summary>The docker image to run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,15 +83,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Image { get; set; }
 #endif
-        /// <summary>The init property</summary>
+        /// <summary>Arguments for init, Fly.io&apos;s footprint inside the Machine, which controls how your own code is run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit? Init { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit? Init { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit Init { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit Init { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigMetadata? Metadata { get; set; }
@@ -99,15 +99,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigMetadata Metadata { get; set; }
 #endif
-        /// <summary>The metrics property</summary>
+        /// <summary>An optional metrics endpoint for Prometheus on Fly.io to scrape</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics? Metrics { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetrics? Metrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics Metrics { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetrics Metrics { get; set; }
 #endif
-        /// <summary>The mounts property</summary>
+        /// <summary>Persistent volumes to mount in the Machine. A Machine can mount at most one volume, which must be onthe same host. The mounted volume cannot be changed by updating the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount>? Mounts { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount> Mounts { get; set; }
 #endif
-        /// <summary>The processes property</summary>
+        /// <summary>Multiple processes to run within this one Machine, all from the Machine&apos;s image. Unrelated to theprocess groups in fly.toml, which run on separate Machines. To run processes from differentimages, use containers instead</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess>? Processes { get; set; }
@@ -123,23 +123,23 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess> Processes { get; set; }
 #endif
-        /// <summary>The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/.</summary>
+        /// <summary>Whether and how the Machine is restarted after its main process exits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart? Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart? Restart { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart Restart { get; set; }
 #endif
-        /// <summary>The rootfs property</summary>
+        /// <summary>The size of the Machine&apos;s root filesystem and whether it persists</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs? Rootfs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs? Rootfs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs Rootfs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs Rootfs { get; set; }
 #endif
-        /// <summary>The schedule property</summary>
+        /// <summary>Run the Machine at an interval: one of hourly, daily, weekly or monthly. The interval starts whenthe Machine is created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Schedule { get; set; }
@@ -147,7 +147,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Schedule { get; set; }
 #endif
-        /// <summary>The services property</summary>
+        /// <summary>Network services that Fly Proxy routes traffic to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService>? Services { get; set; }
@@ -163,13 +163,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Size { get; set; }
 #endif
-        /// <summary>The spot property</summary>
+        /// <summary>Spot pricing settings for the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot? Spot { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot? Spot { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot Spot { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot Spot { get; set; }
 #endif
         /// <summary>Standbys enable a machine to be a standby for another. In the event of a hardware failure,the standby machine will be started.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<string> Standbys { get; set; }
 #endif
-        /// <summary>The statics property</summary>
+        /// <summary>Static files to serve under a URL prefix. Fly Proxy routes matching requests to a file serverinside the Machine, bypassing your application&apos;s own process; the Machine must be running. Thefiles are read either from a path inside the Machine or from a Tigris bucket that belongs to theapp; no bucket is created for you</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic>? Statics { get; set; }
@@ -187,13 +187,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic> Statics { get; set; }
 #endif
-        /// <summary>The stop_config property</summary>
+        /// <summary>How the Machine is shut down gracefully: the signal sent to it and how long to wait before a hard shutdown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig? StopConfig { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigStopConfig? StopConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig StopConfig { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigStopConfig StopConfig { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfig"/> and sets the default values.
@@ -221,29 +221,29 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auto_destroy", n => { AutoDestroy = n.GetBoolValue(); } },
-                { "cache_drive", n => { CacheDrive = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive.CreateFromDiscriminatorValue); } },
+                { "cache_drive", n => { CacheDrive = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive.CreateFromDiscriminatorValue); } },
                 { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigChecks>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigChecks.CreateFromDiscriminatorValue); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disable_machine_autostart", n => { DisableMachineAutostart = n.GetBoolValue(); } },
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns.CreateFromDiscriminatorValue); } },
                 { "env", n => { Env = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigEnv>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigEnv.CreateFromDiscriminatorValue); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "guest", n => { Guest = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest.CreateFromDiscriminatorValue); } },
+                { "guest", n => { Guest = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
-                { "init", n => { Init = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit.CreateFromDiscriminatorValue); } },
+                { "init", n => { Init = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigMetadata>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigMetadata.CreateFromDiscriminatorValue); } },
-                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics.CreateFromDiscriminatorValue); } },
+                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetrics>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetrics.CreateFromDiscriminatorValue); } },
                 { "mounts", n => { Mounts = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "processes", n => { Processes = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "restart", n => { Restart = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart.CreateFromDiscriminatorValue); } },
-                { "rootfs", n => { Rootfs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs.CreateFromDiscriminatorValue); } },
+                { "restart", n => { Restart = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart.CreateFromDiscriminatorValue); } },
+                { "rootfs", n => { Rootfs = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
                 { "services", n => { Services = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetStringValue(); } },
-                { "spot", n => { Spot = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot.CreateFromDiscriminatorValue); } },
+                { "spot", n => { Spot = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot.CreateFromDiscriminatorValue); } },
                 { "standbys", n => { Standbys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "statics", n => { Statics = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "stop_config", n => { StopConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig.CreateFromDiscriminatorValue); } },
+                { "stop_config", n => { StopConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigStopConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigStopConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -254,29 +254,29 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_destroy", AutoDestroy);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineCacheDrive>("cache_drive", CacheDrive);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive>("cache_drive", CacheDrive);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigChecks>("checks", Checks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>("containers", Containers);
             writer.WriteBoolValue("disable_machine_autostart", DisableMachineAutostart);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsConfig>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns>("dns", Dns);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigEnv>("env", Env);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>("files", Files);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>("guest", Guest);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest>("guest", Guest);
             writer.WriteStringValue("image", Image);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineInit>("init", Init);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit>("init", Init);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfigMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMetrics>("metrics", Metrics);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigMetrics>("metrics", Metrics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineMount>("mounts", Mounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcess>("processes", Processes);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart>("restart", Restart);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfs>("rootfs", Rootfs);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart>("restart", Restart);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs>("rootfs", Rootfs);
             writer.WriteStringValue("schedule", Schedule);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineService>("services", Services);
             writer.WriteStringValue("size", Size);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot>("spot", Spot);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot>("spot", Spot);
             writer.WriteCollectionOfPrimitiveValues<string>("standbys", Standbys);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStatic>("statics", Statics);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyStopConfig>("stop_config", StopConfig);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigStopConfig>("stop_config", StopConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,29 +9,35 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FlyMachineSpot : IAdditionalDataHolder, IParsable
+    public partial class ListPostgresPlansResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]</summary>
-        public double? MaxPriceFraction { get; set; }
+        /// <summary>The data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan>? Data { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan> Data { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresPlansResponse"/> and sets the default values.
         /// </summary>
-        public FlyMachineSpot()
+        public ListPostgresPlansResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresPlansResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresPlansResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSpot();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresPlansResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_price_fraction", n => { MaxPriceFraction = n.GetDoubleValue(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("max_price_fraction", MaxPriceFraction);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

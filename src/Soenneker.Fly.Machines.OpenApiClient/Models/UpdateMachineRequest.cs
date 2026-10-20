@@ -32,7 +32,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>The lease_ttl property</summary>
         public int? LeaseTtl { get; set; }
-        /// <summary>The min_secrets_version property</summary>
+        /// <summary>The minimum version of the app&apos;s secrets the Machine must run with. Set it to the `version`returned by the endpoints that set or delete app secrets, so that the Machine is guaranteedto see those changes. This field belongs at the top level of the request body, not in`config`. If omitted, the app&apos;s current secrets version is looked up for you.</summary>
         public int? MinSecretsVersion { get; set; }
         /// <summary>Unique name for this Machine. If omitted, one is generated for you</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

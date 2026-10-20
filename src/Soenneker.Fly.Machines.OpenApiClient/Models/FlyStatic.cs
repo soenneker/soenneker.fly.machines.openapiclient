@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The guest_path property</summary>
+        /// <summary>The path inside the Machine, or inside tigris_bucket when set, where the files to serve are located</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GuestPath { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string GuestPath { get; set; }
 #endif
-        /// <summary>The index_document property</summary>
+        /// <summary>The document served for requests to the URL prefix or any of its subfolders. Only works with tigris_bucket</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndexDocument { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string IndexDocument { get; set; }
 #endif
-        /// <summary>The tigris_bucket property</summary>
+        /// <summary>An existing Tigris bucket belonging to the app to read the files from, instead of the Machine&apos;sfilesystem. The files are still served through the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TigrisBucket { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string TigrisBucket { get; set; }
 #endif
-        /// <summary>The url_prefix property</summary>
+        /// <summary>The URL prefix under which the files are served</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UrlPrefix { get; set; }

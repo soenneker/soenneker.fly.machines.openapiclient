@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/.
+    /// Whether and how the Machine is restarted after its main process exits
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FlyMachineRestart : IAdditionalDataHolder, IParsable
+    public partial class FlyMachineConfigRestart : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -20,21 +20,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>* no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash.* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestartPolicy? Policy { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart"/> and sets the default values.
         /// </summary>
-        public FlyMachineRestart()
+        public FlyMachineConfigRestart()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRestart();
+            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart();
         }
         /// <summary>
         /// The deserialization information for the current model

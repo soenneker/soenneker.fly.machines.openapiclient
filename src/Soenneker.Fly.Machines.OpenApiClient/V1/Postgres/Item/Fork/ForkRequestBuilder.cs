@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork
         {
         }
         /// <summary>
-        /// Fork a ready Managed Postgres cluster into a new cluster that inherits the source&apos;s settings. The source cluster is left unchanged, and the fork is provisioned asynchronously.
+        /// Fork a ready Managed Postgres cluster into a new cluster that inherits the source&apos;s settings, on the source&apos;s plan unless `plan` is given. The source cluster is left unchanged, and the fork is provisioned asynchronously.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresClusterResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresClusterResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresClusterResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fork a ready Managed Postgres cluster into a new cluster that inherits the source&apos;s settings. The source cluster is left unchanged, and the fork is provisioned asynchronously.
+        /// Fork a ready Managed Postgres cluster into a new cluster that inherits the source&apos;s settings, on the source&apos;s plan unless `plan` is given. The source cluster is left unchanged, and the fork is provisioned asynchronously.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

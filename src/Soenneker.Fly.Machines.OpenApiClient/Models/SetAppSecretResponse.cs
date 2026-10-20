@@ -38,7 +38,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
         public int? SetAppSecretResponseVersion { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
