@@ -37,13 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The time in seconds between executing the defined check.</summary>
         public int? Interval { get; set; }
         /// <summary>Kind of healthcheck (readiness, liveness)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed? Kind { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed Kind { get; set; }
-#endif
         /// <summary>The name of the check. Must be unique within the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,13 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The time in seconds to wait for the check to complete.</summary>
         public int? Timeout { get; set; }
         /// <summary>Unhealthy policy that determines what action to take if a container is deemed unhealthy</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy? Unhealthy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy Unhealthy { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck"/> and sets the default values.
         /// </summary>
@@ -102,12 +90,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "grace_period", n => { GracePeriod = n.GetIntValue(); } },
                 { "http", n => { Http = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
-                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed.CreateFromDiscriminatorValue); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "success_threshold", n => { SuccessThreshold = n.GetIntValue(); } },
                 { "tcp", n => { Tcp = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
-                { "unhealthy", n => { Unhealthy = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy.CreateFromDiscriminatorValue); } },
+                { "unhealthy", n => { Unhealthy = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>(); } },
             };
         }
         /// <summary>
@@ -122,12 +110,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("grace_period", GracePeriod);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck>("http", Http);
             writer.WriteIntValue("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("success_threshold", SuccessThreshold);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck>("tcp", Tcp);
             writer.WriteIntValue("timeout", Timeout);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>("unhealthy", Unhealthy);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>("unhealthy", Unhealthy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

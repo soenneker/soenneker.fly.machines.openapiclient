@@ -13,13 +13,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g &quot;rw&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction? Action { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction Action { get; set; }
-#endif
+        public int? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AppFeature is a named set of functionality associated with the app. Ifthis is specified, the AppName field must be set.  - images: images in the fly.io registry</summary>
@@ -135,7 +129,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetIntValue(); } },
                 { "app_feature", n => { AppFeature = n.GetStringValue(); } },
                 { "app_name", n => { AppName = n.GetStringValue(); } },
                 { "command", n => { Command = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -156,7 +150,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccessAction>("action", Action);
+            writer.WriteIntValue("action", Action);
             writer.WriteStringValue("app_feature", AppFeature);
             writer.WriteStringValue("app_name", AppName);
             writer.WriteCollectionOfPrimitiveValues<string>("command", Command);

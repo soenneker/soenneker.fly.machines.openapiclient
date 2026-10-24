@@ -41,13 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The port to connect to, often the same as internal_port</summary>
         public int? Port { get; set; }
         /// <summary>Whether to use http or https</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme? Scheme { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme Scheme { get; set; }
-#endif
         /// <summary>If the protocol is https, the hostname to use for TLS certificate validation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
-                { "scheme", n => { Scheme = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme.CreateFromDiscriminatorValue); } },
+                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme>(); } },
                 { "tls_server_name", n => { TlsServerName = n.GetStringValue(); } },
                 { "tls_skip_verify", n => { TlsSkipVerify = n.GetBoolValue(); } },
             };
@@ -103,7 +97,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme>("scheme", Scheme);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheckScheme>("scheme", Scheme);
             writer.WriteStringValue("tls_server_name", TlsServerName);
             writer.WriteBoolValue("tls_skip_verify", TlsSkipVerify);
             writer.WriteAdditionalData(AdditionalData);

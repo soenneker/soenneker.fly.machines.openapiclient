@@ -6399,20 +6399,24 @@
         "type": "object",
         "properties": {
           "enable_subdomains": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Request a wildcard TLS certificate for *.svc.\u003Capp-name\u003E.fly.dev. Defaults to false. Certificate provisioning is asynchronous; this does not create services or configure their routing."
           },
           "idempotency_key": {
             "type": "string",
             "description": "When set, makes a retry of this exact request safe: a\nsecond create with the same key and the same name (or no name) returns\nthe app the first request created, instead of erroring on a false name\nconflict or creating a duplicate. A second create with the same key\nbut a *different* name is rejected outright; it won\u0027t silently\nhand back the first app."
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "Globally unique name for the app. Required."
           },
           "network": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization\u0027s private network to attach the app to. Creates the network if it does not exist. Omit, use an empty string, or use \u0022default\u0022 to select the organization\u0027s default network."
           },
           "org_slug": {
-            "type": "string"
+            "type": "string",
+            "description": "Slug of the organization that will own the app, or \u0022personal\u0022 for your personal organization. Required."
           }
         }
       },
@@ -6770,7 +6774,6 @@
           "egress_pair"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Type of IP address to allocate. \u0022egress-pair\u0022 allocates both v4 and v6 egress IP addresses (recommended when using egress IPs).",
         "x-enum-varnames": [
           "IPAssignmentType_v4",
@@ -8442,7 +8445,6 @@
           "started"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "ExitedSuccessfully",
           "Healthy",
@@ -8517,7 +8519,6 @@
           "liveness"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "Readiness",
           "Liveness"
@@ -8543,7 +8544,6 @@
           "https"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "HTTP",
           "HTTPS"
@@ -9382,7 +9382,6 @@
           "stop"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "UnhealthyPolicyStop"
         ],
@@ -9734,7 +9733,8 @@
             "example": "lhr,eu"
           },
           "volume_name": {
-            "type": "string"
+            "type": "string",
+            "example": ""
           },
           "volume_size_bytes": {
             "type": "integer"
@@ -9844,7 +9844,6 @@
           "name_taken"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-enum-varnames": [
           "unknown",
           "capacityErr",
@@ -9954,7 +9953,6 @@
           0
         ],
         "type": "integer",
-        "additionalProperties": false,
         "format": "int32",
         "x-enum-varnames": [
           "ActionRead",
@@ -10374,51 +10372,107 @@
         "description": "Stop is used to define the signal and timeout for stopping the container."
       },
       "FlyContainerDependencyConditionComposed": {
-        "required": [
-          "value"
+        "enum": [
+          "exited_successfully",
+          "healthy",
+          "started"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerDependencyCondition"
-          }
+        "type": "string",
+        "x-enum-varnames": [
+          "ExitedSuccessfully",
+          "Healthy",
+          "Started"
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerDependencyConditionComposed",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "exited_successfully",
+              "name": "ExitedSuccessfully"
+            },
+            {
+              "value": "healthy",
+              "name": "Healthy"
+            },
+            {
+              "value": "started",
+              "name": "Started"
+            }
+          ]
         }
       },
       "FlyContainerHealthcheckKindComposed": {
-        "required": [
-          "value"
+        "enum": [
+          "readiness",
+          "liveness"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckKind"
-          }
-        },
-        "description": "Kind of healthcheck (readiness, liveness)"
+        "type": "string",
+        "description": "Kind of healthcheck (readiness, liveness)",
+        "x-enum-varnames": [
+          "Readiness",
+          "Liveness"
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerHealthcheckKindComposed",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "readiness",
+              "name": "Readiness"
+            },
+            {
+              "value": "liveness",
+              "name": "Liveness"
+            }
+          ]
+        }
       },
       "FlyContainerHealthcheckUnhealthy": {
-        "required": [
-          "value"
+        "enum": [
+          "stop"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyUnhealthyPolicy"
-          }
-        },
-        "description": "Unhealthy policy that determines what action to take if a container is deemed unhealthy"
+        "type": "string",
+        "description": "Unhealthy policy that determines what action to take if a container is deemed unhealthy",
+        "x-enum-varnames": [
+          "UnhealthyPolicyStop"
+        ],
+        "x-ms-enum": {
+          "name": "FlyContainerHealthcheckUnhealthy",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "stop",
+              "name": "Stop"
+            }
+          ]
+        }
       },
       "FlyHttpHealthcheckScheme": {
-        "required": [
-          "value"
+        "enum": [
+          "http",
+          "https"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckScheme"
-          }
-        },
-        "description": "Whether to use http or https"
+        "type": "string",
+        "description": "Whether to use http or https",
+        "x-enum-varnames": [
+          "HTTP",
+          "HTTPS"
+        ],
+        "x-ms-enum": {
+          "name": "FlyHttpHealthcheckScheme",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "http",
+              "name": "Http"
+            },
+            {
+              "value": "https",
+              "name": "Https"
+            }
+          ]
+        }
       },
       "FlyMachineConfigCacheDrive": {
         "type": "object",
@@ -10610,16 +10664,27 @@
         "description": "How the Machine is shut down gracefully: the signal sent to it and how long to wait before a hard shutdown"
       },
       "MainTokenAccessAction": {
-        "required": [
-          "value"
+        "enum": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31,
+          0
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/RessetAction"
-          }
-        },
-        "description": "Action is the action being taken on the specified resource. This is the\ncombination of individual action characters (e.g \u0022rw\u0022)\n  - r: read\n  - w: write\n  - c: create\n  - d: delete\n  - C: control"
+        "type": "integer",
+        "description": "Action is the action being taken on the specified resource. This is the\ncombination of individual action characters (e.g \u0022rw\u0022)\n  - r: read\n  - w: write\n  - c: create\n  - d: delete\n  - C: control",
+        "format": "int32",
+        "x-enum-varnames": [
+          "ActionRead",
+          "ActionWrite",
+          "ActionCreate",
+          "ActionDelete",
+          "ActionControl",
+          "ActionAll",
+          "ActionNone"
+        ]
       },
       "MainGetPlacementsRequestCompute": {
         "type": "object",
@@ -10665,15 +10730,10 @@
       },
       "MainGetPlacementsRequestWeights": {
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
+        "additionalProperties": {
+          "type": "integer",
+          "format": "int64"
+        },
         "description": "Optional weights to override default placement preferences.",
         "example": {
           "region": 1000,
@@ -10829,61 +10889,6 @@
       },
       "TokensRequestOidc200PlainResponse": {
         "type": "string"
-      },
-      "FlyContainerDependencyConditionWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerDependencyCondition"
-          }
-        }
-      },
-      "FlyContainerHealthcheckKindWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckKind"
-          }
-        }
-      },
-      "FlyUnhealthyPolicyWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyUnhealthyPolicy"
-          }
-        }
-      },
-      "FlyContainerHealthcheckSchemeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/FlyContainerHealthcheckScheme"
-          }
-        }
-      },
-      "RessetActionWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/RessetAction"
-          }
-        }
       },
       "ExamplePayload": {
         "type": "object",
@@ -11071,7 +11076,6 @@
           "fly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CertificateEntrySource",
           "modelAsString": false,
@@ -11094,7 +11098,6 @@
           "pending_validation"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CertificateEntryStatus",
           "modelAsString": false,
@@ -11120,7 +11123,6 @@
           "ecdsa"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "IssuedCertificateType",
           "modelAsString": false,
@@ -11143,7 +11145,6 @@
           "unreachable"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MachineHostStatus",
           "modelAsString": false,
@@ -11170,7 +11171,6 @@
           "unreachable"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "OrgVolumeHostStatus",
           "modelAsString": false,
@@ -11196,7 +11196,6 @@
           "cache"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "OrgVolumeType",
           "modelAsString": false,
@@ -11219,7 +11218,6 @@
           "diff"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Backup type.",
         "x-ms-enum": {
           "name": "PostgresBackupType",
@@ -11246,7 +11244,6 @@
           "performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "CPU class.",
         "example": "shared",
         "x-ms-enum": {
@@ -11270,7 +11267,6 @@
           "17"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Postgres major version.",
         "example": "17",
         "x-ms-enum": {
@@ -11297,7 +11293,6 @@
           "Performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Plan slug.",
         "example": "basic",
         "x-ms-enum": {
@@ -11333,7 +11328,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Current lifecycle status.",
         "example": "ready",
         "x-ms-enum": {
@@ -11376,7 +11370,6 @@
           "Performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Plan slug.",
         "example": "basic",
         "x-ms-enum": {
@@ -11412,7 +11405,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Current lifecycle status.",
         "example": "ready",
         "x-ms-enum": {
@@ -11452,7 +11444,6 @@
           "performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "CPU class.",
         "example": "shared",
         "x-ms-enum": {
@@ -11479,7 +11470,6 @@
           "Performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Plan slug. Pass it as \u0060plan\u0060 when creating or forking a cluster.",
         "example": "basic",
         "x-ms-enum": {
@@ -11512,7 +11502,6 @@
           "reader"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "User role.",
         "x-ms-enum": {
           "name": "PostgresUserRole",
@@ -11551,7 +11540,6 @@
           "SIGUSR2"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SignalRequestSignal",
           "modelAsString": false,
@@ -11626,7 +11614,6 @@
           "SIGTERM"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "SIGTERM",
         "x-ms-enum": {
           "name": "StopRequestSignal",
@@ -11670,7 +11657,6 @@
           "unreachable"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "VolumeHostStatus",
           "modelAsString": false,
@@ -11696,7 +11682,6 @@
           "cache"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "VolumeType",
           "modelAsString": false,
@@ -11719,7 +11704,6 @@
           "diff"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Backup type.",
         "example": "full",
         "x-ms-enum": {
@@ -11747,7 +11731,6 @@
           "17"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Postgres major version.",
         "example": "17",
         "x-ms-enum": {
@@ -11774,7 +11757,6 @@
           "Performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Plan slug selecting CPU, memory, and disk sizing. Matched case-insensitively.",
         "example": "basic",
         "x-ms-enum": {
@@ -11806,7 +11788,6 @@
           "transaction"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Connection pooler mode.",
         "example": "transaction",
         "x-ms-enum": {
@@ -11831,7 +11812,6 @@
           "reader"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Role to grant the user.",
         "example": "writer",
         "x-ms-enum": {
@@ -11863,7 +11843,6 @@
           "image"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.",
         "x-ms-enum": {
           "name": "FlyEnvFromFieldRef",
@@ -11902,7 +11881,6 @@
           "readiness"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Kind of the check (informational, readiness)",
         "x-ms-enum": {
           "name": "FlyMachineCheckKind",
@@ -11926,7 +11904,6 @@
           "restart"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Deprecated: use MachineConfig.Rootfs instead",
         "x-ms-enum": {
           "name": "FlyMachineGuestPersistRootfs",
@@ -11954,7 +11931,6 @@
           "on-failure"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "* no - Never try to restart a Machine automatically when its main process exits, whether that\u2019s on purpose or on a crash.\n* always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly.\n* on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.",
         "x-ms-enum": {
           "name": "FlyMachineRestartPolicy",
@@ -11982,7 +11958,6 @@
           "restart"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FlyMachineRootfsPersist",
           "modelAsString": false,
@@ -12009,7 +11984,6 @@
           "suspend"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for \u0022off\u0022 and \u0022stop\u0022 in responses.\n* \u0022off\u0022 or false - Do not autostop the Machine.\n* \u0022stop\u0022 or true - Automatically stop the Machine.\n* \u0022suspend\u0022 - Automatically suspend the Machine, falling back to a full stop if this is not possible.",
         "x-ms-enum": {
           "name": "FlyMachineServiceAutostop",
@@ -12036,7 +12010,6 @@
           "header"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Currently either \u0022cookie\u0022 or \u0022header\u0022",
         "x-ms-enum": {
           "name": "FlyReplayCacheType",
@@ -12064,7 +12037,6 @@
           "SIGTERM"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FlyStopConfigSignal",
           "modelAsString": false,
@@ -12109,7 +12081,6 @@
           "Performance"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Plan slug selecting CPU and memory sizing for the fork. Defaults to the source cluster\u0027s plan. Matched case-insensitively.",
         "example": "launch",
         "x-ms-enum": {
@@ -12142,7 +12113,6 @@
           "reader"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "New role for the user.",
         "example": "reader",
         "x-ms-enum": {
@@ -12175,7 +12145,6 @@
           "SIGTERM"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MachinesRestartSignalParameter",
           "modelAsString": false,
@@ -12221,7 +12190,6 @@
           "settled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MachinesWaitStateParameter",
           "modelAsString": false,

@@ -14,7 +14,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enable_subdomains property</summary>
+        /// <summary>Request a wildcard TLS certificate for *.svc.&lt;app-name&gt;.fly.dev. Defaults to false. Certificate provisioning is asynchronous; this does not create services or configure their routing.</summary>
         public bool? EnableSubdomains { get; set; }
         /// <summary>When set, makes a retry of this exact request safe: asecond create with the same key and the same name (or no name) returnsthe app the first request created, instead of erroring on a false nameconflict or creating a duplicate. A second create with the same keybut a *different* name is rejected outright; it won&apos;t silentlyhand back the first app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string IdempotencyKey { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Globally unique name for the app. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The network property</summary>
+        /// <summary>Name of the organization&apos;s private network to attach the app to. Creates the network if it does not exist. Omit, use an empty string, or use &quot;default&quot; to select the organization&apos;s default network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Network { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #else
         public string Network { get; set; }
 #endif
-        /// <summary>The org_slug property</summary>
+        /// <summary>Slug of the organization that will own the app, or &quot;personal&quot; for your personal organization. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgSlug { get; set; }
