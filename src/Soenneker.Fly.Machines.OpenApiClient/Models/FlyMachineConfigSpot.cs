@@ -18,13 +18,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_price_fraction") is { } nullNodeMaxPriceFraction && nullNodeMaxPriceFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPriceFraction = null;
+            if (parseNode.GetChildNode("max_price_fraction") is null) { _explicitNullValueMaxPriceFraction = default!; _explicitNullProperties?.Remove("max_price_fraction"); }
+            else if (parseNode.GetChildNode("max_price_fraction") is { } nullNodeMaxPriceFraction && nullNodeMaxPriceFraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPriceFraction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]</summary>
-        public double? MaxPriceFraction { get => _explicitNullValueMaxPriceFraction; set { _explicitNullValueMaxPriceFraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_price_fraction"); else _explicitNullProperties?.Remove("max_price_fraction"); } }
+        public double? MaxPriceFraction { get => _explicitNullValueMaxPriceFraction; set { _explicitNullValueMaxPriceFraction = value; AdditionalData?.Remove("max_price_fraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_price_fraction"); else _explicitNullProperties?.Remove("max_price_fraction"); } }
         private double? _explicitNullValueMaxPriceFraction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigSpot"/> and sets the default values.

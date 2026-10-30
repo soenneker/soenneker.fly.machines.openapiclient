@@ -17,9 +17,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
-            if (parseNode.GetChildNode("attached_at") is { } nullNodeAttachedAt && nullNodeAttachedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachedAt = null;
-            if (parseNode.GetChildNode("postgres_cluster_id") is { } nullNodePostgresClusterId && nullNodePostgresClusterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresClusterId = null;
+            if (parseNode.GetChildNode("app_name") is null) { _explicitNullValueAppName = default!; _explicitNullProperties?.Remove("app_name"); }
+            else if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
+            if (parseNode.GetChildNode("attached_at") is null) { _explicitNullValueAttachedAt = default!; _explicitNullProperties?.Remove("attached_at"); }
+            else if (parseNode.GetChildNode("attached_at") is { } nullNodeAttachedAt && nullNodeAttachedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachedAt = null;
+            if (parseNode.GetChildNode("postgres_cluster_id") is null) { _explicitNullValuePostgresClusterId = default!; _explicitNullProperties?.Remove("postgres_cluster_id"); }
+            else if (parseNode.GetChildNode("postgres_cluster_id") is { } nullNodePostgresClusterId && nullNodePostgresClusterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgresClusterId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Attached Fly app name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("app_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
         private string? _explicitNullValueAppName = default!;
 #nullable restore
 #else
-        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("app_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
         private string _explicitNullValueAppName = default!;
 #endif
         /// <summary>RFC 3339 timestamp when the attachment was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttachedAt { get => _explicitNullValueAttachedAt; set { _explicitNullValueAttachedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_at"); else _explicitNullProperties?.Remove("attached_at"); } }
+        public string? AttachedAt { get => _explicitNullValueAttachedAt; set { _explicitNullValueAttachedAt = value; AdditionalData?.Remove("attached_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_at"); else _explicitNullProperties?.Remove("attached_at"); } }
         private string? _explicitNullValueAttachedAt = default!;
 #nullable restore
 #else
-        public string AttachedAt { get => _explicitNullValueAttachedAt; set { _explicitNullValueAttachedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_at"); else _explicitNullProperties?.Remove("attached_at"); } }
+        public string AttachedAt { get => _explicitNullValueAttachedAt; set { _explicitNullValueAttachedAt = value; AdditionalData?.Remove("attached_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attached_at"); else _explicitNullProperties?.Remove("attached_at"); } }
         private string _explicitNullValueAttachedAt = default!;
 #endif
         /// <summary>Cluster ID the app is attached to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostgresClusterId { get => _explicitNullValuePostgresClusterId; set { _explicitNullValuePostgresClusterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_cluster_id"); else _explicitNullProperties?.Remove("postgres_cluster_id"); } }
+        public string? PostgresClusterId { get => _explicitNullValuePostgresClusterId; set { _explicitNullValuePostgresClusterId = value; AdditionalData?.Remove("postgres_cluster_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_cluster_id"); else _explicitNullProperties?.Remove("postgres_cluster_id"); } }
         private string? _explicitNullValuePostgresClusterId = default!;
 #nullable restore
 #else
-        public string PostgresClusterId { get => _explicitNullValuePostgresClusterId; set { _explicitNullValuePostgresClusterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_cluster_id"); else _explicitNullProperties?.Remove("postgres_cluster_id"); } }
+        public string PostgresClusterId { get => _explicitNullValuePostgresClusterId; set { _explicitNullValuePostgresClusterId = value; AdditionalData?.Remove("postgres_cluster_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgres_cluster_id"); else _explicitNullProperties?.Remove("postgres_cluster_id"); } }
         private string _explicitNullValuePostgresClusterId = default!;
 #endif
         /// <summary>

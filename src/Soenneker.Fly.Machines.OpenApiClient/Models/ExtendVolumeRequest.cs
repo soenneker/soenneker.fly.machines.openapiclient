@@ -17,13 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
+            if (parseNode.GetChildNode("size_gb") is null) { _explicitNullValueSizeGb = default!; _explicitNullProperties?.Remove("size_gb"); }
+            else if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The size_gb property</summary>
-        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
+        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeRequest"/> and sets the default values.

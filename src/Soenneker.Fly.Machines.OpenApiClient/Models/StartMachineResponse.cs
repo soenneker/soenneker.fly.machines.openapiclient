@@ -17,34 +17,37 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("migrated") is { } nullNodeMigrated && nullNodeMigrated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrated = null;
-            if (parseNode.GetChildNode("new_host") is { } nullNodeNewHost && nullNodeNewHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewHost = null;
-            if (parseNode.GetChildNode("previous_state") is { } nullNodePreviousState && nullNodePreviousState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousState = null;
+            if (parseNode.GetChildNode("migrated") is null) { _explicitNullValueMigrated = default!; _explicitNullProperties?.Remove("migrated"); }
+            else if (parseNode.GetChildNode("migrated") is { } nullNodeMigrated && nullNodeMigrated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrated = null;
+            if (parseNode.GetChildNode("new_host") is null) { _explicitNullValueNewHost = default!; _explicitNullProperties?.Remove("new_host"); }
+            else if (parseNode.GetChildNode("new_host") is { } nullNodeNewHost && nullNodeNewHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewHost = null;
+            if (parseNode.GetChildNode("previous_state") is null) { _explicitNullValuePreviousState = default!; _explicitNullProperties?.Remove("previous_state"); }
+            else if (parseNode.GetChildNode("previous_state") is { } nullNodePreviousState && nullNodePreviousState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousState = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the Machine was moved to another host to be started</summary>
-        public bool? Migrated { get => _explicitNullValueMigrated; set { _explicitNullValueMigrated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrated"); else _explicitNullProperties?.Remove("migrated"); } }
+        public bool? Migrated { get => _explicitNullValueMigrated; set { _explicitNullValueMigrated = value; AdditionalData?.Remove("migrated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrated"); else _explicitNullProperties?.Remove("migrated"); } }
         private bool? _explicitNullValueMigrated = default!;
         /// <summary>The host the Machine was moved to, if it was migrated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
+        public string? NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; AdditionalData?.Remove("new_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
         private string? _explicitNullValueNewHost = default!;
 #nullable restore
 #else
-        public string NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
+        public string NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; AdditionalData?.Remove("new_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
         private string _explicitNullValueNewHost = default!;
 #endif
         /// <summary>The state the Machine was in before it was started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
+        public string? PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; AdditionalData?.Remove("previous_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
         private string? _explicitNullValuePreviousState = default!;
 #nullable restore
 #else
-        public string PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
+        public string PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; AdditionalData?.Remove("previous_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
         private string _explicitNullValuePreviousState = default!;
 #endif
         /// <summary>

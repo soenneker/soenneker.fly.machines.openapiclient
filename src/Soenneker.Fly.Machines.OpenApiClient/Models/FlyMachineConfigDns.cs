@@ -18,13 +18,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dns_forward_rules") is { } nullNodeDnsForwardRules && nullNodeDnsForwardRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsForwardRules = null;
-            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
-            if (parseNode.GetChildNode("hostname_fqdn") is { } nullNodeHostnameFqdn && nullNodeHostnameFqdn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostnameFqdn = null;
-            if (parseNode.GetChildNode("nameservers") is { } nullNodeNameservers && nullNodeNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nameservers = null;
-            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
-            if (parseNode.GetChildNode("searches") is { } nullNodeSearches && nullNodeSearches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Searches = null;
-            if (parseNode.GetChildNode("skip_registration") is { } nullNodeSkipRegistration && nullNodeSkipRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipRegistration = null;
+            if (parseNode.GetChildNode("dns_forward_rules") is null) { _explicitNullValueDnsForwardRules = default!; _explicitNullProperties?.Remove("dns_forward_rules"); }
+            else if (parseNode.GetChildNode("dns_forward_rules") is { } nullNodeDnsForwardRules && nullNodeDnsForwardRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsForwardRules = null;
+            if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
+            else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("hostname_fqdn") is null) { _explicitNullValueHostnameFqdn = default!; _explicitNullProperties?.Remove("hostname_fqdn"); }
+            else if (parseNode.GetChildNode("hostname_fqdn") is { } nullNodeHostnameFqdn && nullNodeHostnameFqdn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostnameFqdn = null;
+            if (parseNode.GetChildNode("nameservers") is null) { _explicitNullValueNameservers = default!; _explicitNullProperties?.Remove("nameservers"); }
+            else if (parseNode.GetChildNode("nameservers") is { } nullNodeNameservers && nullNodeNameservers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nameservers = null;
+            if (parseNode.GetChildNode("options") is null) { _explicitNullValueOptions = default!; _explicitNullProperties?.Remove("options"); }
+            else if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("searches") is null) { _explicitNullValueSearches = default!; _explicitNullProperties?.Remove("searches"); }
+            else if (parseNode.GetChildNode("searches") is { } nullNodeSearches && nullNodeSearches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Searches = null;
+            if (parseNode.GetChildNode("skip_registration") is null) { _explicitNullValueSkipRegistration = default!; _explicitNullProperties?.Remove("skip_registration"); }
+            else if (parseNode.GetChildNode("skip_registration") is { } nullNodeSkipRegistration && nullNodeSkipRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipRegistration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,65 +39,65 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The dns_forward_rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule>? DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule>? DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; AdditionalData?.Remove("dns_forward_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule>? _explicitNullValueDnsForwardRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule> DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule> DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; AdditionalData?.Remove("dns_forward_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule> _explicitNullValueDnsForwardRules = default!;
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>The hostname_fqdn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
+        public string? HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; AdditionalData?.Remove("hostname_fqdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
         private string? _explicitNullValueHostnameFqdn = default!;
 #nullable restore
 #else
-        public string HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
+        public string HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; AdditionalData?.Remove("hostname_fqdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
         private string _explicitNullValueHostnameFqdn = default!;
 #endif
         /// <summary>The nameservers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        public List<string>? Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; AdditionalData?.Remove("nameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
         private List<string>? _explicitNullValueNameservers = default!;
 #nullable restore
 #else
-        public List<string> Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
+        public List<string> Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; AdditionalData?.Remove("nameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
         private List<string> _explicitNullValueNameservers = default!;
 #endif
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption>? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption>? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption>? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption> Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption> Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption> _explicitNullValueOptions = default!;
 #endif
         /// <summary>The searches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
+        public List<string>? Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
         private List<string>? _explicitNullValueSearches = default!;
 #nullable restore
 #else
-        public List<string> Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
+        public List<string> Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
         private List<string> _explicitNullValueSearches = default!;
 #endif
         /// <summary>The skip_registration property</summary>
-        public bool? SkipRegistration { get => _explicitNullValueSkipRegistration; set { _explicitNullValueSkipRegistration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_registration"); else _explicitNullProperties?.Remove("skip_registration"); } }
+        public bool? SkipRegistration { get => _explicitNullValueSkipRegistration; set { _explicitNullValueSkipRegistration = value; AdditionalData?.Remove("skip_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_registration"); else _explicitNullProperties?.Remove("skip_registration"); } }
         private bool? _explicitNullValueSkipRegistration = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigDns"/> and sets the default values.

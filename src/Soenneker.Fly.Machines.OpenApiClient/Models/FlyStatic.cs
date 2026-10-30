@@ -17,10 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guest_path") is { } nullNodeGuestPath && nullNodeGuestPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestPath = null;
-            if (parseNode.GetChildNode("index_document") is { } nullNodeIndexDocument && nullNodeIndexDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexDocument = null;
-            if (parseNode.GetChildNode("tigris_bucket") is { } nullNodeTigrisBucket && nullNodeTigrisBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TigrisBucket = null;
-            if (parseNode.GetChildNode("url_prefix") is { } nullNodeUrlPrefix && nullNodeUrlPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlPrefix = null;
+            if (parseNode.GetChildNode("guest_path") is null) { _explicitNullValueGuestPath = default!; _explicitNullProperties?.Remove("guest_path"); }
+            else if (parseNode.GetChildNode("guest_path") is { } nullNodeGuestPath && nullNodeGuestPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestPath = null;
+            if (parseNode.GetChildNode("index_document") is null) { _explicitNullValueIndexDocument = default!; _explicitNullProperties?.Remove("index_document"); }
+            else if (parseNode.GetChildNode("index_document") is { } nullNodeIndexDocument && nullNodeIndexDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexDocument = null;
+            if (parseNode.GetChildNode("tigris_bucket") is null) { _explicitNullValueTigrisBucket = default!; _explicitNullProperties?.Remove("tigris_bucket"); }
+            else if (parseNode.GetChildNode("tigris_bucket") is { } nullNodeTigrisBucket && nullNodeTigrisBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TigrisBucket = null;
+            if (parseNode.GetChildNode("url_prefix") is null) { _explicitNullValueUrlPrefix = default!; _explicitNullProperties?.Remove("url_prefix"); }
+            else if (parseNode.GetChildNode("url_prefix") is { } nullNodeUrlPrefix && nullNodeUrlPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlPrefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The path inside the Machine, or inside tigris_bucket when set, where the files to serve are located</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
+        public string? GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; AdditionalData?.Remove("guest_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
         private string? _explicitNullValueGuestPath = default!;
 #nullable restore
 #else
-        public string GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
+        public string GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; AdditionalData?.Remove("guest_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
         private string _explicitNullValueGuestPath = default!;
 #endif
         /// <summary>The document served for requests to the URL prefix or any of its subfolders. Only works with tigris_bucket</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexDocument { get => _explicitNullValueIndexDocument; set { _explicitNullValueIndexDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_document"); else _explicitNullProperties?.Remove("index_document"); } }
+        public string? IndexDocument { get => _explicitNullValueIndexDocument; set { _explicitNullValueIndexDocument = value; AdditionalData?.Remove("index_document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_document"); else _explicitNullProperties?.Remove("index_document"); } }
         private string? _explicitNullValueIndexDocument = default!;
 #nullable restore
 #else
-        public string IndexDocument { get => _explicitNullValueIndexDocument; set { _explicitNullValueIndexDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_document"); else _explicitNullProperties?.Remove("index_document"); } }
+        public string IndexDocument { get => _explicitNullValueIndexDocument; set { _explicitNullValueIndexDocument = value; AdditionalData?.Remove("index_document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_document"); else _explicitNullProperties?.Remove("index_document"); } }
         private string _explicitNullValueIndexDocument = default!;
 #endif
         /// <summary>An existing Tigris bucket belonging to the app to read the files from, instead of the Machine&apos;sfilesystem. The files are still served through the Machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TigrisBucket { get => _explicitNullValueTigrisBucket; set { _explicitNullValueTigrisBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tigris_bucket"); else _explicitNullProperties?.Remove("tigris_bucket"); } }
+        public string? TigrisBucket { get => _explicitNullValueTigrisBucket; set { _explicitNullValueTigrisBucket = value; AdditionalData?.Remove("tigris_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tigris_bucket"); else _explicitNullProperties?.Remove("tigris_bucket"); } }
         private string? _explicitNullValueTigrisBucket = default!;
 #nullable restore
 #else
-        public string TigrisBucket { get => _explicitNullValueTigrisBucket; set { _explicitNullValueTigrisBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tigris_bucket"); else _explicitNullProperties?.Remove("tigris_bucket"); } }
+        public string TigrisBucket { get => _explicitNullValueTigrisBucket; set { _explicitNullValueTigrisBucket = value; AdditionalData?.Remove("tigris_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tigris_bucket"); else _explicitNullProperties?.Remove("tigris_bucket"); } }
         private string _explicitNullValueTigrisBucket = default!;
 #endif
         /// <summary>The URL prefix under which the files are served</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlPrefix { get => _explicitNullValueUrlPrefix; set { _explicitNullValueUrlPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_prefix"); else _explicitNullProperties?.Remove("url_prefix"); } }
+        public string? UrlPrefix { get => _explicitNullValueUrlPrefix; set { _explicitNullValueUrlPrefix = value; AdditionalData?.Remove("url_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_prefix"); else _explicitNullProperties?.Remove("url_prefix"); } }
         private string? _explicitNullValueUrlPrefix = default!;
 #nullable restore
 #else
-        public string UrlPrefix { get => _explicitNullValueUrlPrefix; set { _explicitNullValueUrlPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_prefix"); else _explicitNullProperties?.Remove("url_prefix"); } }
+        public string UrlPrefix { get => _explicitNullValueUrlPrefix; set { _explicitNullValueUrlPrefix = value; AdditionalData?.Remove("url_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_prefix"); else _explicitNullProperties?.Remove("url_prefix"); } }
         private string _explicitNullValueUrlPrefix = default!;
 #endif
         /// <summary>

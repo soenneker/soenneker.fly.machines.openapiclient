@@ -18,8 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aud") is { } nullNodeAud && nullNodeAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aud = null;
-            if (parseNode.GetChildNode("aws_principal_tags") is { } nullNodeAwsPrincipalTags && nullNodeAwsPrincipalTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsPrincipalTags = null;
+            if (parseNode.GetChildNode("aud") is null) { _explicitNullValueAud = default!; _explicitNullProperties?.Remove("aud"); }
+            else if (parseNode.GetChildNode("aud") is { } nullNodeAud && nullNodeAud.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aud = null;
+            if (parseNode.GetChildNode("aws_principal_tags") is null) { _explicitNullValueAwsPrincipalTags = default!; _explicitNullProperties?.Remove("aws_principal_tags"); }
+            else if (parseNode.GetChildNode("aws_principal_tags") is { } nullNodeAwsPrincipalTags && nullNodeAwsPrincipalTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsPrincipalTags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The aud property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        public string? Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; AdditionalData?.Remove("aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
         private string? _explicitNullValueAud = default!;
 #nullable restore
 #else
-        public string Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
+        public string Aud { get => _explicitNullValueAud; set { _explicitNullValueAud = value; AdditionalData?.Remove("aud"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aud"); else _explicitNullProperties?.Remove("aud"); } }
         private string _explicitNullValueAud = default!;
 #endif
         /// <summary>The aws_principal_tags property</summary>
-        public bool? AwsPrincipalTags { get => _explicitNullValueAwsPrincipalTags; set { _explicitNullValueAwsPrincipalTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws_principal_tags"); else _explicitNullProperties?.Remove("aws_principal_tags"); } }
+        public bool? AwsPrincipalTags { get => _explicitNullValueAwsPrincipalTags; set { _explicitNullValueAwsPrincipalTags = value; AdditionalData?.Remove("aws_principal_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aws_principal_tags"); else _explicitNullProperties?.Remove("aws_principal_tags"); } }
         private bool? _explicitNullValueAwsPrincipalTags = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateOidcTokenRequest"/> and sets the default values.

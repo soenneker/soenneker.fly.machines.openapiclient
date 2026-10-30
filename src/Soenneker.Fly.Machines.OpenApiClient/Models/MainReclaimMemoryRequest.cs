@@ -17,13 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount_mb") is { } nullNodeAmountMb && nullNodeAmountMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountMb = null;
+            if (parseNode.GetChildNode("amount_mb") is null) { _explicitNullValueAmountMb = default!; _explicitNullProperties?.Remove("amount_mb"); }
+            else if (parseNode.GetChildNode("amount_mb") is { } nullNodeAmountMb && nullNodeAmountMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountMb = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount_mb property</summary>
-        public int? AmountMb { get => _explicitNullValueAmountMb; set { _explicitNullValueAmountMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_mb"); else _explicitNullProperties?.Remove("amount_mb"); } }
+        public int? AmountMb { get => _explicitNullValueAmountMb; set { _explicitNullValueAmountMb = value; AdditionalData?.Remove("amount_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_mb"); else _explicitNullProperties?.Remove("amount_mb"); } }
         private int? _explicitNullValueAmountMb = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainReclaimMemoryRequest"/> and sets the default values.

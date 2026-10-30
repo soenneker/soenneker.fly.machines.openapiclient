@@ -17,8 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nearest") is { } nullNodeNearest && nullNodeNearest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nearest = null;
-            if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
+            if (parseNode.GetChildNode("nearest") is null) { _explicitNullValueNearest = default!; _explicitNullProperties?.Remove("nearest"); }
+            else if (parseNode.GetChildNode("nearest") is { } nullNodeNearest && nullNodeNearest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nearest = null;
+            if (parseNode.GetChildNode("regions") is null) { _explicitNullValueRegions = default!; _explicitNullProperties?.Remove("regions"); }
+            else if (parseNode.GetChildNode("regions") is { } nullNodeRegions && nullNodeRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Regions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The nearest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Nearest { get => _explicitNullValueNearest; set { _explicitNullValueNearest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nearest"); else _explicitNullProperties?.Remove("nearest"); } }
+        public string? Nearest { get => _explicitNullValueNearest; set { _explicitNullValueNearest = value; AdditionalData?.Remove("nearest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nearest"); else _explicitNullProperties?.Remove("nearest"); } }
         private string? _explicitNullValueNearest = default!;
 #nullable restore
 #else
-        public string Nearest { get => _explicitNullValueNearest; set { _explicitNullValueNearest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nearest"); else _explicitNullProperties?.Remove("nearest"); } }
+        public string Nearest { get => _explicitNullValueNearest; set { _explicitNullValueNearest = value; AdditionalData?.Remove("nearest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nearest"); else _explicitNullProperties?.Remove("nearest"); } }
         private string _explicitNullValueNearest = default!;
 #endif
         /// <summary>The regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow>? Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow>? _explicitNullValueRegions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow> Regions { get => _explicitNullValueRegions; set { _explicitNullValueRegions = value; AdditionalData?.Remove("regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regions"); else _explicitNullProperties?.Remove("regions"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRow> _explicitNullValueRegions = default!;
 #endif
         /// <summary>

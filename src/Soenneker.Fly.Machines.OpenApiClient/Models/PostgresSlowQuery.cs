@@ -17,68 +17,76 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calls") is { } nullNodeCalls && nullNodeCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calls = null;
-            if (parseNode.GetChildNode("database") is { } nullNodeDatabase && nullNodeDatabase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Database = null;
-            if (parseNode.GetChildNode("max_exec_time_seconds") is { } nullNodeMaxExecTimeSeconds && nullNodeMaxExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxExecTimeSeconds = null;
-            if (parseNode.GetChildNode("mean_exec_time_seconds") is { } nullNodeMeanExecTimeSeconds && nullNodeMeanExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeanExecTimeSeconds = null;
-            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
-            if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
-            if (parseNode.GetChildNode("total_exec_time_seconds") is { } nullNodeTotalExecTimeSeconds && nullNodeTotalExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalExecTimeSeconds = null;
-            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("calls") is null) { _explicitNullValueCalls = default!; _explicitNullProperties?.Remove("calls"); }
+            else if (parseNode.GetChildNode("calls") is { } nullNodeCalls && nullNodeCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calls = null;
+            if (parseNode.GetChildNode("database") is null) { _explicitNullValueDatabase = default!; _explicitNullProperties?.Remove("database"); }
+            else if (parseNode.GetChildNode("database") is { } nullNodeDatabase && nullNodeDatabase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Database = null;
+            if (parseNode.GetChildNode("max_exec_time_seconds") is null) { _explicitNullValueMaxExecTimeSeconds = default!; _explicitNullProperties?.Remove("max_exec_time_seconds"); }
+            else if (parseNode.GetChildNode("max_exec_time_seconds") is { } nullNodeMaxExecTimeSeconds && nullNodeMaxExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxExecTimeSeconds = null;
+            if (parseNode.GetChildNode("mean_exec_time_seconds") is null) { _explicitNullValueMeanExecTimeSeconds = default!; _explicitNullProperties?.Remove("mean_exec_time_seconds"); }
+            else if (parseNode.GetChildNode("mean_exec_time_seconds") is { } nullNodeMeanExecTimeSeconds && nullNodeMeanExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeanExecTimeSeconds = null;
+            if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
+            else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("query_id") is null) { _explicitNullValueQueryId = default!; _explicitNullProperties?.Remove("query_id"); }
+            else if (parseNode.GetChildNode("query_id") is { } nullNodeQueryId && nullNodeQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryId = null;
+            if (parseNode.GetChildNode("total_exec_time_seconds") is null) { _explicitNullValueTotalExecTimeSeconds = default!; _explicitNullProperties?.Remove("total_exec_time_seconds"); }
+            else if (parseNode.GetChildNode("total_exec_time_seconds") is { } nullNodeTotalExecTimeSeconds && nullNodeTotalExecTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalExecTimeSeconds = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cumulative number of executions.</summary>
-        public int? Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        public int? Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; AdditionalData?.Remove("calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
         private int? _explicitNullValueCalls = default!;
         /// <summary>Database name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database"); else _explicitNullProperties?.Remove("database"); } }
+        public string? Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; AdditionalData?.Remove("database"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database"); else _explicitNullProperties?.Remove("database"); } }
         private string? _explicitNullValueDatabase = default!;
 #nullable restore
 #else
-        public string Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database"); else _explicitNullProperties?.Remove("database"); } }
+        public string Database { get => _explicitNullValueDatabase; set { _explicitNullValueDatabase = value; AdditionalData?.Remove("database"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database"); else _explicitNullProperties?.Remove("database"); } }
         private string _explicitNullValueDatabase = default!;
 #endif
         /// <summary>Maximum execution time in seconds.</summary>
-        public double? MaxExecTimeSeconds { get => _explicitNullValueMaxExecTimeSeconds; set { _explicitNullValueMaxExecTimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_exec_time_seconds"); else _explicitNullProperties?.Remove("max_exec_time_seconds"); } }
+        public double? MaxExecTimeSeconds { get => _explicitNullValueMaxExecTimeSeconds; set { _explicitNullValueMaxExecTimeSeconds = value; AdditionalData?.Remove("max_exec_time_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_exec_time_seconds"); else _explicitNullProperties?.Remove("max_exec_time_seconds"); } }
         private double? _explicitNullValueMaxExecTimeSeconds = default!;
         /// <summary>Mean execution time in seconds.</summary>
-        public double? MeanExecTimeSeconds { get => _explicitNullValueMeanExecTimeSeconds; set { _explicitNullValueMeanExecTimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean_exec_time_seconds"); else _explicitNullProperties?.Remove("mean_exec_time_seconds"); } }
+        public double? MeanExecTimeSeconds { get => _explicitNullValueMeanExecTimeSeconds; set { _explicitNullValueMeanExecTimeSeconds = value; AdditionalData?.Remove("mean_exec_time_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean_exec_time_seconds"); else _explicitNullProperties?.Remove("mean_exec_time_seconds"); } }
         private double? _explicitNullValueMeanExecTimeSeconds = default!;
         /// <summary>Full query pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Query identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        public string? QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
         private string? _explicitNullValueQueryId = default!;
 #nullable restore
 #else
-        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
+        public string QueryId { get => _explicitNullValueQueryId; set { _explicitNullValueQueryId = value; AdditionalData?.Remove("query_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_id"); else _explicitNullProperties?.Remove("query_id"); } }
         private string _explicitNullValueQueryId = default!;
 #endif
         /// <summary>Cumulative total execution time in seconds.</summary>
-        public double? TotalExecTimeSeconds { get => _explicitNullValueTotalExecTimeSeconds; set { _explicitNullValueTotalExecTimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_exec_time_seconds"); else _explicitNullProperties?.Remove("total_exec_time_seconds"); } }
+        public double? TotalExecTimeSeconds { get => _explicitNullValueTotalExecTimeSeconds; set { _explicitNullValueTotalExecTimeSeconds = value; AdditionalData?.Remove("total_exec_time_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_exec_time_seconds"); else _explicitNullProperties?.Remove("total_exec_time_seconds"); } }
         private double? _explicitNullValueTotalExecTimeSeconds = default!;
         /// <summary>User running the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private string? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private string _explicitNullValueUser = default!;
 #endif
         /// <summary>

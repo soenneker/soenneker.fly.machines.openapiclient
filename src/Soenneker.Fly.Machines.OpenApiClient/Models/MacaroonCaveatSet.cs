@@ -17,7 +17,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("caveats") is { } nullNodeCaveats && nullNodeCaveats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caveats = null;
+            if (parseNode.GetChildNode("caveats") is null) { _explicitNullValueCaveats = default!; _explicitNullProperties?.Remove("caveats"); }
+            else if (parseNode.GetChildNode("caveats") is { } nullNodeCaveats && nullNodeCaveats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caveats = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The caveats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>? Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>? Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; AdditionalData?.Remove("caveats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty>? _explicitNullValueCaveats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty> Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty> Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; AdditionalData?.Remove("caveats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSetCaveatsItemProperty> _explicitNullValueCaveats = default!;
 #endif
         /// <summary>

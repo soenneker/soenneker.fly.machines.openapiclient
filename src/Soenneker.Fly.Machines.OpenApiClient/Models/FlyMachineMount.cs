@@ -17,69 +17,79 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("add_size_gb") is { } nullNodeAddSizeGb && nullNodeAddSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddSizeGb = null;
-            if (parseNode.GetChildNode("add_size_percent") is { } nullNodeAddSizePercent && nullNodeAddSizePercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddSizePercent = null;
-            if (parseNode.GetChildNode("encrypted") is { } nullNodeEncrypted && nullNodeEncrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encrypted = null;
-            if (parseNode.GetChildNode("extend_threshold_percent") is { } nullNodeExtendThresholdPercent && nullNodeExtendThresholdPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendThresholdPercent = null;
-            if (parseNode.GetChildNode("min_add_size_gb") is { } nullNodeMinAddSizeGb && nullNodeMinAddSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAddSizeGb = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
-            if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
-            if (parseNode.GetChildNode("size_gb_limit") is { } nullNodeSizeGbLimit && nullNodeSizeGbLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGbLimit = null;
-            if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
+            if (parseNode.GetChildNode("add_size_gb") is null) { _explicitNullValueAddSizeGb = default!; _explicitNullProperties?.Remove("add_size_gb"); }
+            else if (parseNode.GetChildNode("add_size_gb") is { } nullNodeAddSizeGb && nullNodeAddSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddSizeGb = null;
+            if (parseNode.GetChildNode("add_size_percent") is null) { _explicitNullValueAddSizePercent = default!; _explicitNullProperties?.Remove("add_size_percent"); }
+            else if (parseNode.GetChildNode("add_size_percent") is { } nullNodeAddSizePercent && nullNodeAddSizePercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddSizePercent = null;
+            if (parseNode.GetChildNode("encrypted") is null) { _explicitNullValueEncrypted = default!; _explicitNullProperties?.Remove("encrypted"); }
+            else if (parseNode.GetChildNode("encrypted") is { } nullNodeEncrypted && nullNodeEncrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encrypted = null;
+            if (parseNode.GetChildNode("extend_threshold_percent") is null) { _explicitNullValueExtendThresholdPercent = default!; _explicitNullProperties?.Remove("extend_threshold_percent"); }
+            else if (parseNode.GetChildNode("extend_threshold_percent") is { } nullNodeExtendThresholdPercent && nullNodeExtendThresholdPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendThresholdPercent = null;
+            if (parseNode.GetChildNode("min_add_size_gb") is null) { _explicitNullValueMinAddSizeGb = default!; _explicitNullProperties?.Remove("min_add_size_gb"); }
+            else if (parseNode.GetChildNode("min_add_size_gb") is { } nullNodeMinAddSizeGb && nullNodeMinAddSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinAddSizeGb = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("size_gb") is null) { _explicitNullValueSizeGb = default!; _explicitNullProperties?.Remove("size_gb"); }
+            else if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
+            if (parseNode.GetChildNode("size_gb_limit") is null) { _explicitNullValueSizeGbLimit = default!; _explicitNullProperties?.Remove("size_gb_limit"); }
+            else if (parseNode.GetChildNode("size_gb_limit") is { } nullNodeSizeGbLimit && nullNodeSizeGbLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGbLimit = null;
+            if (parseNode.GetChildNode("volume") is null) { _explicitNullValueVolume = default!; _explicitNullProperties?.Remove("volume"); }
+            else if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The add_size_gb property</summary>
-        public int? AddSizeGb { get => _explicitNullValueAddSizeGb; set { _explicitNullValueAddSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_gb"); else _explicitNullProperties?.Remove("add_size_gb"); } }
+        public int? AddSizeGb { get => _explicitNullValueAddSizeGb; set { _explicitNullValueAddSizeGb = value; AdditionalData?.Remove("add_size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_gb"); else _explicitNullProperties?.Remove("add_size_gb"); } }
         private int? _explicitNullValueAddSizeGb = default!;
         /// <summary>AddSizePercent grows by a percentage of the current size, rounded up to GiB.It is mutually exclusive with AddSizeGb.</summary>
-        public int? AddSizePercent { get => _explicitNullValueAddSizePercent; set { _explicitNullValueAddSizePercent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_percent"); else _explicitNullProperties?.Remove("add_size_percent"); } }
+        public int? AddSizePercent { get => _explicitNullValueAddSizePercent; set { _explicitNullValueAddSizePercent = value; AdditionalData?.Remove("add_size_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_percent"); else _explicitNullProperties?.Remove("add_size_percent"); } }
         private int? _explicitNullValueAddSizePercent = default!;
         /// <summary>The encrypted property</summary>
-        public bool? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
+        public bool? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; AdditionalData?.Remove("encrypted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
         private bool? _explicitNullValueEncrypted = default!;
         /// <summary>The extend_threshold_percent property</summary>
-        public int? ExtendThresholdPercent { get => _explicitNullValueExtendThresholdPercent; set { _explicitNullValueExtendThresholdPercent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend_threshold_percent"); else _explicitNullProperties?.Remove("extend_threshold_percent"); } }
+        public int? ExtendThresholdPercent { get => _explicitNullValueExtendThresholdPercent; set { _explicitNullValueExtendThresholdPercent = value; AdditionalData?.Remove("extend_threshold_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend_threshold_percent"); else _explicitNullProperties?.Remove("extend_threshold_percent"); } }
         private int? _explicitNullValueExtendThresholdPercent = default!;
         /// <summary>MinAddSizeGb is the minimum proportional growth in GiB (default 1).</summary>
-        public int? MinAddSizeGb { get => _explicitNullValueMinAddSizeGb; set { _explicitNullValueMinAddSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_add_size_gb"); else _explicitNullProperties?.Remove("min_add_size_gb"); } }
+        public int? MinAddSizeGb { get => _explicitNullValueMinAddSizeGb; set { _explicitNullValueMinAddSizeGb = value; AdditionalData?.Remove("min_add_size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_add_size_gb"); else _explicitNullProperties?.Remove("min_add_size_gb"); } }
         private int? _explicitNullValueMinAddSizeGb = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
         /// <summary>The size_gb property</summary>
-        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
+        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
         /// <summary>The size_gb_limit property</summary>
-        public int? SizeGbLimit { get => _explicitNullValueSizeGbLimit; set { _explicitNullValueSizeGbLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb_limit"); else _explicitNullProperties?.Remove("size_gb_limit"); } }
+        public int? SizeGbLimit { get => _explicitNullValueSizeGbLimit; set { _explicitNullValueSizeGbLimit = value; AdditionalData?.Remove("size_gb_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb_limit"); else _explicitNullProperties?.Remove("size_gb_limit"); } }
         private int? _explicitNullValueSizeGbLimit = default!;
         /// <summary>The volume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        public string? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
         private string? _explicitNullValueVolume = default!;
 #nullable restore
 #else
-        public string Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        public string Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
         private string _explicitNullValueVolume = default!;
 #endif
         /// <summary>

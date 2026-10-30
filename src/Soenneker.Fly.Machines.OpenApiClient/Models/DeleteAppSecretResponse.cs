@@ -17,17 +17,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("version") is { } nullNodeDeleteAppSecretResponseVersion && nullNodeDeleteAppSecretResponseVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAppSecretResponseVersion = null;
-            if (parseNode.GetChildNode("Version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueDeleteAppSecretResponseVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeDeleteAppSecretResponseVersion && nullNodeDeleteAppSecretResponseVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAppSecretResponseVersion = null;
+            if (parseNode.GetChildNode("Version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("Version"); }
+            else if (parseNode.GetChildNode("Version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
-        public int? DeleteAppSecretResponseVersion { get => _explicitNullValueDeleteAppSecretResponseVersion; set { _explicitNullValueDeleteAppSecretResponseVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public int? DeleteAppSecretResponseVersion { get => _explicitNullValueDeleteAppSecretResponseVersion; set { _explicitNullValueDeleteAppSecretResponseVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueDeleteAppSecretResponseVersion = default!;
         /// <summary>DEPRECATED</summary>
-        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("Version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteAppSecretResponse"/> and sets the default values.

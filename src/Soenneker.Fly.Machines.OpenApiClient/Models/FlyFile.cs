@@ -18,11 +18,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guest_path") is { } nullNodeGuestPath && nullNodeGuestPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestPath = null;
-            if (parseNode.GetChildNode("image_config") is { } nullNodeImageConfig && nullNodeImageConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageConfig = null;
-            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
-            if (parseNode.GetChildNode("raw_value") is { } nullNodeRawValue && nullNodeRawValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawValue = null;
-            if (parseNode.GetChildNode("secret_name") is { } nullNodeSecretName && nullNodeSecretName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretName = null;
+            if (parseNode.GetChildNode("guest_path") is null) { _explicitNullValueGuestPath = default!; _explicitNullProperties?.Remove("guest_path"); }
+            else if (parseNode.GetChildNode("guest_path") is { } nullNodeGuestPath && nullNodeGuestPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestPath = null;
+            if (parseNode.GetChildNode("image_config") is null) { _explicitNullValueImageConfig = default!; _explicitNullProperties?.Remove("image_config"); }
+            else if (parseNode.GetChildNode("image_config") is { } nullNodeImageConfig && nullNodeImageConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageConfig = null;
+            if (parseNode.GetChildNode("mode") is null) { _explicitNullValueMode = default!; _explicitNullProperties?.Remove("mode"); }
+            else if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("raw_value") is null) { _explicitNullValueRawValue = default!; _explicitNullProperties?.Remove("raw_value"); }
+            else if (parseNode.GetChildNode("raw_value") is { } nullNodeRawValue && nullNodeRawValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawValue = null;
+            if (parseNode.GetChildNode("secret_name") is null) { _explicitNullValueSecretName = default!; _explicitNullProperties?.Remove("secret_name"); }
+            else if (parseNode.GetChildNode("secret_name") is { } nullNodeSecretName && nullNodeSecretName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>GuestPath is the path on the machine where the file will be written and must be an absolute path.For example: /full/path/to/file.json</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
+        public string? GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; AdditionalData?.Remove("guest_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
         private string? _explicitNullValueGuestPath = default!;
 #nullable restore
 #else
-        public string GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
+        public string GuestPath { get => _explicitNullValueGuestPath; set { _explicitNullValueGuestPath = value; AdditionalData?.Remove("guest_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_path"); else _explicitNullProperties?.Remove("guest_path"); } }
         private string _explicitNullValueGuestPath = default!;
 #endif
         /// <summary>The name of an image to use the OCI image config as the file contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageConfig { get => _explicitNullValueImageConfig; set { _explicitNullValueImageConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_config"); else _explicitNullProperties?.Remove("image_config"); } }
+        public string? ImageConfig { get => _explicitNullValueImageConfig; set { _explicitNullValueImageConfig = value; AdditionalData?.Remove("image_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_config"); else _explicitNullProperties?.Remove("image_config"); } }
         private string? _explicitNullValueImageConfig = default!;
 #nullable restore
 #else
-        public string ImageConfig { get => _explicitNullValueImageConfig; set { _explicitNullValueImageConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_config"); else _explicitNullProperties?.Remove("image_config"); } }
+        public string ImageConfig { get => _explicitNullValueImageConfig; set { _explicitNullValueImageConfig = value; AdditionalData?.Remove("image_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_config"); else _explicitNullProperties?.Remove("image_config"); } }
         private string _explicitNullValueImageConfig = default!;
 #endif
         /// <summary>Mode bits used to set permissions on this file as accepted by chmod(2).</summary>
-        public int? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        public int? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private int? _explicitNullValueMode = default!;
         /// <summary>The base64 encoded string of the file contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawValue { get => _explicitNullValueRawValue; set { _explicitNullValueRawValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_value"); else _explicitNullProperties?.Remove("raw_value"); } }
+        public string? RawValue { get => _explicitNullValueRawValue; set { _explicitNullValueRawValue = value; AdditionalData?.Remove("raw_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_value"); else _explicitNullProperties?.Remove("raw_value"); } }
         private string? _explicitNullValueRawValue = default!;
 #nullable restore
 #else
-        public string RawValue { get => _explicitNullValueRawValue; set { _explicitNullValueRawValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_value"); else _explicitNullProperties?.Remove("raw_value"); } }
+        public string RawValue { get => _explicitNullValueRawValue; set { _explicitNullValueRawValue = value; AdditionalData?.Remove("raw_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_value"); else _explicitNullProperties?.Remove("raw_value"); } }
         private string _explicitNullValueRawValue = default!;
 #endif
         /// <summary>The name of the secret that contains the base64 encoded file contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretName { get => _explicitNullValueSecretName; set { _explicitNullValueSecretName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_name"); else _explicitNullProperties?.Remove("secret_name"); } }
+        public string? SecretName { get => _explicitNullValueSecretName; set { _explicitNullValueSecretName = value; AdditionalData?.Remove("secret_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_name"); else _explicitNullProperties?.Remove("secret_name"); } }
         private string? _explicitNullValueSecretName = default!;
 #nullable restore
 #else
-        public string SecretName { get => _explicitNullValueSecretName; set { _explicitNullValueSecretName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_name"); else _explicitNullProperties?.Remove("secret_name"); } }
+        public string SecretName { get => _explicitNullValueSecretName; set { _explicitNullValueSecretName = value; AdditionalData?.Remove("secret_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_name"); else _explicitNullProperties?.Remove("secret_name"); } }
         private string _explicitNullValueSecretName = default!;
 #endif
         /// <summary>

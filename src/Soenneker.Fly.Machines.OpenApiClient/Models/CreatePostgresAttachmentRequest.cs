@@ -17,7 +17,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
+            if (parseNode.GetChildNode("app_name") is null) { _explicitNullValueAppName = default!; _explicitNullProperties?.Remove("app_name"); }
+            else if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Name of the Fly app to attach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("app_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
         private string? _explicitNullValueAppName = default!;
 #nullable restore
 #else
-        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; AdditionalData?.Remove("app_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
         private string _explicitNullValueAppName = default!;
 #endif
         /// <summary>

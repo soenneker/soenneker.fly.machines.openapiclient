@@ -17,13 +17,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("compute") is { } nullNodeCompute && nullNodeCompute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compute = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("org_slug") is { } nullNodeOrgSlug && nullNodeOrgSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgSlug = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("volume_name") is { } nullNodeVolumeName && nullNodeVolumeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeName = null;
-            if (parseNode.GetChildNode("volume_size_bytes") is { } nullNodeVolumeSizeBytes && nullNodeVolumeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeSizeBytes = null;
-            if (parseNode.GetChildNode("weights") is { } nullNodeWeights && nullNodeWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weights = null;
+            if (parseNode.GetChildNode("compute") is null) { _explicitNullValueCompute = default!; _explicitNullProperties?.Remove("compute"); }
+            else if (parseNode.GetChildNode("compute") is { } nullNodeCompute && nullNodeCompute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compute = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("org_slug") is null) { _explicitNullValueOrgSlug = default!; _explicitNullProperties?.Remove("org_slug"); }
+            else if (parseNode.GetChildNode("org_slug") is { } nullNodeOrgSlug && nullNodeOrgSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgSlug = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("volume_name") is null) { _explicitNullValueVolumeName = default!; _explicitNullProperties?.Remove("volume_name"); }
+            else if (parseNode.GetChildNode("volume_name") is { } nullNodeVolumeName && nullNodeVolumeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeName = null;
+            if (parseNode.GetChildNode("volume_size_bytes") is null) { _explicitNullValueVolumeSizeBytes = default!; _explicitNullProperties?.Remove("volume_size_bytes"); }
+            else if (parseNode.GetChildNode("volume_size_bytes") is { } nullNodeVolumeSizeBytes && nullNodeVolumeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeSizeBytes = null;
+            if (parseNode.GetChildNode("weights") is null) { _explicitNullValueWeights = default!; _explicitNullProperties?.Remove("weights"); }
+            else if (parseNode.GetChildNode("weights") is { } nullNodeWeights && nullNodeWeights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Weights = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,57 +38,57 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Resource requirements for the Machine to simulate. Defaults to a performance-1x machine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute? Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute? Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute? _explicitNullValueCompute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestCompute _explicitNullValueCompute = default!;
 #endif
         /// <summary>Number of machines to simulate placement.Defaults to 0, which returns the org-specific limit for each region.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>The org_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
         private string? _explicitNullValueOrgSlug = default!;
 #nullable restore
 #else
-        public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
         private string _explicitNullValueOrgSlug = default!;
 #endif
         /// <summary>Region expression for placement as a comma-delimited set of regions or aliases.Defaults to &quot;[region],any&quot;, to prefer the API endpoint&apos;s local region with any other region as fallback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The volume_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
+        public string? VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; AdditionalData?.Remove("volume_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
         private string? _explicitNullValueVolumeName = default!;
 #nullable restore
 #else
-        public string VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
+        public string VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; AdditionalData?.Remove("volume_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
         private string _explicitNullValueVolumeName = default!;
 #endif
         /// <summary>The volume_size_bytes property</summary>
-        public int? VolumeSizeBytes { get => _explicitNullValueVolumeSizeBytes; set { _explicitNullValueVolumeSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_size_bytes"); else _explicitNullProperties?.Remove("volume_size_bytes"); } }
+        public int? VolumeSizeBytes { get => _explicitNullValueVolumeSizeBytes; set { _explicitNullValueVolumeSizeBytes = value; AdditionalData?.Remove("volume_size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_size_bytes"); else _explicitNullProperties?.Remove("volume_size_bytes"); } }
         private int? _explicitNullValueVolumeSizeBytes = default!;
         /// <summary>Optional weights to override default placement preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights? Weights { get => _explicitNullValueWeights; set { _explicitNullValueWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weights"); else _explicitNullProperties?.Remove("weights"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights? Weights { get => _explicitNullValueWeights; set { _explicitNullValueWeights = value; AdditionalData?.Remove("weights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weights"); else _explicitNullProperties?.Remove("weights"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights? _explicitNullValueWeights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights Weights { get => _explicitNullValueWeights; set { _explicitNullValueWeights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weights"); else _explicitNullProperties?.Remove("weights"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights Weights { get => _explicitNullValueWeights; set { _explicitNullValueWeights = value; AdditionalData?.Remove("weights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weights"); else _explicitNullProperties?.Remove("weights"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainGetPlacementsRequestWeights _explicitNullValueWeights = default!;
 #endif
         /// <summary>

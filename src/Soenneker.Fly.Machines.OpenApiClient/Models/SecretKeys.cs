@@ -17,7 +17,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("secret_keys") is { } nullNodeSecretKeysProp && nullNodeSecretKeysProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretKeysProp = null;
+            if (parseNode.GetChildNode("secret_keys") is null) { _explicitNullValueSecretKeysProp = default!; _explicitNullProperties?.Remove("secret_keys"); }
+            else if (parseNode.GetChildNode("secret_keys") is { } nullNodeSecretKeysProp && nullNodeSecretKeysProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretKeysProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The secret_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey>? SecretKeysProp { get => _explicitNullValueSecretKeysProp; set { _explicitNullValueSecretKeysProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_keys"); else _explicitNullProperties?.Remove("secret_keys"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey>? SecretKeysProp { get => _explicitNullValueSecretKeysProp; set { _explicitNullValueSecretKeysProp = value; AdditionalData?.Remove("secret_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_keys"); else _explicitNullProperties?.Remove("secret_keys"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey>? _explicitNullValueSecretKeysProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey> SecretKeysProp { get => _explicitNullValueSecretKeysProp; set { _explicitNullValueSecretKeysProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_keys"); else _explicitNullProperties?.Remove("secret_keys"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey> SecretKeysProp { get => _explicitNullValueSecretKeysProp; set { _explicitNullValueSecretKeysProp = value; AdditionalData?.Remove("secret_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_keys"); else _explicitNullProperties?.Remove("secret_keys"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey> _explicitNullValueSecretKeysProp = default!;
 #endif
         /// <summary>

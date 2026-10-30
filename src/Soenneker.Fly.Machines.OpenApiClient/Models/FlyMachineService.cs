@@ -17,90 +17,100 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autostart") is { } nullNodeAutostart && nullNodeAutostart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autostart = null;
-            if (parseNode.GetChildNode("autostop") is { } nullNodeAutostop && nullNodeAutostop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autostop = null;
-            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
-            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
-            if (parseNode.GetChildNode("force_instance_description") is { } nullNodeForceInstanceDescription && nullNodeForceInstanceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceInstanceDescription = null;
-            if (parseNode.GetChildNode("force_instance_key") is { } nullNodeForceInstanceKey && nullNodeForceInstanceKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceInstanceKey = null;
-            if (parseNode.GetChildNode("internal_port") is { } nullNodeInternalPort && nullNodeInternalPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalPort = null;
-            if (parseNode.GetChildNode("min_machines_running") is { } nullNodeMinMachinesRunning && nullNodeMinMachinesRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinMachinesRunning = null;
-            if (parseNode.GetChildNode("ports") is { } nullNodePorts && nullNodePorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ports = null;
-            if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+            if (parseNode.GetChildNode("autostart") is null) { _explicitNullValueAutostart = default!; _explicitNullProperties?.Remove("autostart"); }
+            else if (parseNode.GetChildNode("autostart") is { } nullNodeAutostart && nullNodeAutostart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autostart = null;
+            if (parseNode.GetChildNode("autostop") is null) { _explicitNullValueAutostop = default!; _explicitNullProperties?.Remove("autostop"); }
+            else if (parseNode.GetChildNode("autostop") is { } nullNodeAutostop && nullNodeAutostop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autostop = null;
+            if (parseNode.GetChildNode("checks") is null) { _explicitNullValueChecks = default!; _explicitNullProperties?.Remove("checks"); }
+            else if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("concurrency") is null) { _explicitNullValueConcurrency = default!; _explicitNullProperties?.Remove("concurrency"); }
+            else if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("force_instance_description") is null) { _explicitNullValueForceInstanceDescription = default!; _explicitNullProperties?.Remove("force_instance_description"); }
+            else if (parseNode.GetChildNode("force_instance_description") is { } nullNodeForceInstanceDescription && nullNodeForceInstanceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceInstanceDescription = null;
+            if (parseNode.GetChildNode("force_instance_key") is null) { _explicitNullValueForceInstanceKey = default!; _explicitNullProperties?.Remove("force_instance_key"); }
+            else if (parseNode.GetChildNode("force_instance_key") is { } nullNodeForceInstanceKey && nullNodeForceInstanceKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceInstanceKey = null;
+            if (parseNode.GetChildNode("internal_port") is null) { _explicitNullValueInternalPort = default!; _explicitNullProperties?.Remove("internal_port"); }
+            else if (parseNode.GetChildNode("internal_port") is { } nullNodeInternalPort && nullNodeInternalPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InternalPort = null;
+            if (parseNode.GetChildNode("min_machines_running") is null) { _explicitNullValueMinMachinesRunning = default!; _explicitNullProperties?.Remove("min_machines_running"); }
+            else if (parseNode.GetChildNode("min_machines_running") is { } nullNodeMinMachinesRunning && nullNodeMinMachinesRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinMachinesRunning = null;
+            if (parseNode.GetChildNode("ports") is null) { _explicitNullValuePorts = default!; _explicitNullProperties?.Remove("ports"); }
+            else if (parseNode.GetChildNode("ports") is { } nullNodePorts && nullNodePorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ports = null;
+            if (parseNode.GetChildNode("protocol") is null) { _explicitNullValueProtocol = default!; _explicitNullProperties?.Remove("protocol"); }
+            else if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The autostart property</summary>
-        public bool? Autostart { get => _explicitNullValueAutostart; set { _explicitNullValueAutostart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autostart"); else _explicitNullProperties?.Remove("autostart"); } }
+        public bool? Autostart { get => _explicitNullValueAutostart; set { _explicitNullValueAutostart = value; AdditionalData?.Remove("autostart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autostart"); else _explicitNullProperties?.Remove("autostart"); } }
         private bool? _explicitNullValueAutostart = default!;
         /// <summary>Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for &quot;off&quot; and &quot;stop&quot; in responses.* &quot;off&quot; or false - Do not autostop the Machine.* &quot;stop&quot; or true - Automatically stop the Machine.* &quot;suspend&quot; - Automatically suspend the Machine, falling back to a full stop if this is not possible.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop? Autostop { get => _explicitNullValueAutostop; set { _explicitNullValueAutostop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autostop"); else _explicitNullProperties?.Remove("autostop"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop? Autostop { get => _explicitNullValueAutostop; set { _explicitNullValueAutostop = value; AdditionalData?.Remove("autostop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autostop"); else _explicitNullProperties?.Remove("autostop"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop? _explicitNullValueAutostop = default!;
         /// <summary>An optional list of service checks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>? _explicitNullValueChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck> _explicitNullValueChecks = default!;
 #endif
         /// <summary>The concurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency _explicitNullValueConcurrency = default!;
 #endif
         /// <summary>The force_instance_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
+        public string? ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; AdditionalData?.Remove("force_instance_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
         private string? _explicitNullValueForceInstanceDescription = default!;
 #nullable restore
 #else
-        public string ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
+        public string ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; AdditionalData?.Remove("force_instance_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
         private string _explicitNullValueForceInstanceDescription = default!;
 #endif
         /// <summary>The force_instance_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
+        public string? ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; AdditionalData?.Remove("force_instance_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
         private string? _explicitNullValueForceInstanceKey = default!;
 #nullable restore
 #else
-        public string ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
+        public string ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; AdditionalData?.Remove("force_instance_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
         private string _explicitNullValueForceInstanceKey = default!;
 #endif
         /// <summary>The internal_port property</summary>
-        public int? InternalPort { get => _explicitNullValueInternalPort; set { _explicitNullValueInternalPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_port"); else _explicitNullProperties?.Remove("internal_port"); } }
+        public int? InternalPort { get => _explicitNullValueInternalPort; set { _explicitNullValueInternalPort = value; AdditionalData?.Remove("internal_port"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_port"); else _explicitNullProperties?.Remove("internal_port"); } }
         private int? _explicitNullValueInternalPort = default!;
         /// <summary>The min_machines_running property</summary>
-        public int? MinMachinesRunning { get => _explicitNullValueMinMachinesRunning; set { _explicitNullValueMinMachinesRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_machines_running"); else _explicitNullProperties?.Remove("min_machines_running"); } }
+        public int? MinMachinesRunning { get => _explicitNullValueMinMachinesRunning; set { _explicitNullValueMinMachinesRunning = value; AdditionalData?.Remove("min_machines_running"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_machines_running"); else _explicitNullProperties?.Remove("min_machines_running"); } }
         private int? _explicitNullValueMinMachinesRunning = default!;
         /// <summary>The ports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort>? _explicitNullValuePorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort> _explicitNullValuePorts = default!;
 #endif
         /// <summary>The protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
+        public string? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
         private string? _explicitNullValueProtocol = default!;
 #nullable restore
 #else
-        public string Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
+        public string Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
         private string _explicitNullValueProtocol = default!;
 #endif
         /// <summary>
@@ -129,7 +139,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autostart", n => { Autostart = n.GetBoolValue(); } },
-                { "autostop", n => { Autostop = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>(); } },
+                { "autostop", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAutostop = default; _explicitNullProperties?.Remove("autostop"); AdditionalData["autostop"] = unknown; } else { Autostop = parsed; AdditionalData.Remove("autostop"); } } },
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency.CreateFromDiscriminatorValue); } },
                 { "force_instance_description", n => { ForceInstanceDescription = n.GetStringValue(); } },

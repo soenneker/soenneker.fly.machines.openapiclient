@@ -17,9 +17,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fullchain") is { } nullNodeFullchain && nullNodeFullchain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fullchain = null;
-            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
-            if (parseNode.GetChildNode("private_key") is { } nullNodePrivateKey && nullNodePrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKey = null;
+            if (parseNode.GetChildNode("fullchain") is null) { _explicitNullValueFullchain = default!; _explicitNullProperties?.Remove("fullchain"); }
+            else if (parseNode.GetChildNode("fullchain") is { } nullNodeFullchain && nullNodeFullchain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fullchain = null;
+            if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
+            else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("private_key") is null) { _explicitNullValuePrivateKey = default!; _explicitNullProperties?.Remove("private_key"); }
+            else if (parseNode.GetChildNode("private_key") is { } nullNodePrivateKey && nullNodePrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The fullchain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
+        public string? Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; AdditionalData?.Remove("fullchain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
         private string? _explicitNullValueFullchain = default!;
 #nullable restore
 #else
-        public string Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
+        public string Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; AdditionalData?.Remove("fullchain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
         private string _explicitNullValueFullchain = default!;
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>The private_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key"); else _explicitNullProperties?.Remove("private_key"); } }
+        public string? PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; AdditionalData?.Remove("private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key"); else _explicitNullProperties?.Remove("private_key"); } }
         private string? _explicitNullValuePrivateKey = default!;
 #nullable restore
 #else
-        public string PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key"); else _explicitNullProperties?.Remove("private_key"); } }
+        public string PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; AdditionalData?.Remove("private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key"); else _explicitNullProperties?.Remove("private_key"); } }
         private string _explicitNullValuePrivateKey = default!;
 #endif
         /// <summary>

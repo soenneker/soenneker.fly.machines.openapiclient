@@ -17,13 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("limit_mb") is { } nullNodeLimitMb && nullNodeLimitMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitMb = null;
+            if (parseNode.GetChildNode("limit_mb") is null) { _explicitNullValueLimitMb = default!; _explicitNullProperties?.Remove("limit_mb"); }
+            else if (parseNode.GetChildNode("limit_mb") is { } nullNodeLimitMb && nullNodeLimitMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitMb = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit_mb property</summary>
-        public int? LimitMb { get => _explicitNullValueLimitMb; set { _explicitNullValueLimitMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_mb"); else _explicitNullProperties?.Remove("limit_mb"); } }
+        public int? LimitMb { get => _explicitNullValueLimitMb; set { _explicitNullValueLimitMb = value; AdditionalData?.Remove("limit_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_mb"); else _explicitNullProperties?.Remove("limit_mb"); } }
         private int? _explicitNullValueLimitMb = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainSetMemoryLimitRequest"/> and sets the default values.

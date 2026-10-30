@@ -79,7 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.E
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Extensions.Item.WithExtensionNameItemRequestBuilder.WithExtensionNameItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.machines.dev", "/v1/postgres/{postgresClusterId}/databases/{databaseName}/extensions/{extensionName}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

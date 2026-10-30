@@ -17,15 +17,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
-            if (parseNode.GetChildNode("current_version") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
-            if (parseNode.GetChildNode("lease_ttl") is { } nullNodeLeaseTtl && nullNodeLeaseTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaseTtl = null;
-            if (parseNode.GetChildNode("min_secrets_version") is { } nullNodeMinSecretsVersion && nullNodeMinSecretsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSecretsVersion = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("skip_launch") is { } nullNodeSkipLaunch && nullNodeSkipLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipLaunch = null;
-            if (parseNode.GetChildNode("skip_secrets") is { } nullNodeSkipSecrets && nullNodeSkipSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipSecrets = null;
-            if (parseNode.GetChildNode("skip_service_registration") is { } nullNodeSkipServiceRegistration && nullNodeSkipServiceRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipServiceRegistration = null;
+            if (parseNode.GetChildNode("config") is null) { _explicitNullValueConfig = default!; _explicitNullProperties?.Remove("config"); }
+            else if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("current_version") is null) { _explicitNullValueCurrentVersion = default!; _explicitNullProperties?.Remove("current_version"); }
+            else if (parseNode.GetChildNode("current_version") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
+            if (parseNode.GetChildNode("lease_ttl") is null) { _explicitNullValueLeaseTtl = default!; _explicitNullProperties?.Remove("lease_ttl"); }
+            else if (parseNode.GetChildNode("lease_ttl") is { } nullNodeLeaseTtl && nullNodeLeaseTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeaseTtl = null;
+            if (parseNode.GetChildNode("min_secrets_version") is null) { _explicitNullValueMinSecretsVersion = default!; _explicitNullProperties?.Remove("min_secrets_version"); }
+            else if (parseNode.GetChildNode("min_secrets_version") is { } nullNodeMinSecretsVersion && nullNodeMinSecretsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSecretsVersion = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("skip_launch") is null) { _explicitNullValueSkipLaunch = default!; _explicitNullProperties?.Remove("skip_launch"); }
+            else if (parseNode.GetChildNode("skip_launch") is { } nullNodeSkipLaunch && nullNodeSkipLaunch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipLaunch = null;
+            if (parseNode.GetChildNode("skip_secrets") is null) { _explicitNullValueSkipSecrets = default!; _explicitNullProperties?.Remove("skip_secrets"); }
+            else if (parseNode.GetChildNode("skip_secrets") is { } nullNodeSkipSecrets && nullNodeSkipSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipSecrets = null;
+            if (parseNode.GetChildNode("skip_service_registration") is null) { _explicitNullValueSkipServiceRegistration = default!; _explicitNullProperties?.Remove("skip_service_registration"); }
+            else if (parseNode.GetChildNode("skip_service_registration") is { } nullNodeSkipServiceRegistration && nullNodeSkipServiceRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipServiceRegistration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,57 +42,57 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>An object defining the Machine configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequestConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>CurrentVersion is an optional optimistic-concurrency guard: the Machine&apos;s`version`, as returned by create, get or a previous update. When setand it is no longer the Machine&apos;s current version, the update is rejectedwith 409 Conflict and nothing changes. Omit it to update unconditionally.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version"); else _explicitNullProperties?.Remove("current_version"); } }
+        public string? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; AdditionalData?.Remove("current_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version"); else _explicitNullProperties?.Remove("current_version"); } }
         private string? _explicitNullValueCurrentVersion = default!;
 #nullable restore
 #else
-        public string CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version"); else _explicitNullProperties?.Remove("current_version"); } }
+        public string CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; AdditionalData?.Remove("current_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_version"); else _explicitNullProperties?.Remove("current_version"); } }
         private string _explicitNullValueCurrentVersion = default!;
 #endif
         /// <summary>The lease_ttl property</summary>
-        public int? LeaseTtl { get => _explicitNullValueLeaseTtl; set { _explicitNullValueLeaseTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_ttl"); else _explicitNullProperties?.Remove("lease_ttl"); } }
+        public int? LeaseTtl { get => _explicitNullValueLeaseTtl; set { _explicitNullValueLeaseTtl = value; AdditionalData?.Remove("lease_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_ttl"); else _explicitNullProperties?.Remove("lease_ttl"); } }
         private int? _explicitNullValueLeaseTtl = default!;
         /// <summary>The minimum version of the app&apos;s secrets the Machine must run with. Set it to the `version`returned by the endpoints that set or delete app secrets, so that the Machine is guaranteedto see those changes. This field belongs at the top level of the request body, not in`config`. If omitted, the app&apos;s current secrets version is looked up for you.</summary>
-        public int? MinSecretsVersion { get => _explicitNullValueMinSecretsVersion; set { _explicitNullValueMinSecretsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_secrets_version"); else _explicitNullProperties?.Remove("min_secrets_version"); } }
+        public int? MinSecretsVersion { get => _explicitNullValueMinSecretsVersion; set { _explicitNullValueMinSecretsVersion = value; AdditionalData?.Remove("min_secrets_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_secrets_version"); else _explicitNullProperties?.Remove("min_secrets_version"); } }
         private int? _explicitNullValueMinSecretsVersion = default!;
         /// <summary>Unique name for this Machine. If omitted, one is generated for you</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The target region. Omitting this param launches in the same region as your WireGuard peer connection (somewhere near you).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The skip_launch property</summary>
-        public bool? SkipLaunch { get => _explicitNullValueSkipLaunch; set { _explicitNullValueSkipLaunch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_launch"); else _explicitNullProperties?.Remove("skip_launch"); } }
+        public bool? SkipLaunch { get => _explicitNullValueSkipLaunch; set { _explicitNullValueSkipLaunch = value; AdditionalData?.Remove("skip_launch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_launch"); else _explicitNullProperties?.Remove("skip_launch"); } }
         private bool? _explicitNullValueSkipLaunch = default!;
         /// <summary>The skip_secrets property</summary>
-        public bool? SkipSecrets { get => _explicitNullValueSkipSecrets; set { _explicitNullValueSkipSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_secrets"); else _explicitNullProperties?.Remove("skip_secrets"); } }
+        public bool? SkipSecrets { get => _explicitNullValueSkipSecrets; set { _explicitNullValueSkipSecrets = value; AdditionalData?.Remove("skip_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_secrets"); else _explicitNullProperties?.Remove("skip_secrets"); } }
         private bool? _explicitNullValueSkipSecrets = default!;
         /// <summary>The skip_service_registration property</summary>
-        public bool? SkipServiceRegistration { get => _explicitNullValueSkipServiceRegistration; set { _explicitNullValueSkipServiceRegistration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_service_registration"); else _explicitNullProperties?.Remove("skip_service_registration"); } }
+        public bool? SkipServiceRegistration { get => _explicitNullValueSkipServiceRegistration; set { _explicitNullValueSkipServiceRegistration = value; AdditionalData?.Remove("skip_service_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_service_registration"); else _explicitNullProperties?.Remove("skip_service_registration"); } }
         private bool? _explicitNullValueSkipServiceRegistration = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMachineRequest"/> and sets the default values.

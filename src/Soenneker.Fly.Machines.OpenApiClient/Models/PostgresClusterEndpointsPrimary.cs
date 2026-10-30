@@ -18,8 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("direct") is { } nullNodeDirect && nullNodeDirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direct = null;
-            if (parseNode.GetChildNode("pooler") is { } nullNodePooler && nullNodePooler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pooler = null;
+            if (parseNode.GetChildNode("direct") is null) { _explicitNullValueDirect = default!; _explicitNullProperties?.Remove("direct"); }
+            else if (parseNode.GetChildNode("direct") is { } nullNodeDirect && nullNodeDirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direct = null;
+            if (parseNode.GetChildNode("pooler") is null) { _explicitNullValuePooler = default!; _explicitNullProperties?.Remove("pooler"); }
+            else if (parseNode.GetChildNode("pooler") is { } nullNodePooler && nullNodePooler.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pooler = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Unpooled connection to the cluster node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect? Direct { get => _explicitNullValueDirect; set { _explicitNullValueDirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct"); else _explicitNullProperties?.Remove("direct"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect? Direct { get => _explicitNullValueDirect; set { _explicitNullValueDirect = value; AdditionalData?.Remove("direct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct"); else _explicitNullProperties?.Remove("direct"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect? _explicitNullValueDirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect Direct { get => _explicitNullValueDirect; set { _explicitNullValueDirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct"); else _explicitNullProperties?.Remove("direct"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect Direct { get => _explicitNullValueDirect; set { _explicitNullValueDirect = value; AdditionalData?.Remove("direct"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct"); else _explicitNullProperties?.Remove("direct"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsDirect _explicitNullValueDirect = default!;
 #endif
         /// <summary>Pooled connection to the cluster node (through PgBouncer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler? Pooler { get => _explicitNullValuePooler; set { _explicitNullValuePooler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pooler"); else _explicitNullProperties?.Remove("pooler"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler? Pooler { get => _explicitNullValuePooler; set { _explicitNullValuePooler = value; AdditionalData?.Remove("pooler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pooler"); else _explicitNullProperties?.Remove("pooler"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler? _explicitNullValuePooler = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler Pooler { get => _explicitNullValuePooler; set { _explicitNullValuePooler = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pooler"); else _explicitNullProperties?.Remove("pooler"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler Pooler { get => _explicitNullValuePooler; set { _explicitNullValuePooler = value; AdditionalData?.Remove("pooler"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pooler"); else _explicitNullProperties?.Remove("pooler"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresNodeEndpointsPooler _explicitNullValuePooler = default!;
 #endif
         /// <summary>

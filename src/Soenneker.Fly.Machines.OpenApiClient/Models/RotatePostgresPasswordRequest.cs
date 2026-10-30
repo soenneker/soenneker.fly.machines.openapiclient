@@ -17,13 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kill_sessions") is { } nullNodeKillSessions && nullNodeKillSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KillSessions = null;
+            if (parseNode.GetChildNode("kill_sessions") is null) { _explicitNullValueKillSessions = default!; _explicitNullProperties?.Remove("kill_sessions"); }
+            else if (parseNode.GetChildNode("kill_sessions") is { } nullNodeKillSessions && nullNodeKillSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KillSessions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Terminate the user&apos;s existing sessions after rotating.</summary>
-        public bool? KillSessions { get => _explicitNullValueKillSessions; set { _explicitNullValueKillSessions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kill_sessions"); else _explicitNullProperties?.Remove("kill_sessions"); } }
+        public bool? KillSessions { get => _explicitNullValueKillSessions; set { _explicitNullValueKillSessions = value; AdditionalData?.Remove("kill_sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kill_sessions"); else _explicitNullProperties?.Remove("kill_sessions"); } }
         private bool? _explicitNullValueKillSessions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RotatePostgresPasswordRequest"/> and sets the default values.

@@ -17,23 +17,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("condition") is null) { _explicitNullValueCondition = default!; _explicitNullProperties?.Remove("condition"); }
+            else if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The condition property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? _explicitNullValueCondition = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed>(); } },
+                { "condition", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCondition = default; _explicitNullProperties?.Remove("condition"); AdditionalData["condition"] = unknown; } else { Condition = parsed; AdditionalData.Remove("condition"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }

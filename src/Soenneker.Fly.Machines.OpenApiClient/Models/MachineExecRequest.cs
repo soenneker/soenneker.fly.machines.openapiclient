@@ -17,12 +17,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
-            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
-            if (parseNode.GetChildNode("container") is { } nullNodeContainer && nullNodeContainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Container = null;
-            if (parseNode.GetChildNode("machine") is { } nullNodeMachine && nullNodeMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Machine = null;
-            if (parseNode.GetChildNode("stdin") is { } nullNodeStdin && nullNodeStdin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stdin = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("cmd") is null) { _explicitNullValueCmd = default!; _explicitNullProperties?.Remove("cmd"); }
+            else if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
+            if (parseNode.GetChildNode("command") is null) { _explicitNullValueCommand = default!; _explicitNullProperties?.Remove("command"); }
+            else if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("container") is null) { _explicitNullValueContainer = default!; _explicitNullProperties?.Remove("container"); }
+            else if (parseNode.GetChildNode("container") is { } nullNodeContainer && nullNodeContainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Container = null;
+            if (parseNode.GetChildNode("machine") is null) { _explicitNullValueMachine = default!; _explicitNullProperties?.Remove("machine"); }
+            else if (parseNode.GetChildNode("machine") is { } nullNodeMachine && nullNodeMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Machine = null;
+            if (parseNode.GetChildNode("stdin") is null) { _explicitNullValueStdin = default!; _explicitNullProperties?.Remove("stdin"); }
+            else if (parseNode.GetChildNode("stdin") is { } nullNodeStdin && nullNodeStdin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stdin = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,48 +36,48 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Deprecated: use Command instead</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        public string? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private string? _explicitNullValueCmd = default!;
 #nullable restore
 #else
-        public string Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        public string Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private string _explicitNullValueCmd = default!;
 #endif
         /// <summary>The command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private List<string>? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private List<string> _explicitNullValueCommand = default!;
 #endif
         /// <summary>The container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
+        public string? Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; AdditionalData?.Remove("container"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
         private string? _explicitNullValueContainer = default!;
 #nullable restore
 #else
-        public string Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
+        public string Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; AdditionalData?.Remove("container"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
         private string _explicitNullValueContainer = default!;
 #endif
         /// <summary>Machine runs the command in the machine&apos;s own namespace instead of in acontainer. It is mutually exclusive with Container.</summary>
-        public bool? Machine { get => _explicitNullValueMachine; set { _explicitNullValueMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine"); else _explicitNullProperties?.Remove("machine"); } }
+        public bool? Machine { get => _explicitNullValueMachine; set { _explicitNullValueMachine = value; AdditionalData?.Remove("machine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine"); else _explicitNullProperties?.Remove("machine"); } }
         private bool? _explicitNullValueMachine = default!;
         /// <summary>The stdin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
+        public string? Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; AdditionalData?.Remove("stdin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
         private string? _explicitNullValueStdin = default!;
 #nullable restore
 #else
-        public string Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
+        public string Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; AdditionalData?.Remove("stdin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
         private string _explicitNullValueStdin = default!;
 #endif
         /// <summary>The timeout property</summary>
-        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineExecRequest"/> and sets the default values.

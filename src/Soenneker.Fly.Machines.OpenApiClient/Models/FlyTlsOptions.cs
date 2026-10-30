@@ -17,9 +17,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alpn") is { } nullNodeAlpn && nullNodeAlpn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alpn = null;
-            if (parseNode.GetChildNode("default_self_signed") is { } nullNodeDefaultSelfSigned && nullNodeDefaultSelfSigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSelfSigned = null;
-            if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
+            if (parseNode.GetChildNode("alpn") is null) { _explicitNullValueAlpn = default!; _explicitNullProperties?.Remove("alpn"); }
+            else if (parseNode.GetChildNode("alpn") is { } nullNodeAlpn && nullNodeAlpn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alpn = null;
+            if (parseNode.GetChildNode("default_self_signed") is null) { _explicitNullValueDefaultSelfSigned = default!; _explicitNullProperties?.Remove("default_self_signed"); }
+            else if (parseNode.GetChildNode("default_self_signed") is { } nullNodeDefaultSelfSigned && nullNodeDefaultSelfSigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultSelfSigned = null;
+            if (parseNode.GetChildNode("versions") is null) { _explicitNullValueVersions = default!; _explicitNullProperties?.Remove("versions"); }
+            else if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The alpn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Alpn { get => _explicitNullValueAlpn; set { _explicitNullValueAlpn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alpn"); else _explicitNullProperties?.Remove("alpn"); } }
+        public List<string>? Alpn { get => _explicitNullValueAlpn; set { _explicitNullValueAlpn = value; AdditionalData?.Remove("alpn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alpn"); else _explicitNullProperties?.Remove("alpn"); } }
         private List<string>? _explicitNullValueAlpn = default!;
 #nullable restore
 #else
-        public List<string> Alpn { get => _explicitNullValueAlpn; set { _explicitNullValueAlpn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alpn"); else _explicitNullProperties?.Remove("alpn"); } }
+        public List<string> Alpn { get => _explicitNullValueAlpn; set { _explicitNullValueAlpn = value; AdditionalData?.Remove("alpn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alpn"); else _explicitNullProperties?.Remove("alpn"); } }
         private List<string> _explicitNullValueAlpn = default!;
 #endif
         /// <summary>The default_self_signed property</summary>
-        public bool? DefaultSelfSigned { get => _explicitNullValueDefaultSelfSigned; set { _explicitNullValueDefaultSelfSigned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_self_signed"); else _explicitNullProperties?.Remove("default_self_signed"); } }
+        public bool? DefaultSelfSigned { get => _explicitNullValueDefaultSelfSigned; set { _explicitNullValueDefaultSelfSigned = value; AdditionalData?.Remove("default_self_signed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_self_signed"); else _explicitNullProperties?.Remove("default_self_signed"); } }
         private bool? _explicitNullValueDefaultSelfSigned = default!;
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public List<string>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private List<string>? _explicitNullValueVersions = default!;
 #nullable restore
 #else
-        public List<string> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public List<string> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private List<string> _explicitNullValueVersions = default!;
 #endif
         /// <summary>

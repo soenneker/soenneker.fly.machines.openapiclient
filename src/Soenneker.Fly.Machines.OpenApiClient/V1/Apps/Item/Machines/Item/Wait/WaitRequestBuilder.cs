@@ -72,7 +72,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Wait
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Wait.WaitRequestBuilder.WaitRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.machines.dev", "/v1/apps/{appName}/machines/{machineId}/wait", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

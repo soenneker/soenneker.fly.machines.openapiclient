@@ -17,18 +17,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
-            if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
+            if (parseNode.GetChildNode("access") is null) { _explicitNullValueAccess = default!; _explicitNullProperties?.Remove("access"); }
+            else if (parseNode.GetChildNode("access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("header") is null) { _explicitNullValueHeader = default!; _explicitNullProperties?.Remove("header"); }
+            else if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
         }
 
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess _explicitNullValueAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The header property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        public string? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; AdditionalData?.Remove("header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
         private string? _explicitNullValueHeader = default!;
 #nullable restore
 #else
-        public string Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        public string Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; AdditionalData?.Remove("header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
         private string _explicitNullValueHeader = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ciphertext") is { } nullNodeCiphertext && nullNodeCiphertext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphertext = null;
+            if (parseNode.GetChildNode("ciphertext") is null) { _explicitNullValueCiphertext = default!; _explicitNullProperties?.Remove("ciphertext"); }
+            else if (parseNode.GetChildNode("ciphertext") is { } nullNodeCiphertext && nullNodeCiphertext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ciphertext = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The ciphertext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
+        public List<int?>? Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
         private List<int?>? _explicitNullValueCiphertext = default!;
 #nullable restore
 #else
-        public List<int?> Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
+        public List<int?> Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
         private List<int?> _explicitNullValueCiphertext = default!;
 #endif
         /// <summary>

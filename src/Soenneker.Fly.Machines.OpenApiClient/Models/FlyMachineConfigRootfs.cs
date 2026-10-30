@@ -18,17 +18,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("persist") is { } nullNodePersist && nullNodePersist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persist = null;
-            if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
+            if (parseNode.GetChildNode("persist") is null) { _explicitNullValuePersist = default!; _explicitNullProperties?.Remove("persist"); }
+            else if (parseNode.GetChildNode("persist") is { } nullNodePersist && nullNodePersist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Persist = null;
+            if (parseNode.GetChildNode("size_gb") is null) { _explicitNullValueSizeGb = default!; _explicitNullProperties?.Remove("size_gb"); }
+            else if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The persist property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; AdditionalData?.Remove("persist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? _explicitNullValuePersist = default!;
         /// <summary>The size_gb property</summary>
-        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
+        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "persist", n => { Persist = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>(); } },
+                { "persist", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePersist = default; _explicitNullProperties?.Remove("persist"); AdditionalData["persist"] = unknown; } else { Persist = parsed; AdditionalData.Remove("persist"); } } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
             };
         }

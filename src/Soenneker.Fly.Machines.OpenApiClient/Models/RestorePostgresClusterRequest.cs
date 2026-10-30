@@ -17,9 +17,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("backup_id") is { } nullNodeBackupId && nullNodeBackupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupId = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("pitr_time") is { } nullNodePitrTime && nullNodePitrTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PitrTime = null;
+            if (parseNode.GetChildNode("backup_id") is null) { _explicitNullValueBackupId = default!; _explicitNullProperties?.Remove("backup_id"); }
+            else if (parseNode.GetChildNode("backup_id") is { } nullNodeBackupId && nullNodeBackupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pitr_time") is null) { _explicitNullValuePitrTime = default!; _explicitNullProperties?.Remove("pitr_time"); }
+            else if (parseNode.GetChildNode("pitr_time") is { } nullNodePitrTime && nullNodePitrTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PitrTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Backup label to restore from, as returned by the backups list. Mutually exclusive with pitr_time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackupId { get => _explicitNullValueBackupId; set { _explicitNullValueBackupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_id"); else _explicitNullProperties?.Remove("backup_id"); } }
+        public string? BackupId { get => _explicitNullValueBackupId; set { _explicitNullValueBackupId = value; AdditionalData?.Remove("backup_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_id"); else _explicitNullProperties?.Remove("backup_id"); } }
         private string? _explicitNullValueBackupId = default!;
 #nullable restore
 #else
-        public string BackupId { get => _explicitNullValueBackupId; set { _explicitNullValueBackupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_id"); else _explicitNullProperties?.Remove("backup_id"); } }
+        public string BackupId { get => _explicitNullValueBackupId; set { _explicitNullValueBackupId = value; AdditionalData?.Remove("backup_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_id"); else _explicitNullProperties?.Remove("backup_id"); } }
         private string _explicitNullValueBackupId = default!;
 #endif
         /// <summary>Name for the restored cluster. Defaults to a generated name derived from the source cluster and backup/point in time when omitted or blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Point in time to restore to, as an RFC3339 timestamp with an explicit offset from UTC (e.g. Z or +02:00). Normalized to UTC and must fall within the cluster&apos;s PITR recovery window. Mutually exclusive with backup_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PitrTime { get => _explicitNullValuePitrTime; set { _explicitNullValuePitrTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitr_time"); else _explicitNullProperties?.Remove("pitr_time"); } }
+        public string? PitrTime { get => _explicitNullValuePitrTime; set { _explicitNullValuePitrTime = value; AdditionalData?.Remove("pitr_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitr_time"); else _explicitNullProperties?.Remove("pitr_time"); } }
         private string? _explicitNullValuePitrTime = default!;
 #nullable restore
 #else
-        public string PitrTime { get => _explicitNullValuePitrTime; set { _explicitNullValuePitrTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitr_time"); else _explicitNullProperties?.Remove("pitr_time"); } }
+        public string PitrTime { get => _explicitNullValuePitrTime; set { _explicitNullValuePitrTime = value; AdditionalData?.Remove("pitr_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitr_time"); else _explicitNullProperties?.Remove("pitr_time"); } }
         private string _explicitNullValuePitrTime = default!;
 #endif
         /// <summary>

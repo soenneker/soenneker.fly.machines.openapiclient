@@ -17,29 +17,34 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cpu_kind") is { } nullNodeCpuKind && nullNodeCpuKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuKind = null;
-            if (parseNode.GetChildNode("cpus") is { } nullNodeCpus && nullNodeCpus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpus = null;
-            if (parseNode.GetChildNode("memory_mb") is { } nullNodeMemoryMb && nullNodeMemoryMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMb = null;
-            if (parseNode.GetChildNode("monthly_price_usd") is { } nullNodeMonthlyPriceUsd && nullNodeMonthlyPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyPriceUsd = null;
-            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("cpu_kind") is null) { _explicitNullValueCpuKind = default!; _explicitNullProperties?.Remove("cpu_kind"); }
+            else if (parseNode.GetChildNode("cpu_kind") is { } nullNodeCpuKind && nullNodeCpuKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuKind = null;
+            if (parseNode.GetChildNode("cpus") is null) { _explicitNullValueCpus = default!; _explicitNullProperties?.Remove("cpus"); }
+            else if (parseNode.GetChildNode("cpus") is { } nullNodeCpus && nullNodeCpus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpus = null;
+            if (parseNode.GetChildNode("memory_mb") is null) { _explicitNullValueMemoryMb = default!; _explicitNullProperties?.Remove("memory_mb"); }
+            else if (parseNode.GetChildNode("memory_mb") is { } nullNodeMemoryMb && nullNodeMemoryMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMb = null;
+            if (parseNode.GetChildNode("monthly_price_usd") is null) { _explicitNullValueMonthlyPriceUsd = default!; _explicitNullProperties?.Remove("monthly_price_usd"); }
+            else if (parseNode.GetChildNode("monthly_price_usd") is { } nullNodeMonthlyPriceUsd && nullNodeMonthlyPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyPriceUsd = null;
+            if (parseNode.GetChildNode("plan") is null) { _explicitNullValuePlan = default!; _explicitNullProperties?.Remove("plan"); }
+            else if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>CPU class.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; AdditionalData?.Remove("cpu_kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? _explicitNullValueCpuKind = default!;
         /// <summary>vCPUs per node.</summary>
-        public int? Cpus { get => _explicitNullValueCpus; set { _explicitNullValueCpus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpus"); else _explicitNullProperties?.Remove("cpus"); } }
+        public int? Cpus { get => _explicitNullValueCpus; set { _explicitNullValueCpus = value; AdditionalData?.Remove("cpus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpus"); else _explicitNullProperties?.Remove("cpus"); } }
         private int? _explicitNullValueCpus = default!;
         /// <summary>Memory per node in megabytes.</summary>
-        public int? MemoryMb { get => _explicitNullValueMemoryMb; set { _explicitNullValueMemoryMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mb"); else _explicitNullProperties?.Remove("memory_mb"); } }
+        public int? MemoryMb { get => _explicitNullValueMemoryMb; set { _explicitNullValueMemoryMb = value; AdditionalData?.Remove("memory_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mb"); else _explicitNullProperties?.Remove("memory_mb"); } }
         private int? _explicitNullValueMemoryMb = default!;
         /// <summary>Base monthly price in US dollars.</summary>
-        public int? MonthlyPriceUsd { get => _explicitNullValueMonthlyPriceUsd; set { _explicitNullValueMonthlyPriceUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_price_usd"); else _explicitNullProperties?.Remove("monthly_price_usd"); } }
+        public int? MonthlyPriceUsd { get => _explicitNullValueMonthlyPriceUsd; set { _explicitNullValueMonthlyPriceUsd = value; AdditionalData?.Remove("monthly_price_usd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_price_usd"); else _explicitNullProperties?.Remove("monthly_price_usd"); } }
         private int? _explicitNullValueMonthlyPriceUsd = default!;
         /// <summary>Plan slug. Pass it as `plan` when creating or forking a cluster.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; AdditionalData?.Remove("plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? _explicitNullValuePlan = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan"/> and sets the default values.
@@ -66,11 +71,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cpu_kind", n => { CpuKind = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind>(); } },
+                { "cpu_kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCpuKind = default; _explicitNullProperties?.Remove("cpu_kind"); AdditionalData["cpu_kind"] = unknown; } else { CpuKind = parsed; AdditionalData.Remove("cpu_kind"); } } },
                 { "cpus", n => { Cpus = n.GetIntValue(); } },
                 { "memory_mb", n => { MemoryMb = n.GetIntValue(); } },
                 { "monthly_price_usd", n => { MonthlyPriceUsd = n.GetIntValue(); } },
-                { "plan", n => { Plan = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan>(); } },
+                { "plan", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlan = default; _explicitNullProperties?.Remove("plan"); AdditionalData["plan"] = unknown; } else { Plan = parsed; AdditionalData.Remove("plan"); } } },
             };
         }
         /// <summary>

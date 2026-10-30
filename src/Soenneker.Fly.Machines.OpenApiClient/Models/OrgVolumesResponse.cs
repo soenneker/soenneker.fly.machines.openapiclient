@@ -17,10 +17,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
-            if (parseNode.GetChildNode("last_volume_id") is { } nullNodeLastVolumeId && nullNodeLastVolumeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastVolumeId = null;
-            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
-            if (parseNode.GetChildNode("volumes") is { } nullNodeVolumes && nullNodeVolumes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volumes = null;
+            if (parseNode.GetChildNode("last_updated_at") is null) { _explicitNullValueLastUpdatedAt = default!; _explicitNullProperties?.Remove("last_updated_at"); }
+            else if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("last_volume_id") is null) { _explicitNullValueLastVolumeId = default!; _explicitNullProperties?.Remove("last_volume_id"); }
+            else if (parseNode.GetChildNode("last_volume_id") is { } nullNodeLastVolumeId && nullNodeLastVolumeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastVolumeId = null;
+            if (parseNode.GetChildNode("next_cursor") is null) { _explicitNullValueNextCursor = default!; _explicitNullProperties?.Remove("next_cursor"); }
+            else if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("volumes") is null) { _explicitNullValueVolumes = default!; _explicitNullProperties?.Remove("volumes"); }
+            else if (parseNode.GetChildNode("volumes") is { } nullNodeVolumes && nullNodeVolumes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volumes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The last_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
         private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
         private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>The last_volume_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
+        public string? LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; AdditionalData?.Remove("last_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
         private string? _explicitNullValueLastVolumeId = default!;
 #nullable restore
 #else
-        public string LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
+        public string LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; AdditionalData?.Remove("last_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
         private string _explicitNullValueLastVolumeId = default!;
 #endif
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The volumes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume>? Volumes { get => _explicitNullValueVolumes; set { _explicitNullValueVolumes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volumes"); else _explicitNullProperties?.Remove("volumes"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume>? Volumes { get => _explicitNullValueVolumes; set { _explicitNullValueVolumes = value; AdditionalData?.Remove("volumes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volumes"); else _explicitNullProperties?.Remove("volumes"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume>? _explicitNullValueVolumes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume> Volumes { get => _explicitNullValueVolumes; set { _explicitNullValueVolumes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volumes"); else _explicitNullProperties?.Remove("volumes"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume> Volumes { get => _explicitNullValueVolumes; set { _explicitNullValueVolumes = value; AdditionalData?.Remove("volumes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volumes"); else _explicitNullProperties?.Remove("volumes"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume> _explicitNullValueVolumes = default!;
 #endif
         /// <summary>

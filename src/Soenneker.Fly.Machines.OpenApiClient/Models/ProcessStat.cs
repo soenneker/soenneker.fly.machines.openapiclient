@@ -17,14 +17,22 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
-            if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
-            if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
-            if (parseNode.GetChildNode("listen_sockets") is { } nullNodeListenSockets && nullNodeListenSockets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListenSockets = null;
-            if (parseNode.GetChildNode("pid") is { } nullNodePid && nullNodePid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pid = null;
-            if (parseNode.GetChildNode("rss") is { } nullNodeRss && nullNodeRss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rss = null;
-            if (parseNode.GetChildNode("rtime") is { } nullNodeRtime && nullNodeRtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtime = null;
-            if (parseNode.GetChildNode("stime") is { } nullNodeStime && nullNodeStime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stime = null;
+            if (parseNode.GetChildNode("command") is null) { _explicitNullValueCommand = default!; _explicitNullProperties?.Remove("command"); }
+            else if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("cpu") is null) { _explicitNullValueCpu = default!; _explicitNullProperties?.Remove("cpu"); }
+            else if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
+            if (parseNode.GetChildNode("directory") is null) { _explicitNullValueDirectory = default!; _explicitNullProperties?.Remove("directory"); }
+            else if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
+            if (parseNode.GetChildNode("listen_sockets") is null) { _explicitNullValueListenSockets = default!; _explicitNullProperties?.Remove("listen_sockets"); }
+            else if (parseNode.GetChildNode("listen_sockets") is { } nullNodeListenSockets && nullNodeListenSockets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListenSockets = null;
+            if (parseNode.GetChildNode("pid") is null) { _explicitNullValuePid = default!; _explicitNullProperties?.Remove("pid"); }
+            else if (parseNode.GetChildNode("pid") is { } nullNodePid && nullNodePid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pid = null;
+            if (parseNode.GetChildNode("rss") is null) { _explicitNullValueRss = default!; _explicitNullProperties?.Remove("rss"); }
+            else if (parseNode.GetChildNode("rss") is { } nullNodeRss && nullNodeRss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rss = null;
+            if (parseNode.GetChildNode("rtime") is null) { _explicitNullValueRtime = default!; _explicitNullProperties?.Remove("rtime"); }
+            else if (parseNode.GetChildNode("rtime") is { } nullNodeRtime && nullNodeRtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtime = null;
+            if (parseNode.GetChildNode("stime") is null) { _explicitNullValueStime = default!; _explicitNullProperties?.Remove("stime"); }
+            else if (parseNode.GetChildNode("stime") is { } nullNodeStime && nullNodeStime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,47 +40,47 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public string? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private string? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public string Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        public string Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private string _explicitNullValueCommand = default!;
 #endif
         /// <summary>The cpu property</summary>
-        public int? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        public int? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
         private int? _explicitNullValueCpu = default!;
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        public string? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
         private string? _explicitNullValueDirectory = default!;
 #nullable restore
 #else
-        public string Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        public string Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
         private string _explicitNullValueDirectory = default!;
 #endif
         /// <summary>The listen_sockets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; AdditionalData?.Remove("listen_sockets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? _explicitNullValueListenSockets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; AdditionalData?.Remove("listen_sockets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> _explicitNullValueListenSockets = default!;
 #endif
         /// <summary>The pid property</summary>
-        public int? Pid { get => _explicitNullValuePid; set { _explicitNullValuePid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pid"); else _explicitNullProperties?.Remove("pid"); } }
+        public int? Pid { get => _explicitNullValuePid; set { _explicitNullValuePid = value; AdditionalData?.Remove("pid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pid"); else _explicitNullProperties?.Remove("pid"); } }
         private int? _explicitNullValuePid = default!;
         /// <summary>The rss property</summary>
-        public int? Rss { get => _explicitNullValueRss; set { _explicitNullValueRss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rss"); else _explicitNullProperties?.Remove("rss"); } }
+        public int? Rss { get => _explicitNullValueRss; set { _explicitNullValueRss = value; AdditionalData?.Remove("rss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rss"); else _explicitNullProperties?.Remove("rss"); } }
         private int? _explicitNullValueRss = default!;
         /// <summary>The rtime property</summary>
-        public int? Rtime { get => _explicitNullValueRtime; set { _explicitNullValueRtime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtime"); else _explicitNullProperties?.Remove("rtime"); } }
+        public int? Rtime { get => _explicitNullValueRtime; set { _explicitNullValueRtime = value; AdditionalData?.Remove("rtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtime"); else _explicitNullProperties?.Remove("rtime"); } }
         private int? _explicitNullValueRtime = default!;
         /// <summary>The stime property</summary>
-        public int? Stime { get => _explicitNullValueStime; set { _explicitNullValueStime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stime"); else _explicitNullProperties?.Remove("stime"); } }
+        public int? Stime { get => _explicitNullValueStime; set { _explicitNullValueStime = value; AdditionalData?.Remove("stime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stime"); else _explicitNullProperties?.Remove("stime"); } }
         private int? _explicitNullValueStime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
+            if (parseNode.GetChildNode("primary") is null) { _explicitNullValuePrimary = default!; _explicitNullProperties?.Remove("primary"); }
+            else if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Endpoints for connecting to the primary node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; AdditionalData?.Remove("primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary? _explicitNullValuePrimary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; AdditionalData?.Remove("primary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterEndpointsPrimary _explicitNullValuePrimary = default!;
 #endif
         /// <summary>

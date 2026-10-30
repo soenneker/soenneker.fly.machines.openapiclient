@@ -17,8 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("plaintext") is { } nullNodePlaintext && nullNodePlaintext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plaintext = null;
-            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("plaintext") is null) { _explicitNullValuePlaintext = default!; _explicitNullProperties?.Remove("plaintext"); }
+            else if (parseNode.GetChildNode("plaintext") is { } nullNodePlaintext && nullNodePlaintext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plaintext = null;
+            if (parseNode.GetChildNode("signature") is null) { _explicitNullValueSignature = default!; _explicitNullProperties?.Remove("signature"); }
+            else if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The plaintext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        public List<int?>? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
         private List<int?>? _explicitNullValuePlaintext = default!;
 #nullable restore
 #else
-        public List<int?> Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        public List<int?> Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
         private List<int?> _explicitNullValuePlaintext = default!;
 #endif
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        public List<int?>? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
         private List<int?>? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public List<int?> Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        public List<int?> Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
         private List<int?> _explicitNullValueSignature = default!;
 #endif
         /// <summary>

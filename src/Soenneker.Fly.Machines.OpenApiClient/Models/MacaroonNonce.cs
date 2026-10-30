@@ -17,9 +17,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
-            if (parseNode.GetChildNode("proof") is { } nullNodeProof && nullNodeProof.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proof = null;
-            if (parseNode.GetChildNode("rnd") is { } nullNodeRnd && nullNodeRnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rnd = null;
+            if (parseNode.GetChildNode("kid") is null) { _explicitNullValueKid = default!; _explicitNullProperties?.Remove("kid"); }
+            else if (parseNode.GetChildNode("kid") is { } nullNodeKid && nullNodeKid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kid = null;
+            if (parseNode.GetChildNode("proof") is null) { _explicitNullValueProof = default!; _explicitNullProperties?.Remove("proof"); }
+            else if (parseNode.GetChildNode("proof") is { } nullNodeProof && nullNodeProof.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proof = null;
+            if (parseNode.GetChildNode("rnd") is null) { _explicitNullValueRnd = default!; _explicitNullProperties?.Remove("rnd"); }
+            else if (parseNode.GetChildNode("rnd") is { } nullNodeRnd && nullNodeRnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rnd = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The kid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        public List<int?>? Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; AdditionalData?.Remove("kid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
         private List<int?>? _explicitNullValueKid = default!;
 #nullable restore
 #else
-        public List<int?> Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
+        public List<int?> Kid { get => _explicitNullValueKid; set { _explicitNullValueKid = value; AdditionalData?.Remove("kid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kid"); else _explicitNullProperties?.Remove("kid"); } }
         private List<int?> _explicitNullValueKid = default!;
 #endif
         /// <summary>The proof property</summary>
-        public bool? Proof { get => _explicitNullValueProof; set { _explicitNullValueProof = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proof"); else _explicitNullProperties?.Remove("proof"); } }
+        public bool? Proof { get => _explicitNullValueProof; set { _explicitNullValueProof = value; AdditionalData?.Remove("proof"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proof"); else _explicitNullProperties?.Remove("proof"); } }
         private bool? _explicitNullValueProof = default!;
         /// <summary>The rnd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Rnd { get => _explicitNullValueRnd; set { _explicitNullValueRnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rnd"); else _explicitNullProperties?.Remove("rnd"); } }
+        public List<int?>? Rnd { get => _explicitNullValueRnd; set { _explicitNullValueRnd = value; AdditionalData?.Remove("rnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rnd"); else _explicitNullProperties?.Remove("rnd"); } }
         private List<int?>? _explicitNullValueRnd = default!;
 #nullable restore
 #else
-        public List<int?> Rnd { get => _explicitNullValueRnd; set { _explicitNullValueRnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rnd"); else _explicitNullProperties?.Remove("rnd"); } }
+        public List<int?> Rnd { get => _explicitNullValueRnd; set { _explicitNullValueRnd = value; AdditionalData?.Remove("rnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rnd"); else _explicitNullProperties?.Remove("rnd"); } }
         private List<int?> _explicitNullValueRnd = default!;
 #endif
         /// <summary>

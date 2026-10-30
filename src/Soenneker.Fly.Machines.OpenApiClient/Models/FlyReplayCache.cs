@@ -17,43 +17,48 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_bypass") is { } nullNodeAllowBypass && nullNodeAllowBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowBypass = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("path_prefix") is { } nullNodePathPrefix && nullNodePathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPrefix = null;
-            if (parseNode.GetChildNode("ttl_seconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("allow_bypass") is null) { _explicitNullValueAllowBypass = default!; _explicitNullProperties?.Remove("allow_bypass"); }
+            else if (parseNode.GetChildNode("allow_bypass") is { } nullNodeAllowBypass && nullNodeAllowBypass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowBypass = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("path_prefix") is null) { _explicitNullValuePathPrefix = default!; _explicitNullProperties?.Remove("path_prefix"); }
+            else if (parseNode.GetChildNode("path_prefix") is { } nullNodePathPrefix && nullNodePathPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPrefix = null;
+            if (parseNode.GetChildNode("ttl_seconds") is null) { _explicitNullValueTtlSeconds = default!; _explicitNullProperties?.Remove("ttl_seconds"); }
+            else if (parseNode.GetChildNode("ttl_seconds") is { } nullNodeTtlSeconds && nullNodeTtlSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlSeconds = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_bypass property</summary>
-        public bool? AllowBypass { get => _explicitNullValueAllowBypass; set { _explicitNullValueAllowBypass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_bypass"); else _explicitNullProperties?.Remove("allow_bypass"); } }
+        public bool? AllowBypass { get => _explicitNullValueAllowBypass; set { _explicitNullValueAllowBypass = value; AdditionalData?.Remove("allow_bypass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_bypass"); else _explicitNullProperties?.Remove("allow_bypass"); } }
         private bool? _explicitNullValueAllowBypass = default!;
         /// <summary>Name of the cookie or header to key the cache on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The path_prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
+        public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("path_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
         private string? _explicitNullValuePathPrefix = default!;
 #nullable restore
 #else
-        public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
+        public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("path_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
         private string _explicitNullValuePathPrefix = default!;
 #endif
         /// <summary>The ttl_seconds property</summary>
-        public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_seconds"); else _explicitNullProperties?.Remove("ttl_seconds"); } }
+        public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttl_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_seconds"); else _explicitNullProperties?.Remove("ttl_seconds"); } }
         private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>Currently either &quot;cookie&quot; or &quot;header&quot;</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache"/> and sets the default values.
@@ -84,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path_prefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "ttl_seconds", n => { TtlSeconds = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCacheType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

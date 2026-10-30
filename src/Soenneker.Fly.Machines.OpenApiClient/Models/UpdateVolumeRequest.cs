@@ -17,17 +17,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auto_backup_enabled") is { } nullNodeAutoBackupEnabled && nullNodeAutoBackupEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBackupEnabled = null;
-            if (parseNode.GetChildNode("snapshot_retention") is { } nullNodeSnapshotRetention && nullNodeSnapshotRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotRetention = null;
+            if (parseNode.GetChildNode("auto_backup_enabled") is null) { _explicitNullValueAutoBackupEnabled = default!; _explicitNullProperties?.Remove("auto_backup_enabled"); }
+            else if (parseNode.GetChildNode("auto_backup_enabled") is { } nullNodeAutoBackupEnabled && nullNodeAutoBackupEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBackupEnabled = null;
+            if (parseNode.GetChildNode("snapshot_retention") is null) { _explicitNullValueSnapshotRetention = default!; _explicitNullProperties?.Remove("snapshot_retention"); }
+            else if (parseNode.GetChildNode("snapshot_retention") is { } nullNodeSnapshotRetention && nullNodeSnapshotRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotRetention = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_backup_enabled property</summary>
-        public bool? AutoBackupEnabled { get => _explicitNullValueAutoBackupEnabled; set { _explicitNullValueAutoBackupEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_backup_enabled"); else _explicitNullProperties?.Remove("auto_backup_enabled"); } }
+        public bool? AutoBackupEnabled { get => _explicitNullValueAutoBackupEnabled; set { _explicitNullValueAutoBackupEnabled = value; AdditionalData?.Remove("auto_backup_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_backup_enabled"); else _explicitNullProperties?.Remove("auto_backup_enabled"); } }
         private bool? _explicitNullValueAutoBackupEnabled = default!;
         /// <summary>The snapshot_retention property</summary>
-        public int? SnapshotRetention { get => _explicitNullValueSnapshotRetention; set { _explicitNullValueSnapshotRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_retention"); else _explicitNullProperties?.Remove("snapshot_retention"); } }
+        public int? SnapshotRetention { get => _explicitNullValueSnapshotRetention; set { _explicitNullValueSnapshotRetention = value; AdditionalData?.Remove("snapshot_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_retention"); else _explicitNullProperties?.Remove("snapshot_retention"); } }
         private int? _explicitNullValueSnapshotRetention = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateVolumeRequest"/> and sets the default values.

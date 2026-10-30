@@ -18,8 +18,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("env_var") is { } nullNodeEnvVar && nullNodeEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVar = null;
-            if (parseNode.GetChildNode("field_ref") is { } nullNodeFieldRef && nullNodeFieldRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldRef = null;
+            if (parseNode.GetChildNode("env_var") is null) { _explicitNullValueEnvVar = default!; _explicitNullProperties?.Remove("env_var"); }
+            else if (parseNode.GetChildNode("env_var") is { } nullNodeEnvVar && nullNodeEnvVar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvVar = null;
+            if (parseNode.GetChildNode("field_ref") is null) { _explicitNullValueFieldRef = default!; _explicitNullProperties?.Remove("field_ref"); }
+            else if (parseNode.GetChildNode("field_ref") is { } nullNodeFieldRef && nullNodeFieldRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldRef = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>EnvVar is required and is the name of the environment variable that will be set from thesecret. It must be a valid environment variable name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvVar { get => _explicitNullValueEnvVar; set { _explicitNullValueEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var"); else _explicitNullProperties?.Remove("env_var"); } }
+        public string? EnvVar { get => _explicitNullValueEnvVar; set { _explicitNullValueEnvVar = value; AdditionalData?.Remove("env_var"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var"); else _explicitNullProperties?.Remove("env_var"); } }
         private string? _explicitNullValueEnvVar = default!;
 #nullable restore
 #else
-        public string EnvVar { get => _explicitNullValueEnvVar; set { _explicitNullValueEnvVar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var"); else _explicitNullProperties?.Remove("env_var"); } }
+        public string EnvVar { get => _explicitNullValueEnvVar; set { _explicitNullValueEnvVar = value; AdditionalData?.Remove("env_var"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var"); else _explicitNullProperties?.Remove("env_var"); } }
         private string _explicitNullValueEnvVar = default!;
 #endif
         /// <summary>FieldRef selects a field of the Machine: supports id, version, app_name, private_ip, region, image.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef? FieldRef { get => _explicitNullValueFieldRef; set { _explicitNullValueFieldRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_ref"); else _explicitNullProperties?.Remove("field_ref"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef? FieldRef { get => _explicitNullValueFieldRef; set { _explicitNullValueFieldRef = value; AdditionalData?.Remove("field_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field_ref"); else _explicitNullProperties?.Remove("field_ref"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef? _explicitNullValueFieldRef = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "env_var", n => { EnvVar = n.GetStringValue(); } },
-                { "field_ref", n => { FieldRef = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef>(); } },
+                { "field_ref", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFromFieldRef>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFieldRef = default; _explicitNullProperties?.Remove("field_ref"); AdditionalData["field_ref"] = unknown; } else { FieldRef = parsed; AdditionalData.Remove("field_ref"); } } },
             };
         }
         /// <summary>

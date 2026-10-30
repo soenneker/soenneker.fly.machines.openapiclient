@@ -17,23 +17,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("needs_restart") is { } nullNodeNeedsRestart && nullNodeNeedsRestart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeedsRestart = null;
-            if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
+            if (parseNode.GetChildNode("needs_restart") is null) { _explicitNullValueNeedsRestart = default!; _explicitNullProperties?.Remove("needs_restart"); }
+            else if (parseNode.GetChildNode("needs_restart") is { } nullNodeNeedsRestart && nullNodeNeedsRestart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeedsRestart = null;
+            if (parseNode.GetChildNode("volume") is null) { _explicitNullValueVolume = default!; _explicitNullProperties?.Remove("volume"); }
+            else if (parseNode.GetChildNode("volume") is { } nullNodeVolume && nullNodeVolume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Volume = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The needs_restart property</summary>
-        public bool? NeedsRestart { get => _explicitNullValueNeedsRestart; set { _explicitNullValueNeedsRestart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needs_restart"); else _explicitNullProperties?.Remove("needs_restart"); } }
+        public bool? NeedsRestart { get => _explicitNullValueNeedsRestart; set { _explicitNullValueNeedsRestart = value; AdditionalData?.Remove("needs_restart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needs_restart"); else _explicitNullProperties?.Remove("needs_restart"); } }
         private bool? _explicitNullValueNeedsRestart = default!;
         /// <summary>The volume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume? _explicitNullValueVolume = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume _explicitNullValueVolume = default!;
 #endif
         /// <summary>

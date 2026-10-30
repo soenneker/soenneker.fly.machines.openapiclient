@@ -17,8 +17,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addr") is { } nullNodeAddr && nullNodeAddr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addr = null;
-            if (parseNode.GetChildNode("basename") is { } nullNodeBasename && nullNodeBasename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basename = null;
+            if (parseNode.GetChildNode("addr") is null) { _explicitNullValueAddr = default!; _explicitNullProperties?.Remove("addr"); }
+            else if (parseNode.GetChildNode("addr") is { } nullNodeAddr && nullNodeAddr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addr = null;
+            if (parseNode.GetChildNode("basename") is null) { _explicitNullValueBasename = default!; _explicitNullProperties?.Remove("basename"); }
+            else if (parseNode.GetChildNode("basename") is { } nullNodeBasename && nullNodeBasename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basename = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The addr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
+        public string? Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; AdditionalData?.Remove("addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
         private string? _explicitNullValueAddr = default!;
 #nullable restore
 #else
-        public string Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
+        public string Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; AdditionalData?.Remove("addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
         private string _explicitNullValueAddr = default!;
 #endif
         /// <summary>The basename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Basename { get => _explicitNullValueBasename; set { _explicitNullValueBasename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basename"); else _explicitNullProperties?.Remove("basename"); } }
+        public string? Basename { get => _explicitNullValueBasename; set { _explicitNullValueBasename = value; AdditionalData?.Remove("basename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basename"); else _explicitNullProperties?.Remove("basename"); } }
         private string? _explicitNullValueBasename = default!;
 #nullable restore
 #else
-        public string Basename { get => _explicitNullValueBasename; set { _explicitNullValueBasename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basename"); else _explicitNullProperties?.Remove("basename"); } }
+        public string Basename { get => _explicitNullValueBasename; set { _explicitNullValueBasename = value; AdditionalData?.Remove("basename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basename"); else _explicitNullProperties?.Remove("basename"); } }
         private string _explicitNullValueBasename = default!;
 #endif
         /// <summary>

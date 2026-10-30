@@ -76,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Tokens.Oidc
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.machines.dev", "/v1/tokens/oidc", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
