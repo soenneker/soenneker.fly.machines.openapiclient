@@ -11,16 +11,26 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CurrentTokenResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tokens") is { } nullNodeTokens && nullNodeTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo>? Tokens { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo>? Tokens { get => _explicitNullValueTokens; set { _explicitNullValueTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens"); else _explicitNullProperties?.Remove("tokens"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo>? _explicitNullValueTokens = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo> Tokens { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo> Tokens { get => _explicitNullValueTokens; set { _explicitNullValueTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens"); else _explicitNullProperties?.Remove("tokens"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo> _explicitNullValueTokens = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CurrentTokenResponse"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.CurrentTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.CurrentTokenResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.CurrentTokenResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenInfo>("tokens", Tokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

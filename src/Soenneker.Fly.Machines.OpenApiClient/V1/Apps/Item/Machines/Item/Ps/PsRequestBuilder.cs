@@ -53,6 +53,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Ps
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

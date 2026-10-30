@@ -70,6 +70,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases
                 { "401", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresDatabasesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ListPostgresDatabasesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -103,6 +105,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases
                 { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresDatabaseResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresDatabaseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

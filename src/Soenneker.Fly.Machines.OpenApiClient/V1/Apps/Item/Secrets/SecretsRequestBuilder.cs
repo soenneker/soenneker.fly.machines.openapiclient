@@ -62,7 +62,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
@@ -86,6 +86,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

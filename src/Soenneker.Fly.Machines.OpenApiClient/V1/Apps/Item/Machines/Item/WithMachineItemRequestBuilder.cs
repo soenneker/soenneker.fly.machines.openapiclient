@@ -145,6 +145,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
             {
                 { "409", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "412", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -164,7 +166,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a Machine&apos;s configuration using the details provided in the request body.
@@ -190,6 +192,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Machine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

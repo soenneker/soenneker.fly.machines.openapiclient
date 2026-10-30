@@ -11,84 +11,122 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DestroyCustomCertificateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acme_requested") is { } nullNodeAcmeRequested && nullNodeAcmeRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcmeRequested = null;
+            if (parseNode.GetChildNode("certificates") is { } nullNodeCertificates && nullNodeCertificates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Certificates = null;
+            if (parseNode.GetChildNode("configured") is { } nullNodeConfigured && nullNodeConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configured = null;
+            if (parseNode.GetChildNode("dns_provider") is { } nullNodeDnsProvider && nullNodeDnsProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsProvider = null;
+            if (parseNode.GetChildNode("dns_requirements") is { } nullNodeDnsRequirements && nullNodeDnsRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsRequirements = null;
+            if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("rate_limited_until") is { } nullNodeRateLimitedUntil && nullNodeRateLimitedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimitedUntil = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("validation") is { } nullNodeValidation && nullNodeValidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validation = null;
+            if (parseNode.GetChildNode("validation_errors") is { } nullNodeValidationErrors && nullNodeValidationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationErrors = null;
+            if (parseNode.GetChildNode("warning") is { } nullNodeWarning && nullNodeWarning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warning = null;
+        }
+
         /// <summary>The acme_requested property</summary>
-        public bool? AcmeRequested { get; set; }
+        public bool? AcmeRequested { get => _explicitNullValueAcmeRequested; set { _explicitNullValueAcmeRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_requested"); else _explicitNullProperties?.Remove("acme_requested"); } }
+        private bool? _explicitNullValueAcmeRequested = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The certificates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry>? Certificates { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry>? Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry>? _explicitNullValueCertificates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry> Certificates { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry> Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntry> _explicitNullValueCertificates = default!;
 #endif
         /// <summary>The configured property</summary>
-        public bool? Configured { get; set; }
+        public bool? Configured { get => _explicitNullValueConfigured; set { _explicitNullValueConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured"); else _explicitNullProperties?.Remove("configured"); } }
+        private bool? _explicitNullValueConfigured = default!;
         /// <summary>The dns_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DnsProvider { get; set; }
+        public string? DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
+        private string? _explicitNullValueDnsProvider = default!;
 #nullable restore
 #else
-        public string DnsProvider { get; set; }
+        public string DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
+        private string _explicitNullValueDnsProvider = default!;
 #endif
         /// <summary>The dns_requirements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements? DnsRequirements { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements? DnsRequirements { get => _explicitNullValueDnsRequirements; set { _explicitNullValueDnsRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_requirements"); else _explicitNullProperties?.Remove("dns_requirements"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements? _explicitNullValueDnsRequirements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements DnsRequirements { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements DnsRequirements { get => _explicitNullValueDnsRequirements; set { _explicitNullValueDnsRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_requirements"); else _explicitNullProperties?.Remove("dns_requirements"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRequirements _explicitNullValueDnsRequirements = default!;
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get; set; }
+        public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        private string? _explicitNullValueHostname = default!;
 #nullable restore
 #else
-        public string Hostname { get; set; }
+        public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
+        private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>The rate_limited_until property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RateLimitedUntil { get; set; }
+        public string? RateLimitedUntil { get => _explicitNullValueRateLimitedUntil; set { _explicitNullValueRateLimitedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limited_until"); else _explicitNullProperties?.Remove("rate_limited_until"); } }
+        private string? _explicitNullValueRateLimitedUntil = default!;
 #nullable restore
 #else
-        public string RateLimitedUntil { get; set; }
+        public string RateLimitedUntil { get => _explicitNullValueRateLimitedUntil; set { _explicitNullValueRateLimitedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limited_until"); else _explicitNullProperties?.Remove("rate_limited_until"); } }
+        private string _explicitNullValueRateLimitedUntil = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The validation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation? Validation { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation? Validation { get => _explicitNullValueValidation; set { _explicitNullValueValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation"); else _explicitNullProperties?.Remove("validation"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation? _explicitNullValueValidation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation Validation { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation Validation { get => _explicitNullValueValidation; set { _explicitNullValueValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation"); else _explicitNullProperties?.Remove("validation"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation _explicitNullValueValidation = default!;
 #endif
         /// <summary>The validation_errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError>? ValidationErrors { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError>? ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_errors"); else _explicitNullProperties?.Remove("validation_errors"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError>? _explicitNullValueValidationErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError> ValidationErrors { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError> ValidationErrors { get => _explicitNullValueValidationErrors; set { _explicitNullValueValidationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validation_errors"); else _explicitNullProperties?.Remove("validation_errors"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError> _explicitNullValueValidationErrors = default!;
 #endif
         /// <summary>The warning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Warning { get; set; }
+        public string? Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string? _explicitNullValueWarning = default!;
 #nullable restore
 #else
-        public string Warning { get; set; }
+        public string Warning { get => _explicitNullValueWarning; set { _explicitNullValueWarning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning"); else _explicitNullProperties?.Remove("warning"); } }
+        private string _explicitNullValueWarning = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DestroyCustomCertificateResponse"/> and sets the default values.
@@ -105,7 +143,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.DestroyCustomCertificateResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.DestroyCustomCertificateResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.DestroyCustomCertificateResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,6 +184,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation>("validation", Validation);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidationError>("validation_errors", ValidationErrors);
             writer.WriteStringValue("warning", Warning);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

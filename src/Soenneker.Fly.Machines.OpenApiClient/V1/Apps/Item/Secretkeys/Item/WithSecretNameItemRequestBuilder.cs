@@ -79,7 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteSecretkeyResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteSecretkeyResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteSecretkeyResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.DeleteSecretkeyResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get an app&apos;s secret key
@@ -97,7 +97,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.SecretKey.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create or update a secret key
@@ -121,6 +121,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.SetSecretkeyResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.SetSecretkeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

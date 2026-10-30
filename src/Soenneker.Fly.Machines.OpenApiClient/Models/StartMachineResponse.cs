@@ -11,26 +11,41 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StartMachineResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("migrated") is { } nullNodeMigrated && nullNodeMigrated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrated = null;
+            if (parseNode.GetChildNode("new_host") is { } nullNodeNewHost && nullNodeNewHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewHost = null;
+            if (parseNode.GetChildNode("previous_state") is { } nullNodePreviousState && nullNodePreviousState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousState = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the Machine was moved to another host to be started</summary>
-        public bool? Migrated { get; set; }
+        public bool? Migrated { get => _explicitNullValueMigrated; set { _explicitNullValueMigrated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrated"); else _explicitNullProperties?.Remove("migrated"); } }
+        private bool? _explicitNullValueMigrated = default!;
         /// <summary>The host the Machine was moved to, if it was migrated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewHost { get; set; }
+        public string? NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
+        private string? _explicitNullValueNewHost = default!;
 #nullable restore
 #else
-        public string NewHost { get; set; }
+        public string NewHost { get => _explicitNullValueNewHost; set { _explicitNullValueNewHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_host"); else _explicitNullProperties?.Remove("new_host"); } }
+        private string _explicitNullValueNewHost = default!;
 #endif
         /// <summary>The state the Machine was in before it was started</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousState { get; set; }
+        public string? PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
+        private string? _explicitNullValuePreviousState = default!;
 #nullable restore
 #else
-        public string PreviousState { get; set; }
+        public string PreviousState { get => _explicitNullValuePreviousState; set { _explicitNullValuePreviousState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_state"); else _explicitNullProperties?.Remove("previous_state"); } }
+        private string _explicitNullValuePreviousState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.StartMachineResponse"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.StartMachineResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.StartMachineResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.StartMachineResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteBoolValue("migrated", Migrated);
             writer.WriteStringValue("new_host", NewHost);
             writer.WriteStringValue("previous_state", PreviousState);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

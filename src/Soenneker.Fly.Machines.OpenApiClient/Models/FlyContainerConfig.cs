@@ -11,120 +11,169 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FlyContainerConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
+            if (parseNode.GetChildNode("depends_on") is { } nullNodeDependsOn && nullNodeDependsOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependsOn = null;
+            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("env") is { } nullNodeEnv && nullNodeEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Env = null;
+            if (parseNode.GetChildNode("env_from") is { } nullNodeEnvFrom && nullNodeEnvFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvFrom = null;
+            if (parseNode.GetChildNode("exec") is { } nullNodeExec && nullNodeExec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exec = null;
+            if (parseNode.GetChildNode("files") is { } nullNodeFiles && nullNodeFiles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Files = null;
+            if (parseNode.GetChildNode("healthchecks") is { } nullNodeHealthchecks && nullNodeHealthchecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Healthchecks = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("restart") is { } nullNodeRestart && nullNodeRestart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restart = null;
+            if (parseNode.GetChildNode("secrets") is { } nullNodeSecrets && nullNodeSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secrets = null;
+            if (parseNode.GetChildNode("stop") is { } nullNodeStop && nullNodeStop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stop = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>CmdOverride is used to override the default command of the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cmd { get; set; }
+        public List<string>? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        private List<string>? _explicitNullValueCmd = default!;
 #nullable restore
 #else
-        public List<string> Cmd { get; set; }
+        public List<string> Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        private List<string> _explicitNullValueCmd = default!;
 #endif
         /// <summary>DependsOn can be used to define dependencies between containers. The container will only bestarted after all of its dependent conditions have been satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>? DependsOn { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>? DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depends_on"); else _explicitNullProperties?.Remove("depends_on"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>? _explicitNullValueDependsOn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency> DependsOn { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency> DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depends_on"); else _explicitNullProperties?.Remove("depends_on"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency> _explicitNullValueDependsOn = default!;
 #endif
         /// <summary>EntrypointOverride is used to override the default entrypoint of the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Entrypoint { get; set; }
+        public List<string>? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string>? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public List<string> Entrypoint { get; set; }
+        public List<string> Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string> _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>ExtraEnv is used to add additional environment variables to the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty? Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty? _explicitNullValueEnv = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty Env { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigEnvProperty _explicitNullValueEnv = default!;
 #endif
         /// <summary>EnvFrom can be provided to set environment variables from machine fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>? EnvFrom { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>? EnvFrom { get => _explicitNullValueEnvFrom; set { _explicitNullValueEnvFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_from"); else _explicitNullProperties?.Remove("env_from"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom>? _explicitNullValueEnvFrom = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom> EnvFrom { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom> EnvFrom { get => _explicitNullValueEnvFrom; set { _explicitNullValueEnvFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_from"); else _explicitNullProperties?.Remove("env_from"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom> _explicitNullValueEnvFrom = default!;
 #endif
         /// <summary>Image Config overrides - these fields are used to override the image configuration.If not provided, the image configuration will be used.ExecOverride is used to override the default command of the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Exec { get; set; }
+        public List<string>? Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private List<string>? _explicitNullValueExec = default!;
 #nullable restore
 #else
-        public List<string> Exec { get; set; }
+        public List<string> Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private List<string> _explicitNullValueExec = default!;
 #endif
         /// <summary>Files are files that will be written to the container file system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>? Files { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>? Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile>? _explicitNullValueFiles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile> Files { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile> Files { get => _explicitNullValueFiles; set { _explicitNullValueFiles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files"); else _explicitNullProperties?.Remove("files"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyFile> _explicitNullValueFiles = default!;
 #endif
         /// <summary>Healthchecks determine the health of your containers. Healthchecks can use HTTP, TCP or an Exec command.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck>? Healthchecks { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck>? Healthchecks { get => _explicitNullValueHealthchecks; set { _explicitNullValueHealthchecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthchecks"); else _explicitNullProperties?.Remove("healthchecks"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck>? _explicitNullValueHealthchecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck> Healthchecks { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck> Healthchecks { get => _explicitNullValueHealthchecks; set { _explicitNullValueHealthchecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthchecks"); else _explicitNullProperties?.Remove("healthchecks"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheck> _explicitNullValueHealthchecks = default!;
 #endif
         /// <summary>Image is the docker image to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Image { get; set; }
+        public string? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public string Image { get; set; }
+        public string Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string _explicitNullValueImage = default!;
 #endif
         /// <summary>Name is used to identify the container in the machine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Restart is used to define the restart policy for the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart? Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart? Restart { get => _explicitNullValueRestart; set { _explicitNullValueRestart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restart"); else _explicitNullProperties?.Remove("restart"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart? _explicitNullValueRestart = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart Restart { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart Restart { get => _explicitNullValueRestart; set { _explicitNullValueRestart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restart"); else _explicitNullProperties?.Remove("restart"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigRestart _explicitNullValueRestart = default!;
 #endif
         /// <summary>Secrets can be provided at the process level to explicitly indicate which secrets should beused for the process. If not provided, the secrets provided at the machine level will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>? Secrets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>? _explicitNullValueSecrets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret> Secrets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret> Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret> _explicitNullValueSecrets = default!;
 #endif
         /// <summary>Stop is used to define the signal and timeout for stopping the container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop? Stop { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop? Stop { get => _explicitNullValueStop; set { _explicitNullValueStop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop"); else _explicitNullProperties?.Remove("stop"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop? _explicitNullValueStop = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop Stop { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop Stop { get => _explicitNullValueStop; set { _explicitNullValueStop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop"); else _explicitNullProperties?.Remove("stop"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop _explicitNullValueStop = default!;
 #endif
         /// <summary>UserOverride is used to override the default user of the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User { get; set; }
+        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private string? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public string User { get; set; }
+        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private string _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig"/> and sets the default values.
@@ -141,7 +190,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,6 +237,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret>("secrets", Secrets);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfigStop>("stop", Stop);
             writer.WriteStringValue("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

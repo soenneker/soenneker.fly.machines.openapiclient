@@ -11,48 +11,75 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FlyMachinePort : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_port") is { } nullNodeEndPort && nullNodeEndPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndPort = null;
+            if (parseNode.GetChildNode("force_https") is { } nullNodeForceHttps && nullNodeForceHttps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceHttps = null;
+            if (parseNode.GetChildNode("handlers") is { } nullNodeHandlers && nullNodeHandlers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handlers = null;
+            if (parseNode.GetChildNode("http_options") is { } nullNodeHttpOptions && nullNodeHttpOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpOptions = null;
+            if (parseNode.GetChildNode("port") is { } nullNodePort && nullNodePort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Port = null;
+            if (parseNode.GetChildNode("proxy_proto_options") is { } nullNodeProxyProtoOptions && nullNodeProxyProtoOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProxyProtoOptions = null;
+            if (parseNode.GetChildNode("start_port") is { } nullNodeStartPort && nullNodeStartPort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartPort = null;
+            if (parseNode.GetChildNode("tls_options") is { } nullNodeTlsOptions && nullNodeTlsOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsOptions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end_port property</summary>
-        public int? EndPort { get; set; }
+        public int? EndPort { get => _explicitNullValueEndPort; set { _explicitNullValueEndPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_port"); else _explicitNullProperties?.Remove("end_port"); } }
+        private int? _explicitNullValueEndPort = default!;
         /// <summary>The force_https property</summary>
-        public bool? ForceHttps { get; set; }
+        public bool? ForceHttps { get => _explicitNullValueForceHttps; set { _explicitNullValueForceHttps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_https"); else _explicitNullProperties?.Remove("force_https"); } }
+        private bool? _explicitNullValueForceHttps = default!;
         /// <summary>The handlers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Handlers { get; set; }
+        public List<string>? Handlers { get => _explicitNullValueHandlers; set { _explicitNullValueHandlers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handlers"); else _explicitNullProperties?.Remove("handlers"); } }
+        private List<string>? _explicitNullValueHandlers = default!;
 #nullable restore
 #else
-        public List<string> Handlers { get; set; }
+        public List<string> Handlers { get => _explicitNullValueHandlers; set { _explicitNullValueHandlers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handlers"); else _explicitNullProperties?.Remove("handlers"); } }
+        private List<string> _explicitNullValueHandlers = default!;
 #endif
         /// <summary>The http_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions? HttpOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions? HttpOptions { get => _explicitNullValueHttpOptions; set { _explicitNullValueHttpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_options"); else _explicitNullProperties?.Remove("http_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions? _explicitNullValueHttpOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions HttpOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions HttpOptions { get => _explicitNullValueHttpOptions; set { _explicitNullValueHttpOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_options"); else _explicitNullProperties?.Remove("http_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions _explicitNullValueHttpOptions = default!;
 #endif
         /// <summary>The port property</summary>
-        public int? Port { get; set; }
+        public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
+        private int? _explicitNullValuePort = default!;
         /// <summary>The proxy_proto_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions? ProxyProtoOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions? ProxyProtoOptions { get => _explicitNullValueProxyProtoOptions; set { _explicitNullValueProxyProtoOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy_proto_options"); else _explicitNullProperties?.Remove("proxy_proto_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions? _explicitNullValueProxyProtoOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions ProxyProtoOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions ProxyProtoOptions { get => _explicitNullValueProxyProtoOptions; set { _explicitNullValueProxyProtoOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy_proto_options"); else _explicitNullProperties?.Remove("proxy_proto_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions _explicitNullValueProxyProtoOptions = default!;
 #endif
         /// <summary>The start_port property</summary>
-        public int? StartPort { get; set; }
+        public int? StartPort { get => _explicitNullValueStartPort; set { _explicitNullValueStartPort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_port"); else _explicitNullProperties?.Remove("start_port"); } }
+        private int? _explicitNullValueStartPort = default!;
         /// <summary>The tls_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions? TlsOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions? TlsOptions { get => _explicitNullValueTlsOptions; set { _explicitNullValueTlsOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_options"); else _explicitNullProperties?.Remove("tls_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions? _explicitNullValueTlsOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions TlsOptions { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions TlsOptions { get => _explicitNullValueTlsOptions; set { _explicitNullValueTlsOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_options"); else _explicitNullProperties?.Remove("tls_options"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions _explicitNullValueTlsOptions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,6 +131,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyProxyProtoOptions>("proxy_proto_options", ProxyProtoOptions);
             writer.WriteIntValue("start_port", StartPort);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTlsOptions>("tls_options", TlsOptions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

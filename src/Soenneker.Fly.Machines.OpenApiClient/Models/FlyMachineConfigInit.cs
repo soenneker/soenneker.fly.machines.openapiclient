@@ -12,45 +12,68 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachineConfigInit : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cmd") is { } nullNodeCmd && nullNodeCmd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cmd = null;
+            if (parseNode.GetChildNode("entrypoint") is { } nullNodeEntrypoint && nullNodeEntrypoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entrypoint = null;
+            if (parseNode.GetChildNode("exec") is { } nullNodeExec && nullNodeExec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exec = null;
+            if (parseNode.GetChildNode("kernel_args") is { } nullNodeKernelArgs && nullNodeKernelArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelArgs = null;
+            if (parseNode.GetChildNode("swap_size_mb") is { } nullNodeSwapSizeMb && nullNodeSwapSizeMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SwapSizeMb = null;
+            if (parseNode.GetChildNode("tty") is { } nullNodeTty && nullNodeTty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tty = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cmd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cmd { get; set; }
+        public List<string>? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        private List<string>? _explicitNullValueCmd = default!;
 #nullable restore
 #else
-        public List<string> Cmd { get; set; }
+        public List<string> Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
+        private List<string> _explicitNullValueCmd = default!;
 #endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Entrypoint { get; set; }
+        public List<string>? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string>? _explicitNullValueEntrypoint = default!;
 #nullable restore
 #else
-        public List<string> Entrypoint { get; set; }
+        public List<string> Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
+        private List<string> _explicitNullValueEntrypoint = default!;
 #endif
         /// <summary>The exec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Exec { get; set; }
+        public List<string>? Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private List<string>? _explicitNullValueExec = default!;
 #nullable restore
 #else
-        public List<string> Exec { get; set; }
+        public List<string> Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private List<string> _explicitNullValueExec = default!;
 #endif
         /// <summary>The kernel_args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KernelArgs { get; set; }
+        public List<string>? KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
+        private List<string>? _explicitNullValueKernelArgs = default!;
 #nullable restore
 #else
-        public List<string> KernelArgs { get; set; }
+        public List<string> KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
+        private List<string> _explicitNullValueKernelArgs = default!;
 #endif
         /// <summary>The swap_size_mb property</summary>
-        public int? SwapSizeMb { get; set; }
+        public int? SwapSizeMb { get => _explicitNullValueSwapSizeMb; set { _explicitNullValueSwapSizeMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swap_size_mb"); else _explicitNullProperties?.Remove("swap_size_mb"); } }
+        private int? _explicitNullValueSwapSizeMb = default!;
         /// <summary>The tty property</summary>
-        public bool? Tty { get; set; }
+        public bool? Tty { get => _explicitNullValueTty; set { _explicitNullValueTty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tty"); else _explicitNullProperties?.Remove("tty"); } }
+        private bool? _explicitNullValueTty = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit"/> and sets the default values.
         /// </summary>
@@ -66,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigInit(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +120,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("kernel_args", KernelArgs);
             writer.WriteIntValue("swap_size_mb", SwapSizeMb);
             writer.WriteBoolValue("tty", Tty);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

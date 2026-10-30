@@ -11,48 +11,70 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrgMachinesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_regions") is { } nullNodeErrorRegions && nullNodeErrorRegions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorRegions = null;
+            if (parseNode.GetChildNode("last_machine_id") is { } nullNodeLastMachineId && nullNodeLastMachineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastMachineId = null;
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("machines") is { } nullNodeMachines && nullNodeMachines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Machines = null;
+            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error_regions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ErrorRegions { get; set; }
+        public List<string>? ErrorRegions { get => _explicitNullValueErrorRegions; set { _explicitNullValueErrorRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_regions"); else _explicitNullProperties?.Remove("error_regions"); } }
+        private List<string>? _explicitNullValueErrorRegions = default!;
 #nullable restore
 #else
-        public List<string> ErrorRegions { get; set; }
+        public List<string> ErrorRegions { get => _explicitNullValueErrorRegions; set { _explicitNullValueErrorRegions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_regions"); else _explicitNullProperties?.Remove("error_regions"); } }
+        private List<string> _explicitNullValueErrorRegions = default!;
 #endif
         /// <summary>The last_machine_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastMachineId { get; set; }
+        public string? LastMachineId { get => _explicitNullValueLastMachineId; set { _explicitNullValueLastMachineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_machine_id"); else _explicitNullProperties?.Remove("last_machine_id"); } }
+        private string? _explicitNullValueLastMachineId = default!;
 #nullable restore
 #else
-        public string LastMachineId { get; set; }
+        public string LastMachineId { get => _explicitNullValueLastMachineId; set { _explicitNullValueLastMachineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_machine_id"); else _explicitNullProperties?.Remove("last_machine_id"); } }
+        private string _explicitNullValueLastMachineId = default!;
 #endif
         /// <summary>The last_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get; set; }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get; set; }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>The machines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine>? Machines { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine>? Machines { get => _explicitNullValueMachines; set { _explicitNullValueMachines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machines"); else _explicitNullProperties?.Remove("machines"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine>? _explicitNullValueMachines = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine> Machines { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine> Machines { get => _explicitNullValueMachines; set { _explicitNullValueMachines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machines"); else _explicitNullProperties?.Remove("machines"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine> _explicitNullValueMachines = default!;
 #endif
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get; set; }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get; set; }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("last_updated_at", LastUpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine>("machines", Machines);
             writer.WriteStringValue("next_cursor", NextCursor);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

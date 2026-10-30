@@ -11,32 +11,53 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FlyHttpOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("compress") is { } nullNodeCompress && nullNodeCompress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compress = null;
+            if (parseNode.GetChildNode("h2_backend") is { } nullNodeH2Backend && nullNodeH2Backend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) H2Backend = null;
+            if (parseNode.GetChildNode("headers_read_timeout") is { } nullNodeHeadersReadTimeout && nullNodeHeadersReadTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadersReadTimeout = null;
+            if (parseNode.GetChildNode("idle_timeout") is { } nullNodeIdleTimeout && nullNodeIdleTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdleTimeout = null;
+            if (parseNode.GetChildNode("replay_cache") is { } nullNodeReplayCache && nullNodeReplayCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplayCache = null;
+            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The compress property</summary>
-        public bool? Compress { get; set; }
+        public bool? Compress { get => _explicitNullValueCompress; set { _explicitNullValueCompress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compress"); else _explicitNullProperties?.Remove("compress"); } }
+        private bool? _explicitNullValueCompress = default!;
         /// <summary>The h2_backend property</summary>
-        public bool? H2Backend { get; set; }
+        public bool? H2Backend { get => _explicitNullValueH2Backend; set { _explicitNullValueH2Backend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("h2_backend"); else _explicitNullProperties?.Remove("h2_backend"); } }
+        private bool? _explicitNullValueH2Backend = default!;
         /// <summary>The headers_read_timeout property</summary>
-        public int? HeadersReadTimeout { get; set; }
+        public int? HeadersReadTimeout { get => _explicitNullValueHeadersReadTimeout; set { _explicitNullValueHeadersReadTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers_read_timeout"); else _explicitNullProperties?.Remove("headers_read_timeout"); } }
+        private int? _explicitNullValueHeadersReadTimeout = default!;
         /// <summary>The idle_timeout property</summary>
-        public int? IdleTimeout { get; set; }
+        public int? IdleTimeout { get => _explicitNullValueIdleTimeout; set { _explicitNullValueIdleTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idle_timeout"); else _explicitNullProperties?.Remove("idle_timeout"); } }
+        private int? _explicitNullValueIdleTimeout = default!;
         /// <summary>The replay_cache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache>? ReplayCache { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache>? ReplayCache { get => _explicitNullValueReplayCache; set { _explicitNullValueReplayCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_cache"); else _explicitNullProperties?.Remove("replay_cache"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache>? _explicitNullValueReplayCache = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache> ReplayCache { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache> ReplayCache { get => _explicitNullValueReplayCache; set { _explicitNullValueReplayCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_cache"); else _explicitNullProperties?.Remove("replay_cache"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache> _explicitNullValueReplayCache = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions? Response { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions Response { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions _explicitNullValueResponse = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions"/> and sets the default values.
@@ -53,7 +74,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +105,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("idle_timeout", IdleTimeout);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyReplayCache>("replay_cache", ReplayCache);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpResponseOptions>("response", Response);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

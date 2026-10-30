@@ -49,7 +49,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Volumes
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolumesResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all volumes for an organization with optional filters and cursor-based pagination.

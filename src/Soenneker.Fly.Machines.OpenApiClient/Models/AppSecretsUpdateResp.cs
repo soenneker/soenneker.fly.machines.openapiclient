@@ -11,21 +11,35 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AppSecretsUpdateResp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("version") is { } nullNodeAppSecretsUpdateRespVersion && nullNodeAppSecretsUpdateRespVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppSecretsUpdateRespVersion = null;
+            if (parseNode.GetChildNode("secrets") is { } nullNodeSecrets && nullNodeSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secrets = null;
+            if (parseNode.GetChildNode("Version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
-        public int? AppSecretsUpdateRespVersion { get; set; }
+        public int? AppSecretsUpdateRespVersion { get => _explicitNullValueAppSecretsUpdateRespVersion; set { _explicitNullValueAppSecretsUpdateRespVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueAppSecretsUpdateRespVersion = default!;
         /// <summary>The secrets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>? Secrets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>? _explicitNullValueSecrets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret> Secrets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret> Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret> _explicitNullValueSecrets = default!;
 #endif
         /// <summary>DEPRECATED</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecretsUpdateResp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("version", AppSecretsUpdateRespVersion);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>("secrets", Secrets);
             writer.WriteIntValue("Version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

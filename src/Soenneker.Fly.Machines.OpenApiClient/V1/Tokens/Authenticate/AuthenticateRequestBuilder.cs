@@ -55,6 +55,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Tokens.Authenticate
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

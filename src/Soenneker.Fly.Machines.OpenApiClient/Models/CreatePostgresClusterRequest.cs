@@ -11,42 +11,68 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePostgresClusterRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("disk_size_gb") is { } nullNodeDiskSizeGb && nullNodeDiskSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiskSizeGb = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("org_slug") is { } nullNodeOrgSlug && nullNodeOrgSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgSlug = null;
+            if (parseNode.GetChildNode("pg_major_version") is { } nullNodePgMajorVersion && nullNodePgMajorVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PgMajorVersion = null;
+            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+            if (parseNode.GetChildNode("pool_mode") is { } nullNodePoolMode && nullNodePoolMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolMode = null;
+            if (parseNode.GetChildNode("postgis_enabled") is { } nullNodePostgisEnabled && nullNodePostgisEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostgisEnabled = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Disk size in gigabytes.</summary>
-        public int? DiskSizeGb { get; set; }
+        public int? DiskSizeGb { get => _explicitNullValueDiskSizeGb; set { _explicitNullValueDiskSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_size_gb"); else _explicitNullProperties?.Remove("disk_size_gb"); } }
+        private int? _explicitNullValueDiskSizeGb = default!;
         /// <summary>Name for the cluster. A name is generated when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Slug of the organization that will own the cluster, or &quot;personal&quot; for the caller&apos;s personal organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgSlug { get; set; }
+        public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        private string? _explicitNullValueOrgSlug = default!;
 #nullable restore
 #else
-        public string OrgSlug { get; set; }
+        public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        private string _explicitNullValueOrgSlug = default!;
 #endif
         /// <summary>Postgres major version.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPgMajorVersion? PgMajorVersion { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPgMajorVersion? PgMajorVersion { get => _explicitNullValuePgMajorVersion; set { _explicitNullValuePgMajorVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pg_major_version"); else _explicitNullProperties?.Remove("pg_major_version"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPgMajorVersion? _explicitNullValuePgMajorVersion = default!;
         /// <summary>Plan slug selecting CPU, memory, and disk sizing. Matched case-insensitively.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPlan? Plan { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPlan? _explicitNullValuePlan = default!;
         /// <summary>Connection pooler mode.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPoolMode? PoolMode { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPoolMode? PoolMode { get => _explicitNullValuePoolMode; set { _explicitNullValuePoolMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_mode"); else _explicitNullProperties?.Remove("pool_mode"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPoolMode? _explicitNullValuePoolMode = default!;
         /// <summary>Enable PostGIS support, required to later enable PostGIS extensions.</summary>
-        public bool? PostgisEnabled { get; set; }
+        public bool? PostgisEnabled { get => _explicitNullValuePostgisEnabled; set { _explicitNullValuePostgisEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postgis_enabled"); else _explicitNullProperties?.Remove("postgis_enabled"); } }
+        private bool? _explicitNullValuePostgisEnabled = default!;
         /// <summary>Fly region code where the cluster&apos;s primary runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequest"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreatePostgresClusterRequestPoolMode>("pool_mode", PoolMode);
             writer.WriteBoolValue("postgis_enabled", PostgisEnabled);
             writer.WriteStringValue("region", Region);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

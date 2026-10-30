@@ -11,17 +11,32 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CertificateValidation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alpn_configured") is { } nullNodeAlpnConfigured && nullNodeAlpnConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlpnConfigured = null;
+            if (parseNode.GetChildNode("dns_configured") is { } nullNodeDnsConfigured && nullNodeDnsConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsConfigured = null;
+            if (parseNode.GetChildNode("http_configured") is { } nullNodeHttpConfigured && nullNodeHttpConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpConfigured = null;
+            if (parseNode.GetChildNode("ownership_txt_configured") is { } nullNodeOwnershipTxtConfigured && nullNodeOwnershipTxtConfigured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipTxtConfigured = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alpn_configured property</summary>
-        public bool? AlpnConfigured { get; set; }
+        public bool? AlpnConfigured { get => _explicitNullValueAlpnConfigured; set { _explicitNullValueAlpnConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alpn_configured"); else _explicitNullProperties?.Remove("alpn_configured"); } }
+        private bool? _explicitNullValueAlpnConfigured = default!;
         /// <summary>The dns_configured property</summary>
-        public bool? DnsConfigured { get; set; }
+        public bool? DnsConfigured { get => _explicitNullValueDnsConfigured; set { _explicitNullValueDnsConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_configured"); else _explicitNullProperties?.Remove("dns_configured"); } }
+        private bool? _explicitNullValueDnsConfigured = default!;
         /// <summary>The http_configured property</summary>
-        public bool? HttpConfigured { get; set; }
+        public bool? HttpConfigured { get => _explicitNullValueHttpConfigured; set { _explicitNullValueHttpConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_configured"); else _explicitNullProperties?.Remove("http_configured"); } }
+        private bool? _explicitNullValueHttpConfigured = default!;
         /// <summary>The ownership_txt_configured property</summary>
-        public bool? OwnershipTxtConfigured { get; set; }
+        public bool? OwnershipTxtConfigured { get => _explicitNullValueOwnershipTxtConfigured; set { _explicitNullValueOwnershipTxtConfigured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt_configured"); else _explicitNullProperties?.Remove("ownership_txt_configured"); } }
+        private bool? _explicitNullValueOwnershipTxtConfigured = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateValidation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteBoolValue("dns_configured", DnsConfigured);
             writer.WriteBoolValue("http_configured", HttpConfigured);
             writer.WriteBoolValue("ownership_txt_configured", OwnershipTxtConfigured);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

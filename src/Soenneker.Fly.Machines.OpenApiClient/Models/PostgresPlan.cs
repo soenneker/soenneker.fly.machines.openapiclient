@@ -11,19 +11,36 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostgresPlan : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cpu_kind") is { } nullNodeCpuKind && nullNodeCpuKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuKind = null;
+            if (parseNode.GetChildNode("cpus") is { } nullNodeCpus && nullNodeCpus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpus = null;
+            if (parseNode.GetChildNode("memory_mb") is { } nullNodeMemoryMb && nullNodeMemoryMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMb = null;
+            if (parseNode.GetChildNode("monthly_price_usd") is { } nullNodeMonthlyPriceUsd && nullNodeMonthlyPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyPriceUsd = null;
+            if (parseNode.GetChildNode("plan") is { } nullNodePlan && nullNodePlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plan = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>CPU class.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? CpuKind { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanCpuKind? _explicitNullValueCpuKind = default!;
         /// <summary>vCPUs per node.</summary>
-        public int? Cpus { get; set; }
+        public int? Cpus { get => _explicitNullValueCpus; set { _explicitNullValueCpus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpus"); else _explicitNullProperties?.Remove("cpus"); } }
+        private int? _explicitNullValueCpus = default!;
         /// <summary>Memory per node in megabytes.</summary>
-        public int? MemoryMb { get; set; }
+        public int? MemoryMb { get => _explicitNullValueMemoryMb; set { _explicitNullValueMemoryMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mb"); else _explicitNullProperties?.Remove("memory_mb"); } }
+        private int? _explicitNullValueMemoryMb = default!;
         /// <summary>Base monthly price in US dollars.</summary>
-        public int? MonthlyPriceUsd { get; set; }
+        public int? MonthlyPriceUsd { get => _explicitNullValueMonthlyPriceUsd; set { _explicitNullValueMonthlyPriceUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_price_usd"); else _explicitNullProperties?.Remove("monthly_price_usd"); } }
+        private int? _explicitNullValueMonthlyPriceUsd = default!;
         /// <summary>Plan slug. Pass it as `plan` when creating or forking a cluster.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? Plan { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? Plan { get => _explicitNullValuePlan; set { _explicitNullValuePlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plan"); else _explicitNullProperties?.Remove("plan"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan? _explicitNullValuePlan = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("memory_mb", MemoryMb);
             writer.WriteIntValue("monthly_price_usd", MonthlyPriceUsd);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresPlanPlan>("plan", Plan);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

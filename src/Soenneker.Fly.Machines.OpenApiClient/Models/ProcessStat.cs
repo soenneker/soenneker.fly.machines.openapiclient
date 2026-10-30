@@ -11,43 +11,69 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ProcessStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("cpu") is { } nullNodeCpu && nullNodeCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpu = null;
+            if (parseNode.GetChildNode("directory") is { } nullNodeDirectory && nullNodeDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Directory = null;
+            if (parseNode.GetChildNode("listen_sockets") is { } nullNodeListenSockets && nullNodeListenSockets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListenSockets = null;
+            if (parseNode.GetChildNode("pid") is { } nullNodePid && nullNodePid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pid = null;
+            if (parseNode.GetChildNode("rss") is { } nullNodeRss && nullNodeRss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rss = null;
+            if (parseNode.GetChildNode("rtime") is { } nullNodeRtime && nullNodeRtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rtime = null;
+            if (parseNode.GetChildNode("stime") is { } nullNodeStime && nullNodeStime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Command { get; set; }
+        public string? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private string? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public string Command { get; set; }
+        public string Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private string _explicitNullValueCommand = default!;
 #endif
         /// <summary>The cpu property</summary>
-        public int? Cpu { get; set; }
+        public int? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
+        private int? _explicitNullValueCpu = default!;
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Directory { get; set; }
+        public string? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        private string? _explicitNullValueDirectory = default!;
 #nullable restore
 #else
-        public string Directory { get; set; }
+        public string Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
+        private string _explicitNullValueDirectory = default!;
 #endif
         /// <summary>The listen_sockets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? ListenSockets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? _explicitNullValueListenSockets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> ListenSockets { get; set; }
+        public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
+        private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> _explicitNullValueListenSockets = default!;
 #endif
         /// <summary>The pid property</summary>
-        public int? Pid { get; set; }
+        public int? Pid { get => _explicitNullValuePid; set { _explicitNullValuePid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pid"); else _explicitNullProperties?.Remove("pid"); } }
+        private int? _explicitNullValuePid = default!;
         /// <summary>The rss property</summary>
-        public int? Rss { get; set; }
+        public int? Rss { get => _explicitNullValueRss; set { _explicitNullValueRss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rss"); else _explicitNullProperties?.Remove("rss"); } }
+        private int? _explicitNullValueRss = default!;
         /// <summary>The rtime property</summary>
-        public int? Rtime { get; set; }
+        public int? Rtime { get => _explicitNullValueRtime; set { _explicitNullValueRtime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtime"); else _explicitNullProperties?.Remove("rtime"); } }
+        private int? _explicitNullValueRtime = default!;
         /// <summary>The stime property</summary>
-        public int? Stime { get; set; }
+        public int? Stime { get => _explicitNullValueStime; set { _explicitNullValueStime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stime"); else _explicitNullProperties?.Remove("stime"); } }
+        private int? _explicitNullValueStime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat"/> and sets the default values.
         /// </summary>
@@ -63,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("rss", Rss);
             writer.WriteIntValue("rtime", Rtime);
             writer.WriteIntValue("stime", Stime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

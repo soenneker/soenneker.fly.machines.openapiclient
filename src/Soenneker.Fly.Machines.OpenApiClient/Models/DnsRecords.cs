@@ -11,64 +11,92 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DnsRecords : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("a") is { } nullNodeA && nullNodeA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) A = null;
+            if (parseNode.GetChildNode("aaaa") is { } nullNodeAaaa && nullNodeAaaa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aaaa = null;
+            if (parseNode.GetChildNode("acme_challenge_cname") is { } nullNodeAcmeChallengeCname && nullNodeAcmeChallengeCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcmeChallengeCname = null;
+            if (parseNode.GetChildNode("cname") is { } nullNodeCname && nullNodeCname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cname = null;
+            if (parseNode.GetChildNode("ownership_txt") is { } nullNodeOwnershipTxt && nullNodeOwnershipTxt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipTxt = null;
+            if (parseNode.GetChildNode("resolved_addresses") is { } nullNodeResolvedAddresses && nullNodeResolvedAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvedAddresses = null;
+            if (parseNode.GetChildNode("soa") is { } nullNodeSoa && nullNodeSoa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Soa = null;
+        }
+
         /// <summary>The a property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? A { get; set; }
+        public List<string>? A { get => _explicitNullValueA; set { _explicitNullValueA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a"); else _explicitNullProperties?.Remove("a"); } }
+        private List<string>? _explicitNullValueA = default!;
 #nullable restore
 #else
-        public List<string> A { get; set; }
+        public List<string> A { get => _explicitNullValueA; set { _explicitNullValueA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a"); else _explicitNullProperties?.Remove("a"); } }
+        private List<string> _explicitNullValueA = default!;
 #endif
         /// <summary>The aaaa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Aaaa { get; set; }
+        public List<string>? Aaaa { get => _explicitNullValueAaaa; set { _explicitNullValueAaaa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aaaa"); else _explicitNullProperties?.Remove("aaaa"); } }
+        private List<string>? _explicitNullValueAaaa = default!;
 #nullable restore
 #else
-        public List<string> Aaaa { get; set; }
+        public List<string> Aaaa { get => _explicitNullValueAaaa; set { _explicitNullValueAaaa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aaaa"); else _explicitNullProperties?.Remove("aaaa"); } }
+        private List<string> _explicitNullValueAaaa = default!;
 #endif
         /// <summary>The acme_challenge_cname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcmeChallengeCname { get; set; }
+        public string? AcmeChallengeCname { get => _explicitNullValueAcmeChallengeCname; set { _explicitNullValueAcmeChallengeCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_challenge_cname"); else _explicitNullProperties?.Remove("acme_challenge_cname"); } }
+        private string? _explicitNullValueAcmeChallengeCname = default!;
 #nullable restore
 #else
-        public string AcmeChallengeCname { get; set; }
+        public string AcmeChallengeCname { get => _explicitNullValueAcmeChallengeCname; set { _explicitNullValueAcmeChallengeCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_challenge_cname"); else _explicitNullProperties?.Remove("acme_challenge_cname"); } }
+        private string _explicitNullValueAcmeChallengeCname = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Cname { get; set; }
+        public List<string>? Cname { get => _explicitNullValueCname; set { _explicitNullValueCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname"); else _explicitNullProperties?.Remove("cname"); } }
+        private List<string>? _explicitNullValueCname = default!;
 #nullable restore
 #else
-        public List<string> Cname { get; set; }
+        public List<string> Cname { get => _explicitNullValueCname; set { _explicitNullValueCname = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname"); else _explicitNullProperties?.Remove("cname"); } }
+        private List<string> _explicitNullValueCname = default!;
 #endif
         /// <summary>The ownership_txt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipTxt { get; set; }
+        public string? OwnershipTxt { get => _explicitNullValueOwnershipTxt; set { _explicitNullValueOwnershipTxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt"); else _explicitNullProperties?.Remove("ownership_txt"); } }
+        private string? _explicitNullValueOwnershipTxt = default!;
 #nullable restore
 #else
-        public string OwnershipTxt { get; set; }
+        public string OwnershipTxt { get => _explicitNullValueOwnershipTxt; set { _explicitNullValueOwnershipTxt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt"); else _explicitNullProperties?.Remove("ownership_txt"); } }
+        private string _explicitNullValueOwnershipTxt = default!;
 #endif
         /// <summary>The resolved_addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResolvedAddresses { get; set; }
+        public List<string>? ResolvedAddresses { get => _explicitNullValueResolvedAddresses; set { _explicitNullValueResolvedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_addresses"); else _explicitNullProperties?.Remove("resolved_addresses"); } }
+        private List<string>? _explicitNullValueResolvedAddresses = default!;
 #nullable restore
 #else
-        public List<string> ResolvedAddresses { get; set; }
+        public List<string> ResolvedAddresses { get => _explicitNullValueResolvedAddresses; set { _explicitNullValueResolvedAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_addresses"); else _explicitNullProperties?.Remove("resolved_addresses"); } }
+        private List<string> _explicitNullValueResolvedAddresses = default!;
 #endif
         /// <summary>The soa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Soa { get; set; }
+        public string? Soa { get => _explicitNullValueSoa; set { _explicitNullValueSoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soa"); else _explicitNullProperties?.Remove("soa"); } }
+        private string? _explicitNullValueSoa = default!;
 #nullable restore
 #else
-        public string Soa { get; set; }
+        public string Soa { get => _explicitNullValueSoa; set { _explicitNullValueSoa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soa"); else _explicitNullProperties?.Remove("soa"); } }
+        private string _explicitNullValueSoa = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRecords"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRecords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRecords();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.DnsRecords(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("ownership_txt", OwnershipTxt);
             writer.WriteCollectionOfPrimitiveValues<string>("resolved_addresses", ResolvedAddresses);
             writer.WriteStringValue("soa", Soa);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

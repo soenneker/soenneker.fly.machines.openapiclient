@@ -11,98 +11,140 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MainTokenAccess : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("app_feature") is { } nullNodeAppFeature && nullNodeAppFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppFeature = null;
+            if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
+            if (parseNode.GetChildNode("command") is { } nullNodeCommand && nullNodeCommand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Command = null;
+            if (parseNode.GetChildNode("machine_feature") is { } nullNodeMachineFeature && nullNodeMachineFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MachineFeature = null;
+            if (parseNode.GetChildNode("machine_id") is { } nullNodeMachineId && nullNodeMachineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MachineId = null;
+            if (parseNode.GetChildNode("mutation") is { } nullNodeMutation && nullNodeMutation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mutation = null;
+            if (parseNode.GetChildNode("org_feature") is { } nullNodeOrgFeature && nullNodeOrgFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgFeature = null;
+            if (parseNode.GetChildNode("org_slug") is { } nullNodeOrgSlug && nullNodeOrgSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgSlug = null;
+            if (parseNode.GetChildNode("source_machine") is { } nullNodeSourceMachine && nullNodeSourceMachine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMachine = null;
+            if (parseNode.GetChildNode("storage_object") is { } nullNodeStorageObject && nullNodeStorageObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StorageObject = null;
+            if (parseNode.GetChildNode("volume_id") is { } nullNodeVolumeId && nullNodeVolumeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeId = null;
+        }
+
         /// <summary>Action is the action being taken on the specified resource. This is thecombination of individual action characters (e.g &quot;rw&quot;)  - r: read  - w: write  - c: create  - d: delete  - C: control</summary>
-        public int? Action { get; set; }
+        public int? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private int? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AppFeature is a named set of functionality associated with the app. Ifthis is specified, the AppName field must be set.  - images: images in the fly.io registry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppFeature { get; set; }
+        public string? AppFeature { get => _explicitNullValueAppFeature; set { _explicitNullValueAppFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_feature"); else _explicitNullProperties?.Remove("app_feature"); } }
+        private string? _explicitNullValueAppFeature = default!;
 #nullable restore
 #else
-        public string AppFeature { get; set; }
+        public string AppFeature { get => _explicitNullValueAppFeature; set { _explicitNullValueAppFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_feature"); else _explicitNullProperties?.Remove("app_feature"); } }
+        private string _explicitNullValueAppFeature = default!;
 #endif
         /// <summary>AppName is the name of the app being accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        private string? _explicitNullValueAppName = default!;
 #nullable restore
 #else
-        public string AppName { get; set; }
+        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        private string _explicitNullValueAppName = default!;
 #endif
         /// <summary>Command is the command being executed on a machine. If this is specified,the Machine must be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Command { get; set; }
+        public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private List<string>? _explicitNullValueCommand = default!;
 #nullable restore
 #else
-        public List<string> Command { get; set; }
+        public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
+        private List<string> _explicitNullValueCommand = default!;
 #endif
         /// <summary>MachineFeature is a named set of functionality associated with themachine. If this is specified, the Machine field must be set.  - metadata: machine metadata service  - oidc: OIDC tokens  - kmstoken: Petsem tokens for KMS access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineFeature { get; set; }
+        public string? MachineFeature { get => _explicitNullValueMachineFeature; set { _explicitNullValueMachineFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_feature"); else _explicitNullProperties?.Remove("machine_feature"); } }
+        private string? _explicitNullValueMachineFeature = default!;
 #nullable restore
 #else
-        public string MachineFeature { get; set; }
+        public string MachineFeature { get => _explicitNullValueMachineFeature; set { _explicitNullValueMachineFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_feature"); else _explicitNullProperties?.Remove("machine_feature"); } }
+        private string _explicitNullValueMachineFeature = default!;
 #endif
         /// <summary>MachineID is the ID of the machine being accessed (e.g. 7811701f564258).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineId { get; set; }
+        public string? MachineId { get => _explicitNullValueMachineId; set { _explicitNullValueMachineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_id"); else _explicitNullProperties?.Remove("machine_id"); } }
+        private string? _explicitNullValueMachineId = default!;
 #nullable restore
 #else
-        public string MachineId { get; set; }
+        public string MachineId { get => _explicitNullValueMachineId; set { _explicitNullValueMachineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_id"); else _explicitNullProperties?.Remove("machine_id"); } }
+        private string _explicitNullValueMachineId = default!;
 #endif
         /// <summary>Mutation is the GraphQL mutation being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mutation { get; set; }
+        public string? Mutation { get => _explicitNullValueMutation; set { _explicitNullValueMutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutation"); else _explicitNullProperties?.Remove("mutation"); } }
+        private string? _explicitNullValueMutation = default!;
 #nullable restore
 #else
-        public string Mutation { get; set; }
+        public string Mutation { get => _explicitNullValueMutation; set { _explicitNullValueMutation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutation"); else _explicitNullProperties?.Remove("mutation"); } }
+        private string _explicitNullValueMutation = default!;
 #endif
         /// <summary>OrgFeature is a named set of functionality associated with theorganization. If this is specified, the OrgSlug field must be set.  - wg: WireGuard peers  - builder: remote builders  - addon: addons  - membership: organization membership  - billing: billing  - litefs-cloud: LiteFS Cloud  - authentication: authentication settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgFeature { get; set; }
+        public string? OrgFeature { get => _explicitNullValueOrgFeature; set { _explicitNullValueOrgFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_feature"); else _explicitNullProperties?.Remove("org_feature"); } }
+        private string? _explicitNullValueOrgFeature = default!;
 #nullable restore
 #else
-        public string OrgFeature { get; set; }
+        public string OrgFeature { get => _explicitNullValueOrgFeature; set { _explicitNullValueOrgFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_feature"); else _explicitNullProperties?.Remove("org_feature"); } }
+        private string _explicitNullValueOrgFeature = default!;
 #endif
         /// <summary>OrgSlug is the slug of the organization being accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrgSlug { get; set; }
+        public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        private string? _explicitNullValueOrgSlug = default!;
 #nullable restore
 #else
-        public string OrgSlug { get; set; }
+        public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
+        private string _explicitNullValueOrgSlug = default!;
 #endif
         /// <summary>SourceMachine is the machine ID of the actor attempting access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceMachine { get; set; }
+        public string? SourceMachine { get => _explicitNullValueSourceMachine; set { _explicitNullValueSourceMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_machine"); else _explicitNullProperties?.Remove("source_machine"); } }
+        private string? _explicitNullValueSourceMachine = default!;
 #nullable restore
 #else
-        public string SourceMachine { get; set; }
+        public string SourceMachine { get => _explicitNullValueSourceMachine; set { _explicitNullValueSourceMachine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_machine"); else _explicitNullProperties?.Remove("source_machine"); } }
+        private string _explicitNullValueSourceMachine = default!;
 #endif
         /// <summary>StorageObject is the storage object being accessed. If this is specified,the OrgSlug must be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageObject { get; set; }
+        public string? StorageObject { get => _explicitNullValueStorageObject; set { _explicitNullValueStorageObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_object"); else _explicitNullProperties?.Remove("storage_object"); } }
+        private string? _explicitNullValueStorageObject = default!;
 #nullable restore
 #else
-        public string StorageObject { get; set; }
+        public string StorageObject { get => _explicitNullValueStorageObject; set { _explicitNullValueStorageObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage_object"); else _explicitNullProperties?.Remove("storage_object"); } }
+        private string _explicitNullValueStorageObject = default!;
 #endif
         /// <summary>VolumeID is the encoded ID of the volume being accessed (e.g.vol_r1p6pln1k9m9j7zr).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VolumeId { get; set; }
+        public string? VolumeId { get => _explicitNullValueVolumeId; set { _explicitNullValueVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_id"); else _explicitNullProperties?.Remove("volume_id"); } }
+        private string? _explicitNullValueVolumeId = default!;
 #nullable restore
 #else
-        public string VolumeId { get; set; }
+        public string VolumeId { get => _explicitNullValueVolumeId; set { _explicitNullValueVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_id"); else _explicitNullProperties?.Remove("volume_id"); } }
+        private string _explicitNullValueVolumeId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess"/> and sets the default values.
@@ -119,7 +161,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +204,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("source_machine", SourceMachine);
             writer.WriteStringValue("storage_object", StorageObject);
             writer.WriteStringValue("volume_id", VolumeId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

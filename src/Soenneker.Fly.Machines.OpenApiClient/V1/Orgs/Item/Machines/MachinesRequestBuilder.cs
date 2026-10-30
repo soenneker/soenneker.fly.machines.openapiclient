@@ -49,7 +49,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Machines
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all Machines associated with a specific organization. Machines are sorted by their `updated_at` timestamps, oldest to newest.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.

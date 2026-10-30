@@ -11,40 +11,59 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RootVerifiedToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("caveats") is { } nullNodeCaveats && nullNodeCaveats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caveats = null;
+            if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
+            if (parseNode.GetChildNode("nonce") is { } nullNodeNonce && nullNodeNonce.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nonce = null;
+            if (parseNode.GetChildNode("permission_token") is { } nullNodePermissionToken && nullNodePermissionToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionToken = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The caveats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet? Caveats { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet? Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet? _explicitNullValueCaveats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet Caveats { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet Caveats { get => _explicitNullValueCaveats; set { _explicitNullValueCaveats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caveats"); else _explicitNullProperties?.Remove("caveats"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonCaveatSet _explicitNullValueCaveats = default!;
 #endif
         /// <summary>The header property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Header { get; set; }
+        public string? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private string? _explicitNullValueHeader = default!;
 #nullable restore
 #else
-        public string Header { get; set; }
+        public string Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
+        private string _explicitNullValueHeader = default!;
 #endif
         /// <summary>The nonce property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce? Nonce { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce? Nonce { get => _explicitNullValueNonce; set { _explicitNullValueNonce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonce"); else _explicitNullProperties?.Remove("nonce"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce? _explicitNullValueNonce = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce Nonce { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce Nonce { get => _explicitNullValueNonce; set { _explicitNullValueNonce = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonce"); else _explicitNullProperties?.Remove("nonce"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce _explicitNullValueNonce = default!;
 #endif
         /// <summary>The permission_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? PermissionToken { get; set; }
+        public List<int?>? PermissionToken { get => _explicitNullValuePermissionToken; set { _explicitNullValuePermissionToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_token"); else _explicitNullProperties?.Remove("permission_token"); } }
+        private List<int?>? _explicitNullValuePermissionToken = default!;
 #nullable restore
 #else
-        public List<int?> PermissionToken { get; set; }
+        public List<int?> PermissionToken { get => _explicitNullValuePermissionToken; set { _explicitNullValuePermissionToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_token"); else _explicitNullProperties?.Remove("permission_token"); } }
+        private List<int?> _explicitNullValuePermissionToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("header", Header);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MacaroonNonce>("nonce", Nonce);
             writer.WriteCollectionOfPrimitiveValues<int?>("permission_token", PermissionToken);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

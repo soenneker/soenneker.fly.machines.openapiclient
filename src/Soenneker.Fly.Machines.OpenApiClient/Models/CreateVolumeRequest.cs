@@ -11,77 +11,117 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateVolumeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_backup_enabled") is { } nullNodeAutoBackupEnabled && nullNodeAutoBackupEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBackupEnabled = null;
+            if (parseNode.GetChildNode("compute") is { } nullNodeCompute && nullNodeCompute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compute = null;
+            if (parseNode.GetChildNode("compute_image") is { } nullNodeComputeImage && nullNodeComputeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeImage = null;
+            if (parseNode.GetChildNode("encrypted") is { } nullNodeEncrypted && nullNodeEncrypted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Encrypted = null;
+            if (parseNode.GetChildNode("fstype") is { } nullNodeFstype && nullNodeFstype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fstype = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("require_unique_zone") is { } nullNodeRequireUniqueZone && nullNodeRequireUniqueZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireUniqueZone = null;
+            if (parseNode.GetChildNode("size_gb") is { } nullNodeSizeGb && nullNodeSizeGb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeGb = null;
+            if (parseNode.GetChildNode("snapshot_id") is { } nullNodeSnapshotId && nullNodeSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotId = null;
+            if (parseNode.GetChildNode("snapshot_retention") is { } nullNodeSnapshotRetention && nullNodeSnapshotRetention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotRetention = null;
+            if (parseNode.GetChildNode("source_volume_id") is { } nullNodeSourceVolumeId && nullNodeSourceVolumeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceVolumeId = null;
+            if (parseNode.GetChildNode("unique_zone_app_wide") is { } nullNodeUniqueZoneAppWide && nullNodeUniqueZoneAppWide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueZoneAppWide = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>enable scheduled automatic snapshots. Defaults to `true`</summary>
-        public bool? AutoBackupEnabled { get; set; }
+        public bool? AutoBackupEnabled { get => _explicitNullValueAutoBackupEnabled; set { _explicitNullValueAutoBackupEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_backup_enabled"); else _explicitNullProperties?.Remove("auto_backup_enabled"); } }
+        private bool? _explicitNullValueAutoBackupEnabled = default!;
         /// <summary>The compute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? Compute { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? _explicitNullValueCompute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest Compute { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest _explicitNullValueCompute = default!;
 #endif
         /// <summary>The compute_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComputeImage { get; set; }
+        public string? ComputeImage { get => _explicitNullValueComputeImage; set { _explicitNullValueComputeImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_image"); else _explicitNullProperties?.Remove("compute_image"); } }
+        private string? _explicitNullValueComputeImage = default!;
 #nullable restore
 #else
-        public string ComputeImage { get; set; }
+        public string ComputeImage { get => _explicitNullValueComputeImage; set { _explicitNullValueComputeImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_image"); else _explicitNullProperties?.Remove("compute_image"); } }
+        private string _explicitNullValueComputeImage = default!;
 #endif
         /// <summary>The encrypted property</summary>
-        public bool? Encrypted { get; set; }
+        public bool? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
+        private bool? _explicitNullValueEncrypted = default!;
         /// <summary>The fstype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fstype { get; set; }
+        public string? Fstype { get => _explicitNullValueFstype; set { _explicitNullValueFstype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fstype"); else _explicitNullProperties?.Remove("fstype"); } }
+        private string? _explicitNullValueFstype = default!;
 #nullable restore
 #else
-        public string Fstype { get; set; }
+        public string Fstype { get => _explicitNullValueFstype; set { _explicitNullValueFstype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fstype"); else _explicitNullProperties?.Remove("fstype"); } }
+        private string _explicitNullValueFstype = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The require_unique_zone property</summary>
-        public bool? RequireUniqueZone { get; set; }
+        public bool? RequireUniqueZone { get => _explicitNullValueRequireUniqueZone; set { _explicitNullValueRequireUniqueZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_unique_zone"); else _explicitNullProperties?.Remove("require_unique_zone"); } }
+        private bool? _explicitNullValueRequireUniqueZone = default!;
         /// <summary>The size_gb property</summary>
-        public int? SizeGb { get; set; }
+        public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
+        private int? _explicitNullValueSizeGb = default!;
         /// <summary>restore from snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotId { get; set; }
+        public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
+        private string? _explicitNullValueSnapshotId = default!;
 #nullable restore
 #else
-        public string SnapshotId { get; set; }
+        public string SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
+        private string _explicitNullValueSnapshotId = default!;
 #endif
         /// <summary>The snapshot_retention property</summary>
-        public int? SnapshotRetention { get; set; }
+        public int? SnapshotRetention { get => _explicitNullValueSnapshotRetention; set { _explicitNullValueSnapshotRetention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_retention"); else _explicitNullProperties?.Remove("snapshot_retention"); } }
+        private int? _explicitNullValueSnapshotRetention = default!;
         /// <summary>fork from remote volume</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceVolumeId { get; set; }
+        public string? SourceVolumeId { get => _explicitNullValueSourceVolumeId; set { _explicitNullValueSourceVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_volume_id"); else _explicitNullProperties?.Remove("source_volume_id"); } }
+        private string? _explicitNullValueSourceVolumeId = default!;
 #nullable restore
 #else
-        public string SourceVolumeId { get; set; }
+        public string SourceVolumeId { get => _explicitNullValueSourceVolumeId; set { _explicitNullValueSourceVolumeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_volume_id"); else _explicitNullProperties?.Remove("source_volume_id"); } }
+        private string _explicitNullValueSourceVolumeId = default!;
 #endif
         /// <summary>The unique_zone_app_wide property</summary>
-        public bool? UniqueZoneAppWide { get; set; }
+        public bool? UniqueZoneAppWide { get => _explicitNullValueUniqueZoneAppWide; set { _explicitNullValueUniqueZoneAppWide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_zone_app_wide"); else _explicitNullProperties?.Remove("unique_zone_app_wide"); } }
+        private bool? _explicitNullValueUniqueZoneAppWide = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest"/> and sets the default values.
         /// </summary>
@@ -97,7 +137,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,6 +182,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("snapshot_retention", SnapshotRetention);
             writer.WriteStringValue("source_volume_id", SourceVolumeId);
             writer.WriteBoolValue("unique_zone_app_wide", UniqueZoneAppWide);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

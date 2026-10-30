@@ -12,58 +12,90 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachineConfigGuest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cpu_kind") is { } nullNodeCpuKind && nullNodeCpuKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CpuKind = null;
+            if (parseNode.GetChildNode("cpus") is { } nullNodeCpus && nullNodeCpus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cpus = null;
+            if (parseNode.GetChildNode("gpu_kind") is { } nullNodeGpuKind && nullNodeGpuKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GpuKind = null;
+            if (parseNode.GetChildNode("gpus") is { } nullNodeGpus && nullNodeGpus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gpus = null;
+            if (parseNode.GetChildNode("host_dedication_id") is { } nullNodeHostDedicationId && nullNodeHostDedicationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostDedicationId = null;
+            if (parseNode.GetChildNode("kernel_args") is { } nullNodeKernelArgs && nullNodeKernelArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KernelArgs = null;
+            if (parseNode.GetChildNode("max_memory_mb") is { } nullNodeMaxMemoryMb && nullNodeMaxMemoryMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxMemoryMb = null;
+            if (parseNode.GetChildNode("memory_mb") is { } nullNodeMemoryMb && nullNodeMemoryMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemoryMb = null;
+            if (parseNode.GetChildNode("persist_rootfs") is { } nullNodePersistRootfs && nullNodePersistRootfs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersistRootfs = null;
+            if (parseNode.GetChildNode("required_host_features") is { } nullNodeRequiredHostFeatures && nullNodeRequiredHostFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredHostFeatures = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cpu_kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CpuKind { get; set; }
+        public string? CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
+        private string? _explicitNullValueCpuKind = default!;
 #nullable restore
 #else
-        public string CpuKind { get; set; }
+        public string CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
+        private string _explicitNullValueCpuKind = default!;
 #endif
         /// <summary>The cpus property</summary>
-        public int? Cpus { get; set; }
+        public int? Cpus { get => _explicitNullValueCpus; set { _explicitNullValueCpus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpus"); else _explicitNullProperties?.Remove("cpus"); } }
+        private int? _explicitNullValueCpus = default!;
         /// <summary>The gpu_kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GpuKind { get; set; }
+        public string? GpuKind { get => _explicitNullValueGpuKind; set { _explicitNullValueGpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpu_kind"); else _explicitNullProperties?.Remove("gpu_kind"); } }
+        private string? _explicitNullValueGpuKind = default!;
 #nullable restore
 #else
-        public string GpuKind { get; set; }
+        public string GpuKind { get => _explicitNullValueGpuKind; set { _explicitNullValueGpuKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpu_kind"); else _explicitNullProperties?.Remove("gpu_kind"); } }
+        private string _explicitNullValueGpuKind = default!;
 #endif
         /// <summary>The gpus property</summary>
-        public int? Gpus { get; set; }
+        public int? Gpus { get => _explicitNullValueGpus; set { _explicitNullValueGpus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpus"); else _explicitNullProperties?.Remove("gpus"); } }
+        private int? _explicitNullValueGpus = default!;
         /// <summary>The host_dedication_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostDedicationId { get; set; }
+        public string? HostDedicationId { get => _explicitNullValueHostDedicationId; set { _explicitNullValueHostDedicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_dedication_id"); else _explicitNullProperties?.Remove("host_dedication_id"); } }
+        private string? _explicitNullValueHostDedicationId = default!;
 #nullable restore
 #else
-        public string HostDedicationId { get; set; }
+        public string HostDedicationId { get => _explicitNullValueHostDedicationId; set { _explicitNullValueHostDedicationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_dedication_id"); else _explicitNullProperties?.Remove("host_dedication_id"); } }
+        private string _explicitNullValueHostDedicationId = default!;
 #endif
         /// <summary>The kernel_args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KernelArgs { get; set; }
+        public List<string>? KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
+        private List<string>? _explicitNullValueKernelArgs = default!;
 #nullable restore
 #else
-        public List<string> KernelArgs { get; set; }
+        public List<string> KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
+        private List<string> _explicitNullValueKernelArgs = default!;
 #endif
         /// <summary>The max_memory_mb property</summary>
-        public int? MaxMemoryMb { get; set; }
+        public int? MaxMemoryMb { get => _explicitNullValueMaxMemoryMb; set { _explicitNullValueMaxMemoryMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_memory_mb"); else _explicitNullProperties?.Remove("max_memory_mb"); } }
+        private int? _explicitNullValueMaxMemoryMb = default!;
         /// <summary>The memory_mb property</summary>
-        public int? MemoryMb { get; set; }
+        public int? MemoryMb { get => _explicitNullValueMemoryMb; set { _explicitNullValueMemoryMb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mb"); else _explicitNullProperties?.Remove("memory_mb"); } }
+        private int? _explicitNullValueMemoryMb = default!;
         /// <summary>Deprecated: use MachineConfig.Rootfs instead</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get; set; }
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get => _explicitNullValuePersistRootfs; set { _explicitNullValuePersistRootfs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist_rootfs"); else _explicitNullProperties?.Remove("persist_rootfs"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? _explicitNullValuePersistRootfs = default!;
         /// <summary>The required_host_features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequiredHostFeatures { get; set; }
+        public List<string>? RequiredHostFeatures { get => _explicitNullValueRequiredHostFeatures; set { _explicitNullValueRequiredHostFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_host_features"); else _explicitNullProperties?.Remove("required_host_features"); } }
+        private List<string>? _explicitNullValueRequiredHostFeatures = default!;
 #nullable restore
 #else
-        public List<string> RequiredHostFeatures { get; set; }
+        public List<string> RequiredHostFeatures { get => _explicitNullValueRequiredHostFeatures; set { _explicitNullValueRequiredHostFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_host_features"); else _explicitNullProperties?.Remove("required_host_features"); } }
+        private List<string> _explicitNullValueRequiredHostFeatures = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest"/> and sets the default values.
@@ -80,7 +112,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigGuest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +151,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteIntValue("memory_mb", MemoryMb);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs>("persist_rootfs", PersistRootfs);
             writer.WriteCollectionOfPrimitiveValues<string>("required_host_features", RequiredHostFeatures);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

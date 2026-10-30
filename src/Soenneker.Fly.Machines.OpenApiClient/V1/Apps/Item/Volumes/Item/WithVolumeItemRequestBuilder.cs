@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Volumes.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve details about a specific volume by its ID within an app.
@@ -79,7 +79,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Volumes.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a volume&apos;s configuration using the details provided in the request body.
@@ -103,6 +103,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Volumes.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
