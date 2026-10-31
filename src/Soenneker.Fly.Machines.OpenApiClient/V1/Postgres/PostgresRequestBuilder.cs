@@ -130,7 +130,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.PostgresRequestBuilder.PostgresRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/postgres?org_slug={org_slug}{&include_deleted*}", RequestAdapter.BaseUrl, "https://api.machines.dev", "/v1/postgres", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/postgres?org_slug={org_slug}{&include_deleted*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -151,7 +151,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.machines.dev", "/v1/postgres", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
