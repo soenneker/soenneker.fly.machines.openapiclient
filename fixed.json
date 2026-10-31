@@ -130,6 +130,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAppResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -297,6 +308,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificateDetail"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -351,6 +373,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CertificateDetail"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -1195,12 +1228,14 @@
           "200": {
             "description": "stdout, stderr, exit code, and exit signal are returned",
             "content": {
-              "application/octet-stream": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Flydv1ExecResponse"
                 }
-              },
-              "application/json": {
+              }
+            },
+            "x-client-original-non-json-content": {
+              "application/octet-stream": {
                 "schema": {
                   "$ref": "#/components/schemas/Flydv1ExecResponse"
                 }
@@ -1323,6 +1358,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Lease"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -2534,6 +2580,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetSecretkeyResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -2778,6 +2835,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetSecretkeyResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -3133,6 +3201,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetAppSecretResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -3952,6 +4031,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Cluster accepted for provisioning",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowPostgresClusterResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -4547,6 +4637,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostgresDatabaseResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -5022,6 +5123,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "New cluster provisioned from the fork",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowPostgresClusterResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -5274,6 +5386,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "New cluster provisioned from the backup or point in time",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShowPostgresClusterResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
@@ -5440,6 +5563,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePostgresUserResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-codegen-request-body-name": "request"
