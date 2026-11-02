@@ -6953,17 +6953,6 @@
           ]
         }
       },
-      "IpPair": {
-        "type": "object",
-        "properties": {
-          "v4": {
-            "type": "string"
-          },
-          "v6": {
-            "type": "string"
-          }
-        }
-      },
       "ImageRef": {
         "type": "object",
         "properties": {
@@ -7600,14 +7589,6 @@
           }
         }
       },
-      "PostgresClusterEndpoints": {
-        "type": "object",
-        "properties": {
-          "primary": {
-            "$ref": "#/components/schemas/PostgresClusterEndpointsPrimary"
-          }
-        }
-      },
       "PostgresClusterSummary": {
         "type": "object",
         "properties": {
@@ -7657,19 +7638,6 @@
           }
         }
       },
-      "PostgresEndpoint": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Hostname to connect to."
-          },
-          "port": {
-            "type": "integer",
-            "description": "TCP port."
-          }
-        }
-      },
       "PostgresErrorResponse": {
         "type": "object",
         "properties": {
@@ -7706,32 +7674,6 @@
           "system": {
             "type": "boolean",
             "description": "Whether this is a system extension that cannot be disabled."
-          }
-        }
-      },
-      "PostgresInstalledExtension": {
-        "type": "object",
-        "properties": {
-          "schema": {
-            "type": "string",
-            "description": "Schema the extension is installed into.",
-            "example": "public"
-          },
-          "version": {
-            "type": "string",
-            "description": "Installed version.",
-            "example": "1.0"
-          }
-        }
-      },
-      "PostgresNodeEndpoints": {
-        "type": "object",
-        "properties": {
-          "direct": {
-            "$ref": "#/components/schemas/PostgresNodeEndpointsDirect"
-          },
-          "pooler": {
-            "$ref": "#/components/schemas/PostgresNodeEndpointsPooler"
           }
         }
       },
@@ -8572,37 +8514,6 @@
           }
         }
       },
-      "FlyContainerDependencyCondition": {
-        "enum": [
-          "exited_successfully",
-          "healthy",
-          "started"
-        ],
-        "type": "string",
-        "x-enum-varnames": [
-          "ExitedSuccessfully",
-          "Healthy",
-          "Started"
-        ],
-        "x-ms-enum": {
-          "name": "FlyContainerDependencyCondition",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exited_successfully",
-              "name": "ExitedSuccessfully"
-            },
-            {
-              "value": "healthy",
-              "name": "Healthy"
-            },
-            {
-              "value": "started",
-              "name": "Started"
-            }
-          ]
-        }
-      },
       "FlyContainerHealthcheck": {
         "type": "object",
         "properties": {
@@ -8644,94 +8555,6 @@
           },
           "unhealthy": {
             "$ref": "#/components/schemas/FlyContainerHealthcheckUnhealthy"
-          }
-        }
-      },
-      "FlyContainerHealthcheckKind": {
-        "enum": [
-          "readiness",
-          "liveness"
-        ],
-        "type": "string",
-        "x-enum-varnames": [
-          "Readiness",
-          "Liveness"
-        ],
-        "x-ms-enum": {
-          "name": "FlyContainerHealthcheckKind",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "readiness",
-              "name": "Readiness"
-            },
-            {
-              "value": "liveness",
-              "name": "Liveness"
-            }
-          ]
-        }
-      },
-      "FlyContainerHealthcheckScheme": {
-        "enum": [
-          "http",
-          "https"
-        ],
-        "type": "string",
-        "x-enum-varnames": [
-          "HTTP",
-          "HTTPS"
-        ],
-        "x-ms-enum": {
-          "name": "FlyContainerHealthcheckScheme",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "http",
-              "name": "Http"
-            },
-            {
-              "value": "https",
-              "name": "Https"
-            }
-          ]
-        }
-      },
-      "FlyDnsConfig": {
-        "type": "object",
-        "properties": {
-          "dns_forward_rules": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FlyDnsForwardRule"
-            }
-          },
-          "hostname": {
-            "type": "string"
-          },
-          "hostname_fqdn": {
-            "type": "string"
-          },
-          "nameservers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FlyDnsOption"
-            }
-          },
-          "searches": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "skip_registration": {
-            "type": "boolean"
           }
         }
       },
@@ -8855,14 +8678,6 @@
           },
           "pristine": {
             "type": "boolean"
-          }
-        }
-      },
-      "FlyMachineCacheDrive": {
-        "type": "object",
-        "properties": {
-          "size_mb": {
-            "type": "integer"
           }
         }
       },
@@ -9091,55 +8906,6 @@
         },
         "description": "For http checks, an array of objects with string field Name and array of strings field Values. The key/value pairs specify header and header values that will get passed with the check call."
       },
-      "FlyMachineInit": {
-        "type": "object",
-        "properties": {
-          "cmd": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "entrypoint": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "exec": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "kernel_args": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "swap_size_mb": {
-            "type": "integer"
-          },
-          "tty": {
-            "type": "boolean"
-          }
-        }
-      },
-      "FlyMachineMetrics": {
-        "type": "object",
-        "properties": {
-          "https": {
-            "type": "boolean"
-          },
-          "path": {
-            "type": "string"
-          },
-          "port": {
-            "type": "integer"
-          }
-        }
-      },
       "FlyMachineMount": {
         "type": "object",
         "properties": {
@@ -9253,30 +9019,6 @@
           },
           "user": {
             "type": "string"
-          }
-        }
-      },
-      "FlyMachineRestart": {
-        "type": "object",
-        "properties": {
-          "max_retries": {
-            "type": "integer",
-            "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
-          },
-          "policy": {
-            "$ref": "#/components/schemas/FlyMachineRestartPolicy"
-          }
-        },
-        "description": "The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/."
-      },
-      "FlyMachineRootfs": {
-        "type": "object",
-        "properties": {
-          "persist": {
-            "$ref": "#/components/schemas/FlyMachineRootfsPersist"
-          },
-          "size_gb": {
-            "type": "integer"
           }
         }
       },
@@ -9404,15 +9146,6 @@
           }
         }
       },
-      "FlyMachineSpot": {
-        "type": "object",
-        "properties": {
-          "max_price_fraction": {
-            "type": "number",
-            "description": "MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]"
-          }
-        }
-      },
       "FlyProxyProtoOptions": {
         "type": "object",
         "properties": {
@@ -9470,18 +9203,6 @@
           }
         }
       },
-      "FlyStopConfig": {
-        "type": "object",
-        "properties": {
-          "signal": {
-            "$ref": "#/components/schemas/FlyStopConfigSignal"
-          },
-          "timeout": {
-            "type": "string",
-            "example": "10s"
-          }
-        }
-      },
       "FlyTcpHealthcheck": {
         "type": "object",
         "properties": {
@@ -9509,25 +9230,6 @@
               "type": "string"
             }
           }
-        }
-      },
-      "FlyUnhealthyPolicy": {
-        "enum": [
-          "stop"
-        ],
-        "type": "string",
-        "x-enum-varnames": [
-          "UnhealthyPolicyStop"
-        ],
-        "x-ms-enum": {
-          "name": "FlyUnhealthyPolicy",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "stop",
-              "name": "Stop"
-            }
-          ]
         }
       },
       "FlyDnsForwardRule": {
@@ -10059,13 +9761,6 @@
           "region": {
             "type": "string"
           }
-        }
-      },
-      "PlacementWeights": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "integer",
-          "format": "int64"
         }
       },
       "PostgresDatabaseResponse": {
@@ -10874,31 +10569,6 @@
           "spread": 0
         }
       },
-      "AppSecretsUpdateRequestValues": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "ErrorResponseDetails": {
-        "type": "object",
-        "description": "Deprecated"
-      },
-      "ImageRefLabels": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "MachineEventRequest": {
-        "type": "object"
-      },
-      "MachineOverviewConfigMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
       "PostgresExtensionInstalled": {
         "type": [
           "null",
@@ -10917,116 +10587,6 @@
           }
         },
         "description": "Installation details, or null when the extension is not installed."
-      },
-      "FlyContainerConfigEnv": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "ExtraEnv is used to add additional environment variables to the container."
-      },
-      "FlyHttpResponseOptionsHeaders": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty"
-        }
-      },
-      "FlyMachineConfigChecks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FlyMachineCheck"
-        },
-        "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
-      },
-      "FlyMachineConfigEnv": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "An object filled with key/value pairs to be set as environment variables"
-      },
-      "FlyMachineConfigMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
-      },
-      "FlyMachineProcessEnv": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "MacaroonCaveatSetCaveatsItem": {
-        "type": "object"
-      },
-      "UpdateMetadataRequestMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "FlyHttpResponseOptionsHeadersAdditionalProperties": {
-        "type": "object"
-      },
-      "MachinesList200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Machine"
-        }
-      },
-      "MachinesListEvents200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MachineEvent"
-        }
-      },
-      "MachinesShowMetadata200Response": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "MachinesListProcesses200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ProcessStat"
-        }
-      },
-      "MachinesListVersions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MachineVersion"
-        }
-      },
-      "VolumesList200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Volume"
-        }
-      },
-      "VolumesListSnapshots200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/VolumeSnapshot"
-        }
-      },
-      "TokensAuthenticate200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RootVerifiedToken"
-        }
-      },
-      "TokensRequestKms200PlainResponse": {
-        "type": "string"
-      },
-      "TokensRequestOidc200PlainResponse": {
-        "type": "string"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "MachinesList200ResponseSchema": {
         "type": "array",
@@ -11197,9 +10757,6 @@
           "type": "string"
         },
         "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
-      },
-      "FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty": {
-        "type": "object"
       },
       "FlyHttpResponseOptionsHeadersPropertyAdditionalProperties": {
         "type": "object"
@@ -12394,5 +11951,450 @@
   "externalDocs": {
     "url": "https://fly.io/docs/machines/working-with-machines/"
   },
-  "x-original-swagger-version": "2.0"
+  "x-original-swagger-version": "2.0",
+  "x-client-unused-schemas": {
+    "IpPair": {
+      "type": "object",
+      "properties": {
+        "v4": {
+          "type": "string"
+        },
+        "v6": {
+          "type": "string"
+        }
+      }
+    },
+    "PostgresClusterEndpoints": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "$ref": "#/components/schemas/PostgresClusterEndpointsPrimary"
+        }
+      }
+    },
+    "PostgresEndpoint": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "Hostname to connect to."
+        },
+        "port": {
+          "type": "integer",
+          "description": "TCP port."
+        }
+      }
+    },
+    "PostgresInstalledExtension": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "string",
+          "description": "Schema the extension is installed into.",
+          "example": "public"
+        },
+        "version": {
+          "type": "string",
+          "description": "Installed version.",
+          "example": "1.0"
+        }
+      }
+    },
+    "PostgresNodeEndpoints": {
+      "type": "object",
+      "properties": {
+        "direct": {
+          "$ref": "#/components/schemas/PostgresNodeEndpointsDirect"
+        },
+        "pooler": {
+          "$ref": "#/components/schemas/PostgresNodeEndpointsPooler"
+        }
+      }
+    },
+    "FlyContainerDependencyCondition": {
+      "enum": [
+        "exited_successfully",
+        "healthy",
+        "started"
+      ],
+      "type": "string",
+      "x-enum-varnames": [
+        "ExitedSuccessfully",
+        "Healthy",
+        "Started"
+      ],
+      "x-ms-enum": {
+        "name": "FlyContainerDependencyCondition",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "exited_successfully",
+            "name": "ExitedSuccessfully"
+          },
+          {
+            "value": "healthy",
+            "name": "Healthy"
+          },
+          {
+            "value": "started",
+            "name": "Started"
+          }
+        ]
+      }
+    },
+    "FlyContainerHealthcheckKind": {
+      "enum": [
+        "readiness",
+        "liveness"
+      ],
+      "type": "string",
+      "x-enum-varnames": [
+        "Readiness",
+        "Liveness"
+      ],
+      "x-ms-enum": {
+        "name": "FlyContainerHealthcheckKind",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "readiness",
+            "name": "Readiness"
+          },
+          {
+            "value": "liveness",
+            "name": "Liveness"
+          }
+        ]
+      }
+    },
+    "FlyContainerHealthcheckScheme": {
+      "enum": [
+        "http",
+        "https"
+      ],
+      "type": "string",
+      "x-enum-varnames": [
+        "HTTP",
+        "HTTPS"
+      ],
+      "x-ms-enum": {
+        "name": "FlyContainerHealthcheckScheme",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "http",
+            "name": "Http"
+          },
+          {
+            "value": "https",
+            "name": "Https"
+          }
+        ]
+      }
+    },
+    "FlyDnsConfig": {
+      "type": "object",
+      "properties": {
+        "dns_forward_rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/FlyDnsForwardRule"
+          }
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "hostname_fqdn": {
+          "type": "string"
+        },
+        "nameservers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/FlyDnsOption"
+          }
+        },
+        "searches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skip_registration": {
+          "type": "boolean"
+        }
+      }
+    },
+    "FlyMachineCacheDrive": {
+      "type": "object",
+      "properties": {
+        "size_mb": {
+          "type": "integer"
+        }
+      }
+    },
+    "FlyMachineInit": {
+      "type": "object",
+      "properties": {
+        "cmd": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entrypoint": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exec": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "kernel_args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "swap_size_mb": {
+          "type": "integer"
+        },
+        "tty": {
+          "type": "boolean"
+        }
+      }
+    },
+    "FlyMachineMetrics": {
+      "type": "object",
+      "properties": {
+        "https": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      }
+    },
+    "FlyMachineRestart": {
+      "type": "object",
+      "properties": {
+        "max_retries": {
+          "type": "integer",
+          "description": "When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop."
+        },
+        "policy": {
+          "$ref": "#/components/schemas/FlyMachineRestartPolicy"
+        }
+      },
+      "description": "The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/."
+    },
+    "FlyMachineRootfs": {
+      "type": "object",
+      "properties": {
+        "persist": {
+          "$ref": "#/components/schemas/FlyMachineRootfsPersist"
+        },
+        "size_gb": {
+          "type": "integer"
+        }
+      }
+    },
+    "FlyMachineSpot": {
+      "type": "object",
+      "properties": {
+        "max_price_fraction": {
+          "type": "number",
+          "description": "MaxPriceFraction is the maximum fraction of the full Machine price you will pay for this Machine. Range: (0, 1.0]"
+        }
+      }
+    },
+    "FlyStopConfig": {
+      "type": "object",
+      "properties": {
+        "signal": {
+          "$ref": "#/components/schemas/FlyStopConfigSignal"
+        },
+        "timeout": {
+          "type": "string",
+          "example": "10s"
+        }
+      }
+    },
+    "FlyUnhealthyPolicy": {
+      "enum": [
+        "stop"
+      ],
+      "type": "string",
+      "x-enum-varnames": [
+        "UnhealthyPolicyStop"
+      ],
+      "x-ms-enum": {
+        "name": "FlyUnhealthyPolicy",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "stop",
+            "name": "Stop"
+          }
+        ]
+      }
+    },
+    "PlacementWeights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "AppSecretsUpdateRequestValues": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ErrorResponseDetails": {
+      "type": "object",
+      "description": "Deprecated"
+    },
+    "ImageRefLabels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "MachineEventRequest": {
+      "type": "object"
+    },
+    "MachineOverviewConfigMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "FlyContainerConfigEnv": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "ExtraEnv is used to add additional environment variables to the container."
+    },
+    "FlyHttpResponseOptionsHeaders": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty"
+      }
+    },
+    "FlyMachineConfigChecks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FlyMachineCheck"
+      },
+      "description": "An optional object that defines one or more named top-level checks. The key for each check is the check name."
+    },
+    "FlyMachineConfigEnv": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "An object filled with key/value pairs to be set as environment variables"
+    },
+    "FlyMachineConfigMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Key/value pairs of Machine metadata. Fly.io uses metadata internally for routing, process groups, and clusters"
+    },
+    "FlyMachineProcessEnv": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "MacaroonCaveatSetCaveatsItem": {
+      "type": "object"
+    },
+    "UpdateMetadataRequestMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "FlyHttpResponseOptionsHeadersAdditionalProperties": {
+      "type": "object"
+    },
+    "MachinesList200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Machine"
+      }
+    },
+    "MachinesListEvents200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MachineEvent"
+      }
+    },
+    "MachinesShowMetadata200Response": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "MachinesListProcesses200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProcessStat"
+      }
+    },
+    "MachinesListVersions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MachineVersion"
+      }
+    },
+    "VolumesList200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Volume"
+      }
+    },
+    "VolumesListSnapshots200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VolumeSnapshot"
+      }
+    },
+    "TokensAuthenticate200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RootVerifiedToken"
+      }
+    },
+    "TokensRequestKms200PlainResponse": {
+      "type": "string"
+    },
+    "TokensRequestOidc200PlainResponse": {
+      "type": "string"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty": {
+      "type": "object"
+    }
+  }
 }
