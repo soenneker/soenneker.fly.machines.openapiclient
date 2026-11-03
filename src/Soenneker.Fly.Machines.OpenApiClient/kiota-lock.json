@@ -2,7 +2,7 @@
   "descriptionHash": "36BF9A06F4EE1A56B49D8DEAEFD0686EAE006E210C06D74CEFB9332CC8AE3029153AF590E770A1852A2279CDDD9A5C20CE33F3073D6FE819A763F01CE06D23F0",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "FlyMachinesOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Fly.Machines.OpenApiClient",
