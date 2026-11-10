@@ -39,7 +39,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
+        /// <summary>Region code, such as `iad`, used to select the region in other requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
@@ -49,32 +49,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
-        /// <summary>The deprecated property</summary>
+        /// <summary>Whether the region is deprecated. Avoid creating new resources in it.</summary>
         public bool? Deprecated { get => _explicitNullValueDeprecated; set { _explicitNullValueDeprecated = value; AdditionalData?.Remove("deprecated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecated"); else _explicitNullProperties?.Remove("deprecated"); } }
         private bool? _explicitNullValueDeprecated = default!;
-        /// <summary>The gateway_available property</summary>
+        /// <summary>Whether the region has a WireGuard gateway that private network peers can connect to.</summary>
         public bool? GatewayAvailable { get => _explicitNullValueGatewayAvailable; set { _explicitNullValueGatewayAvailable = value; AdditionalData?.Remove("gateway_available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gateway_available"); else _explicitNullProperties?.Remove("gateway_available"); } }
         private bool? _explicitNullValueGatewayAvailable = default!;
-        /// <summary>The geo_region property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GeoRegion { get => _explicitNullValueGeoRegion; set { _explicitNullValueGeoRegion = value; AdditionalData?.Remove("geo_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geo_region"); else _explicitNullProperties?.Remove("geo_region"); } }
-        private string? _explicitNullValueGeoRegion = default!;
-#nullable restore
-#else
-        public string GeoRegion { get => _explicitNullValueGeoRegion; set { _explicitNullValueGeoRegion = value; AdditionalData?.Remove("geo_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geo_region"); else _explicitNullProperties?.Remove("geo_region"); } }
-        private string _explicitNullValueGeoRegion = default!;
-#endif
-        /// <summary>The latitude property</summary>
+        /// <summary>Geographic area the region belongs to.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRowGeoRegion? GeoRegion { get => _explicitNullValueGeoRegion; set { _explicitNullValueGeoRegion = value; AdditionalData?.Remove("geo_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geo_region"); else _explicitNullProperties?.Remove("geo_region"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRowGeoRegion? _explicitNullValueGeoRegion = default!;
+        /// <summary>Latitude of the region&apos;s location.</summary>
         public double? Latitude { get => _explicitNullValueLatitude; set { _explicitNullValueLatitude = value; AdditionalData?.Remove("latitude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latitude"); else _explicitNullProperties?.Remove("latitude"); } }
         private double? _explicitNullValueLatitude = default!;
-        /// <summary>The longitude property</summary>
+        /// <summary>Longitude of the region&apos;s location.</summary>
         public double? Longitude { get => _explicitNullValueLongitude; set { _explicitNullValueLongitude = value; AdditionalData?.Remove("longitude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longitude"); else _explicitNullProperties?.Remove("longitude"); } }
         private double? _explicitNullValueLongitude = default!;
-        /// <summary>The mpg_available property</summary>
+        /// <summary>Whether Managed Postgres clusters can be created in the region.</summary>
         public bool? MpgAvailable { get => _explicitNullValueMpgAvailable; set { _explicitNullValueMpgAvailable = value; AdditionalData?.Remove("mpg_available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpg_available"); else _explicitNullProperties?.Remove("mpg_available"); } }
         private bool? _explicitNullValueMpgAvailable = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Human-readable name of the region, such as `Ashburn, Virginia (US)`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -84,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The requires_paid_plan property</summary>
+        /// <summary>Whether only organizations on a paid plan can use the region.</summary>
         public bool? RequiresPaidPlan { get => _explicitNullValueRequiresPaidPlan; set { _explicitNullValueRequiresPaidPlan = value; AdditionalData?.Remove("requires_paid_plan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_paid_plan"); else _explicitNullProperties?.Remove("requires_paid_plan"); } }
         private bool? _explicitNullValueRequiresPaidPlan = default!;
         /// <summary>
@@ -115,7 +108,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 { "gateway_available", n => { GatewayAvailable = n.GetBoolValue(); } },
-                { "geo_region", n => { GeoRegion = n.GetStringValue(); } },
+                { "geo_region", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRowGeoRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGeoRegion = default; _explicitNullProperties?.Remove("geo_region"); AdditionalData["geo_region"] = unknown; } else { GeoRegion = parsed; AdditionalData.Remove("geo_region"); } } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
                 { "mpg_available", n => { MpgAvailable = n.GetBoolValue(); } },
@@ -133,7 +126,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("code", Code);
             writer.WriteBoolValue("deprecated", Deprecated);
             writer.WriteBoolValue("gateway_available", GatewayAvailable);
-            writer.WriteStringValue("geo_region", GeoRegion);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainRegionRowGeoRegion>("geo_region", GeoRegion);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteBoolValue("mpg_available", MpgAvailable);

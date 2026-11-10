@@ -25,7 +25,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>Local address and port the socket is bound to, such as `0.0.0.0:8080` or `[::]:8080`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private string _explicitNullValueAddress = default!;
 #endif
-        /// <summary>The proto property</summary>
+        /// <summary>Protocol of the socket. Always `tcp`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Proto { get => _explicitNullValueProto; set { _explicitNullValueProto = value; AdditionalData?.Remove("proto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proto"); else _explicitNullProperties?.Remove("proto"); } }

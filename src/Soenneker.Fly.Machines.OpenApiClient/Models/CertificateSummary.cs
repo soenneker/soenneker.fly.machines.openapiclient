@@ -45,24 +45,24 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
-        /// <summary>The acme_alpn_configured property</summary>
+        /// <summary>Whether the hostname points at the app, allowing TLS-ALPN-01 validation.</summary>
         public bool? AcmeAlpnConfigured { get => _explicitNullValueAcmeAlpnConfigured; set { _explicitNullValueAcmeAlpnConfigured = value; AdditionalData?.Remove("acme_alpn_configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_alpn_configured"); else _explicitNullProperties?.Remove("acme_alpn_configured"); } }
         private bool? _explicitNullValueAcmeAlpnConfigured = default!;
-        /// <summary>The acme_dns_configured property</summary>
+        /// <summary>Whether the `_acme-challenge` CNAME record is set up, allowing DNS-01 validation.</summary>
         public bool? AcmeDnsConfigured { get => _explicitNullValueAcmeDnsConfigured; set { _explicitNullValueAcmeDnsConfigured = value; AdditionalData?.Remove("acme_dns_configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_dns_configured"); else _explicitNullProperties?.Remove("acme_dns_configured"); } }
         private bool? _explicitNullValueAcmeDnsConfigured = default!;
-        /// <summary>The acme_http_configured property</summary>
+        /// <summary>Whether the hostname points at the app, allowing HTTP-01 validation.</summary>
         public bool? AcmeHttpConfigured { get => _explicitNullValueAcmeHttpConfigured; set { _explicitNullValueAcmeHttpConfigured = value; AdditionalData?.Remove("acme_http_configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_http_configured"); else _explicitNullProperties?.Remove("acme_http_configured"); } }
         private bool? _explicitNullValueAcmeHttpConfigured = default!;
-        /// <summary>The acme_requested property</summary>
+        /// <summary>Whether Fly.io-issued (ACME) certificates were requested for the hostname.</summary>
         public bool? AcmeRequested { get => _explicitNullValueAcmeRequested; set { _explicitNullValueAcmeRequested = value; AdditionalData?.Remove("acme_requested"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_requested"); else _explicitNullProperties?.Remove("acme_requested"); } }
         private bool? _explicitNullValueAcmeRequested = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configured property</summary>
+        /// <summary>Whether ownership of the hostname has been verified by any of the methods above.</summary>
         public bool? Configured { get => _explicitNullValueConfigured; set { _explicitNullValueConfigured = value; AdditionalData?.Remove("configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configured"); else _explicitNullProperties?.Remove("configured"); } }
         private bool? _explicitNullValueConfigured = default!;
-        /// <summary>The created_at property</summary>
+        /// <summary>When the hostname was added to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -72,7 +72,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
-        /// <summary>The dns_provider property</summary>
+        /// <summary>DNS provider detected for the hostname, if known.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; AdditionalData?.Remove("dns_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
@@ -82,13 +82,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string DnsProvider { get => _explicitNullValueDnsProvider; set { _explicitNullValueDnsProvider = value; AdditionalData?.Remove("dns_provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_provider"); else _explicitNullProperties?.Remove("dns_provider"); } }
         private string _explicitNullValueDnsProvider = default!;
 #endif
-        /// <summary>The has_custom_certificate property</summary>
+        /// <summary>Whether a custom certificate was uploaded for the hostname.</summary>
         public bool? HasCustomCertificate { get => _explicitNullValueHasCustomCertificate; set { _explicitNullValueHasCustomCertificate = value; AdditionalData?.Remove("has_custom_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_custom_certificate"); else _explicitNullProperties?.Remove("has_custom_certificate"); } }
         private bool? _explicitNullValueHasCustomCertificate = default!;
-        /// <summary>The has_fly_certificate property</summary>
+        /// <summary>Whether Fly.io has issued certificates for the hostname.</summary>
         public bool? HasFlyCertificate { get => _explicitNullValueHasFlyCertificate; set { _explicitNullValueHasFlyCertificate = value; AdditionalData?.Remove("has_fly_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_fly_certificate"); else _explicitNullProperties?.Remove("has_fly_certificate"); } }
         private bool? _explicitNullValueHasFlyCertificate = default!;
-        /// <summary>The hostname property</summary>
+        /// <summary>The hostname the certificate is for. May start with `*.` for a wildcard certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
@@ -98,10 +98,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
-        /// <summary>The ownership_txt_configured property</summary>
+        /// <summary>Whether the `_fly-ownership` TXT record is set up.</summary>
         public bool? OwnershipTxtConfigured { get => _explicitNullValueOwnershipTxtConfigured; set { _explicitNullValueOwnershipTxtConfigured = value; AdditionalData?.Remove("ownership_txt_configured"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt_configured"); else _explicitNullProperties?.Remove("ownership_txt_configured"); } }
         private bool? _explicitNullValueOwnershipTxtConfigured = default!;
-        /// <summary>The status property</summary>
+        /// <summary>Human-readable status: `Ready`, `Awaiting certificates`, `Awaiting configuration`, or ahint about what is misconfigured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -111,7 +111,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>When the hostname&apos;s certificate configuration last changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }

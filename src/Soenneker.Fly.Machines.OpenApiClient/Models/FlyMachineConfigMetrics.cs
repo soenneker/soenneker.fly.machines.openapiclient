@@ -28,10 +28,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The https property</summary>
+        /// <summary>Scrape over HTTPS instead of HTTP</summary>
         public bool? Https { get => _explicitNullValueHttps; set { _explicitNullValueHttps = value; AdditionalData?.Remove("https"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("https"); else _explicitNullProperties?.Remove("https"); } }
         private bool? _explicitNullValueHttps = default!;
-        /// <summary>The path property</summary>
+        /// <summary>HTTP path to scrape. Defaults to `/`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
-        /// <summary>The port property</summary>
+        /// <summary>Port in the Machine to scrape metrics from</summary>
         public int? Port { get => _explicitNullValuePort; set { _explicitNullValuePort = value; AdditionalData?.Remove("port"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("port"); else _explicitNullProperties?.Remove("port"); } }
         private int? _explicitNullValuePort = default!;
         /// <summary>

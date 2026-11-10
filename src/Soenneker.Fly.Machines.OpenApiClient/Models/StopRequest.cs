@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The signal property</summary>
+        /// <summary>Signal to send to the Machine&apos;s main process. Defaults to `config.stop_config.signal`, orSIGINT.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.StopRequestSignal? Signal { get => _explicitNullValueSignal; set { _explicitNullValueSignal = value; AdditionalData?.Remove("signal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal"); else _explicitNullProperties?.Remove("signal"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.StopRequestSignal? _explicitNullValueSignal = default!;
-        /// <summary>The timeout property</summary>
+        /// <summary>How long to wait for the Machine to exit after sending `signal` before killing it, as aGo duration string. Defaults to `config.stop_config.timeout`, or 5s.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }

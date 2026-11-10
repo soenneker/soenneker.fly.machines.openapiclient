@@ -33,7 +33,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>When the certificate was added; for Fly.io-issued certificates, the earliest one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
-        /// <summary>The expires_at property</summary>
+        /// <summary>When the certificate expires; for Fly.io-issued certificates, the latest one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
@@ -53,7 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
         private string _explicitNullValueExpiresAt = default!;
 #endif
-        /// <summary>The issued property</summary>
+        /// <summary>The individual Fly.io-issued certificates, newest first. Empty for custom certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate>? Issued { get => _explicitNullValueIssued; set { _explicitNullValueIssued = value; AdditionalData?.Remove("issued"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issued"); else _explicitNullProperties?.Remove("issued"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate> Issued { get => _explicitNullValueIssued; set { _explicitNullValueIssued = value; AdditionalData?.Remove("issued"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issued"); else _explicitNullProperties?.Remove("issued"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.IssuedCertificate> _explicitNullValueIssued = default!;
 #endif
-        /// <summary>The issuer property</summary>
+        /// <summary>Issuer of a custom certificate. Omitted for Fly.io-issued certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
@@ -73,10 +73,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
         private string _explicitNullValueIssuer = default!;
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>`custom` for an uploaded certificate, `fly` for certificates issued by Fly.io.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntrySource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntrySource? _explicitNullValueSource = default!;
-        /// <summary>The status property</summary>
+        /// <summary>`active` once ownership of the hostname is verified. Until then, `pending_ownership` forcustom certificates and `pending_validation` for Fly.io-issued certificates.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntryStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateEntryStatus? _explicitNullValueStatus = default!;
         /// <summary>

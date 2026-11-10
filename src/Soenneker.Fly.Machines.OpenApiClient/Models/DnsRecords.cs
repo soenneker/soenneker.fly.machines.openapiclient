@@ -33,7 +33,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             else if (parseNode.GetChildNode("soa") is { } nullNodeSoa && nullNodeSoa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Soa = null;
         }
 
-        /// <summary>The a property</summary>
+        /// <summary>A records found for the hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? A { get => _explicitNullValueA; set { _explicitNullValueA = value; AdditionalData?.Remove("a"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a"); else _explicitNullProperties?.Remove("a"); } }
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> A { get => _explicitNullValueA; set { _explicitNullValueA = value; AdditionalData?.Remove("a"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("a"); else _explicitNullProperties?.Remove("a"); } }
         private List<string> _explicitNullValueA = default!;
 #endif
-        /// <summary>The aaaa property</summary>
+        /// <summary>AAAA records found for the hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Aaaa { get => _explicitNullValueAaaa; set { _explicitNullValueAaaa = value; AdditionalData?.Remove("aaaa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aaaa"); else _explicitNullProperties?.Remove("aaaa"); } }
@@ -53,7 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Aaaa { get => _explicitNullValueAaaa; set { _explicitNullValueAaaa = value; AdditionalData?.Remove("aaaa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aaaa"); else _explicitNullProperties?.Remove("aaaa"); } }
         private List<string> _explicitNullValueAaaa = default!;
 #endif
-        /// <summary>The acme_challenge_cname property</summary>
+        /// <summary>Target of the `_acme-challenge` CNAME record, if found.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AcmeChallengeCname { get => _explicitNullValueAcmeChallengeCname; set { _explicitNullValueAcmeChallengeCname = value; AdditionalData?.Remove("acme_challenge_cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acme_challenge_cname"); else _explicitNullProperties?.Remove("acme_challenge_cname"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cname property</summary>
+        /// <summary>CNAME records found for the hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Cname { get => _explicitNullValueCname; set { _explicitNullValueCname = value; AdditionalData?.Remove("cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname"); else _explicitNullProperties?.Remove("cname"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Cname { get => _explicitNullValueCname; set { _explicitNullValueCname = value; AdditionalData?.Remove("cname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cname"); else _explicitNullProperties?.Remove("cname"); } }
         private List<string> _explicitNullValueCname = default!;
 #endif
-        /// <summary>The ownership_txt property</summary>
+        /// <summary>Value of the `_fly-ownership` TXT record, if found.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnershipTxt { get => _explicitNullValueOwnershipTxt; set { _explicitNullValueOwnershipTxt = value; AdditionalData?.Remove("ownership_txt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt"); else _explicitNullProperties?.Remove("ownership_txt"); } }
@@ -85,7 +85,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string OwnershipTxt { get => _explicitNullValueOwnershipTxt; set { _explicitNullValueOwnershipTxt = value; AdditionalData?.Remove("ownership_txt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership_txt"); else _explicitNullProperties?.Remove("ownership_txt"); } }
         private string _explicitNullValueOwnershipTxt = default!;
 #endif
-        /// <summary>The resolved_addresses property</summary>
+        /// <summary>All addresses the hostname resolved to, after following CNAMEs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResolvedAddresses { get => _explicitNullValueResolvedAddresses; set { _explicitNullValueResolvedAddresses = value; AdditionalData?.Remove("resolved_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_addresses"); else _explicitNullProperties?.Remove("resolved_addresses"); } }
@@ -95,7 +95,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> ResolvedAddresses { get => _explicitNullValueResolvedAddresses; set { _explicitNullValueResolvedAddresses = value; AdditionalData?.Remove("resolved_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved_addresses"); else _explicitNullProperties?.Remove("resolved_addresses"); } }
         private List<string> _explicitNullValueResolvedAddresses = default!;
 #endif
-        /// <summary>The soa property</summary>
+        /// <summary>Primary name server from the SOA record of the hostname&apos;s zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Soa { get => _explicitNullValueSoa; set { _explicitNullValueSoa = value; AdditionalData?.Remove("soa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soa"); else _explicitNullProperties?.Remove("soa"); } }

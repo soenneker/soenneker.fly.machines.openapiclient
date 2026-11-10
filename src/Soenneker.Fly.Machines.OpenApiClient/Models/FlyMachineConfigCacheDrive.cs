@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// A cache drive attached to the Machine
+    /// Beta: a cache drive attached to the Machine. This field may be removed in the future
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachineConfigCacheDrive : IAdditionalDataHolder, IParsable
@@ -24,7 +24,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The size_mb property</summary>
+        /// <summary>Beta: size of the cache drive in MiB. At most 51200; 0 uses the default</summary>
         public int? SizeMb { get => _explicitNullValueSizeMb; set { _explicitNullValueSizeMb = value; AdditionalData?.Remove("size_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_mb"); else _explicitNullProperties?.Remove("size_mb"); } }
         private int? _explicitNullValueSizeMb = default!;
         /// <summary>

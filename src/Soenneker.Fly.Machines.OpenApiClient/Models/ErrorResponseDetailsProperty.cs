@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// Deprecated
+    /// Deprecated: details about some errors. Do not rely on its contents.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ErrorResponseDetailsProperty : IAdditionalDataHolder, IParsable

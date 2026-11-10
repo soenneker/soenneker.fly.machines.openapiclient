@@ -31,7 +31,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allow_bypass property</summary>
+        /// <summary>Let clients skip the cache by sending the `fly-replay-cache-control: skip` header</summary>
         public bool? AllowBypass { get => _explicitNullValueAllowBypass; set { _explicitNullValueAllowBypass = value; AdditionalData?.Remove("allow_bypass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_bypass"); else _explicitNullProperties?.Remove("allow_bypass"); } }
         private bool? _explicitNullValueAllowBypass = default!;
         /// <summary>Name of the cookie or header to key the cache on</summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The path_prefix property</summary>
+        /// <summary>Requests whose path starts with this prefix use the rule. May start with a hostname, e.g.`example.com/api/*`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("path_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
@@ -54,7 +54,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string PathPrefix { get => _explicitNullValuePathPrefix; set { _explicitNullValuePathPrefix = value; AdditionalData?.Remove("path_prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_prefix"); else _explicitNullProperties?.Remove("path_prefix"); } }
         private string _explicitNullValuePathPrefix = default!;
 #endif
-        /// <summary>The ttl_seconds property</summary>
+        /// <summary>How long a cached replay is used, in seconds</summary>
         public int? TtlSeconds { get => _explicitNullValueTtlSeconds; set { _explicitNullValueTtlSeconds = value; AdditionalData?.Remove("ttl_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_seconds"); else _explicitNullProperties?.Remove("ttl_seconds"); } }
         private int? _explicitNullValueTtlSeconds = default!;
         /// <summary>Currently either &quot;cookie&quot; or &quot;header&quot;</summary>

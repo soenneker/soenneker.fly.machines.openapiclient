@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Key type of the certificate.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IssuedCertificateType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "rsa")]
         #pragma warning disable CS1591

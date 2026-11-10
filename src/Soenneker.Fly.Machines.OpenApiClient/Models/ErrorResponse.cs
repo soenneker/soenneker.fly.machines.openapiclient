@@ -28,7 +28,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated</summary>
+        /// <summary>Deprecated: details about some errors. Do not rely on its contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
@@ -38,7 +38,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty _explicitNullValueDetails = default!;
 #endif
-        /// <summary>The error property</summary>
+        /// <summary>Human-readable description of the error. Its wording may change; use `status` to tellerrors apart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
@@ -50,9 +50,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode? _explicitNullValueStatus = default!;
+        /// <summary>Machine-readable error code, set for some errors, such as `insufficient_capacity`,`volume_placement_capacity`, `name_taken`, `exec_request_too_large`, or`exec_output_too_large`.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             {
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseDetailsProperty>("details", Details);
             writer.WriteStringValue("error", Error);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainStatusCode>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponseStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

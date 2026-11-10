@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The condition property</summary>
+        /// <summary>When the container can start: once the dependency has `started`, is `healthy`, or has`exited_successfully`</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependencyConditionComposed? _explicitNullValueCondition = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the container this one depends on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }

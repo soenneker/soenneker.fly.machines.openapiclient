@@ -57,6 +57,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item.WithSecretNameItemRequestBuilder.WithSecretNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,7 +69,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
@@ -171,7 +180,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSecretNameItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Minimum secrets version to return. Returned when setting a new secret</summary>
+            /// <summary>Minimum secrets version to read, as returned by the endpoints that set or delete secrets. Use it to read your own writes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_version")]
@@ -181,7 +190,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.Item
             [QueryParameter("min_version")]
             public string MinVersion { get; set; }
 #endif
-            /// <summary>Show the secret value.</summary>
+            /// <summary>Include the secret value. Only allowed when the request comes from a Machine of the app; otherwise the request fails with 403.</summary>
             [QueryParameter("show_secrets")]
             public bool? ShowSecrets { get; set; }
         }

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fly.Machines.OpenApiClient.Models;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Extensions;
+using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Query;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item
         public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The query property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Query.QueryRequestBuilder Query
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases.Item.WithDatabaseNameItemRequestBuilder"/> and sets the default values.

@@ -25,17 +25,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The user_config property</summary>
+        /// <summary>The configuration of that version, as provided by the create or update request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? UserConfig { get => _explicitNullValueUserConfig; set { _explicitNullValueUserConfig = value; AdditionalData?.Remove("user_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_config"); else _explicitNullProperties?.Remove("user_config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? _explicitNullValueUserConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig? UserConfig { get => _explicitNullValueUserConfig; set { _explicitNullValueUserConfig = value; AdditionalData?.Remove("user_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_config"); else _explicitNullProperties?.Remove("user_config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig? _explicitNullValueUserConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig UserConfig { get => _explicitNullValueUserConfig; set { _explicitNullValueUserConfig = value; AdditionalData?.Remove("user_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_config"); else _explicitNullProperties?.Remove("user_config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig _explicitNullValueUserConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig UserConfig { get => _explicitNullValueUserConfig; set { _explicitNullValueUserConfig = value; AdditionalData?.Remove("user_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_config"); else _explicitNullProperties?.Remove("user_config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig _explicitNullValueUserConfig = default!;
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>ID of the Machine version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
@@ -70,7 +70,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "user_config", n => { UserConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
+                { "user_config", n => { UserConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("user_config", UserConfig);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfig>("user_config", UserConfig);
             writer.WriteStringValue("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

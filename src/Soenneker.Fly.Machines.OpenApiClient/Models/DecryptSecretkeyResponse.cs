@@ -23,15 +23,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The plaintext property</summary>
+        /// <summary>Decrypted data, base64-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
-        private List<int?>? _explicitNullValuePlaintext = default!;
+        public byte[]? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        private byte[]? _explicitNullValuePlaintext = default!;
 #nullable restore
 #else
-        public List<int?> Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
-        private List<int?> _explicitNullValuePlaintext = default!;
+        public byte[] Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        private byte[] _explicitNullValuePlaintext = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DecryptSecretkeyResponse"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "plaintext", n => { Plaintext = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "plaintext", n => { Plaintext = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("plaintext", Plaintext);
+            writer.WriteByteArrayValue("plaintext", Plaintext);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

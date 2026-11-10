@@ -31,7 +31,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The error_regions property</summary>
+        /// <summary>Regions that could not be queried. Their Machines are missing from the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ErrorRegions { get => _explicitNullValueErrorRegions; set { _explicitNullValueErrorRegions = value; AdditionalData?.Remove("error_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_regions"); else _explicitNullProperties?.Remove("error_regions"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> ErrorRegions { get => _explicitNullValueErrorRegions; set { _explicitNullValueErrorRegions = value; AdditionalData?.Remove("error_regions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_regions"); else _explicitNullProperties?.Remove("error_regions"); } }
         private List<string> _explicitNullValueErrorRegions = default!;
 #endif
-        /// <summary>The last_machine_id property</summary>
+        /// <summary>ID of the last Machine on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastMachineId { get => _explicitNullValueLastMachineId; set { _explicitNullValueLastMachineId = value; AdditionalData?.Remove("last_machine_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_machine_id"); else _explicitNullProperties?.Remove("last_machine_id"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string LastMachineId { get => _explicitNullValueLastMachineId; set { _explicitNullValueLastMachineId = value; AdditionalData?.Remove("last_machine_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_machine_id"); else _explicitNullProperties?.Remove("last_machine_id"); } }
         private string _explicitNullValueLastMachineId = default!;
 #endif
-        /// <summary>The last_updated_at property</summary>
+        /// <summary>`updated_at` of the last Machine on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
         private string _explicitNullValueLastUpdatedAt = default!;
 #endif
-        /// <summary>The machines property</summary>
+        /// <summary>The Machines on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine>? Machines { get => _explicitNullValueMachines; set { _explicitNullValueMachines = value; AdditionalData?.Remove("machines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machines"); else _explicitNullProperties?.Remove("machines"); } }
@@ -71,7 +71,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine> Machines { get => _explicitNullValueMachines; set { _explicitNullValueMachines = value; AdditionalData?.Remove("machines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machines"); else _explicitNullProperties?.Remove("machines"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachine> _explicitNullValueMachines = default!;
 #endif
-        /// <summary>The next_cursor property</summary>
+        /// <summary>Pagination cursor for the next page. Absent when no more Machines remain. Cursors expire30 minutes after the first page was requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }

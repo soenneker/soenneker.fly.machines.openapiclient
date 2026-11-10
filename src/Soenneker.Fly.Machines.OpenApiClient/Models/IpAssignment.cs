@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>When the address was assigned to the app, in RFC 3339 format. Null for the app&apos;s sharedIPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -45,10 +45,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
-        /// <summary>The egress property</summary>
+        /// <summary>Whether this is an egress address, used for the app&apos;s outbound traffic rather than forreceiving requests.</summary>
         public bool? Egress { get => _explicitNullValueEgress; set { _explicitNullValueEgress = value; AdditionalData?.Remove("egress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("egress"); else _explicitNullProperties?.Remove("egress"); } }
         private bool? _explicitNullValueEgress = default!;
-        /// <summary>The ip property</summary>
+        /// <summary>The IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
@@ -68,7 +68,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentNetwork _explicitNullValueNetwork = default!;
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Region the address is scoped to, or `global` for addresses announced in all regions.Empty for the app&apos;s shared IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The service_name property</summary>
+        /// <summary>Name of the service the address is scoped to, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("service_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_name"); else _explicitNullProperties?.Remove("service_name"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("service_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_name"); else _explicitNullProperties?.Remove("service_name"); } }
         private string _explicitNullValueServiceName = default!;
 #endif
-        /// <summary>The shared property</summary>
+        /// <summary>Whether this is the app&apos;s shared IPv4 address, which other apps use too.</summary>
         public bool? Shared { get => _explicitNullValueShared; set { _explicitNullValueShared = value; AdditionalData?.Remove("shared"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared"); else _explicitNullProperties?.Remove("shared"); } }
         private bool? _explicitNullValueShared = default!;
         /// <summary>

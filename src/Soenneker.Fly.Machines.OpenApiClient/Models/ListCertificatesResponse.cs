@@ -27,7 +27,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The certificates property</summary>
+        /// <summary>The certificates on this page, ordered by when they were added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateSummary>? Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; AdditionalData?.Remove("certificates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateSummary> Certificates { get => _explicitNullValueCertificates; set { _explicitNullValueCertificates = value; AdditionalData?.Remove("certificates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificates"); else _explicitNullProperties?.Remove("certificates"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CertificateSummary> _explicitNullValueCertificates = default!;
 #endif
-        /// <summary>The next_cursor property</summary>
+        /// <summary>Pagination cursor for the next page. Absent when no more certificates remain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
-        /// <summary>The total_count property</summary>
+        /// <summary>Number of certificates matching `filter` (and after `cursor`, if given), across all pages.</summary>
         public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
         private int? _explicitNullValueTotalCount = default!;
         /// <summary>

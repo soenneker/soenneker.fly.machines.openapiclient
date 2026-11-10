@@ -25,18 +25,18 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The needs_restart property</summary>
+        /// <summary>Whether the volume is attached to a running Machine that could not resize its filesystemwhile running. If true, restart the Machine for the filesystem to use the new size.</summary>
         public bool? NeedsRestart { get => _explicitNullValueNeedsRestart; set { _explicitNullValueNeedsRestart = value; AdditionalData?.Remove("needs_restart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needs_restart"); else _explicitNullProperties?.Remove("needs_restart"); } }
         private bool? _explicitNullValueNeedsRestart = default!;
-        /// <summary>The volume property</summary>
+        /// <summary>The extended volume.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume? _explicitNullValueVolume = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume? _explicitNullValueVolume = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume _explicitNullValueVolume = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume _explicitNullValueVolume = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponse"/> and sets the default values.
@@ -64,7 +64,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "needs_restart", n => { NeedsRestart = n.GetBoolValue(); } },
-                { "volume", n => { Volume = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>(global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue); } },
+                { "volume", n => { Volume = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("needs_restart", NeedsRestart);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.Volume>("volume", Volume);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExtendVolumeResponseVolume>("volume", Volume);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

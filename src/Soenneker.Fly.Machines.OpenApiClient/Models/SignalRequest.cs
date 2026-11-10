@@ -23,7 +23,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The signal property</summary>
+        /// <summary>Signal to send to the Machine&apos;s main process.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.SignalRequestSignal? Signal { get => _explicitNullValueSignal; set { _explicitNullValueSignal = value; AdditionalData?.Remove("signal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signal"); else _explicitNullProperties?.Remove("signal"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.SignalRequestSignal? _explicitNullValueSignal = default!;
         /// <summary>

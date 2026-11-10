@@ -47,20 +47,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>enable scheduled automatic snapshots. Defaults to `true`</summary>
+        /// <summary>Take daily automatic snapshots of the volume. Defaults to `true`.</summary>
         public bool? AutoBackupEnabled { get => _explicitNullValueAutoBackupEnabled; set { _explicitNullValueAutoBackupEnabled = value; AdditionalData?.Remove("auto_backup_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_backup_enabled"); else _explicitNullProperties?.Remove("auto_backup_enabled"); } }
         private bool? _explicitNullValueAutoBackupEnabled = default!;
-        /// <summary>The compute property</summary>
+        /// <summary>Requirements of the Machine that will use the volume, so that the volume is placed on ahost that can run it. Uses `cpus`, `memory_mb`, `cpu_kind`, `host_dedication_id`, and`required_host_features`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest? _explicitNullValueCompute = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute? Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute? _explicitNullValueCompute = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest _explicitNullValueCompute = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute Compute { get => _explicitNullValueCompute; set { _explicitNullValueCompute = value; AdditionalData?.Remove("compute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute"); else _explicitNullProperties?.Remove("compute"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute _explicitNullValueCompute = default!;
 #endif
-        /// <summary>The compute_image property</summary>
+        /// <summary>Ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComputeImage { get => _explicitNullValueComputeImage; set { _explicitNullValueComputeImage = value; AdditionalData?.Remove("compute_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_image"); else _explicitNullProperties?.Remove("compute_image"); } }
@@ -70,20 +70,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ComputeImage { get => _explicitNullValueComputeImage; set { _explicitNullValueComputeImage = value; AdditionalData?.Remove("compute_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_image"); else _explicitNullProperties?.Remove("compute_image"); } }
         private string _explicitNullValueComputeImage = default!;
 #endif
-        /// <summary>The encrypted property</summary>
+        /// <summary>Encrypt the volume at rest. Defaults to true. When forking, the source volume&apos;s settingis used.</summary>
         public bool? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; AdditionalData?.Remove("encrypted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
         private bool? _explicitNullValueEncrypted = default!;
-        /// <summary>The fstype property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Fstype { get => _explicitNullValueFstype; set { _explicitNullValueFstype = value; AdditionalData?.Remove("fstype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fstype"); else _explicitNullProperties?.Remove("fstype"); } }
-        private string? _explicitNullValueFstype = default!;
-#nullable restore
-#else
-        public string Fstype { get => _explicitNullValueFstype; set { _explicitNullValueFstype = value; AdditionalData?.Remove("fstype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fstype"); else _explicitNullProperties?.Remove("fstype"); } }
-        private string _explicitNullValueFstype = default!;
-#endif
-        /// <summary>The name property</summary>
+        /// <summary>Filesystem to format the volume with: `ext4`, or `raw` for an unformatted block device.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestFstype? Fstype { get => _explicitNullValueFstype; set { _explicitNullValueFstype = value; AdditionalData?.Remove("fstype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fstype"); else _explicitNullProperties?.Remove("fstype"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestFstype? _explicitNullValueFstype = default!;
+        /// <summary>Name of the volume: at most 30 lowercase letters, digits, and underscores. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -93,7 +86,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Region to create the volume in. Accepts the same values as the `region` of CreateMachine. When forking, defaults to the source volume&apos;s region; otherwise defaults to theregion of the API server handling the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -103,13 +96,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The require_unique_zone property</summary>
+        /// <summary>Place the volume on a host that has no other volume of the app with the same name in theregion, so that Machines using these volumes don&apos;t share a host. Fails with 400 if nosuch host is available.</summary>
         public bool? RequireUniqueZone { get => _explicitNullValueRequireUniqueZone; set { _explicitNullValueRequireUniqueZone = value; AdditionalData?.Remove("require_unique_zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_unique_zone"); else _explicitNullProperties?.Remove("require_unique_zone"); } }
         private bool? _explicitNullValueRequireUniqueZone = default!;
-        /// <summary>The size_gb property</summary>
+        /// <summary>Size of the volume in GiB, from 1 to the organization&apos;s maximum (500 by default).Required unless forking, in which case it must be omitted and the source volume&apos;s sizeis used.</summary>
         public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
-        /// <summary>restore from snapshot</summary>
+        /// <summary>ID of a snapshot to restore into the new volume. Mutually exclusive with`source_volume_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
@@ -119,10 +112,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
         private string _explicitNullValueSnapshotId = default!;
 #endif
-        /// <summary>The snapshot_retention property</summary>
+        /// <summary>Number of days to keep snapshots of the volume, from 1 to 60. Defaults to 5.</summary>
         public int? SnapshotRetention { get => _explicitNullValueSnapshotRetention; set { _explicitNullValueSnapshotRetention = value; AdditionalData?.Remove("snapshot_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_retention"); else _explicitNullProperties?.Remove("snapshot_retention"); } }
         private int? _explicitNullValueSnapshotRetention = default!;
-        /// <summary>fork from remote volume</summary>
+        /// <summary>ID of a volume to fork: the new volume starts as a copy of it. The volume must belong toan app in the same organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceVolumeId { get => _explicitNullValueSourceVolumeId; set { _explicitNullValueSourceVolumeId = value; AdditionalData?.Remove("source_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_volume_id"); else _explicitNullProperties?.Remove("source_volume_id"); } }
@@ -132,7 +125,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string SourceVolumeId { get => _explicitNullValueSourceVolumeId; set { _explicitNullValueSourceVolumeId = value; AdditionalData?.Remove("source_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_volume_id"); else _explicitNullProperties?.Remove("source_volume_id"); } }
         private string _explicitNullValueSourceVolumeId = default!;
 #endif
-        /// <summary>The unique_zone_app_wide property</summary>
+        /// <summary>With `require_unique_zone`, avoid hosts with any volume of the app in the region, notjust volumes with the same name.</summary>
         public bool? UniqueZoneAppWide { get => _explicitNullValueUniqueZoneAppWide; set { _explicitNullValueUniqueZoneAppWide = value; AdditionalData?.Remove("unique_zone_app_wide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_zone_app_wide"); else _explicitNullProperties?.Remove("unique_zone_app_wide"); } }
         private bool? _explicitNullValueUniqueZoneAppWide = default!;
         /// <summary>
@@ -161,10 +154,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auto_backup_enabled", n => { AutoBackupEnabled = n.GetBoolValue(); } },
-                { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest.CreateFromDiscriminatorValue); } },
+                { "compute", n => { Compute = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute.CreateFromDiscriminatorValue); } },
                 { "compute_image", n => { ComputeImage = n.GetStringValue(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
-                { "fstype", n => { Fstype = n.GetStringValue(); } },
+                { "fstype", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestFstype>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFstype = default; _explicitNullProperties?.Remove("fstype"); AdditionalData["fstype"] = unknown; } else { Fstype = parsed; AdditionalData.Remove("fstype"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "require_unique_zone", n => { RequireUniqueZone = n.GetBoolValue(); } },
@@ -183,10 +176,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_backup_enabled", AutoBackupEnabled);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuest>("compute", Compute);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestCompute>("compute", Compute);
             writer.WriteStringValue("compute_image", ComputeImage);
             writer.WriteBoolValue("encrypted", Encrypted);
-            writer.WriteStringValue("fstype", Fstype);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateVolumeRequestFstype>("fstype", Fstype);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("region", Region);
             writer.WriteBoolValue("require_unique_zone", RequireUniqueZone);

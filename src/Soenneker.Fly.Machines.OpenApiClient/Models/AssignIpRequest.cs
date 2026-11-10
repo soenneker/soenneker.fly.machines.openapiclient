@@ -31,7 +31,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The network property</summary>
+        /// <summary>Only for `private_v6`: name of the private network to allocate the Flycast address in.Defaults to the organization&apos;s default network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
         private string _explicitNullValueNetwork = default!;
 #endif
-        /// <summary>The org_slug property</summary>
+        /// <summary>Only for `private_v6`: slug of the organization whose private network the Flycast addressis allocated in, to make the app reachable from that organization. Defaults to the app&apos;sorganization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
         private string _explicitNullValueOrgSlug = default!;
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Region to scope the address to. Required for egress types. Optional for `v4` and `v6`,which default to `global` (announced in all regions). Must be empty or `global` for`shared_v4` and `private_v6`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The service_name property</summary>
+        /// <summary>Scope the address to a single service of the app. Not supported for egress types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("service_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_name"); else _explicitNullProperties?.Remove("service_name"); } }
@@ -71,9 +71,9 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ServiceName { get => _explicitNullValueServiceName; set { _explicitNullValueServiceName = value; AdditionalData?.Remove("service_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_name"); else _explicitNullProperties?.Remove("service_name"); } }
         private string _explicitNullValueServiceName = default!;
 #endif
-        /// <summary>Type of IP address to allocate. &quot;egress-pair&quot; allocates both v4 and v6 egress IP addresses (recommended when using egress IPs).</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType? _explicitNullValueType = default!;
+        /// <summary>Type of IP address to allocate. &quot;egress_pair&quot; allocates both v4 and v6 egress IP addresses (recommended when using egress IPs).</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequestType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequest"/> and sets the default values.
         /// </summary>
@@ -103,7 +103,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "org_slug", n => { OrgSlug = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("org_slug", OrgSlug);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("service_name", ServiceName);
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.IpAssignmentType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AssignIpRequestType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

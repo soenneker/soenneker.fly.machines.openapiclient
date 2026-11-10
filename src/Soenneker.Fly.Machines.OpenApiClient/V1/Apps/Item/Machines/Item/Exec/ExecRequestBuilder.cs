@@ -34,20 +34,22 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Exec
         {
         }
         /// <summary>
-        /// Execute a command on a specific Machine and return the raw command output bytes.
+        /// Execute a command on a specific Machine and return a JSON response containingstdout, stderr, exit_code, and exit_signal.A completed command returns HTTP 200, including when the command exitsunsuccessfully.HTTP 412 is returned when the Machine is not running. On Machines withoutcontainers, it can also indicate an error before or during command execution.For example, the executable may be missing or lack execute permission. The`error` field describes the failure.HTTP 413 responses include a `status` field identifying the size limit that wasexceeded:* `exec_request_too_large`: the Machine rejected the exec request as too large.  The error message is `exec request rejected: payload too large`. The limit  applies to the encoded request sent to the Machine, which can differ in size  from the public API request.* `exec_output_too_large`: the command ran, but its output could not be returned  because it exceeded the maximum allowed response size after JSON encoding.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.Flydv1ExecResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 412 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 413 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Flydv1ExecResponse?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineExecRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecResponse?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineExecRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.Flydv1ExecResponse> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineExecRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecResponse> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineExecRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,13 +57,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Exec
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "412", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.Flydv1ExecResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.Flydv1ExecResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ExecResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute a command on a specific Machine and return the raw command output bytes.
+        /// Execute a command on a specific Machine and return a JSON response containingstdout, stderr, exit_code, and exit_signal.A completed command returns HTTP 200, including when the command exitsunsuccessfully.HTTP 412 is returned when the Machine is not running. On Machines withoutcontainers, it can also indicate an error before or during command execution.For example, the executable may be missing or lack execute permission. The`error` field describes the failure.HTTP 413 responses include a `status` field identifying the size limit that wasexceeded:* `exec_request_too_large`: the Machine rejected the exec request as too large.  The error message is `exec request rejected: payload too large`. The limit  applies to the encoded request sent to the Machine, which can differ in size  from the public API request.* `exec_output_too_large`: the command ran, but its output could not be returned  because it exceeded the maximum allowed response size after JSON encoding.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

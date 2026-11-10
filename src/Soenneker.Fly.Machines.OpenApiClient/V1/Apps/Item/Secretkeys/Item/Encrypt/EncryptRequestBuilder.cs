@@ -34,13 +34,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Encr
         {
         }
         /// <summary>
-        /// Encrypt with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.EncryptSecretkeyResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.EncryptSecretkeyResponse?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.EncryptSecretkeyRequest body, Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Encrypt.EncryptRequestBuilder.EncryptRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,13 +56,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Encr
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.EncryptSecretkeyResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.EncryptSecretkeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Encrypt with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -92,12 +94,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Encr
             return new global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Encrypt.EncryptRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Encrypt with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EncryptRequestBuilderPostQueryParameters 
         {
-            /// <summary>Minimum secrets version to return. Returned when setting a new secret</summary>
+            /// <summary>Minimum secrets version to read, as returned by the endpoints that set or delete secrets. Use it to read your own writes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_version")]

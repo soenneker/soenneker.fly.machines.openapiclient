@@ -42,7 +42,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cpu_kind property</summary>
+        /// <summary>Kind of CPU: shared or performance. Performance CPUs must be enabled for the organization.Defaults to shared when `guest` is omitted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; AdditionalData?.Remove("cpu_kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
@@ -52,10 +52,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string CpuKind { get => _explicitNullValueCpuKind; set { _explicitNullValueCpuKind = value; AdditionalData?.Remove("cpu_kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu_kind"); else _explicitNullProperties?.Remove("cpu_kind"); } }
         private string _explicitNullValueCpuKind = default!;
 #endif
-        /// <summary>The cpus property</summary>
+        /// <summary>Number of CPUs: 1, 2, 4, 6, 8, 10, 12, 14, 16, 32, 64 or 128, up to 8 for shared and 16 forperformance CPUs unless the organization&apos;s limit is higher. Defaults to 1 when `guest` isomitted</summary>
         public int? Cpus { get => _explicitNullValueCpus; set { _explicitNullValueCpus = value; AdditionalData?.Remove("cpus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpus"); else _explicitNullProperties?.Remove("cpus"); } }
         private int? _explicitNullValueCpus = default!;
-        /// <summary>The gpu_kind property</summary>
+        /// <summary>No longer supported. Requests that set it are rejected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GpuKind { get => _explicitNullValueGpuKind; set { _explicitNullValueGpuKind = value; AdditionalData?.Remove("gpu_kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpu_kind"); else _explicitNullProperties?.Remove("gpu_kind"); } }
@@ -65,10 +65,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string GpuKind { get => _explicitNullValueGpuKind; set { _explicitNullValueGpuKind = value; AdditionalData?.Remove("gpu_kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpu_kind"); else _explicitNullProperties?.Remove("gpu_kind"); } }
         private string _explicitNullValueGpuKind = default!;
 #endif
-        /// <summary>The gpus property</summary>
+        /// <summary>No longer supported. Requests that set it are rejected</summary>
         public int? Gpus { get => _explicitNullValueGpus; set { _explicitNullValueGpus = value; AdditionalData?.Remove("gpus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gpus"); else _explicitNullProperties?.Remove("gpus"); } }
         private int? _explicitNullValueGpus = default!;
-        /// <summary>The host_dedication_id property</summary>
+        /// <summary>Place the Machine on hosts dedicated to the organization under this ID. Only available toorganizations with dedicated hosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HostDedicationId { get => _explicitNullValueHostDedicationId; set { _explicitNullValueHostDedicationId = value; AdditionalData?.Remove("host_dedication_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_dedication_id"); else _explicitNullProperties?.Remove("host_dedication_id"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string HostDedicationId { get => _explicitNullValueHostDedicationId; set { _explicitNullValueHostDedicationId = value; AdditionalData?.Remove("host_dedication_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_dedication_id"); else _explicitNullProperties?.Remove("host_dedication_id"); } }
         private string _explicitNullValueHostDedicationId = default!;
 #endif
-        /// <summary>The kernel_args property</summary>
+        /// <summary>Extra arguments appended to the guest kernel command line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; AdditionalData?.Remove("kernel_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
@@ -88,16 +88,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> KernelArgs { get => _explicitNullValueKernelArgs; set { _explicitNullValueKernelArgs = value; AdditionalData?.Remove("kernel_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kernel_args"); else _explicitNullProperties?.Remove("kernel_args"); } }
         private List<string> _explicitNullValueKernelArgs = default!;
 #endif
-        /// <summary>The max_memory_mb property</summary>
+        /// <summary>Memory in MiB that the Machine&apos;s memory limit can later be raised to without a restart, usingthe memory endpoints. Must be at least memory_mb and at most the per-CPU maximum. The Machinestarts with a limit of memory_mb</summary>
         public int? MaxMemoryMb { get => _explicitNullValueMaxMemoryMb; set { _explicitNullValueMaxMemoryMb = value; AdditionalData?.Remove("max_memory_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_memory_mb"); else _explicitNullProperties?.Remove("max_memory_mb"); } }
         private int? _explicitNullValueMaxMemoryMb = default!;
-        /// <summary>The memory_mb property</summary>
+        /// <summary>Memory in MiB. Must be a multiple of 256 for shared and 1024 for performance CPUs, andbetween 256 and 2048 (shared) or 2048 and 8192 (performance) per CPU. Defaults to 256 when`guest` is omitted</summary>
         public int? MemoryMb { get => _explicitNullValueMemoryMb; set { _explicitNullValueMemoryMb = value; AdditionalData?.Remove("memory_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memory_mb"); else _explicitNullProperties?.Remove("memory_mb"); } }
         private int? _explicitNullValueMemoryMb = default!;
         /// <summary>Deprecated: use MachineConfig.Rootfs instead</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? PersistRootfs { get => _explicitNullValuePersistRootfs; set { _explicitNullValuePersistRootfs = value; AdditionalData?.Remove("persist_rootfs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist_rootfs"); else _explicitNullProperties?.Remove("persist_rootfs"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineGuestPersistRootfs? _explicitNullValuePersistRootfs = default!;
-        /// <summary>The required_host_features property</summary>
+        /// <summary>Host features the Machine&apos;s host must have, such as `storage-tier-1`. At most 16, each madeof lowercase letters, digits and dashes. Each feature must be enabled for the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RequiredHostFeatures { get => _explicitNullValueRequiredHostFeatures; set { _explicitNullValueRequiredHostFeatures = value; AdditionalData?.Remove("required_host_features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required_host_features"); else _explicitNullProperties?.Remove("required_host_features"); } }

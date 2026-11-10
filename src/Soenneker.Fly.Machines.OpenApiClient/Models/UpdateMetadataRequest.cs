@@ -27,7 +27,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The machine_version property</summary>
+        /// <summary>Only apply the change if this is still the Machine&apos;s current version; otherwise failwith 412. Defaults to the current version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MachineVersion { get => _explicitNullValueMachineVersion; set { _explicitNullValueMachineVersion = value; AdditionalData?.Remove("machine_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_version"); else _explicitNullProperties?.Remove("machine_version"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string MachineVersion { get => _explicitNullValueMachineVersion; set { _explicitNullValueMachineVersion = value; AdditionalData?.Remove("machine_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_version"); else _explicitNullProperties?.Remove("machine_version"); } }
         private string _explicitNullValueMachineVersion = default!;
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Keys to change. A string value sets the key; null, an empty string or whitespace removesit. Keys and values have surrounding whitespace trimmed. Keys not listed are left alone.Must contain at least one key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.UpdateMetadataRequestMetadataProperty _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>Time to record for the change in the Machine&apos;s `metadata_update` event. Defaults to now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }

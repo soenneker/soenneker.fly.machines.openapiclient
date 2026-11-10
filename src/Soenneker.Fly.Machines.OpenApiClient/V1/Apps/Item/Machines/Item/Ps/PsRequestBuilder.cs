@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Ps
         {
         }
         /// <summary>
-        /// List all processes running on a specific Machine within an app, with optional sorting parameters.
+        /// List all processes running on a specific Machine within an app, with optional sorting parameters. The Machine must be started.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fly.Machines.OpenApiClient.Models.ProcessStat&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Ps
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List all processes running on a specific Machine within an app, with optional sorting parameters.
+        /// List all processes running on a specific Machine within an app, with optional sorting parameters. The Machine must be started.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,31 +88,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Ps
             return new global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Ps.PsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all processes running on a specific Machine within an app, with optional sorting parameters.
+        /// List all processes running on a specific Machine within an app, with optional sorting parameters. The Machine must be started.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Order</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Sort order. Requires sort_by. Defaults to asc.</summary>
             [QueryParameter("order")]
-            public string? Order { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order")]
-            public string Order { get; set; }
-#endif
-            /// <summary>Sort by</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesListProcessesOrderParameter? Order { get; set; }
+            /// <summary>Field to sort processes by</summary>
             [QueryParameter("sort_by")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_by")]
-            public string SortBy { get; set; }
-#endif
+            public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesListProcessesSortByParameter? SortBy { get; set; }
         }
     }
 }

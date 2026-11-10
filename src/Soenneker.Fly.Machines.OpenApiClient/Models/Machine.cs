@@ -59,7 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The checks property</summary>
+        /// <summary>Status of each health check: the Machine&apos;s top-level `checks` and its services&apos;checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
@@ -69,20 +69,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus> _explicitNullValueChecks = default!;
 #endif
-        /// <summary>The config property</summary>
+        /// <summary>The Machine&apos;s configuration, as provided when it was created or last updated, with`metadata` and `mounts` reflecting their current values. Null when the host is notreachable (`host_status` is not `ok`) or `summary=true` was requested; see`incomplete_config`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? _explicitNullValueConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig _explicitNullValueConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig _explicitNullValueConfig = default!;
 #endif
-        /// <summary>The cordoned property</summary>
+        /// <summary>Whether the Machine is cordoned, meaning Fly Proxy does not route requests to it. Seethe Cordon Machine endpoint.</summary>
         public bool? Cordoned { get => _explicitNullValueCordoned; set { _explicitNullValueCordoned = value; AdditionalData?.Remove("cordoned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cordoned"); else _explicitNullProperties?.Remove("cordoned"); } }
         private bool? _explicitNullValueCordoned = default!;
-        /// <summary>The created_at property</summary>
+        /// <summary>When the Machine was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -92,7 +92,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
-        /// <summary>The events property</summary>
+        /// <summary>Up to 5 of the most recent events of the current Machine version, newest first. Usethe List Events endpoint for more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent> _explicitNullValueEvents = default!;
 #endif
-        /// <summary>The host_features property</summary>
+        /// <summary>Features of the Machine&apos;s host, for comparison with `config.guest.required_host_features`.Only returned when the request sets the `fly-include-host-features: true` header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? HostFeatures { get => _explicitNullValueHostFeatures; set { _explicitNullValueHostFeatures = value; AdditionalData?.Remove("host_features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_features"); else _explicitNullProperties?.Remove("host_features"); } }
@@ -112,10 +112,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> HostFeatures { get => _explicitNullValueHostFeatures; set { _explicitNullValueHostFeatures = value; AdditionalData?.Remove("host_features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_features"); else _explicitNullProperties?.Remove("host_features"); } }
         private List<string> _explicitNullValueHostFeatures = default!;
 #endif
-        /// <summary>The host_status property</summary>
+        /// <summary>Whether Fly.io could reach the Machine&apos;s host: `ok` if it could, `unreachable` if itcould not, in which case the response is built from last known state. `unknown` if thehost&apos;s status was not reported.</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus? HostStatus { get => _explicitNullValueHostStatus; set { _explicitNullValueHostStatus = value; AdditionalData?.Remove("host_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_status"); else _explicitNullProperties?.Remove("host_status"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus? _explicitNullValueHostStatus = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Unique ID of the Machine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -125,27 +125,27 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The image_ref property</summary>
+        /// <summary>The image the Machine runs, as resolved when it was last created or updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef? ImageRef { get => _explicitNullValueImageRef; set { _explicitNullValueImageRef = value; AdditionalData?.Remove("image_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_ref"); else _explicitNullProperties?.Remove("image_ref"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef? _explicitNullValueImageRef = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef? ImageRef { get => _explicitNullValueImageRef; set { _explicitNullValueImageRef = value; AdditionalData?.Remove("image_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_ref"); else _explicitNullProperties?.Remove("image_ref"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef? _explicitNullValueImageRef = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef ImageRef { get => _explicitNullValueImageRef; set { _explicitNullValueImageRef = value; AdditionalData?.Remove("image_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_ref"); else _explicitNullProperties?.Remove("image_ref"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef _explicitNullValueImageRef = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef ImageRef { get => _explicitNullValueImageRef; set { _explicitNullValueImageRef = value; AdditionalData?.Remove("image_ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_ref"); else _explicitNullProperties?.Remove("image_ref"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef _explicitNullValueImageRef = default!;
 #endif
-        /// <summary>The incomplete_config property</summary>
+        /// <summary>Last known configuration, returned in place of `config` when the host could not bereached (`host_status` is not `ok`) or when listing Machines with `summary=true`. Itcomes from Fly.io&apos;s replicated state rather than the host, so it may be stale or lackfields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? IncompleteConfig { get => _explicitNullValueIncompleteConfig; set { _explicitNullValueIncompleteConfig = value; AdditionalData?.Remove("incomplete_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_config"); else _explicitNullProperties?.Remove("incomplete_config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig? _explicitNullValueIncompleteConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig? IncompleteConfig { get => _explicitNullValueIncompleteConfig; set { _explicitNullValueIncompleteConfig = value; AdditionalData?.Remove("incomplete_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_config"); else _explicitNullProperties?.Remove("incomplete_config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig? _explicitNullValueIncompleteConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig IncompleteConfig { get => _explicitNullValueIncompleteConfig; set { _explicitNullValueIncompleteConfig = value; AdditionalData?.Remove("incomplete_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_config"); else _explicitNullProperties?.Remove("incomplete_config"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig _explicitNullValueIncompleteConfig = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig IncompleteConfig { get => _explicitNullValueIncompleteConfig; set { _explicitNullValueIncompleteConfig = value; AdditionalData?.Remove("incomplete_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_config"); else _explicitNullProperties?.Remove("incomplete_config"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig _explicitNullValueIncompleteConfig = default!;
 #endif
-        /// <summary>InstanceID is the same value as `version`.Deprecated: use `version`.</summary>
+        /// <summary>Same value as `version`.Deprecated: use `version`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instance_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
@@ -155,17 +155,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string InstanceId { get => _explicitNullValueInstanceId; set { _explicitNullValueInstanceId = value; AdditionalData?.Remove("instance_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instance_id"); else _explicitNullProperties?.Remove("instance_id"); } }
         private string _explicitNullValueInstanceId = default!;
 #endif
-        /// <summary>The lease property</summary>
+        /// <summary>The lease currently held on the Machine. Only returned when `include_leases=true`was requested and a lease is held.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease? Lease { get => _explicitNullValueLease; set { _explicitNullValueLease = value; AdditionalData?.Remove("lease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease"); else _explicitNullProperties?.Remove("lease"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease? _explicitNullValueLease = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease? Lease { get => _explicitNullValueLease; set { _explicitNullValueLease = value; AdditionalData?.Remove("lease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease"); else _explicitNullProperties?.Remove("lease"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease? _explicitNullValueLease = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease Lease { get => _explicitNullValueLease; set { _explicitNullValueLease = value; AdditionalData?.Remove("lease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease"); else _explicitNullProperties?.Remove("lease"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease _explicitNullValueLease = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease Lease { get => _explicitNullValueLease; set { _explicitNullValueLease = value; AdditionalData?.Remove("lease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease"); else _explicitNullProperties?.Remove("lease"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease _explicitNullValueLease = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the Machine. Generated when not provided at creation. Names are not requiredto be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -175,7 +175,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Nonce is only every returned on machine creation if a lease_duration was provided.</summary>
+        /// <summary>Nonce of the lease acquired on the Machine at creation. Only returned when creating aMachine with `lease_ttl` set. Pass it in the `fly-machine-lease-nonce` header to act onthe Machine while the lease is held.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nonce { get => _explicitNullValueNonce; set { _explicitNullValueNonce = value; AdditionalData?.Remove("nonce"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonce"); else _explicitNullProperties?.Remove("nonce"); } }
@@ -185,7 +185,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Nonce { get => _explicitNullValueNonce; set { _explicitNullValueNonce = value; AdditionalData?.Remove("nonce"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonce"); else _explicitNullProperties?.Remove("nonce"); } }
         private string _explicitNullValueNonce = default!;
 #endif
-        /// <summary>PrivateIP is the internal 6PN address of the machine.</summary>
+        /// <summary>The Machine&apos;s address on the organization&apos;s private (6PN) IPv6 network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; AdditionalData?.Remove("private_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
@@ -195,7 +195,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string PrivateIp { get => _explicitNullValuePrivateIp; set { _explicitNullValuePrivateIp = value; AdditionalData?.Remove("private_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_ip"); else _explicitNullProperties?.Remove("private_ip"); } }
         private string _explicitNullValuePrivateIp = default!;
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>Code of the region the Machine runs in, such as `iad`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -205,7 +205,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>Current state of the Machine, taken from the status of its most recent event. One of`created`, `starting`, `started`, `stopping`, `stopped`, `suspending`, `suspended`,`replacing`, `replaced`, `destroying`, `destroyed`, `failed`, `migrating`, `migrated`,`archived`, or `pending`. See https://fly.io/docs/machines/machine-states/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
@@ -215,7 +215,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private string _explicitNullValueState = default!;
 #endif
-        /// <summary>The updated_at property</summary>
+        /// <summary>Time of the Machine&apos;s most recent event, truncated to whole seconds. The zero time(0001-01-01T00:00:00Z) if the host could not be reached. With `summary=true`, the timeFly.io last recorded a change to the Machine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
@@ -225,7 +225,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
-        /// <summary>Version is unique for each version of the machine. Pass it as`current_version` when updating the Machine to reject the update if theMachine has changed since this version.</summary>
+        /// <summary>Unique ID of this version of the Machine. Every update creates a new version. Pass itas `current_version` when updating the Machine to reject the update if the Machine haschanged since this version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
@@ -261,17 +261,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig.CreateFromDiscriminatorValue); } },
                 { "cordoned", n => { Cordoned = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "host_features", n => { HostFeatures = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "host_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHostStatus = default; _explicitNullProperties?.Remove("host_status"); AdditionalData["host_status"] = unknown; } else { HostStatus = parsed; AdditionalData.Remove("host_status"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "image_ref", n => { ImageRef = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef.CreateFromDiscriminatorValue); } },
-                { "incomplete_config", n => { IncompleteConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig.CreateFromDiscriminatorValue); } },
+                { "image_ref", n => { ImageRef = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef.CreateFromDiscriminatorValue); } },
+                { "incomplete_config", n => { IncompleteConfig = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig.CreateFromDiscriminatorValue); } },
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
-                { "lease", n => { Lease = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease>(global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease.CreateFromDiscriminatorValue); } },
+                { "lease", n => { Lease = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nonce", n => { Nonce = n.GetStringValue(); } },
                 { "private_ip", n => { PrivateIp = n.GetStringValue(); } },
@@ -289,17 +289,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>("checks", Checks);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig>("config", Config);
             writer.WriteBoolValue("cordoned", Cordoned);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineEvent>("events", Events);
             writer.WriteCollectionOfPrimitiveValues<string>("host_features", HostFeatures);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineHostStatus>("host_status", HostStatus);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ImageRef>("image_ref", ImageRef);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfig>("incomplete_config", IncompleteConfig);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineImageRef>("image_ref", ImageRef);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineIncompleteConfig>("incomplete_config", IncompleteConfig);
             writer.WriteStringValue("instance_id", InstanceId);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.StrippedLease>("lease", Lease);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineLease>("lease", Lease);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("nonce", Nonce);
             writer.WriteStringValue("private_ip", PrivateIp);

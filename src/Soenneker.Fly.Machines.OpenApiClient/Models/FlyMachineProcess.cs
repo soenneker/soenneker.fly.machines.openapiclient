@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cmd property</summary>
+        /// <summary>Replaces the image&apos;s CMD for this process. It&apos;s appended to the entrypoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private List<string> _explicitNullValueCmd = default!;
 #endif
-        /// <summary>The entrypoint property</summary>
+        /// <summary>Replaces the image&apos;s ENTRYPOINT for this process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
@@ -57,7 +57,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Entrypoint { get => _explicitNullValueEntrypoint; set { _explicitNullValueEntrypoint = value; AdditionalData?.Remove("entrypoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entrypoint"); else _explicitNullProperties?.Remove("entrypoint"); } }
         private List<string> _explicitNullValueEntrypoint = default!;
 #endif
-        /// <summary>The env property</summary>
+        /// <summary>Environment variables for this process, in addition to the Machine&apos;s `env`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineProcessEnvProperty? Env { get => _explicitNullValueEnv; set { _explicitNullValueEnv = value; AdditionalData?.Remove("env"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env"); else _explicitNullProperties?.Remove("env"); } }
@@ -77,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom> EnvFrom { get => _explicitNullValueEnvFrom; set { _explicitNullValueEnvFrom = value; AdditionalData?.Remove("env_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_from"); else _explicitNullProperties?.Remove("env_from"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyEnvFrom> _explicitNullValueEnvFrom = default!;
 #endif
-        /// <summary>The exec property</summary>
+        /// <summary>Command to run instead of the image&apos;s ENTRYPOINT and CMD. Takes precedence over entrypointand cmd</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; AdditionalData?.Remove("exec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
@@ -100,7 +100,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret> Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; AdditionalData?.Remove("secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineSecret> _explicitNullValueSecrets = default!;
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>User to run the process as, instead of the image&apos;s USER</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }

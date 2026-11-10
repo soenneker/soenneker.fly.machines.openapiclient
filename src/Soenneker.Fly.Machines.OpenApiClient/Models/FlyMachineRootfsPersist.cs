@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Whether changes to the root filesystem are kept. `never` (default): reset on every start.`restart`: kept across stops and restarts, reset when the Machine is updated. `always`: alsokept across updates</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FlyMachineRootfsPersist
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "never")]
         #pragma warning disable CS1591

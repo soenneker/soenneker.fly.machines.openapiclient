@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The version property</summary>
+        /// <summary>The app&apos;s secrets version after this change.</summary>
         public int? DeleteSecretkeyResponseVersion { get => _explicitNullValueDeleteSecretkeyResponseVersion; set { _explicitNullValueDeleteSecretkeyResponseVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueDeleteSecretkeyResponseVersion = default!;
-        /// <summary>DEPRECATED</summary>
+        /// <summary>Same value as `version`.Deprecated: use `version`.</summary>
         public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("Version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>

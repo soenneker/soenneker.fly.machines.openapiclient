@@ -53,7 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string GracePeriod { get => _explicitNullValueGracePeriod; set { _explicitNullValueGracePeriod = value; AdditionalData?.Remove("grace_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grace_period"); else _explicitNullProperties?.Remove("grace_period"); } }
         private string _explicitNullValueGracePeriod = default!;
 #endif
-        /// <summary>The headers property</summary>
+        /// <summary>For http checks, headers to send with the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineHttpHeader>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }

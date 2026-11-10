@@ -98,7 +98,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecretkeysRequestBuilderGetQueryParameters 
         {
-            /// <summary>Minimum secrets version to return. Returned when setting a new secret</summary>
+            /// <summary>Minimum secrets version to read, as returned by the endpoints that set or delete secrets. Use it to read your own writes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_version")]
@@ -108,7 +108,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys
             [QueryParameter("min_version")]
             public string MinVersion { get; set; }
 #endif
-            /// <summary>Comma-seperated list of secret keys to list</summary>
+            /// <summary>Comma-separated list of key types to list, such as hs256,es256. Defaults to all types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("types")]

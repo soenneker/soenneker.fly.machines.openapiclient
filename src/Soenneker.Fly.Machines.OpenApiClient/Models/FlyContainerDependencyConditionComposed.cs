@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>When the container can start: once the dependency has `started`, is `healthy`, or has`exited_successfully`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FlyContainerDependencyConditionComposed
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "exited_successfully")]
         #pragma warning disable CS1591

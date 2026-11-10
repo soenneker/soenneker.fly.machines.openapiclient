@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>`custom` for an uploaded certificate, `fly` for certificates issued by Fly.io.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CertificateEntrySource
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "custom")]
         #pragma warning disable CS1591

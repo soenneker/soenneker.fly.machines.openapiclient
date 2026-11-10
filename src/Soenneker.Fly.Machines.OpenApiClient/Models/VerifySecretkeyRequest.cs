@@ -25,25 +25,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The plaintext property</summary>
+        /// <summary>Data that was signed, base64-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
-        private List<int?>? _explicitNullValuePlaintext = default!;
+        public byte[]? Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        private byte[]? _explicitNullValuePlaintext = default!;
 #nullable restore
 #else
-        public List<int?> Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
-        private List<int?> _explicitNullValuePlaintext = default!;
+        public byte[] Plaintext { get => _explicitNullValuePlaintext; set { _explicitNullValuePlaintext = value; AdditionalData?.Remove("plaintext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plaintext"); else _explicitNullProperties?.Remove("plaintext"); } }
+        private byte[] _explicitNullValuePlaintext = default!;
 #endif
-        /// <summary>The signature property</summary>
+        /// <summary>Signature or MAC to check, base64-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
-        private List<int?>? _explicitNullValueSignature = default!;
+        public byte[]? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private byte[]? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public List<int?> Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
-        private List<int?> _explicitNullValueSignature = default!;
+        public byte[] Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private byte[] _explicitNullValueSignature = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.VerifySecretkeyRequest"/> and sets the default values.
@@ -70,8 +70,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "plaintext", n => { Plaintext = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "signature", n => { Signature = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "plaintext", n => { Plaintext = n.GetByteArrayValue(); } },
+                { "signature", n => { Signature = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("plaintext", Plaintext);
-            writer.WriteCollectionOfPrimitiveValues<int?>("signature", Signature);
+            writer.WriteByteArrayValue("plaintext", Plaintext);
+            writer.WriteByteArrayValue("signature", Signature);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

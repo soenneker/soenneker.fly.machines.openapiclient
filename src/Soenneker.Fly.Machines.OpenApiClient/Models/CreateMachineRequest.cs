@@ -47,13 +47,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.CreateMachineRequestConfig _explicitNullValueConfig = default!;
 #endif
-        /// <summary>The lease_ttl property</summary>
+        /// <summary>Acquire a lease on the new Machine that lasts this many seconds. The response&apos;s `nonce`field holds the lease nonce.</summary>
         public int? LeaseTtl { get => _explicitNullValueLeaseTtl; set { _explicitNullValueLeaseTtl = value; AdditionalData?.Remove("lease_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lease_ttl"); else _explicitNullProperties?.Remove("lease_ttl"); } }
         private int? _explicitNullValueLeaseTtl = default!;
         /// <summary>The minimum version of the app&apos;s secrets the Machine must run with. Set it to the `version`returned by the endpoints that set or delete app secrets, so that the Machine is guaranteedto see those changes. This field belongs at the top level of the request body, not in`config`. If omitted, the app&apos;s current secrets version is looked up for you.</summary>
         public int? MinSecretsVersion { get => _explicitNullValueMinSecretsVersion; set { _explicitNullValueMinSecretsVersion = value; AdditionalData?.Remove("min_secrets_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_secrets_version"); else _explicitNullProperties?.Remove("min_secrets_version"); } }
         private int? _explicitNullValueMinSecretsVersion = default!;
-        /// <summary>Unique name for this Machine. If omitted, one is generated for you</summary>
+        /// <summary>Name for this Machine. If omitted, one is generated for you. Names are not required to beunique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The target region. Omitting this param launches in the same region as your WireGuard peer connection (somewhere near you).</summary>
+        /// <summary>The region to create the Machine in, such as `iad`. Also accepts a comma-separated listof regions and region groups (`any`, `us`, `na`, `sa`, `eu`, `apac`, `africa`,`asia_pacific`, `europe`, `north_america`, `south_america`), in which case Fly.io picks onewith capacity. If the Machine mounts a volume, defaults to the volume&apos;s region; the regionmust include it. Otherwise defaults to the region of the API server handling the request,which is usually the one closest to you.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -73,13 +73,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The skip_launch property</summary>
+        /// <summary>Create the Machine without starting it. It ends up `stopped`; start it with the StartMachine endpoint. Not allowed for spot Machines.</summary>
         public bool? SkipLaunch { get => _explicitNullValueSkipLaunch; set { _explicitNullValueSkipLaunch = value; AdditionalData?.Remove("skip_launch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_launch"); else _explicitNullProperties?.Remove("skip_launch"); } }
         private bool? _explicitNullValueSkipLaunch = default!;
-        /// <summary>The skip_secrets property</summary>
+        /// <summary>Don&apos;t look up the app&apos;s current secrets version. The Machine still gets the app&apos;ssecrets, but may not see recent changes to them. Takes precedence over`min_secrets_version`.</summary>
         public bool? SkipSecrets { get => _explicitNullValueSkipSecrets; set { _explicitNullValueSkipSecrets = value; AdditionalData?.Remove("skip_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_secrets"); else _explicitNullProperties?.Remove("skip_secrets"); } }
         private bool? _explicitNullValueSkipSecrets = default!;
-        /// <summary>The skip_service_registration property</summary>
+        /// <summary>Create the Machine cordoned, so Fly Proxy doesn&apos;t route requests to it until it isuncordoned. Its services are still registered.</summary>
         public bool? SkipServiceRegistration { get => _explicitNullValueSkipServiceRegistration; set { _explicitNullValueSkipServiceRegistration = value; AdditionalData?.Remove("skip_service_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_service_registration"); else _explicitNullProperties?.Remove("skip_service_registration"); } }
         private bool? _explicitNullValueSkipServiceRegistration = default!;
         /// <summary>

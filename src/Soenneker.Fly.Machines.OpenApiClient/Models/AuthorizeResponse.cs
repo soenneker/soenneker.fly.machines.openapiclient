@@ -23,27 +23,27 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             else if (parseNode.GetChildNode("verified_token") is { } nullNodeVerifiedToken && nullNodeVerifiedToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedToken = null;
         }
 
-        /// <summary>The access property</summary>
+        /// <summary>The requested access, with names resolved to IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess? _explicitNullValueAccess = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess _explicitNullValueAccess = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess _explicitNullValueAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The verified_token property</summary>
+        /// <summary>The token that grants the requested access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken? VerifiedToken { get => _explicitNullValueVerifiedToken; set { _explicitNullValueVerifiedToken = value; AdditionalData?.Remove("verified_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_token"); else _explicitNullProperties?.Remove("verified_token"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken? _explicitNullValueVerifiedToken = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken? VerifiedToken { get => _explicitNullValueVerifiedToken; set { _explicitNullValueVerifiedToken = value; AdditionalData?.Remove("verified_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_token"); else _explicitNullProperties?.Remove("verified_token"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken? _explicitNullValueVerifiedToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken VerifiedToken { get => _explicitNullValueVerifiedToken; set { _explicitNullValueVerifiedToken = value; AdditionalData?.Remove("verified_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_token"); else _explicitNullProperties?.Remove("verified_token"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken _explicitNullValueVerifiedToken = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken VerifiedToken { get => _explicitNullValueVerifiedToken; set { _explicitNullValueVerifiedToken = value; AdditionalData?.Remove("verified_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_token"); else _explicitNullProperties?.Remove("verified_token"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken _explicitNullValueVerifiedToken = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponse"/> and sets the default values.
@@ -70,8 +70,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess.CreateFromDiscriminatorValue); } },
-                { "verified_token", n => { VerifiedToken = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken>(global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken.CreateFromDiscriminatorValue); } },
+                { "access", n => { Access = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess.CreateFromDiscriminatorValue); } },
+                { "verified_token", n => { VerifiedToken = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyioAccess>("access", Access);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.RootVerifiedToken>("verified_token", VerifiedToken);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseAccess>("access", Access);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeResponseVerifiedToken>("verified_token", VerifiedToken);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

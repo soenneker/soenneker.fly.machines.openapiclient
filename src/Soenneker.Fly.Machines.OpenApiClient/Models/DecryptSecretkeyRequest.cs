@@ -25,25 +25,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associated_data property</summary>
+        /// <summary>Additional data passed when encrypting, base64-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? AssociatedData { get => _explicitNullValueAssociatedData; set { _explicitNullValueAssociatedData = value; AdditionalData?.Remove("associated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_data"); else _explicitNullProperties?.Remove("associated_data"); } }
-        private List<int?>? _explicitNullValueAssociatedData = default!;
+        public byte[]? AssociatedData { get => _explicitNullValueAssociatedData; set { _explicitNullValueAssociatedData = value; AdditionalData?.Remove("associated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_data"); else _explicitNullProperties?.Remove("associated_data"); } }
+        private byte[]? _explicitNullValueAssociatedData = default!;
 #nullable restore
 #else
-        public List<int?> AssociatedData { get => _explicitNullValueAssociatedData; set { _explicitNullValueAssociatedData = value; AdditionalData?.Remove("associated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_data"); else _explicitNullProperties?.Remove("associated_data"); } }
-        private List<int?> _explicitNullValueAssociatedData = default!;
+        public byte[] AssociatedData { get => _explicitNullValueAssociatedData; set { _explicitNullValueAssociatedData = value; AdditionalData?.Remove("associated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_data"); else _explicitNullProperties?.Remove("associated_data"); } }
+        private byte[] _explicitNullValueAssociatedData = default!;
 #endif
-        /// <summary>The ciphertext property</summary>
+        /// <summary>Data to decrypt, as returned by the encrypt endpoint, base64-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
-        private List<int?>? _explicitNullValueCiphertext = default!;
+        public byte[]? Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
+        private byte[]? _explicitNullValueCiphertext = default!;
 #nullable restore
 #else
-        public List<int?> Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
-        private List<int?> _explicitNullValueCiphertext = default!;
+        public byte[] Ciphertext { get => _explicitNullValueCiphertext; set { _explicitNullValueCiphertext = value; AdditionalData?.Remove("ciphertext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ciphertext"); else _explicitNullProperties?.Remove("ciphertext"); } }
+        private byte[] _explicitNullValueCiphertext = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.DecryptSecretkeyRequest"/> and sets the default values.
@@ -70,8 +70,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "associated_data", n => { AssociatedData = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "ciphertext", n => { Ciphertext = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "associated_data", n => { AssociatedData = n.GetByteArrayValue(); } },
+                { "ciphertext", n => { Ciphertext = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("associated_data", AssociatedData);
-            writer.WriteCollectionOfPrimitiveValues<int?>("ciphertext", Ciphertext);
+            writer.WriteByteArrayValue("associated_data", AssociatedData);
+            writer.WriteByteArrayValue("ciphertext", Ciphertext);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

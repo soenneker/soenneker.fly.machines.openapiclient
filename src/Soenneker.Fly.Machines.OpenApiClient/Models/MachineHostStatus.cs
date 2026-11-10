@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Whether Fly.io could reach the Machine&apos;s host: `ok` if it could, `unreachable` if itcould not, in which case the response is built from last known state. `unknown` if thehost&apos;s status was not reported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MachineHostStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ok")]
         #pragma warning disable CS1591

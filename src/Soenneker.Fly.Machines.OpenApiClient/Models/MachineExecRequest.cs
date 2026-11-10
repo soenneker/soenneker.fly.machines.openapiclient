@@ -33,7 +33,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated: use Command instead</summary>
+        /// <summary>Command line to run, split into arguments like a shell would. Takes precedence over`command`.Deprecated: use `command`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
@@ -43,7 +43,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Cmd { get => _explicitNullValueCmd; set { _explicitNullValueCmd = value; AdditionalData?.Remove("cmd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cmd"); else _explicitNullProperties?.Remove("cmd"); } }
         private string _explicitNullValueCmd = default!;
 #endif
-        /// <summary>The command property</summary>
+        /// <summary>Command to run, as the program followed by its arguments. It is run directly, not by ashell.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
@@ -53,7 +53,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private List<string> _explicitNullValueCommand = default!;
 #endif
-        /// <summary>The container property</summary>
+        /// <summary>Name of the container to run the command in, for Machines with containers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; AdditionalData?.Remove("container"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
@@ -63,10 +63,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Container { get => _explicitNullValueContainer; set { _explicitNullValueContainer = value; AdditionalData?.Remove("container"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("container"); else _explicitNullProperties?.Remove("container"); } }
         private string _explicitNullValueContainer = default!;
 #endif
-        /// <summary>Machine runs the command in the machine&apos;s own namespace instead of in acontainer. It is mutually exclusive with Container.</summary>
+        /// <summary>Run the command in the Machine&apos;s own namespace instead of in a container. Mutuallyexclusive with `container`.</summary>
         public bool? Machine { get => _explicitNullValueMachine; set { _explicitNullValueMachine = value; AdditionalData?.Remove("machine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine"); else _explicitNullProperties?.Remove("machine"); } }
         private bool? _explicitNullValueMachine = default!;
-        /// <summary>The stdin property</summary>
+        /// <summary>Data to write to the command&apos;s standard input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; AdditionalData?.Remove("stdin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Stdin { get => _explicitNullValueStdin; set { _explicitNullValueStdin = value; AdditionalData?.Remove("stdin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stdin"); else _explicitNullProperties?.Remove("stdin"); } }
         private string _explicitNullValueStdin = default!;
 #endif
-        /// <summary>The timeout property</summary>
+        /// <summary>How long to let the command run, in seconds. Defaults to 10; at most 600.</summary>
         public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>

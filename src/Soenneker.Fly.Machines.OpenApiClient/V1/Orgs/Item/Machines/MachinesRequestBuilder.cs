@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Machines
         {
         }
         /// <summary>
-        /// List all Machines associated with a specific organization. Machines are sorted by their `updated_at` timestamps, oldest to newest.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
+        /// List all Machines associated with a specific organization. Machines are returned region by region, and sorted by their `updated_at` timestamps, oldest to newest, within each region. The list as a whole is therefore not sorted by `updated_at`.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Machines
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgMachinesResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all Machines associated with a specific organization. Machines are sorted by their `updated_at` timestamps, oldest to newest.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
+        /// List all Machines associated with a specific organization. Machines are returned region by region, and sorted by their `updated_at` timestamps, oldest to newest, within each region. The list as a whole is therefore not sorted by `updated_at`.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Machines
             return new global::Soenneker.Fly.Machines.OpenApiClient.V1.Orgs.Item.Machines.MachinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all Machines associated with a specific organization. Machines are sorted by their `updated_at` timestamps, oldest to newest.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
+        /// List all Machines associated with a specific organization. Machines are returned region by region, and sorted by their `updated_at` timestamps, oldest to newest, within each region. The list as a whole is therefore not sorted by `updated_at`.This API call represents &quot;a point in time&quot;. Recent machine changes, including creations and destructions, may take time to propagate. When polling with `updated_after`, offset your timestamps to catch late-arriving events.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MachinesRequestBuilderGetQueryParameters 

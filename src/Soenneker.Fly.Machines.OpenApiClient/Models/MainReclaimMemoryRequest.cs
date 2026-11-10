@@ -23,7 +23,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount_mb property</summary>
+        /// <summary>Memory to reclaim, in MiB. Must be positive and at most the Machine&apos;s memory limit minus128 MiB.</summary>
         public int? AmountMb { get => _explicitNullValueAmountMb; set { _explicitNullValueAmountMb = value; AdditionalData?.Remove("amount_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_mb"); else _explicitNullProperties?.Remove("amount_mb"); } }
         private int? _explicitNullValueAmountMb = default!;
         /// <summary>

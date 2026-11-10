@@ -28,6 +28,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         #pragma warning disable CS1591
         Failed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "archived")]
+        #pragma warning disable CS1591
+        Archived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "settled")]
         #pragma warning disable CS1591
         Settled,

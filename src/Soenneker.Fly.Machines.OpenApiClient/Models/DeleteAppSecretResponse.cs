@@ -28,7 +28,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
         public int? DeleteAppSecretResponseVersion { get => _explicitNullValueDeleteAppSecretResponseVersion; set { _explicitNullValueDeleteAppSecretResponseVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueDeleteAppSecretResponseVersion = default!;
-        /// <summary>DEPRECATED</summary>
+        /// <summary>Same value as `version`.Deprecated: use `version`.</summary>
         public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("Version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>

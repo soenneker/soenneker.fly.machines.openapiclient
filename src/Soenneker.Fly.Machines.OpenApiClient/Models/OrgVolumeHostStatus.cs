@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Whether Fly.io could reach the volume&apos;s host: `ok` if it could, `unreachable` or`unknown` if it could not, in which case host-reported fields are missing.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum OrgVolumeHostStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ok")]
         #pragma warning disable CS1591

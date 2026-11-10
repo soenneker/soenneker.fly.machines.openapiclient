@@ -52,6 +52,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets.SecretsRequestBuilder.SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,7 +63,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "403", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecrets.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Running Machines don&apos;t pick up the change on their own: create or update Machines with `min_secrets_version` set to the returned `version` for them to see it.
@@ -147,7 +154,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecretsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Minimum secrets version to return. Returned when setting a new secret</summary>
+            /// <summary>Minimum secrets version to read, as returned by the endpoints that set or delete secrets. Use it to read your own writes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_version")]
@@ -157,7 +164,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secrets
             [QueryParameter("min_version")]
             public string MinVersion { get; set; }
 #endif
-            /// <summary>Show the secret values.</summary>
+            /// <summary>Include secret values. Only allowed when the request comes from a Machine of the app; otherwise the request fails with 403.</summary>
             [QueryParameter("show_secrets")]
             public bool? ShowSecrets { get; set; }
         }

@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The apps property</summary>
+        /// <summary>Names of the apps the token is restricted to. Omitted if the token is not restricted tospecific apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Apps { get => _explicitNullValueApps; set { _explicitNullValueApps = value; AdditionalData?.Remove("apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apps"); else _explicitNullProperties?.Remove("apps"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Apps { get => _explicitNullValueApps; set { _explicitNullValueApps = value; AdditionalData?.Remove("apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apps"); else _explicitNullProperties?.Remove("apps"); } }
         private List<string> _explicitNullValueApps = default!;
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>Name of the organization the token is scoped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
         private string _explicitNullValueOrganization = default!;
 #endif
-        /// <summary>The org_slug property</summary>
+        /// <summary>Slug of the organization the token is scoped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
         private string _explicitNullValueOrgSlug = default!;
 #endif
-        /// <summary>Machine the token is restricted to (FromMachine caveat)</summary>
+        /// <summary>ID of the Machine the token may only be used from. Omitted if the token is not restrictedto a Machine.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestrictedToMachine { get => _explicitNullValueRestrictedToMachine; set { _explicitNullValueRestrictedToMachine = value; AdditionalData?.Remove("restricted_to_machine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted_to_machine"); else _explicitNullProperties?.Remove("restricted_to_machine"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string RestrictedToMachine { get => _explicitNullValueRestrictedToMachine; set { _explicitNullValueRestrictedToMachine = value; AdditionalData?.Remove("restricted_to_machine"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restricted_to_machine"); else _explicitNullProperties?.Remove("restricted_to_machine"); } }
         private string _explicitNullValueRestrictedToMachine = default!;
 #endif
-        /// <summary>Machine making the request</summary>
+        /// <summary>Never set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceMachineId { get => _explicitNullValueSourceMachineId; set { _explicitNullValueSourceMachineId = value; AdditionalData?.Remove("source_machine_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_machine_id"); else _explicitNullProperties?.Remove("source_machine_id"); } }
@@ -85,7 +85,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string SourceMachineId { get => _explicitNullValueSourceMachineId; set { _explicitNullValueSourceMachineId = value; AdditionalData?.Remove("source_machine_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_machine_id"); else _explicitNullProperties?.Remove("source_machine_id"); } }
         private string _explicitNullValueSourceMachineId = default!;
 #endif
-        /// <summary>The token_id property</summary>
+        /// <summary>ID of the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TokenId { get => _explicitNullValueTokenId; set { _explicitNullValueTokenId = value; AdditionalData?.Remove("token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_id"); else _explicitNullProperties?.Remove("token_id"); } }
@@ -95,7 +95,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string TokenId { get => _explicitNullValueTokenId; set { _explicitNullValueTokenId = value; AdditionalData?.Remove("token_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_id"); else _explicitNullProperties?.Remove("token_id"); } }
         private string _explicitNullValueTokenId = default!;
 #endif
-        /// <summary>User identifier if token is for a user</summary>
+        /// <summary>Opaque identifier of the user the token belongs to: the first 7 hex characters of a hash ofthe user&apos;s ID. Omitted for tokens that do not belong to a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }

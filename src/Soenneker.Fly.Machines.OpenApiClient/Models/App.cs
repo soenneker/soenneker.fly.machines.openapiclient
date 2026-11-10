@@ -39,7 +39,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique ID of the app, as used by Fly.io&apos;s GraphQL API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -49,13 +49,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The internal_numeric_id property</summary>
+        /// <summary>Fly.io&apos;s internal numeric ID of the app.</summary>
         public int? InternalNumericId { get => _explicitNullValueInternalNumericId; set { _explicitNullValueInternalNumericId = value; AdditionalData?.Remove("internal_numeric_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_numeric_id"); else _explicitNullProperties?.Remove("internal_numeric_id"); } }
         private int? _explicitNullValueInternalNumericId = default!;
-        /// <summary>The machine_count property</summary>
+        /// <summary>Number of the app&apos;s Machines that have not been destroyed.</summary>
         public int? MachineCount { get => _explicitNullValueMachineCount; set { _explicitNullValueMachineCount = value; AdditionalData?.Remove("machine_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("machine_count"); else _explicitNullProperties?.Remove("machine_count"); } }
         private int? _explicitNullValueMachineCount = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Globally unique name of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The network property</summary>
+        /// <summary>Name of the private network the app is attached to: `default` for the organization&apos;sdefault network, or the name given when the app was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Network { get => _explicitNullValueNetwork; set { _explicitNullValueNetwork = value; AdditionalData?.Remove("network"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network"); else _explicitNullProperties?.Remove("network"); } }
         private string _explicitNullValueNetwork = default!;
 #endif
-        /// <summary>The network_cidr property</summary>
+        /// <summary>The /48 IPv6 prefix of the private (6PN) network the app is attached to, such as`fdaa:0:1234::/48`. Apps on the same network share it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkCidr { get => _explicitNullValueNetworkCidr; set { _explicitNullValueNetworkCidr = value; AdditionalData?.Remove("network_cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_cidr"); else _explicitNullProperties?.Remove("network_cidr"); } }
@@ -85,27 +85,20 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string NetworkCidr { get => _explicitNullValueNetworkCidr; set { _explicitNullValueNetworkCidr = value; AdditionalData?.Remove("network_cidr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("network_cidr"); else _explicitNullProperties?.Remove("network_cidr"); } }
         private string _explicitNullValueNetworkCidr = default!;
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>The organization that owns the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo? _explicitNullValueOrganization = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo _explicitNullValueOrganization = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization _explicitNullValueOrganization = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
-        /// <summary>The volume_count property</summary>
+        /// <summary>State of the app. `pending` until one of its Machines changes state. After that, updatedasynchronously whenever a Machine changes state: `deployed` if at least one Machine isstarted, and `suspended` otherwise.</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AppStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AppStatus? _explicitNullValueStatus = default!;
+        /// <summary>Number of the app&apos;s volumes that have not been destroyed or scheduled for destruction.</summary>
         public int? VolumeCount { get => _explicitNullValueVolumeCount; set { _explicitNullValueVolumeCount = value; AdditionalData?.Remove("volume_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_count"); else _explicitNullProperties?.Remove("volume_count"); } }
         private int? _explicitNullValueVolumeCount = default!;
         /// <summary>
@@ -139,8 +132,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
                 { "network_cidr", n => { NetworkCidr = n.GetStringValue(); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization.CreateFromDiscriminatorValue); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "volume_count", n => { VolumeCount = n.GetIntValue(); } },
             };
         }
@@ -157,8 +150,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network", Network);
             writer.WriteStringValue("network_cidr", NetworkCidr);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganizationInfo>("organization", Organization);
-            writer.WriteStringValue("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppOrganization>("organization", Organization);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppStatus>("status", Status);
             writer.WriteIntValue("volume_count", VolumeCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

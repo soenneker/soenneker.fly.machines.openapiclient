@@ -43,15 +43,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The exec property</summary>
+        /// <summary>Check that a command run in the container exits with status 0</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck? Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; AdditionalData?.Remove("exec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck? _explicitNullValueExec = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec? Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; AdditionalData?.Remove("exec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec? _explicitNullValueExec = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; AdditionalData?.Remove("exec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck _explicitNullValueExec = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec Exec { get => _explicitNullValueExec; set { _explicitNullValueExec = value; AdditionalData?.Remove("exec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exec"); else _explicitNullProperties?.Remove("exec"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec _explicitNullValueExec = default!;
 #endif
         /// <summary>The number of times the check must fail before considering the container unhealthy.</summary>
         public int? FailureThreshold { get => _explicitNullValueFailureThreshold; set { _explicitNullValueFailureThreshold = value; AdditionalData?.Remove("failure_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_threshold"); else _explicitNullProperties?.Remove("failure_threshold"); } }
@@ -59,15 +59,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The time in seconds to wait after a container starts before checking its health.</summary>
         public int? GracePeriod { get => _explicitNullValueGracePeriod; set { _explicitNullValueGracePeriod = value; AdditionalData?.Remove("grace_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grace_period"); else _explicitNullProperties?.Remove("grace_period"); } }
         private int? _explicitNullValueGracePeriod = default!;
-        /// <summary>The http property</summary>
+        /// <summary>Check that an HTTP request succeeds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck? Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck? _explicitNullValueHttp = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp? Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp? _explicitNullValueHttp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck _explicitNullValueHttp = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp Http { get => _explicitNullValueHttp; set { _explicitNullValueHttp = value; AdditionalData?.Remove("http"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http"); else _explicitNullProperties?.Remove("http"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp _explicitNullValueHttp = default!;
 #endif
         /// <summary>The time in seconds between executing the defined check.</summary>
         public int? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
@@ -88,15 +88,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The number of times the check must succeeed before considering the container healthy.</summary>
         public int? SuccessThreshold { get => _explicitNullValueSuccessThreshold; set { _explicitNullValueSuccessThreshold = value; AdditionalData?.Remove("success_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_threshold"); else _explicitNullProperties?.Remove("success_threshold"); } }
         private int? _explicitNullValueSuccessThreshold = default!;
-        /// <summary>The tcp property</summary>
+        /// <summary>Check that a TCP connection can be opened</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck? Tcp { get => _explicitNullValueTcp; set { _explicitNullValueTcp = value; AdditionalData?.Remove("tcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp"); else _explicitNullProperties?.Remove("tcp"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck? _explicitNullValueTcp = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp? Tcp { get => _explicitNullValueTcp; set { _explicitNullValueTcp = value; AdditionalData?.Remove("tcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp"); else _explicitNullProperties?.Remove("tcp"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp? _explicitNullValueTcp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck Tcp { get => _explicitNullValueTcp; set { _explicitNullValueTcp = value; AdditionalData?.Remove("tcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp"); else _explicitNullProperties?.Remove("tcp"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck _explicitNullValueTcp = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp Tcp { get => _explicitNullValueTcp; set { _explicitNullValueTcp = value; AdditionalData?.Remove("tcp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp"); else _explicitNullProperties?.Remove("tcp"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp _explicitNullValueTcp = default!;
 #endif
         /// <summary>The time in seconds to wait for the check to complete.</summary>
         public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
@@ -129,15 +129,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exec", n => { Exec = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck.CreateFromDiscriminatorValue); } },
+                { "exec", n => { Exec = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec.CreateFromDiscriminatorValue); } },
                 { "failure_threshold", n => { FailureThreshold = n.GetIntValue(); } },
                 { "grace_period", n => { GracePeriod = n.GetIntValue(); } },
-                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck.CreateFromDiscriminatorValue); } },
+                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
                 { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "success_threshold", n => { SuccessThreshold = n.GetIntValue(); } },
-                { "tcp", n => { Tcp = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck.CreateFromDiscriminatorValue); } },
+                { "tcp", n => { Tcp = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
                 { "unhealthy", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUnhealthy = default; _explicitNullProperties?.Remove("unhealthy"); AdditionalData["unhealthy"] = unknown; } else { Unhealthy = parsed; AdditionalData.Remove("unhealthy"); } } },
             };
@@ -149,15 +149,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyExecHealthcheck>("exec", Exec);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckExec>("exec", Exec);
             writer.WriteIntValue("failure_threshold", FailureThreshold);
             writer.WriteIntValue("grace_period", GracePeriod);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyHttpHealthcheck>("http", Http);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckHttp>("http", Http);
             writer.WriteIntValue("interval", Interval);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckKindComposed>("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("success_threshold", SuccessThreshold);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyTcpHealthcheck>("tcp", Tcp);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckTcp>("tcp", Tcp);
             writer.WriteIntValue("timeout", Timeout);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerHealthcheckUnhealthy>("unhealthy", Unhealthy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

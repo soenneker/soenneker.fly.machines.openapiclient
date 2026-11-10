@@ -21,7 +21,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             else if (parseNode.GetChildNode("actual_mb") is { } nullNodeActualMb && nullNodeActualMb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualMb = null;
         }
 
-        /// <summary>The actual_mb property</summary>
+        /// <summary>Memory, in MiB, that the guest actually gave up. Can be less than requested.</summary>
         public int? ActualMb { get => _explicitNullValueActualMb; set { _explicitNullValueActualMb = value; AdditionalData?.Remove("actual_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_mb"); else _explicitNullProperties?.Remove("actual_mb"); } }
         private int? _explicitNullValueActualMb = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

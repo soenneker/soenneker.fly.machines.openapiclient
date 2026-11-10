@@ -112,10 +112,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Machines.Item.Wait
             [QueryParameter("instance_id")]
             public string InstanceId { get; set; }
 #endif
-            /// <summary>desired state(s), supports repeated or comma-separated values</summary>
+            /// <summary>Desired state(s). Supports repeated or comma-separated values. settled matches any of started, stopped, suspended, failed, destroyed, or archived. Defaults to started.</summary>
             [QueryParameter("state")]
             public global::Soenneker.Fly.Machines.OpenApiClient.Models.MachinesWaitStateParameter? State { get; set; }
-            /// <summary>wait timeout. default 60s</summary>
+            /// <summary>Wait timeout in seconds. Defaults to 60.</summary>
             [QueryParameter("timeout")]
             public int? Timeout { get; set; }
             /// <summary>26-character Machine version ID</summary>

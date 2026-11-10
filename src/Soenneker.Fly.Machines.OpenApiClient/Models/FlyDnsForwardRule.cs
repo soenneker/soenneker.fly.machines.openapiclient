@@ -25,7 +25,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The addr property</summary>
+        /// <summary>Address and port of the DNS server to forward queries to over TCP, e.g. `10.0.0.1:53`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; AdditionalData?.Remove("addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Addr { get => _explicitNullValueAddr; set { _explicitNullValueAddr = value; AdditionalData?.Remove("addr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addr"); else _explicitNullProperties?.Remove("addr"); } }
         private string _explicitNullValueAddr = default!;
 #endif
-        /// <summary>The basename property</summary>
+        /// <summary>Domain to forward queries for, including subdomains. Must end in a dot, e.g. `example.com.`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Basename { get => _explicitNullValueBasename; set { _explicitNullValueBasename = value; AdditionalData?.Remove("basename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basename"); else _explicitNullProperties?.Remove("basename"); } }

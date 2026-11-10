@@ -30,7 +30,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>The app&apos;s secrets version after this change. Pass it as `min_secrets_version` when creating orupdating Machines so that they are guaranteed to see the change.</summary>
         public int? AppSecretsUpdateRespVersion { get => _explicitNullValueAppSecretsUpdateRespVersion; set { _explicitNullValueAppSecretsUpdateRespVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueAppSecretsUpdateRespVersion = default!;
-        /// <summary>The secrets property</summary>
+        /// <summary>The secrets from the request, with their new values and digests; deleted secrets onlyhave a name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret>? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; AdditionalData?.Remove("secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
@@ -40,7 +40,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret> Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; AdditionalData?.Remove("secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.AppSecret> _explicitNullValueSecrets = default!;
 #endif
-        /// <summary>DEPRECATED</summary>
+        /// <summary>Same value as `version`.Deprecated: use `version`.</summary>
         public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("Version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Version"); else _explicitNullProperties?.Remove("Version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>

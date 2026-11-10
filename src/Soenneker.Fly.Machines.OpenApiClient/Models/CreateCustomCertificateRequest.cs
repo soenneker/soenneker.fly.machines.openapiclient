@@ -27,7 +27,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fullchain property</summary>
+        /// <summary>PEM-encoded certificate, followed by any intermediate certificates. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; AdditionalData?.Remove("fullchain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Fullchain { get => _explicitNullValueFullchain; set { _explicitNullValueFullchain = value; AdditionalData?.Remove("fullchain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullchain"); else _explicitNullProperties?.Remove("fullchain"); } }
         private string _explicitNullValueFullchain = default!;
 #endif
-        /// <summary>The hostname property</summary>
+        /// <summary>Hostname the certificate is for. Required. Hostnames under `fly.dev` are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
-        /// <summary>The private_key property</summary>
+        /// <summary>PEM-encoded private key of the certificate. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; AdditionalData?.Remove("private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("private_key"); else _explicitNullProperties?.Remove("private_key"); } }

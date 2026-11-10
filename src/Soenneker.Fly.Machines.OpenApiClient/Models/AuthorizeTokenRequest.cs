@@ -23,19 +23,19 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             else if (parseNode.GetChildNode("header") is { } nullNodeHeader && nullNodeHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Header = null;
         }
 
-        /// <summary>The access property</summary>
+        /// <summary>Access to check the token against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess? _explicitNullValueAccess = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess _explicitNullValueAccess = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess _explicitNullValueAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The header property</summary>
+        /// <summary>Value of the Authorization header to verify, e.g. `FlyV1 fm2_...`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Header { get => _explicitNullValueHeader; set { _explicitNullValueHeader = value; AdditionalData?.Remove("header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header"); else _explicitNullProperties?.Remove("header"); } }
@@ -70,7 +70,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess.CreateFromDiscriminatorValue); } },
+                { "access", n => { Access = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess>(global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess.CreateFromDiscriminatorValue); } },
                 { "header", n => { Header = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MainTokenAccess>("access", Access);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.AuthorizeTokenRequestAccess>("access", Access);
             writer.WriteStringValue("header", Header);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

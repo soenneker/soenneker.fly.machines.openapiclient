@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Signal to send to the Machine&apos;s main process. Defaults to `config.stop_config.signal`, orSIGINT.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum StopRequestSignal
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "SIGHUP")]
         #pragma warning disable CS1591

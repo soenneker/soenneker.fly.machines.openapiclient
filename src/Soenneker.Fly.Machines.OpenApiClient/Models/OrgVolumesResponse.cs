@@ -29,7 +29,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The last_updated_at property</summary>
+        /// <summary>`updated_at` of the last volume on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
@@ -39,7 +39,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("last_updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
         private string _explicitNullValueLastUpdatedAt = default!;
 #endif
-        /// <summary>The last_volume_id property</summary>
+        /// <summary>ID of the last volume on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; AdditionalData?.Remove("last_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
@@ -49,7 +49,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string LastVolumeId { get => _explicitNullValueLastVolumeId; set { _explicitNullValueLastVolumeId = value; AdditionalData?.Remove("last_volume_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_volume_id"); else _explicitNullProperties?.Remove("last_volume_id"); } }
         private string _explicitNullValueLastVolumeId = default!;
 #endif
-        /// <summary>The next_cursor property</summary>
+        /// <summary>Pagination cursor for the next page. Absent when no more volumes remain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
@@ -59,7 +59,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
-        /// <summary>The volumes property</summary>
+        /// <summary>The volumes on this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.OrgVolume>? Volumes { get => _explicitNullValueVolumes; set { _explicitNullValueVolumes = value; AdditionalData?.Remove("volumes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volumes"); else _explicitNullProperties?.Remove("volumes"); } }

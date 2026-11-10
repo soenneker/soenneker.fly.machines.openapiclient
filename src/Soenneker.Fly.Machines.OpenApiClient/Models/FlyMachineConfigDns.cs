@@ -36,7 +36,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dns_forward_rules property</summary>
+        /// <summary>Forward DNS queries for some domains to other DNS servers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule>? DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; AdditionalData?.Remove("dns_forward_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
@@ -46,7 +46,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule> DnsForwardRules { get => _explicitNullValueDnsForwardRules; set { _explicitNullValueDnsForwardRules = value; AdditionalData?.Remove("dns_forward_rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_forward_rules"); else _explicitNullProperties?.Remove("dns_forward_rules"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule> _explicitNullValueDnsForwardRules = default!;
 #endif
-        /// <summary>The hostname property</summary>
+        /// <summary>Hostname of the Machine. Defaults to the Machine ID. Also added to /etc/hosts with theMachine&apos;s 6PN address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
@@ -56,7 +56,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private string _explicitNullValueHostname = default!;
 #endif
-        /// <summary>The hostname_fqdn property</summary>
+        /// <summary>Fully qualified domain name added to /etc/hosts for `hostname`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; AdditionalData?.Remove("hostname_fqdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string HostnameFqdn { get => _explicitNullValueHostnameFqdn; set { _explicitNullValueHostnameFqdn = value; AdditionalData?.Remove("hostname_fqdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname_fqdn"); else _explicitNullProperties?.Remove("hostname_fqdn"); } }
         private string _explicitNullValueHostnameFqdn = default!;
 #endif
-        /// <summary>The nameservers property</summary>
+        /// <summary>Nameservers to use instead of the default, Fly.io&apos;s private DNS server `fdaa::3`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; AdditionalData?.Remove("nameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Nameservers { get => _explicitNullValueNameservers; set { _explicitNullValueNameservers = value; AdditionalData?.Remove("nameservers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nameservers"); else _explicitNullProperties?.Remove("nameservers"); } }
         private List<string> _explicitNullValueNameservers = default!;
 #endif
-        /// <summary>The options property</summary>
+        /// <summary>Options for /etc/resolv.conf</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption>? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
@@ -86,7 +86,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption> Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsOption> _explicitNullValueOptions = default!;
 #endif
-        /// <summary>The searches property</summary>
+        /// <summary>Search domains for /etc/resolv.conf</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
@@ -96,7 +96,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<string> Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
         private List<string> _explicitNullValueSearches = default!;
 #endif
-        /// <summary>The skip_registration property</summary>
+        /// <summary>Currently has no effect</summary>
         public bool? SkipRegistration { get => _explicitNullValueSkipRegistration; set { _explicitNullValueSkipRegistration = value; AdditionalData?.Remove("skip_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_registration"); else _explicitNullProperties?.Remove("skip_registration"); } }
         private bool? _explicitNullValueSkipRegistration = default!;
         /// <summary>

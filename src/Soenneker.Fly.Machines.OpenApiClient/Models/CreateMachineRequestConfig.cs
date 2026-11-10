@@ -73,7 +73,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Optional boolean telling the Machine to destroy itself once it’s complete (default false)</summary>
         public bool? AutoDestroy { get => _explicitNullValueAutoDestroy; set { _explicitNullValueAutoDestroy = value; AdditionalData?.Remove("auto_destroy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_destroy"); else _explicitNullProperties?.Remove("auto_destroy"); } }
         private bool? _explicitNullValueAutoDestroy = default!;
-        /// <summary>A cache drive attached to the Machine</summary>
+        /// <summary>Beta: a cache drive attached to the Machine. This field may be removed in the future</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive? CacheDrive { get => _explicitNullValueCacheDrive; set { _explicitNullValueCacheDrive = value; AdditionalData?.Remove("cache_drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_drive"); else _explicitNullProperties?.Remove("cache_drive"); } }
@@ -216,7 +216,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart Restart { get => _explicitNullValueRestart; set { _explicitNullValueRestart = value; AdditionalData?.Remove("restart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restart"); else _explicitNullProperties?.Remove("restart"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRestart _explicitNullValueRestart = default!;
 #endif
-        /// <summary>The size of the Machine&apos;s root filesystem and whether it persists</summary>
+        /// <summary>Beta: the size of the Machine&apos;s root filesystem and whether it persists. This field may beremoved in the future</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigRootfs? Rootfs { get => _explicitNullValueRootfs; set { _explicitNullValueRootfs = value; AdditionalData?.Remove("rootfs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rootfs"); else _explicitNullProperties?.Remove("rootfs"); } }

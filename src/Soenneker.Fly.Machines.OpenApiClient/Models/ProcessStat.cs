@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The command property</summary>
+        /// <summary>The process&apos;s command line, with arguments separated by spaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
@@ -47,10 +47,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Command { get => _explicitNullValueCommand; set { _explicitNullValueCommand = value; AdditionalData?.Remove("command"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("command"); else _explicitNullProperties?.Remove("command"); } }
         private string _explicitNullValueCommand = default!;
 #endif
-        /// <summary>The cpu property</summary>
+        /// <summary>Average CPU usage over the process&apos;s lifetime, in percent of one CPU. May exceed 100on Machines with more than one CPU.</summary>
         public int? Cpu { get => _explicitNullValueCpu; set { _explicitNullValueCpu = value; AdditionalData?.Remove("cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpu"); else _explicitNullProperties?.Remove("cpu"); } }
         private int? _explicitNullValueCpu = default!;
-        /// <summary>The directory property</summary>
+        /// <summary>The process&apos;s working directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
@@ -60,7 +60,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Directory { get => _explicitNullValueDirectory; set { _explicitNullValueDirectory = value; AdditionalData?.Remove("directory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directory"); else _explicitNullProperties?.Remove("directory"); } }
         private string _explicitNullValueDirectory = default!;
 #endif
-        /// <summary>The listen_sockets property</summary>
+        /// <summary>TCP sockets the process is listening on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket>? ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; AdditionalData?.Remove("listen_sockets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
@@ -70,16 +70,16 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> ListenSockets { get => _explicitNullValueListenSockets; set { _explicitNullValueListenSockets = value; AdditionalData?.Remove("listen_sockets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listen_sockets"); else _explicitNullProperties?.Remove("listen_sockets"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.ListenSocket> _explicitNullValueListenSockets = default!;
 #endif
-        /// <summary>The pid property</summary>
+        /// <summary>Process ID inside the Machine.</summary>
         public int? Pid { get => _explicitNullValuePid; set { _explicitNullValuePid = value; AdditionalData?.Remove("pid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pid"); else _explicitNullProperties?.Remove("pid"); } }
         private int? _explicitNullValuePid = default!;
-        /// <summary>The rss property</summary>
+        /// <summary>Resident set size: the physical memory the process uses, in bytes.</summary>
         public int? Rss { get => _explicitNullValueRss; set { _explicitNullValueRss = value; AdditionalData?.Remove("rss"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rss"); else _explicitNullProperties?.Remove("rss"); } }
         private int? _explicitNullValueRss = default!;
-        /// <summary>The rtime property</summary>
+        /// <summary>How long the process has been running, in seconds.</summary>
         public int? Rtime { get => _explicitNullValueRtime; set { _explicitNullValueRtime = value; AdditionalData?.Remove("rtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtime"); else _explicitNullProperties?.Remove("rtime"); } }
         private int? _explicitNullValueRtime = default!;
-        /// <summary>The stime property</summary>
+        /// <summary>When the process started, in seconds since the Machine booted.</summary>
         public int? Stime { get => _explicitNullValueStime; set { _explicitNullValueStime = value; AdditionalData?.Remove("stime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stime"); else _explicitNullProperties?.Remove("stime"); } }
         private int? _explicitNullValueStime = default!;
         /// <summary>

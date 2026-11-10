@@ -41,22 +41,22 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The add_size_gb property</summary>
+        /// <summary>With automatic extension, grow the volume by this many GB at a time. Between 1 and 100.Mutually exclusive with add_size_percent</summary>
         public int? AddSizeGb { get => _explicitNullValueAddSizeGb; set { _explicitNullValueAddSizeGb = value; AdditionalData?.Remove("add_size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_gb"); else _explicitNullProperties?.Remove("add_size_gb"); } }
         private int? _explicitNullValueAddSizeGb = default!;
         /// <summary>AddSizePercent grows by a percentage of the current size, rounded up to GiB.It is mutually exclusive with AddSizeGb.</summary>
         public int? AddSizePercent { get => _explicitNullValueAddSizePercent; set { _explicitNullValueAddSizePercent = value; AdditionalData?.Remove("add_size_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_size_percent"); else _explicitNullProperties?.Remove("add_size_percent"); } }
         private int? _explicitNullValueAddSizePercent = default!;
-        /// <summary>The encrypted property</summary>
+        /// <summary>Whether the volume is encrypted. Set by Fly.io; ignored in requests</summary>
         public bool? Encrypted { get => _explicitNullValueEncrypted; set { _explicitNullValueEncrypted = value; AdditionalData?.Remove("encrypted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted"); else _explicitNullProperties?.Remove("encrypted"); } }
         private bool? _explicitNullValueEncrypted = default!;
-        /// <summary>The extend_threshold_percent property</summary>
+        /// <summary>Enable automatic volume extension: grow the volume when its usage exceeds this percentage.Between 50 and 99; 0 disables it</summary>
         public int? ExtendThresholdPercent { get => _explicitNullValueExtendThresholdPercent; set { _explicitNullValueExtendThresholdPercent = value; AdditionalData?.Remove("extend_threshold_percent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extend_threshold_percent"); else _explicitNullProperties?.Remove("extend_threshold_percent"); } }
         private int? _explicitNullValueExtendThresholdPercent = default!;
         /// <summary>MinAddSizeGb is the minimum proportional growth in GiB (default 1).</summary>
         public int? MinAddSizeGb { get => _explicitNullValueMinAddSizeGb; set { _explicitNullValueMinAddSizeGb = value; AdditionalData?.Remove("min_add_size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_add_size_gb"); else _explicitNullProperties?.Remove("min_add_size_gb"); } }
         private int? _explicitNullValueMinAddSizeGb = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the volume. Set by Fly.io; ignored in requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -66,7 +66,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The path property</summary>
+        /// <summary>Absolute path in the Machine to mount the volume at. Required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
@@ -76,13 +76,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
-        /// <summary>The size_gb property</summary>
+        /// <summary>Size of the volume in GB. Set by Fly.io; ignored in requests</summary>
         public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
-        /// <summary>The size_gb_limit property</summary>
+        /// <summary>With automatic extension, never grow the volume beyond this size in GB. At most theorganization&apos;s maximum volume size</summary>
         public int? SizeGbLimit { get => _explicitNullValueSizeGbLimit; set { _explicitNullValueSizeGbLimit = value; AdditionalData?.Remove("size_gb_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb_limit"); else _explicitNullProperties?.Remove("size_gb_limit"); } }
         private int? _explicitNullValueSizeGbLimit = default!;
-        /// <summary>The volume property</summary>
+        /// <summary>ID (`vol_...`) or name of the volume to mount. Required. With a name, any unattached volumeof the app with that name in the Machine&apos;s region is used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Volume { get => _explicitNullValueVolume; set { _explicitNullValueVolume = value; AdditionalData?.Remove("volume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume"); else _explicitNullProperties?.Remove("volume"); } }

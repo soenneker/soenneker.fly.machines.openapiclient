@@ -48,7 +48,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Number of machines to simulate placement.Defaults to 0, which returns the org-specific limit for each region.</summary>
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
-        /// <summary>The org_slug property</summary>
+        /// <summary>Slug of the organization to place Machines for, or `personal`. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
@@ -58,7 +58,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string OrgSlug { get => _explicitNullValueOrgSlug; set { _explicitNullValueOrgSlug = value; AdditionalData?.Remove("org_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_slug"); else _explicitNullProperties?.Remove("org_slug"); } }
         private string _explicitNullValueOrgSlug = default!;
 #endif
-        /// <summary>Region expression for placement as a comma-delimited set of regions or aliases.Defaults to &quot;[region],any&quot;, to prefer the API endpoint&apos;s local region with any other region as fallback.</summary>
+        /// <summary>Region expression for placement as a comma-delimited set of regions or aliases.Defaults to the API endpoint&apos;s local region. When `count` is greater than 0, `any` isadded as a fallback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -68,7 +68,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>The volume_name property</summary>
+        /// <summary>Currently unused.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; AdditionalData?.Remove("volume_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string VolumeName { get => _explicitNullValueVolumeName; set { _explicitNullValueVolumeName = value; AdditionalData?.Remove("volume_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_name"); else _explicitNullProperties?.Remove("volume_name"); } }
         private string _explicitNullValueVolumeName = default!;
 #endif
-        /// <summary>The volume_size_bytes property</summary>
+        /// <summary>Size of a volume each Machine will need, in bytes. Only hosts with room for it areconsidered.</summary>
         public int? VolumeSizeBytes { get => _explicitNullValueVolumeSizeBytes; set { _explicitNullValueVolumeSizeBytes = value; AdditionalData?.Remove("volume_size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_size_bytes"); else _explicitNullProperties?.Remove("volume_size_bytes"); } }
         private int? _explicitNullValueVolumeSizeBytes = default!;
         /// <summary>Optional weights to override default placement preferences.</summary>

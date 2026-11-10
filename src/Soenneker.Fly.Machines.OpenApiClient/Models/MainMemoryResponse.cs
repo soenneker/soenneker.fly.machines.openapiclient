@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The available_mb property</summary>
+        /// <summary>Highest limit, in MiB, that the Machine could currently be raised to: its configuredmemory (`guest.max_memory_mb` if set, else `guest.memory_mb`), capped by the host&apos;s freememory.</summary>
         public int? AvailableMb { get => _explicitNullValueAvailableMb; set { _explicitNullValueAvailableMb = value; AdditionalData?.Remove("available_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_mb"); else _explicitNullProperties?.Remove("available_mb"); } }
         private int? _explicitNullValueAvailableMb = default!;
-        /// <summary>The limit_mb property</summary>
+        /// <summary>Memory, in MiB, the guest can currently use.</summary>
         public int? LimitMb { get => _explicitNullValueLimitMb; set { _explicitNullValueLimitMb = value; AdditionalData?.Remove("limit_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_mb"); else _explicitNullProperties?.Remove("limit_mb"); } }
         private int? _explicitNullValueLimitMb = default!;
         /// <summary>

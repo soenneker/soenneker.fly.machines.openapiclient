@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// The size of the Machine&apos;s root filesystem and whether it persists
+    /// Beta: the size of the Machine&apos;s root filesystem and whether it persists. This field may beremoved in the future
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlyMachineConfigRootfs : IAdditionalDataHolder, IParsable
@@ -26,10 +26,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The persist property</summary>
+        /// <summary>Whether changes to the root filesystem are kept. `never` (default): reset on every start.`restart`: kept across stops and restarts, reset when the Machine is updated. `always`: alsokept across updates</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? Persist { get => _explicitNullValuePersist; set { _explicitNullValuePersist = value; AdditionalData?.Remove("persist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("persist"); else _explicitNullProperties?.Remove("persist"); } }
         private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineRootfsPersist? _explicitNullValuePersist = default!;
-        /// <summary>The size_gb property</summary>
+        /// <summary>Size of the root filesystem in GB. At most 50; 0 uses the default</summary>
         public int? SizeGb { get => _explicitNullValueSizeGb; set { _explicitNullValueSizeGb = value; AdditionalData?.Remove("size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_gb"); else _explicitNullProperties?.Remove("size_gb"); } }
         private int? _explicitNullValueSizeGb = default!;
         /// <summary>

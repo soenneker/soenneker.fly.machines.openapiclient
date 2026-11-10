@@ -34,13 +34,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Sign
         {
         }
         /// <summary>
-        /// Sign with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.SignSecretkeyResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Fly.Machines.OpenApiClient.Models.SignSecretkeyResponse?> PostAsync(global::Soenneker.Fly.Machines.OpenApiClient.Models.SignSecretkeyRequest body, Action<RequestConfiguration<global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Sign.SignRequestBuilder.SignRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,13 +56,14 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Sign
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Fly.Machines.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.SignSecretkeyResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.SignSecretkeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sign with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -92,12 +94,12 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Sign
             return new global::Soenneker.Fly.Machines.OpenApiClient.V1.Apps.Item.Secretkeys.Item.Sign.SignRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Sign with a secret key
+        /// The request must come from a Machine of the app; otherwise it fails with 403.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SignRequestBuilderPostQueryParameters 
         {
-            /// <summary>Minimum secrets version to return. Returned when setting a new secret</summary>
+            /// <summary>Minimum secrets version to read, as returned by the endpoints that set or delete secrets. Use it to read your own writes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_version")]

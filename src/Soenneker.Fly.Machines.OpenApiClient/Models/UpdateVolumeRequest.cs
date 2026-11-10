@@ -25,10 +25,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The auto_backup_enabled property</summary>
+        /// <summary>Take daily automatic snapshots of the volume. Unchanged if omitted.</summary>
         public bool? AutoBackupEnabled { get => _explicitNullValueAutoBackupEnabled; set { _explicitNullValueAutoBackupEnabled = value; AdditionalData?.Remove("auto_backup_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_backup_enabled"); else _explicitNullProperties?.Remove("auto_backup_enabled"); } }
         private bool? _explicitNullValueAutoBackupEnabled = default!;
-        /// <summary>The snapshot_retention property</summary>
+        /// <summary>Number of days to keep snapshots of the volume, from 1 to 60. Unchanged if omitted.</summary>
         public int? SnapshotRetention { get => _explicitNullValueSnapshotRetention; set { _explicitNullValueSnapshotRetention = value; AdditionalData?.Remove("snapshot_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_retention"); else _explicitNullProperties?.Remove("snapshot_retention"); } }
         private int? _explicitNullValueSnapshotRetention = default!;
         /// <summary>

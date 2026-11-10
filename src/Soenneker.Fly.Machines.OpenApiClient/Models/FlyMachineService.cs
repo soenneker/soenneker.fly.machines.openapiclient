@@ -41,7 +41,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autostart property</summary>
+        /// <summary>Whether Fly Proxy starts stopped or suspended Machines when requests arrive. Defaults to true</summary>
         public bool? Autostart { get => _explicitNullValueAutostart; set { _explicitNullValueAutostart = value; AdditionalData?.Remove("autostart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autostart"); else _explicitNullProperties?.Remove("autostart"); } }
         private bool? _explicitNullValueAutostart = default!;
         /// <summary>Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for &quot;off&quot; and &quot;stop&quot; in responses.* &quot;off&quot; or false - Do not autostop the Machine.* &quot;stop&quot; or true - Automatically stop the Machine.* &quot;suspend&quot; - Automatically suspend the Machine, falling back to a full stop if this is not possible.</summary>
@@ -57,17 +57,17 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck> _explicitNullValueChecks = default!;
 #endif
-        /// <summary>The concurrency property</summary>
+        /// <summary>Load limits Fly Proxy uses to balance traffic across Machines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency? _explicitNullValueConcurrency = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed? _explicitNullValueConcurrency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency _explicitNullValueConcurrency = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed _explicitNullValueConcurrency = default!;
 #endif
-        /// <summary>The force_instance_description property</summary>
+        /// <summary>Currently has no effect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; AdditionalData?.Remove("force_instance_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
@@ -77,7 +77,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ForceInstanceDescription { get => _explicitNullValueForceInstanceDescription; set { _explicitNullValueForceInstanceDescription = value; AdditionalData?.Remove("force_instance_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_description"); else _explicitNullProperties?.Remove("force_instance_description"); } }
         private string _explicitNullValueForceInstanceDescription = default!;
 #endif
-        /// <summary>The force_instance_key property</summary>
+        /// <summary>Currently has no effect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; AdditionalData?.Remove("force_instance_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
@@ -87,13 +87,13 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string ForceInstanceKey { get => _explicitNullValueForceInstanceKey; set { _explicitNullValueForceInstanceKey = value; AdditionalData?.Remove("force_instance_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instance_key"); else _explicitNullProperties?.Remove("force_instance_key"); } }
         private string _explicitNullValueForceInstanceKey = default!;
 #endif
-        /// <summary>The internal_port property</summary>
+        /// <summary>Port in the Machine that Fly Proxy forwards traffic to. Defaults to 8080</summary>
         public int? InternalPort { get => _explicitNullValueInternalPort; set { _explicitNullValueInternalPort = value; AdditionalData?.Remove("internal_port"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("internal_port"); else _explicitNullProperties?.Remove("internal_port"); } }
         private int? _explicitNullValueInternalPort = default!;
-        /// <summary>The min_machines_running property</summary>
+        /// <summary>When autostop is on, the number of Machines Fly Proxy keeps running in the app&apos;s primaryregion (`PRIMARY_REGION` env var). Machines in other regions can all be stopped</summary>
         public int? MinMachinesRunning { get => _explicitNullValueMinMachinesRunning; set { _explicitNullValueMinMachinesRunning = value; AdditionalData?.Remove("min_machines_running"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_machines_running"); else _explicitNullProperties?.Remove("min_machines_running"); } }
         private int? _explicitNullValueMinMachinesRunning = default!;
-        /// <summary>The ports property</summary>
+        /// <summary>Public ports that Fly Proxy accepts traffic on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort>? Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
@@ -103,7 +103,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort> Ports { get => _explicitNullValuePorts; set { _explicitNullValuePorts = value; AdditionalData?.Remove("ports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ports"); else _explicitNullProperties?.Remove("ports"); } }
         private List<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachinePort> _explicitNullValuePorts = default!;
 #endif
-        /// <summary>The protocol property</summary>
+        /// <summary>Protocol: tcp or udp. Defaults to tcp</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
@@ -141,7 +141,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
                 { "autostart", n => { Autostart = n.GetBoolValue(); } },
                 { "autostop", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAutostop = default; _explicitNullProperties?.Remove("autostop"); AdditionalData["autostop"] = unknown; } else { Autostop = parsed; AdditionalData.Remove("autostop"); } } },
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency.CreateFromDiscriminatorValue); } },
+                { "concurrency", n => { Concurrency = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed.CreateFromDiscriminatorValue); } },
                 { "force_instance_description", n => { ForceInstanceDescription = n.GetStringValue(); } },
                 { "force_instance_key", n => { ForceInstanceKey = n.GetStringValue(); } },
                 { "internal_port", n => { InternalPort = n.GetIntValue(); } },
@@ -160,7 +160,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
             writer.WriteBoolValue("autostart", Autostart);
             writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceAutostop>("autostop", Autostop);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceCheck>("checks", Checks);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrency>("concurrency", Concurrency);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineServiceConcurrencyComposed>("concurrency", Concurrency);
             writer.WriteStringValue("force_instance_description", ForceInstanceDescription);
             writer.WriteStringValue("force_instance_key", ForceInstanceKey);
             writer.WriteIntValue("internal_port", InternalPort);

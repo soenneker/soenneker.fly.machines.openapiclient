@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// ip_pair is returned when &quot;egress-pair&quot; IP type is requested; in this case, ip is null.
+    /// The allocated IPv4 and IPv6 addresses when the `egress_pair` type was requested; nullotherwise.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssignIpResponseIpPair : IAdditionalDataHolder, IParsable
@@ -26,7 +26,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The v4 property</summary>
+        /// <summary>The egress IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? V4 { get => _explicitNullValueV4; set { _explicitNullValueV4 = value; AdditionalData?.Remove("v4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v4"); else _explicitNullProperties?.Remove("v4"); } }
@@ -36,7 +36,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string V4 { get => _explicitNullValueV4; set { _explicitNullValueV4 = value; AdditionalData?.Remove("v4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v4"); else _explicitNullProperties?.Remove("v4"); } }
         private string _explicitNullValueV4 = default!;
 #endif
-        /// <summary>The v6 property</summary>
+        /// <summary>The egress IPv6 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? V6 { get => _explicitNullValueV6; set { _explicitNullValueV6 = value; AdditionalData?.Remove("v6"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("v6"); else _explicitNullProperties?.Remove("v6"); } }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>Kind of volume: `local` for regular volumes, or `cache` for volumes that holddisposable data and support neither snapshots nor restores.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum OrgVolumeType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "local")]
         #pragma warning disable CS1591
