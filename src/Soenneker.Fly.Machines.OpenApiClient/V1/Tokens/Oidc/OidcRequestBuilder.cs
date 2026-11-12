@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Tokens.Oidc
         {
         }
         /// <summary>
-        /// Request an Open ID Connect token for your machine. Customize the audience claim with the `aud` parameter. This returns a JWT token. Learn more about [using OpenID Connect](/docs/reference/openid-connect/) on Fly.io.
+        /// Request an Open ID Connect token for your machine. Customize the audience claim with the `aud` parameter. This returns a JWT token. Learn more about [using OpenID Connect](https://docs.fly.io/security/openid-connect) on Fly.io.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="body">Optional parameters</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Tokens.Oidc
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Request an Open ID Connect token for your machine. Customize the audience claim with the `aud` parameter. This returns a JWT token. Learn more about [using OpenID Connect](/docs/reference/openid-connect/) on Fly.io.
+        /// Request an Open ID Connect token for your machine. Customize the audience claim with the `aud` parameter. This returns a JWT token. Learn more about [using OpenID Connect](https://docs.fly.io/security/openid-connect) on Fly.io.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Optional parameters</param>
