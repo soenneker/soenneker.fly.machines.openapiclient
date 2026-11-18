@@ -8,6 +8,7 @@ using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Attachments;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Backups;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Databases;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork;
+using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_window;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Queries;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Restore;
 using Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Users;
@@ -43,6 +44,11 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item
         public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork.ForkRequestBuilder Fork
         {
             get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Fork.ForkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The maintenance_window property</summary>
+        public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_window.Maintenance_windowRequestBuilder Maintenance_window
+        {
+            get => new global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_window.Maintenance_windowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The queries property</summary>
         public global::Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Queries.QueriesRequestBuilder Queries

@@ -128,7 +128,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "a", n => { A = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "aaaa", n => { Aaaa = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

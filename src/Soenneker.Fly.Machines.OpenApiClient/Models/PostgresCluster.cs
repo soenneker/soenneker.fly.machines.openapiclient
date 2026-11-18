@@ -176,7 +176,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "attached_apps", n => { AttachedApps = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp>(global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresAttachedApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cpu_kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresClusterCpuKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCpuKind = default; _explicitNullProperties?.Remove("cpu_kind"); AdditionalData["cpu_kind"] = unknown; } else { CpuKind = parsed; AdditionalData.Remove("cpu_kind"); } } },

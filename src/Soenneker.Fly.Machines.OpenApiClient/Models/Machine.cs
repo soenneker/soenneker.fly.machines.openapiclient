@@ -258,7 +258,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "checks", n => { Checks = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus>(global::Soenneker.Fly.Machines.OpenApiClient.Models.CheckStatus.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineConfig.CreateFromDiscriminatorValue); } },

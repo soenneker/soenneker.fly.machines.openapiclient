@@ -124,7 +124,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "internal_numeric_id", n => { InternalNumericId = n.GetIntValue(); } },

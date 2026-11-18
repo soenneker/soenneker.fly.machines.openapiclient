@@ -212,7 +212,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "cmd", n => { Cmd = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "depends_on", n => { DependsOn = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerDependency.CreateFromDiscriminatorValue)?.AsList(); } },

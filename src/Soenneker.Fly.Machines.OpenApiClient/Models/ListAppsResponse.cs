@@ -47,7 +47,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
-        /// <summary>The number of matching apps across all pages. Organization-wide listingsretain the first page&apos;s count; scoped listings recount using the currenttoken&apos;s permissions. Snapshot bounds exclude newer apps, and replicationlag or deletion during traversal can make totals differ from rows seen.</summary>
+        /// <summary>The number of matching apps across all pages. With an organization-widetoken, it is counted when the first page is requested and not updatedafterwards, so it excludes apps created later and includes apps deletedwhile paginating. With an app-scoped token, such as a deploy token, it isrecounted on each page and includes only the apps the token can read.Either way, it may differ slightly from the number of apps returned.</summary>
         public int? TotalApps { get => _explicitNullValueTotalApps; set { _explicitNullValueTotalApps = value; AdditionalData?.Remove("total_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_apps"); else _explicitNullProperties?.Remove("total_apps"); } }
         private int? _explicitNullValueTotalApps = default!;
         /// <summary>

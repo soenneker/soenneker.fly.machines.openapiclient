@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>
-    /// Beta: a cache drive attached to the Machine. This field may be removed in the future
+    /// Semi-durable cache disk attached to the Machine. Contents generally survive Machine stops, restarts, and updates,but durability is not guaranteed. Expect Machines to start with an empty cache disk at any time
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FlyMachineConfigCacheDrive : IAdditionalDataHolder, IParsable
+    public partial class FlyMachineConfigCacheDisk : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -26,7 +26,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Optional absolute guest mount path. When set, the device is formatted as ext4.Without a path, the device retains legacy raw block behavior. Contents survivesame-host restarts and path changes, but are discarded on size or mode changes,relocation, recovery on another host, and cloning.</summary>
+        /// <summary>Absolute path in the Machine at which to mount the cache disk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
@@ -36,25 +36,25 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
-        /// <summary>Fixed size of the Machine-owned cache drive in MiB. At most 51200.With a path, at least 16 MiB is required; without a path, 0 disables the device.</summary>
+        /// <summary>Size of the cache disk in MiB. Between 16 and 51200.Changing the size discards the disk&apos;s contents.</summary>
         public int? SizeMb { get => _explicitNullValueSizeMb; set { _explicitNullValueSizeMb = value; AdditionalData?.Remove("size_mb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_mb"); else _explicitNullProperties?.Remove("size_mb"); } }
         private int? _explicitNullValueSizeMb = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk"/> and sets the default values.
         /// </summary>
-        public FlyMachineConfigCacheDrive()
+        public FlyMachineConfigCacheDisk()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

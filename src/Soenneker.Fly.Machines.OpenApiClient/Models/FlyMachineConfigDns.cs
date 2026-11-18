@@ -122,7 +122,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "dns_forward_rules", n => { DnsForwardRules = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyDnsForwardRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },

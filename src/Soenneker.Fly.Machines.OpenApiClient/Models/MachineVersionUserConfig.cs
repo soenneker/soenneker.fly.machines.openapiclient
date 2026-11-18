@@ -20,8 +20,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("auto_destroy") is null) { _explicitNullValueAutoDestroy = default!; _explicitNullProperties?.Remove("auto_destroy"); }
             else if (parseNode.GetChildNode("auto_destroy") is { } nullNodeAutoDestroy && nullNodeAutoDestroy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoDestroy = null;
-            if (parseNode.GetChildNode("cache_drive") is null) { _explicitNullValueCacheDrive = default!; _explicitNullProperties?.Remove("cache_drive"); }
-            else if (parseNode.GetChildNode("cache_drive") is { } nullNodeCacheDrive && nullNodeCacheDrive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheDrive = null;
+            if (parseNode.GetChildNode("cache_disk") is null) { _explicitNullValueCacheDisk = default!; _explicitNullProperties?.Remove("cache_disk"); }
+            else if (parseNode.GetChildNode("cache_disk") is { } nullNodeCacheDisk && nullNodeCacheDisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheDisk = null;
             if (parseNode.GetChildNode("checks") is null) { _explicitNullValueChecks = default!; _explicitNullProperties?.Remove("checks"); }
             else if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
             if (parseNode.GetChildNode("containers") is null) { _explicitNullValueContainers = default!; _explicitNullProperties?.Remove("containers"); }
@@ -73,15 +73,15 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Optional boolean telling the Machine to destroy itself once it’s complete (default false)</summary>
         public bool? AutoDestroy { get => _explicitNullValueAutoDestroy; set { _explicitNullValueAutoDestroy = value; AdditionalData?.Remove("auto_destroy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_destroy"); else _explicitNullProperties?.Remove("auto_destroy"); } }
         private bool? _explicitNullValueAutoDestroy = default!;
-        /// <summary>Beta: a cache drive attached to the Machine. This field may be removed in the future</summary>
+        /// <summary>Semi-durable cache disk attached to the Machine. Contents generally survive Machine stops, restarts, and updates,but durability is not guaranteed. Expect Machines to start with an empty cache disk at any time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive? CacheDrive { get => _explicitNullValueCacheDrive; set { _explicitNullValueCacheDrive = value; AdditionalData?.Remove("cache_drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_drive"); else _explicitNullProperties?.Remove("cache_drive"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive? _explicitNullValueCacheDrive = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk? CacheDisk { get => _explicitNullValueCacheDisk; set { _explicitNullValueCacheDisk = value; AdditionalData?.Remove("cache_disk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_disk"); else _explicitNullProperties?.Remove("cache_disk"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk? _explicitNullValueCacheDisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive CacheDrive { get => _explicitNullValueCacheDrive; set { _explicitNullValueCacheDrive = value; AdditionalData?.Remove("cache_drive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_drive"); else _explicitNullProperties?.Remove("cache_drive"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive _explicitNullValueCacheDrive = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk CacheDisk { get => _explicitNullValueCacheDisk; set { _explicitNullValueCacheDisk = value; AdditionalData?.Remove("cache_disk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_disk"); else _explicitNullProperties?.Remove("cache_disk"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk _explicitNullValueCacheDisk = default!;
 #endif
         /// <summary>An optional object that defines one or more named top-level checks. The key for each check is the check name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -319,10 +319,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(24)
             {
                 { "auto_destroy", n => { AutoDestroy = n.GetBoolValue(); } },
-                { "cache_drive", n => { CacheDrive = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive.CreateFromDiscriminatorValue); } },
+                { "cache_disk", n => { CacheDisk = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk.CreateFromDiscriminatorValue); } },
                 { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfigChecks>(global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfigChecks.CreateFromDiscriminatorValue); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>(global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disable_machine_autostart", n => { DisableMachineAutostart = n.GetBoolValue(); } },
@@ -355,7 +355,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_destroy", AutoDestroy);
-            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDrive>("cache_drive", CacheDrive);
+            writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyMachineConfigCacheDisk>("cache_disk", CacheDisk);
             writer.WriteObjectValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.MachineVersionUserConfigChecks>("checks", Checks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fly.Machines.OpenApiClient.Models.FlyContainerConfig>("containers", Containers);
             writer.WriteBoolValue("disable_machine_autostart", DisableMachineAutostart);
