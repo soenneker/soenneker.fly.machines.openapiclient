@@ -34,7 +34,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_wind
         {
         }
         /// <summary>
-        /// Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region&apos;s default. Requires only read access to the organization.
+        /// Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region&apos;s default. Some clusters have no window: their maintenance can run at any time, and `data` is null. Requires only read access to the organization.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_wind
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a cluster&apos;s weekly maintenance window. Give at least one of `day`, `start_hour` and `duration_hours`; omitted fields keep their current value. `start_hour` is in the cluster&apos;s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running.
+        /// Update a cluster&apos;s weekly maintenance window. Give at least one of `day`, `start_hour` and `duration_hours`; omitted fields keep their current value. `start_hour` is in the cluster&apos;s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running. A cluster with no window, whose maintenance can run at any time, can&apos;t be given one: the request fails with 422. A successful update always returns a window in `data`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_wind
             return await RequestAdapter.SendAsync<global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse>(requestInfo, global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region&apos;s default. Requires only read access to the organization.
+        /// Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region&apos;s default. Some clusters have no window: their maintenance can run at any time, and `data` is null. Requires only read access to the organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.V1.Postgres.Item.Maintenance_wind
             return requestInfo;
         }
         /// <summary>
-        /// Update a cluster&apos;s weekly maintenance window. Give at least one of `day`, `start_hour` and `duration_hours`; omitted fields keep their current value. `start_hour` is in the cluster&apos;s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running.
+        /// Update a cluster&apos;s weekly maintenance window. Give at least one of `day`, `start_hour` and `duration_hours`; omitted fields keep their current value. `start_hour` is in the cluster&apos;s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running. A cluster with no window, whose maintenance can run at any time, can&apos;t be given one: the request fails with 422. A successful update always returns a window in `data`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

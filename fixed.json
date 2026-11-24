@@ -5566,7 +5566,7 @@
           "Postgres Clusters"
         ],
         "summary": "Get Maintenance Window",
-        "description": "Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region\u0027s default. Requires only read access to the organization.",
+        "description": "Get the weekly window in which a cluster may undergo maintenance. A cluster that never set one returns its region\u0027s default. Some clusters have no window: their maintenance can run at any time, and \u0060data\u0060 is null. Requires only read access to the organization.",
         "operationId": "PostgresMaintenanceWindowShow",
         "parameters": [
           {
@@ -5617,7 +5617,7 @@
           "Postgres Clusters"
         ],
         "summary": "Update Maintenance Window",
-        "description": "Update a cluster\u0027s weekly maintenance window. Give at least one of \u0060day\u0060, \u0060start_hour\u0060 and \u0060duration_hours\u0060; omitted fields keep their current value. \u0060start_hour\u0060 is in the cluster\u0027s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running.",
+        "description": "Update a cluster\u0027s weekly maintenance window. Give at least one of \u0060day\u0060, \u0060start_hour\u0060 and \u0060duration_hours\u0060; omitted fields keep their current value. \u0060start_hour\u0060 is in the cluster\u0027s timezone, which is derived from its region and cannot be changed. Changes are accepted only while the cluster is ready and no maintenance is running. A cluster with no window, whose maintenance can run at any time, can\u0027t be given one: the request fails with 422. A successful update always returns a window in \u0060data\u0060.",
         "operationId": "PostgresMaintenanceWindowUpdate",
         "parameters": [
           {
@@ -5693,7 +5693,7 @@
             }
           },
           "422": {
-            "description": "No fields given, or a value is invalid",
+            "description": "No fields given, or a value is invalid; \u0027Maintenance can run at any time\u0027 for a cluster with no window",
             "content": {
               "application/json": {
                 "schema": {
@@ -8277,33 +8277,6 @@
           }
         }
       },
-      "PostgresMaintenanceWindow": {
-        "type": "object",
-        "properties": {
-          "day": {
-            "$ref": "#/components/schemas/PostgresMaintenanceWindowDay"
-          },
-          "duration_hours": {
-            "maximum": 8,
-            "minimum": 3,
-            "type": "integer",
-            "description": "Length of the window in hours.",
-            "example": 3
-          },
-          "start_hour": {
-            "maximum": 23,
-            "minimum": 0,
-            "type": "integer",
-            "description": "Hour of the day the window starts, in the cluster\u0027s timezone.",
-            "example": 1
-          },
-          "timezone": {
-            "type": "string",
-            "description": "IANA timezone the window is expressed in, derived from the cluster\u0027s region.",
-            "example": "America/New_York"
-          }
-        }
-      },
       "PostgresPlan": {
         "type": "object",
         "properties": {
@@ -8985,9 +8958,9 @@
         "properties": {
           "disk_size_gb": {
             "maximum": 1000,
-            "minimum": 10,
+            "minimum": 1,
             "type": "integer",
-            "description": "Disk size in gigabytes.",
+            "description": "Disk size in gigabytes. Defaults to the plan\u0027s starting size: 1 for dev-256 and 10 for the other plans.",
             "example": 10
           },
           "name": {
@@ -10222,7 +10195,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/PostgresMaintenanceWindow"
+            "$ref": "#/components/schemas/ShowPostgresMaintenanceWindowResponseData"
           }
         }
       },
@@ -12255,6 +12228,37 @@
         },
         "description": "Installation details, or null when the extension is not installed."
       },
+      "ShowPostgresMaintenanceWindowResponseData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "day": {
+            "$ref": "#/components/schemas/ShowPostgresMaintenanceWindowResponseDataDay"
+          },
+          "duration_hours": {
+            "maximum": 8,
+            "minimum": 3,
+            "type": "integer",
+            "description": "Length of the window in hours.",
+            "example": 3
+          },
+          "start_hour": {
+            "maximum": 23,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Hour of the day the window starts, in the cluster\u0027s timezone.",
+            "example": 1
+          },
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone the window is expressed in, derived from the cluster\u0027s region.",
+            "example": "America/New_York"
+          }
+        },
+        "description": "The cluster\u0027s maintenance window, or null when it has none and its maintenance can run at any time."
+      },
       "MachinesList200ResponseSchema": {
         "type": "array",
         "items": {
@@ -12809,6 +12813,7 @@
       },
       "PostgresClusterPlan": {
         "enum": [
+          "dev-256",
           "basic",
           "starter",
           "launch",
@@ -12822,6 +12827,10 @@
           "name": "PostgresClusterPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "dev-256",
+              "name": "Dev256"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -12886,6 +12895,7 @@
       },
       "PostgresClusterSummaryPlan": {
         "enum": [
+          "dev-256",
           "basic",
           "starter",
           "launch",
@@ -12899,6 +12909,10 @@
           "name": "PostgresClusterSummaryPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "dev-256",
+              "name": "Dev256"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -12961,54 +12975,6 @@
           ]
         }
       },
-      "PostgresMaintenanceWindowDay": {
-        "enum": [
-          "sunday",
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday",
-          "friday",
-          "saturday"
-        ],
-        "type": "string",
-        "description": "Day of the week the window starts on.",
-        "example": "sunday",
-        "x-ms-enum": {
-          "name": "PostgresMaintenanceWindowDay",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "sunday",
-              "name": "Sunday"
-            },
-            {
-              "value": "monday",
-              "name": "Monday"
-            },
-            {
-              "value": "tuesday",
-              "name": "Tuesday"
-            },
-            {
-              "value": "wednesday",
-              "name": "Wednesday"
-            },
-            {
-              "value": "thursday",
-              "name": "Thursday"
-            },
-            {
-              "value": "friday",
-              "name": "Friday"
-            },
-            {
-              "value": "saturday",
-              "name": "Saturday"
-            }
-          ]
-        }
-      },
       "PostgresPlanCpuKind": {
         "enum": [
           "shared",
@@ -13034,6 +13000,7 @@
       },
       "PostgresPlanPlan": {
         "enum": [
+          "dev-256",
           "basic",
           "starter",
           "launch",
@@ -13047,6 +13014,10 @@
           "name": "PostgresPlanPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "dev-256",
+              "name": "Dev256"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -13325,6 +13296,7 @@
       },
       "CreatePostgresClusterRequestPlan": {
         "enum": [
+          "dev-256",
           "basic",
           "starter",
           "launch",
@@ -13338,6 +13310,10 @@
           "name": "CreatePostgresClusterRequestPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "dev-256",
+              "name": "Dev256"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -13651,6 +13627,7 @@
       },
       "ForkPostgresClusterRequestPlan": {
         "enum": [
+          "dev-256",
           "basic",
           "starter",
           "launch",
@@ -13664,6 +13641,10 @@
           "name": "ForkPostgresClusterRequestPlan",
           "modelAsString": false,
           "values": [
+            {
+              "value": "dev-256",
+              "name": "Dev256"
+            },
             {
               "value": "basic",
               "name": "Basic"
@@ -13792,6 +13773,54 @@
             {
               "value": "reader",
               "name": "Reader"
+            }
+          ]
+        }
+      },
+      "ShowPostgresMaintenanceWindowResponseDataDay": {
+        "enum": [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ],
+        "type": "string",
+        "description": "Day of the week the window starts on.",
+        "example": "sunday",
+        "x-ms-enum": {
+          "name": "ShowPostgresMaintenanceWindowResponseDataDay",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sunday",
+              "name": "Sunday"
+            },
+            {
+              "value": "monday",
+              "name": "Monday"
+            },
+            {
+              "value": "tuesday",
+              "name": "Tuesday"
+            },
+            {
+              "value": "wednesday",
+              "name": "Wednesday"
+            },
+            {
+              "value": "thursday",
+              "name": "Thursday"
+            },
+            {
+              "value": "friday",
+              "name": "Friday"
+            },
+            {
+              "value": "saturday",
+              "name": "Saturday"
             }
           ]
         }
@@ -14244,6 +14273,33 @@
           "type": "string",
           "description": "Installed version.",
           "example": "1.0"
+        }
+      }
+    },
+    "PostgresMaintenanceWindow": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/components/schemas/PostgresMaintenanceWindowDay"
+        },
+        "duration_hours": {
+          "maximum": 8,
+          "minimum": 3,
+          "type": "integer",
+          "description": "Length of the window in hours.",
+          "example": 3
+        },
+        "start_hour": {
+          "maximum": 23,
+          "minimum": 0,
+          "type": "integer",
+          "description": "Hour of the day the window starts, in the cluster\u0027s timezone.",
+          "example": 1
+        },
+        "timezone": {
+          "type": "string",
+          "description": "IANA timezone the window is expressed in, derived from the cluster\u0027s region.",
+          "example": "America/New_York"
         }
       }
     },
@@ -15200,6 +15256,54 @@
     },
     "FlyHttpResponseOptionsHeadersAdditionalPropertiesProperty": {
       "type": "object"
+    },
+    "PostgresMaintenanceWindowDay": {
+      "enum": [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "type": "string",
+      "description": "Day of the week the window starts on.",
+      "example": "sunday",
+      "x-ms-enum": {
+        "name": "PostgresMaintenanceWindowDay",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "sunday",
+            "name": "Sunday"
+          },
+          {
+            "value": "monday",
+            "name": "Monday"
+          },
+          {
+            "value": "tuesday",
+            "name": "Tuesday"
+          },
+          {
+            "value": "wednesday",
+            "name": "Wednesday"
+          },
+          {
+            "value": "thursday",
+            "name": "Thursday"
+          },
+          {
+            "value": "friday",
+            "name": "Friday"
+          },
+          {
+            "value": "saturday",
+            "name": "Saturday"
+          }
+        ]
+      }
     }
   }
 }

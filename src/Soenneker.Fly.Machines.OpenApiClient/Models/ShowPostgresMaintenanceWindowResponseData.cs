@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
+    /// <summary>
+    /// The cluster&apos;s maintenance window, or null when it has none and its maintenance can run at any time.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostgresMaintenanceWindow : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ShowPostgresMaintenanceWindowResponseData : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -30,8 +31,8 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Day of the week the window starts on.</summary>
-        public global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindowDay? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
-        private global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindowDay? _explicitNullValueDay = default!;
+        public global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseDataDay? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseDataDay? _explicitNullValueDay = default!;
         /// <summary>Length of the window in hours.</summary>
         public int? DurationHours { get => _explicitNullValueDurationHours; set { _explicitNullValueDurationHours = value; AdditionalData?.Remove("duration_hours"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_hours"); else _explicitNullProperties?.Remove("duration_hours"); } }
         private int? _explicitNullValueDurationHours = default!;
@@ -49,21 +50,23 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindow"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseData"/> and sets the default values.
         /// </summary>
-        public PostgresMaintenanceWindow()
+        public ShowPostgresMaintenanceWindowResponseData()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindow"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindow(), parseNode);
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +76,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(4)
             {
-                { "day", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindowDay>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDay = default; _explicitNullProperties?.Remove("day"); AdditionalData["day"] = unknown; } else { Day = parsed; AdditionalData.Remove("day"); } } },
+                { "day", n => { var parsed = n.GetEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseDataDay>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDay = default; _explicitNullProperties?.Remove("day"); AdditionalData["day"] = unknown; } else { Day = parsed; AdditionalData.Remove("day"); } } },
                 { "duration_hours", n => { DurationHours = n.GetIntValue(); } },
                 { "start_hour", n => { StartHour = n.GetIntValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -86,7 +89,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.PostgresMaintenanceWindowDay>("day", Day);
+            writer.WriteEnumValue<global::Soenneker.Fly.Machines.OpenApiClient.Models.ShowPostgresMaintenanceWindowResponseDataDay>("day", Day);
             writer.WriteIntValue("duration_hours", DurationHours);
             writer.WriteIntValue("start_hour", StartHour);
             writer.WriteStringValue("timezone", Timezone);

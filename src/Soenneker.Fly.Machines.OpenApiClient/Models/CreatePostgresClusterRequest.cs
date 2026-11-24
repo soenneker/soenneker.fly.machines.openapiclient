@@ -37,7 +37,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Disk size in gigabytes.</summary>
+        /// <summary>Disk size in gigabytes. Defaults to the plan&apos;s starting size: 1 for dev-256 and 10 for the other plans.</summary>
         public int? DiskSizeGb { get => _explicitNullValueDiskSizeGb; set { _explicitNullValueDiskSizeGb = value; AdditionalData?.Remove("disk_size_gb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disk_size_gb"); else _explicitNullProperties?.Remove("disk_size_gb"); } }
         private int? _explicitNullValueDiskSizeGb = default!;
         /// <summary>Name for the cluster. A name is generated when omitted.</summary>

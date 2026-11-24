@@ -5,7 +5,7 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
 {
     /// <summary>Day of the week the window starts on.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostgresMaintenanceWindowDay
+    public enum ShowPostgresMaintenanceWindowResponseDataDay
     {
         [EnumMember(Value = "sunday")]
         #pragma warning disable CS1591

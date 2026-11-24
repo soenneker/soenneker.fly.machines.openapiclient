@@ -7,6 +7,10 @@ namespace Soenneker.Fly.Machines.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreatePostgresClusterRequestPlan
     {
+        [EnumMember(Value = "dev-256")]
+        #pragma warning disable CS1591
+        Dev256,
+        #pragma warning restore CS1591
         [EnumMember(Value = "basic")]
         #pragma warning disable CS1591
         Basic,
